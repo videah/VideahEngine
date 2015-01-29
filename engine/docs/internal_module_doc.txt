@@ -1,0 +1,54 @@
+main.lua:
+	Handles and connects everything together.
+	Imports 3rd party libs and utils.
+
+camera.lua:
+	Camera system that can handle rotation, scale, translation etc.
+	Can also handle camera shake.
+
+map.lua:
+	Handles the tilemap loading, drawing, updating etc. Uses Simple Tiled Implimentation.
+
+menu.lua:
+	Creates a main menu to be able to switch between gamestates with mouse control.
+	Needs touching up.
+
+panel.lua:
+	Debug panel that is super easy to add things.
+	Whilst it's super easy, it's not very minimal as it requires you to return a function
+	Maybe find a way to minimize it?
+
+splash.lua:
+	Handles the loading and drawing of splash screens upon loading the game.
+	Tweening is currently broken, might need replacing of flux.lua
+
+state.lua:
+	Handles the current state of the game engine.
+	State can be easily changed with a function.
+
+network.lua:
+	The base of a networking module.
+	Very incomplete, and might never be finished due to lack of networking knowledge.
+
+lighting.lua:
+	TODO: Actually implement.
+
+fonts.lua:
+	A simple font cache.
+
+hud.lua:
+	Handles the drawing and updating of ingame HUD's.
+	
+input.lua:
+	Input and Binds handler.
+	Loads and saves to a config file.
+
+weapon.lua:
+	Weapon and bullet handling system
+	Might need tweaking.
+
+global.lua:
+	Handles global variables and functions.
+
+options.lua:
+	Loads and saves settings and options to an config file.

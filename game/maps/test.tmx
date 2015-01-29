@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="bluh" tilewidth="32" tileheight="32">
+  <image source="../data/images/tilesheet.png" width="480" height="736"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMA6A90PrXGzyHgr2kqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrqH38VBUo=
+  </data>
+ </layer>
+ <layer name="road" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztw0ERAAAEADD9s2mgjApeeGx3iwAAAAAAAIAbuZSZWgoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3zWHRyr3
+  </data>
+ </layer>
+ <layer name="buildings" width="100" height="100">
+  <properties>
+   <property name="collidable" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztzklOAlEYhVFg/3OEBdiBQxuUIUjjDGyAGeoGlA1wSVjAm1AklXNSX17upPI3GgAAAABQL+10kTqpW7A5rct0la7TTcG+Tb3UT3dnuLfu7tNDekxPBXuQntNLGqbv9JN+qz68ZhbHd5TG6TVNCvY0zdI8vaW/9J92Fd5eR9vju0zv6SN9FuyvtErrtDn8oJkvtZpVXg8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwCnsAWnnPh8=
+  </data>
+ </layer>
+</map>
