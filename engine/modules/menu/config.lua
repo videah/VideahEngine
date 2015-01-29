@@ -1,15 +1,20 @@
 config = {}
+config.bg = {}
+config.sidepanel = {}
 
 	config.title = "Untitled Game"
 	config.titleimage = ""
 	config.titletype = "text"
 
-	config.bgimage = "data/images/menubg.png"
-	config.bgcolor = {44, 62, 80}
+	config.bg.image = "data/images/menubg.png"
+	config.bg.color = {44, 62, 80}
 	config.options = {"Start", "Options", "Customize", "Quit"}
 
 	config.type = "scrolling_tiled"
 	config.scrolldirection = "left"
 	config.scrollspeed = 50
+
+	config.sidepanel.color = {25, 25, 25, 155}
+	config.sidepanel.width = 200
 
 return config
