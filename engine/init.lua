@@ -25,6 +25,8 @@ function engine.draw()
 
 	engine.debug.draw()
 
+	engine.global.fps = love.timer.getFPS()
+
 end
 
 function engine.update(dt)

@@ -11,6 +11,7 @@ function game.load()
 	engine.splash.onComplete(function() engine.state.setState("menu") end)
 
 	-- Debug Vars --
+	engine.debug.addVar("FPS", function() return global.fps end)
 	engine.debug.addVar("global.version", function() return engine.global.version end)
 	engine.debug.addVar("state.currentState", function() return engine.state.currentState end)
 
