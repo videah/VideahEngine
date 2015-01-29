@@ -14,7 +14,7 @@ engine.state		= require(path .. 'modules.state')
 
 function engine.load()
 
-	print("Loaded VideahEngine" .. engine.global.version)
+	print("Loaded VideahEngine " .. engine.global.version)
 
 end
 
