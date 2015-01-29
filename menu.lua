@@ -55,7 +55,7 @@ function menu.GenerateBackground()
 
 	elseif menu.type == "color" then
 
-		love.graphics.setColor(menubgRed, menubgGreen, menubgBlue, 255)
+		love.graphics.setColor(menu.config.bgcolor)
 		love.graphics.rectangle( "fill", 0, 0, global.screenWidth, global.screenHeight )
 		love.graphics.setColor(255, 255, 255, 255)
 
