@@ -1,17 +1,15 @@
 engine = {}
-engine.path = ...
+engine.path = ... .. '.'
 
-local requirepath = engine.path .. '.'
+engine.debug 		= require(engine.path .. 'libs.solar')
+engine.splash 		= require(engine.path .. 'libs.splashy')
+engine.ui 			= require(engine.path .. 'libs.LoveFrames')
+engine.map 			= require(engine.path .. 'libs.STI')
+engine.lightworld 	= require(engine.path .. 'libs.lightworld')
 
-engine.debug 		= require(requirepath .. 'libs.solar')
-engine.splash 		= require(requirepath .. 'libs.splashy')
-engine.ui 			= require(requirepath .. 'libs.LoveFrames')
-engine.map 			= require(requirepath .. 'libs.STI')
-engine.lightworld 	= require(requirepath .. 'libs.lightworld')
-
-engine.global 		= require(requirepath .. 'modules.global')
-engine.menu			= require(requirepath .. 'modules.menu')
-engine.state		= require(requirepath .. 'modules.state')
+engine.global 		= require(engine.path .. 'modules.global')
+engine.menu			= require(engine.path .. 'modules.menu')
+engine.state		= require(engine.path .. 'modules.state')
 
 function engine.load()
 

@@ -1,5 +1,5 @@
 game = {}
-game.path = ...
+game.path = ... .. '/'
 
 function game.load()
 
