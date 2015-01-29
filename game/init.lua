@@ -1,4 +1,5 @@
 game = {}
+game.path = ...
 
 function game.load()
 
