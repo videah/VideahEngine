@@ -2,9 +2,16 @@ game = {}
 
 function game.load()
 
-	engine.splash.addSplash(love.graphics.newImage("game/data/images/splashes/love.png"))
+	-- Set default state --
+	engine.state.setState("splash")
 
-	engine.debug.addVar("test", function() return engine.global.version end)
+	-- Splash Screen --
+	engine.splash.addSplash(love.graphics.newImage("game/data/images/splashes/love.png"))
+	engine.splash.onComplete(function() engine.state.setState("menu") end)
+
+	-- Debug Vars --
+	engine.debug.addVar("global.version", function() return engine.global.version end)
+	engine.debug.addVar("state.currentState", function() return engine.state.currentState end)
 
 end
 

@@ -9,6 +9,8 @@ engine.map 			= require(path .. 'libs.STI')
 engine.lightworld 	= require(path .. 'libs.lightworld')
 
 engine.global 		= require(path .. 'modules.global')
+engine.menu			= require(path .. 'modules.menu')
+engine.state		= require(path .. 'modules.state')
 
 function engine.load()
 
@@ -18,14 +20,19 @@ end
 
 function engine.draw()
 
-	engine.splash.draw()
+	if engine.state:isCurrentState("splash") then
+		engine.splash.draw()
+	end
+
 	engine.debug.draw()
 
 end
 
 function engine.update(dt)
 
-	engine.splash.update(dt)
+	if engine.state:isCurrentState("splash") then
+		engine.splash.update(dt)
+	end
 
 end
 
