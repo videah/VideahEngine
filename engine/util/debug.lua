@@ -21,7 +21,7 @@ local _Debug = {
 	history = {''},
 	historyIndex = 1,
 
-	Font = love.graphics.newFont("data/fonts/consola.ttf", 17),
+	Font = love.graphics.newFont("game/data/fonts/consola.ttf", 17),
 	BigFont = love.graphics.newFont(24),
 	Proposals = {},
 	ProposalLocation = _G;

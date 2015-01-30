@@ -15,6 +15,13 @@ function game.load()
 	engine.debug.addVar("global.version", function() return engine.global.version end)
 	engine.debug.addVar("state.currentState", function() return engine.state.currentState end)
 
+	-- Menu Buttons --
+	engine.menu.addButton("Button", "Button", "Button")
+	engine.menu.addButton("Button", "Button", "Button")
+	engine.menu.addButton("Button", "Button", "Button")
+	engine.menu.addButton("Button", "Button", "Button")
+	engine.menu.addButton("Button", "Button", "Button")
+
 end
 
 function game.draw()

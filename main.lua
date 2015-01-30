@@ -1,3 +1,5 @@
+--require 'engine/util/debug' -- Temporary debug console
+
 game 	= require 'game'
 engine 	= require 'engine'
 

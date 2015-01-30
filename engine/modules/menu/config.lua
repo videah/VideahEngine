@@ -1,6 +1,7 @@
 config = {}
 config.bg = {}
 config.sidepanel = {}
+config.button = {}
 
 	config.title = "Untitled Game"
 	config.titleimage = ""
@@ -16,5 +17,7 @@ config.sidepanel = {}
 
 	config.sidepanel.color = {25, 25, 25, 155}
 	config.sidepanel.width = 200
+
+	config.button.height = 100
 
 return config

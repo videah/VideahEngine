@@ -25,8 +25,8 @@ end
 
 function menu.addButton(text, func, image)
 
-	local table = {text, func, image}
-	table.insert(menu.buttonlist, table)
+	local tbl = {text = text, func = func, image = image}
+	table.insert(menu.buttonlist, tbl)
 
 end
 
@@ -41,9 +41,20 @@ function menu.sidepanel.draw()
 	love.graphics.setColor(255, 255, 255, 255)
 
 	for i=1, #menu.buttonlist do
-		love.graphics.setColor(color)
-		love.graphics.rectangle("fill", 0, 100 * i - 1, width, 100)
+
+		local height = menu.config.button.height
+
+		local buttonpos = (i - 1) * height -- Creates a list of buttons, rather than them all overlapping.
+
+		buttonpos = buttonpos + ((engine.global.screenHeight / 2)) -- Centers the starting position to screenWidth.
+
+		buttonpos = buttonpos - (height * #menu.buttonlist / 2) -- Centers the list to the middle button.
+
+		love.graphics.setColor(25, 25, 25, 200)
+		love.graphics.rectangle("fill", 0, buttonpos, width, height)
 		love.graphics.setColor(255, 255, 255, 255)
+		love.graphics.print(menu.buttonlist[i].text .. i, 0, buttonpos)
+
 	end
 
 end

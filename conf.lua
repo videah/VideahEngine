@@ -18,8 +18,8 @@ function love.conf(t)
 
 
     --t.window.icon       = "data/images/engineicon.png"
-    t.window.width      = 1280                               -- The window width (number)
-    t.window.height     = 720                              -- The window height (number)
+    t.window.width      = 1920                               -- The window width (number)
+    t.window.height     = 1080                              -- The window height (number)
     t.window.fullscreen = false                             -- Enable fullscreen (boolean)
                                                                 -- this is likely to be true
                                                                 -- on an uLove target, but few modern systems
