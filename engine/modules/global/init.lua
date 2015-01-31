@@ -5,5 +5,7 @@ global = {}
 	global.debug = true
 	global.screenWidth = love.graphics.getWidth()
 	global.screenHeight = love.graphics.getHeight()
+	global.cursorx = love.mouse.getX()
+	global.cursory = love.mouse.getY()
 
 return global

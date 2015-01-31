@@ -14,13 +14,15 @@ function game.load()
 	engine.debug.addVar("FPS", function() return global.fps end)
 	engine.debug.addVar("global.version", function() return engine.global.version end)
 	engine.debug.addVar("state.currentState", function() return engine.state.currentState end)
+	engine.debug.addVar("global.mousex", function() return engine.global.cursorx end)
+	engine.debug.addVar("global.mousey", function() return engine.global.cursory end)
 
 	-- Menu Buttons --
-	engine.menu.addButton("Button", "Button", "Button")
-	engine.menu.addButton("Button", "Button", "Button")
-	engine.menu.addButton("Button", "Button", "Button")
-	engine.menu.addButton("Button", "Button", "Button")
-	engine.menu.addButton("Button", "Button", "Button")
+	engine.menu.addButton("Button", 0, 0, "Button", "Button")
+	engine.menu.addButton("Button", 0, 0, "Button", "Button")
+	engine.menu.addButton("Button", 0, 0, "Button", "Button")
+	engine.menu.addButton("Button", 0, 0, "Button", "Button")
+	engine.menu.addButton("Button", 0, 0, "Button", "Button")
 
 end
 

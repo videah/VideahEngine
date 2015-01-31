@@ -20,12 +20,13 @@ end
 function menu.update(dt)
 
 	menu.bg.update(dt)
+	menu.sidepanel.update(dt)
 
 end
 
-function menu.addButton(text, func, image)
+function menu.addButton(text, x, y, func, image)
 
-	local tbl = {text = text, func = func, image = image}
+	local tbl = {text = text, x = x, y = y, func = func, image = image, hover = false}
 	table.insert(menu.buttonlist, tbl)
 
 end
@@ -50,16 +51,46 @@ function menu.sidepanel.draw()
 
 		buttonpos = buttonpos - (height * #menu.buttonlist / 2) -- Centers the list to the middle button.
 
+		menu.buttonlist[i].y = buttonpos
+
 		love.graphics.setColor(25, 25, 25, 200)
-		love.graphics.rectangle("fill", 0, buttonpos, width, height)
+		love.graphics.rectangle("fill", 0, menu.buttonlist[i].y, width, height)
 		love.graphics.setColor(255, 255, 255, 255)
-		love.graphics.print(menu.buttonlist[i].text .. i, 0, buttonpos)
+		love.graphics.print(menu.buttonlist[i].text .. i .. "   " .. menu.buttonlist[i].y, 0, menu.buttonlist[i].y)
 
 	end
 
 end
 
 function menu.sidepanel.update(dt)
+
+	local width = menu.config.sidepanel.width
+	local height = menu.config.button.height
+
+	for i=1, #menu.buttonlist do
+
+		local x = menu.buttonlist[i].x
+		local y = menu.buttonlist[i].y
+
+		if engine.global.cursorx >= x and engine.global.cursorx <= (x + width) and engine.global.cursory >= y and engine.global.cursory <= (y + height) then
+			menu.buttonlist[i].hover = true
+		else
+			menu.buttonlist[i].hover = false
+		end
+
+	end
+
+	for i=1, #menu.buttonlist do
+
+		local hover = menu.buttonlist[i].hover
+
+		if hover then
+			menu.buttonlist[i].text = "Hovered!"
+		else
+			menu.buttonlist[i].text = "Button"
+		end
+
+	end
 
 end
 

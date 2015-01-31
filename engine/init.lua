@@ -27,6 +27,9 @@ function engine.draw()
 
 	engine.global.fps = love.timer.getFPS()
 
+	engine.global.cursorx = love.mouse.getX()
+	engine.global.cursory = love.mouse.getY()
+
 end
 
 function engine.update(dt)

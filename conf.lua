@@ -6,6 +6,8 @@
 -- benchmark; if it can't run under this, then you are definitely going to
 -- have problems.
 
+io.stdout:setvbuf("no") -- Prints to SublimeText's console
+
 function love.conf(t)
     t.title             = "VideahEngine"                     -- The title of the window the game is in (string)
     t.author            = "Ruairidh 'VideahGams' Carmichael <ruairidhcarmichael@live.co.uk>"   -- The author of the game (string)
@@ -18,8 +20,8 @@ function love.conf(t)
 
 
     --t.window.icon       = "data/images/engineicon.png"
-    t.window.width      = 1920                               -- The window width (number)
-    t.window.height     = 1080                              -- The window height (number)
+    t.window.width      = 1280                               -- The window width (number)
+    t.window.height     = 720                              -- The window height (number)
     t.window.fullscreen = false                             -- Enable fullscreen (boolean)
                                                                 -- this is likely to be true
                                                                 -- on an uLove target, but few modern systems
