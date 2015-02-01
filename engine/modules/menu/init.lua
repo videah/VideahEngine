@@ -1,6 +1,8 @@
 menu = {}
 menu.bg = {}
 menu.sidepanel = {}
+menu.button = {}
+
 menu.buttonlist = {}
 
 local path = ... .. "."
@@ -43,26 +45,40 @@ function menu.sidepanel.draw()
 
 	for i=1, #menu.buttonlist do
 
-		local height = menu.config.button.height
-
-		local buttonpos = (i - 1) * height -- Creates a list of buttons, rather than them all overlapping.
-
-		buttonpos = buttonpos + ((engine.global.screenHeight / 2)) -- Centers the starting position to screenWidth.
-
-		buttonpos = buttonpos - (height * #menu.buttonlist / 2) -- Centers the list to the middle button.
-
-		menu.buttonlist[i].y = buttonpos
-
-		love.graphics.setColor(25, 25, 25, 200)
-		love.graphics.rectangle("fill", 0, menu.buttonlist[i].y, width, height)
-		love.graphics.setColor(255, 255, 255, 255)
-		love.graphics.print(menu.buttonlist[i].text .. i .. "   " .. menu.buttonlist[i].y, 0, menu.buttonlist[i].y)
+		menu.button.draw(i)
 
 	end
 
 end
 
 function menu.sidepanel.update(dt)
+
+	menu.button.update(dt)
+
+end
+
+function menu.button.draw(i)
+
+	local width = menu.config.sidepanel.width
+
+	local height = menu.config.button.height
+
+	local buttonpos = (i - 1) * height -- Creates a list of buttons, rather than them all overlapping.
+
+	buttonpos = buttonpos + ((engine.global.screenHeight / 2)) -- Centers the starting position to screenWidth.
+
+	buttonpos = buttonpos - (height * #menu.buttonlist / 2) -- Centers the list to the middle button.
+
+	menu.buttonlist[i].y = buttonpos
+
+	love.graphics.setColor(25, 25, 25, 200)
+	love.graphics.rectangle("fill", 0, menu.buttonlist[i].y, width, height)
+	love.graphics.setColor(255, 255, 255, 255)
+	love.graphics.print(menu.buttonlist[i].text .. i .. "   " .. menu.buttonlist[i].y, 0, menu.buttonlist[i].y)
+
+end
+
+function menu.button.update(dt)
 
 	local width = menu.config.sidepanel.width
 	local height = menu.config.button.height
