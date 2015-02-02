@@ -26,6 +26,7 @@ function game.load()
 
 	engine.input.bind(" ", "print_test")
 	engine.input.bind("l", "mouse_test") -- Mouse
+	engine.input.bind("a", "gamepad_test")
 
 end
 
@@ -33,6 +34,12 @@ function game.draw()
 
 	if engine.state:isCurrentState("menu") then
 		engine.menu.draw()
+	end
+
+	if engine.input.gamepad.isDown("gamepad_test") then
+		engine.input.gamepad.pads[1]:setVibration(0.25, 0.25)
+	else
+		engine.input.gamepad.pads[1]:setVibration(0, 0)
 	end
 
 end

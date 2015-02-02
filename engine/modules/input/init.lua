@@ -7,6 +7,9 @@ input.keyboard.hasBeenPressed = false
 input.mouse = {}
 input.mouse.hasBeenPressed = false
 
+input.gamepad = {}
+input.gamepad.pads = love.joystick.getJoysticks()
+
 function input.bind(key, action)
 
 	for i=1, #input.list do
@@ -80,6 +83,19 @@ function input.mouse.isPressed(action)
 				end
 			else
 				input.mouse.hasBeenPressed = false
+				return false
+			end
+		end
+	end
+end
+
+function input.gamepad.isDown(action)
+
+	for i=1, #input.list do
+		if input.list[i].action == action then
+			if input.gamepad.pads[1]:isGamepadDown("a") then
+				return true
+			else
 				return false
 			end
 		end
