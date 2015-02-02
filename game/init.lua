@@ -24,12 +24,18 @@ function game.load()
 	engine.menu.addButton("Button", 0, 0, "Button", "Button")
 	engine.menu.addButton("Button", 0, 0, "Button", "Button")
 
+	engine.input.bind(" ", "print_test")
+
 end
 
 function game.draw()
 
 	if engine.state:isCurrentState("menu") then
 		engine.menu.draw()
+	end
+
+	if engine.input.keyboard.isDown("print_test") then
+		print("Input binding works!")
 	end
 
 end

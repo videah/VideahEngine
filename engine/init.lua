@@ -10,6 +10,7 @@ engine.lightworld 	= require(engine.path .. 'libs.lightworld')
 engine.global 		= require(engine.path .. 'modules.global')
 engine.menu			= require(engine.path .. 'modules.menu')
 engine.state		= require(engine.path .. 'modules.state')
+engine.input		= require(engine.path .. 'modules.input')
 
 function engine.load()
 
