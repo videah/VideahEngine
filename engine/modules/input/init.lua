@@ -4,6 +4,9 @@ input.list = {}
 input.keyboard = {}
 input.keyboard.hasBeenPressed = false
 
+input.mouse = {}
+input.mouse.hasBeenPressed = false
+
 function input.bind(key, action)
 
 	for i=1, #input.list do
@@ -18,6 +21,8 @@ function input.bind(key, action)
 	table.insert(input.list, tbl)
 
 end
+
+-- Keyboard --
 
 function input.keyboard.isDown(action)
 
@@ -43,6 +48,38 @@ function input.keyboard.isPressed(action)
 				end
 			else
 				input.keyboard.hasBeenPressed = false
+				return false
+			end
+		end
+	end
+end
+
+-- Mouse --
+
+function input.mouse.isDown(action)
+
+	for i=1, #input.list do
+		if input.list[i].action == action then
+			if love.mouse.isDown(input.list[i].key) then
+				return true
+			else
+				return false
+			end
+		end
+	end
+end
+
+function input.mouse.isPressed(action)
+
+	for i=1, #input.list do
+		if input.list[i].action == action then
+			if love.mouse.isDown(input.list[i].key) then
+				if input.mouse.hasBeenPressed == false then
+					input.mouse.hasBeenPressed = true
+					return true
+				end
+			else
+				input.mouse.hasBeenPressed = false
 				return false
 			end
 		end

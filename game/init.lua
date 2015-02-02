@@ -25,6 +25,7 @@ function game.load()
 	engine.menu.addButton("Button", 0, 0, "Button", "Button")
 
 	engine.input.bind(" ", "print_test")
+	engine.input.bind("l", "mouse_test") -- Mouse
 
 end
 
@@ -32,14 +33,6 @@ function game.draw()
 
 	if engine.state:isCurrentState("menu") then
 		engine.menu.draw()
-	end
-
-	if engine.input.keyboard.isDown("print_test") then
-		--print("Input binding works!")
-	end
-
-	if engine.input.keyboard.isPressed("print_test") then
-		print("This should only print once.")
 	end
 
 end
