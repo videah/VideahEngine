@@ -2,6 +2,7 @@ input = {}
 input.list = {}
 
 input.keyboard = {}
+input.keyboard.hasBeenPressed = false
 
 function input.bind(key, action)
 
@@ -25,6 +26,23 @@ function input.keyboard.isDown(action)
 			if love.keyboard.isDown(input.list[i].key) then
 				return true
 			else
+				return false
+			end
+		end
+	end
+end
+
+function input.keyboard.isPressed(action)
+
+	for i=1, #input.list do
+		if input.list[i].action == action then
+			if love.keyboard.isDown(input.list[i].key) then
+				if input.keyboard.hasBeenPressed == false then
+					input.keyboard.hasBeenPressed = true
+					return true
+				end
+			else
+				input.keyboard.hasBeenPressed = false
 				return false
 			end
 		end

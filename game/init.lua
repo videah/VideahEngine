@@ -35,7 +35,11 @@ function game.draw()
 	end
 
 	if engine.input.keyboard.isDown("print_test") then
-		print("Input binding works!")
+		--print("Input binding works!")
+	end
+
+	if engine.input.keyboard.isPressed("print_test") then
+		print("This should only print once.")
 	end
 
 end
