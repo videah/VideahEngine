@@ -41,4 +41,11 @@ function engine.update(dt)
 
 end
 
+function engine.resize(w, h)
+
+	global.screenWidth = w
+	global.screenHeight = h
+
+end
+
 return engine

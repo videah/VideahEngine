@@ -94,6 +94,14 @@ function input.mouse.isClicked(action)
 	end
 end
 
+function input.mouse:getPos()
+	return global.cursorx, global.cursory
+end
+
+function input.mouse:setPos(x, y)
+	love.mouse.setPosition(x, y)
+end
+
 -- Gamepad --
 
 function input.gamepad.isDown(id, action)

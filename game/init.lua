@@ -7,7 +7,7 @@ function game.load()
 	engine.state.setState("splash")
 
 	-- Splash Screen --
-	--engine.splash.addSplash(love.graphics.newImage("game/data/images/splashes/love.png"))
+	engine.splash.addSplash(love.graphics.newImage("game/data/images/splashes/love.png"))
 	engine.splash.onComplete(function() engine.state.setState("menu") end)
 
 	-- Debug Vars --

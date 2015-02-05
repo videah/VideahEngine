@@ -23,6 +23,7 @@ function love.conf(t)
     t.window.width      = 1280                               -- The window width (number)
     t.window.height     = 720                              -- The window height (number)
     t.window.fullscreen = false                             -- Enable fullscreen (boolean)
+    t.window.resizable         = true
                                                                 -- this is likely to be true
                                                                 -- on an uLove target, but few modern systems
                                                                 -- actually support this res ...so, yeah.

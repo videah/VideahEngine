@@ -26,3 +26,9 @@ function love.update(dt)
 	game.update(dt)
 
 end
+
+function love.resize(w, h)
+
+	engine.resize(w, h)
+
+end
