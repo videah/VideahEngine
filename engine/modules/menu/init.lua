@@ -1,8 +1,9 @@
+-- Dependencies: input --
+
 menu = {}
 menu.bg = {}
 menu.sidepanel = {}
 menu.button = {}
-
 menu.buttonlist = {}
 
 local path = ... .. "."
@@ -11,6 +12,10 @@ menu.config = require(path .. 'config') -- Load menu config.
 menu.config.bg.image = love.graphics.newImage(game.path .. menu.config.bg.image)
 
 menu.bg.tileoffset = 0
+
+assert(engine.input, "The 'menu' module requires the 'input' module to be loaded.")
+
+engine.input.bind("l", "menu.leftclick")
 
 function menu.draw()
 
@@ -28,7 +33,7 @@ end
 
 function menu.addButton(text, x, y, func, image)
 
-	local tbl = {text = text, x = x, y = y, func = func, image = image, hover = false}
+	local tbl = {text = text, x = x, y = y, func = func or nil, image = image or nil, hover = false}
 	table.insert(menu.buttonlist, tbl)
 
 end
@@ -63,7 +68,7 @@ function menu.button.draw(i)
 
 	local height = menu.config.button.height
 
-	local buttonpos = (i - 1) * height -- Creates a list of buttons, rather than them all overlapping.
+	local buttonpos = ((i - 1) * (height + menu.config.button.gap)) -- Creates a list of buttons, rather than them all overlapping.
 
 	buttonpos = buttonpos + ((engine.global.screenHeight / 2)) -- Centers the starting position to screenWidth.
 
@@ -71,10 +76,15 @@ function menu.button.draw(i)
 
 	menu.buttonlist[i].y = buttonpos
 
+	local font = menu.config.button.font
+
 	love.graphics.setColor(25, 25, 25, 200)
 	love.graphics.rectangle("fill", 0, menu.buttonlist[i].y, width, height)
 	love.graphics.setColor(255, 255, 255, 255)
-	love.graphics.print(menu.buttonlist[i].text .. i .. "   " .. menu.buttonlist[i].y, 0, menu.buttonlist[i].y)
+
+	love.graphics.setFont(menu.config.button.font)
+
+	love.graphics.print(menu.buttonlist[i].text, (width / 2) - (font:getWidth(menu.buttonlist[i].text) / 2), (menu.buttonlist[i].y + (height / 2)) - (font:getHeight() / 2))
 
 end
 
@@ -101,7 +111,13 @@ function menu.button.update(dt)
 		local hover = menu.buttonlist[i].hover
 
 		if hover then
+
 			menu.buttonlist[i].text = "Hovered!"
+
+			if engine.input.mouse.isClicked("menu.leftclick") then
+				menu.buttonlist[i].func()
+			end
+
 		else
 			menu.buttonlist[i].text = "Button"
 		end

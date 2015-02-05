@@ -18,11 +18,11 @@ function game.load()
 	engine.debug.addVar("global.mousey", function() return engine.global.cursory end)
 
 	-- Menu Buttons --
-	engine.menu.addButton("Button", 0, 0, "Button", "Button")
-	engine.menu.addButton("Button", 0, 0, "Button", "Button")
-	engine.menu.addButton("Button", 0, 0, "Button", "Button")
-	engine.menu.addButton("Button", 0, 0, "Button", "Button")
-	engine.menu.addButton("Button", 0, 0, "Button", "Button")
+	engine.menu.addButton("Button", 0, 0, function() print("You have clicked button 1!") end)
+	engine.menu.addButton("Button", 0, 0, function() print("You have clicked button 2!") end)
+	engine.menu.addButton("Button", 0, 0, function() print("You have clicked button 3!") end)
+	engine.menu.addButton("Button", 0, 0, function() print("You have clicked button 4!") end)
+	engine.menu.addButton("Button", 0, 0, function() print("You have clicked button 5!") end)
 
 end
 

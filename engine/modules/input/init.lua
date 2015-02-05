@@ -9,6 +9,7 @@ input.mouse.hasBeenPressed = false
 
 input.gamepad = {}
 input.gamepad.pads = love.joystick.getJoysticks()
+input.gamepad.hasBeenPressed = false
 
 function input.bind(key, action)
 
@@ -74,7 +75,7 @@ function input.mouse.isDown(action)
 	end
 end
 
-function input.mouse.isPressed(action)
+function input.mouse.isClicked(action)
 
 	for i=1, #input.list do
 		if input.list[i].action == action then
