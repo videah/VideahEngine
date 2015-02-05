@@ -6,7 +6,7 @@ engine 	= require 'engine'
 -- You should never have to touch anything in here.
 -- Edit the init.lua in both the games and engine folder instead.
 
-function love.load()	
+function love.load()
 
 	engine.load()
 	game.load()

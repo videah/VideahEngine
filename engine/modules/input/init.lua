@@ -48,6 +48,8 @@ function input.keyboard.isPressed(action)
 				if input.keyboard.hasBeenPressed == false then
 					input.keyboard.hasBeenPressed = true
 					return true
+				else
+					return false
 				end
 			else
 				input.keyboard.hasBeenPressed = false
@@ -80,6 +82,8 @@ function input.mouse.isPressed(action)
 				if input.mouse.hasBeenPressed == false then
 					input.mouse.hasBeenPressed = true
 					return true
+				else
+					return false
 				end
 			else
 				input.mouse.hasBeenPressed = false
@@ -89,13 +93,34 @@ function input.mouse.isPressed(action)
 	end
 end
 
-function input.gamepad.isDown(action)
+-- Gamepad --
+
+function input.gamepad.isDown(id, action)
 
 	for i=1, #input.list do
 		if input.list[i].action == action then
-			if input.gamepad.pads[1]:isGamepadDown("a") then
+			if input.gamepad.pads[id]:isGamepadDown(input.list[i].key) then
 				return true
 			else
+				return false
+			end
+		end
+	end
+end
+
+function input.gamepad.isPressed(id, action)
+
+	for i=1, #input.list do
+		if input.list[i].action == action then
+			if input.gamepad.pads[id]:isGamepadDown(input.list[i].key) then
+				if input.gamepad.hasBeenPressed == false then
+					input.gamepad.hasBeenPressed = true
+					return true
+				else
+					return false
+				end
+			else
+				input.gamepad.hasBeenPressed = false
 				return false
 			end
 		end
