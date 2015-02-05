@@ -112,14 +112,10 @@ function menu.button.update(dt)
 
 		if hover then
 
-			menu.buttonlist[i].text = "Hovered!"
-
 			if engine.input.mouse.isClicked("menu.leftclick") then
 				menu.buttonlist[i].func()
 			end
 
-		else
-			menu.buttonlist[i].text = "Button"
 		end
 
 	end
