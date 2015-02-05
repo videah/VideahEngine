@@ -1,17 +1,23 @@
 -- Dependencies: input --
 
+local path = ... .. "."
+
 menu = {}
 menu.bg = {}
 menu.sidepanel = {}
 menu.button = {}
 menu.buttonlist = {}
 
-local path = ... .. "."
+menu.bg.tileoffset = 0
+
+menu.title = {}
 
 menu.config = require(path .. 'config') -- Load menu config.
 menu.config.bg.image = love.graphics.newImage(game.path .. menu.config.bg.image)
 
-menu.bg.tileoffset = 0
+if menu.config.title.type == "image" then
+	menu.config.title.image = love.graphics.newImage(game.path .. menu.config.title.image)
+end
 
 assert(engine.input, "The 'menu' module requires the 'input' module to be loaded.")
 
@@ -21,6 +27,7 @@ function menu.draw()
 
 	menu.bg.draw()
 	menu.sidepanel.draw()
+	menu.title.draw()
 
 end
 
@@ -164,6 +171,28 @@ function menu.bg.update(dt)
 			menu.bg.tileoffset = menu.bg.tileoffset - menu.config.scrollspeed * dt
 
 		end
+	end
+
+end
+
+function menu.title.draw()
+
+	local image = menu.config.title.image
+	local text = menu.config.title.text
+	local typ = menu.config.title.type
+	local scale = menu.config.title.imagescale
+
+	if typ == "image" then
+
+		local x = global.screenWidth / 2
+		x = x - ((image:getWidth() * scale) / 2)
+		x = x + (menu.config.sidepanel.width / 2)
+
+		local y = global.screenHeight / 2
+		y = y - ((image:getHeight() * scale) / 2)
+
+		love.graphics.draw(image, x, y, 0, scale, scale)
+
 	end
 
 end

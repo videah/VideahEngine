@@ -2,10 +2,12 @@ config = {}
 config.bg = {}
 config.sidepanel = {}
 config.button = {}
+config.title = {}
 
-	config.title = "Untitled Game"
-	config.titleimage = ""
-	config.titletype = "text"
+	config.title.text = "Untitled Game"
+	config.title.image = "data/images/videahenginelogo.png"
+	config.title.type = "image"
+	config.title.imagescale = 0.75
 
 	config.bg.image = "data/images/menubg.png"
 	config.bg.color = {44, 62, 80}
@@ -18,7 +20,7 @@ config.button = {}
 	config.sidepanel.color = {25, 25, 25, 155}
 	config.sidepanel.width = 200
 
-	config.button.font = love.graphics.newFont(16)
+	config.button.font = love.graphics.newFont(24)
 	config.button.height = 100
 	config.button.gap = 5
 
