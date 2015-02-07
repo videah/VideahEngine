@@ -53,7 +53,27 @@ function solar.addVar(name, variable)
 
 end
 
-function solar.removeVar(name)
+function solar.addWheel(name, variable)
+
+	assert(type(variable) == "function", "variable must be in function form")
+
+	local tbl = {name = name, func = variable, format = "wheel"}
+
+	table.insert(solar.list, tbl)
+
+end
+
+function solar.addBar(name, variable, min, max, width, color)
+
+	assert(type(variable) == "function", "variable must be in function form")
+
+	local tbl = {name = name, func = variable, format = "bar", min = min or 0, max = max or 100, width = width or solar.width, color = color or {255, 255, 255, 255}}
+
+	table.insert(solar.list, tbl)
+
+end
+
+function solar.remove(name)
 
 	for i=1, #solar.list do
 
@@ -66,33 +86,34 @@ function solar.removeVar(name)
 
 end
 
-function solar.addWheel(name, variable)
-
-	assert(type(variable) == "function", "variable must be in function form")
-
-	local tbl = {name = name, func = variable, format = "wheel"}
-
-	table.insert(solar.list, tbl)
-
-end
-
 function solar.draw()
 
-	local highestwidth = 0
+	if #solar.list == 0 then return end -- If theres nothing in the list, don't draw anything.
 
+	local highestwidth = 0
 	local numberofvars = 0
 	local numberofwheels = 0
+	local numberofbars = 0
 
-	-- Resize panel to biggest var width. --
+	-- Resize panel to biggest object width. --
+	-- TODO: Add Wheels to the logic. --
 
 	for i=1, #solar.list do
 
-		local lengthstring = tostring(solar.list[i].name .. ": " .. solar.list[i].func())
+		local format = solar.list[i].format
 
-		if theme.font:getWidth(lengthstring) > highestwidth then
-			highestwidth = theme.font:getWidth(lengthstring)
+		if format == "var" then
+			local lengthstring = tostring(solar.list[i].name .. ": " .. solar.list[i].func())
+
+			if theme.font:getWidth(lengthstring) > highestwidth then
+				highestwidth = theme.font:getWidth(lengthstring)
+			end
+
+		elseif format == "bar" then
+			if solar.list[i].width > highestwidth then
+				highestwidth = solar.list[i].width - 16
+			end
 		end
-
 	end
 
 	solar.width = 15 + highestwidth
@@ -104,19 +125,28 @@ function solar.draw()
 			numberofvars = numberofvars + 1
 		elseif solar.list[i].format == "wheel" then
 			numberofwheels = numberofwheels + 1
+		elseif solar.list[i].format == "bar" then
+			numberofbars = numberofbars + 1
 		end
 	end
 
 	local panelheight = 0
 
+	-- Set the panel height depending on object height. --
+
 	panelheight = theme.font:getHeight() * (numberofvars)
 	panelheight = panelheight + (theme.font:getHeight() * (numberofwheels)) + (70 * numberofwheels) + 4
+	panelheight = panelheight + (theme.font:getHeight() * (numberofbars)) + (24 * numberofbars)
+
+	-- Draw the panel background. --
 
 	love.graphics.setColor(theme.panelbg)
 	love.graphics.rectangle("fill", solar.x, solar.y, solar.width, panelheight)
 	love.graphics.setColor(255,255,255,255)
 
 	local objectheight = (solar.y + 4) - theme.font:getHeight()
+
+	-- Draw the objects. --
 
 	for i=1, #solar.list do
 
@@ -160,13 +190,66 @@ function solar.draw()
 
 			objectheight = objectheight + theme.font:getHeight()
 
+			love.graphics.setFont(theme.font)
+
 			love.graphics.print(name .. ":", solar.x + 4, objectheight)
 
 			objectheight = objectheight + theme.font:getHeight()
 
-			love.graphics.circle("line", (solar.x + 4) + 35, objectheight + 35, 35, 20 )
+			love.graphics.circle("line", (solar.x + 4) + 35, objectheight + 35, 35, 20)
 
-			objectheight = (objectheight + 50)
+			objectheight = objectheight + 50
+
+		elseif format == "bar" then
+
+			local barwidth = 0
+
+			-- Print the name. --
+
+			objectheight = objectheight + theme.font:getHeight()
+
+			love.graphics.setFont(theme.font)
+
+			love.graphics.print(name .. ":", solar.x + 4, objectheight)
+
+			objectheight = objectheight + theme.font:getHeight()
+
+			-- If the panels width is lower than the bar width, --
+			-- Then resize the bar to the panel. --
+
+			if solar.width < solar.list[i].width then
+				barwidth = solar.width
+			else
+				barwidth = solar.list[i].width
+			end
+
+			local valuewidth = 0
+
+			valuewidth = (func - solar.list[i].min) / solar.list[i].max
+
+			-- Don't overdraw the bar. --
+
+			if valuewidth < 0 then
+				valuewidth = 0
+			elseif valuewidth > 1 then
+				valuewidth = 1
+			end
+
+			love.graphics.setColor(solar.list[i].color)
+
+			-- Bar to show the value. --
+
+			love.graphics.rectangle("fill", solar.x + 8, objectheight, (barwidth - 16) * valuewidth, 20)
+
+			-- Bar outline. --
+
+			love.graphics.rectangle("line", solar.x + 8, objectheight, barwidth - 16, 20)
+
+			love.graphics.setColor(255, 255, 255, 255)
+
+			-- Add a small gap. --
+
+			objectheight = objectheight + 4
 
 		end
 
