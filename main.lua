@@ -32,3 +32,33 @@ function love.resize(w, h)
 	engine.resize(w, h)
 
 end
+
+function love.mousepressed(x, y, button)
+
+	engine.mousepressed(x, y, button)
+
+end
+ 
+function love.mousereleased(x, y, button)
+
+	engine.mousereleased(x, y, button)
+
+end
+ 
+function love.keypressed(key, unicode)
+
+	engine.keypressed(key, unicode)
+
+end
+ 
+function love.keyreleased(key)
+
+	engine.keyreleased(key)
+
+end
+
+function love.textinput(text)
+
+	engine.textinput(text)
+
+end
