@@ -16,13 +16,6 @@ function engine.load()
 
 	print("Loaded VideahEngine " .. engine.global.version)
 
-	local frame = engine.ui.Create("frame")
-	frame:SetName("Panel")
-	frame:SetSize(210, 85)
-     
-	local panel = engine.ui.Create("panel", frame)
-	panel:SetPos(5, 30)
-
 end
 
 function engine.draw()
