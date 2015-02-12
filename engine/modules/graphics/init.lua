@@ -22,4 +22,41 @@ function graphics.newImage(filename)
 
 end
 
+function graphics.rectangle(mode, x, y, width, height, bordersize)
+
+	assert(mode == "fill" or mode == "line", "mode requires a valid value.")
+
+	bordersize = bordersize or 0
+
+	if mode == "fill" then
+		love.graphics.rectangle(mode, x, y, width, height)
+	end
+
+	if mode == "line" and bordersize <= 0 then
+		bordersize = 1
+	end
+
+	-- Border --
+
+	if bordersize ~= 0 then
+
+		-- Top Bar --
+		love.graphics.rectangle("fill", x - bordersize, y - bordersize, width + bordersize * 2, bordersize)
+
+		-- Left Bar --
+
+		love.graphics.rectangle("fill", x - bordersize, y - bordersize, bordersize, height + bordersize * 2)
+
+		-- Right Bar --
+
+		love.graphics.rectangle("fill", x + width, y - bordersize, bordersize, height + bordersize * 2)
+
+		-- Bot Bar --
+
+		love.graphics.rectangle("fill", x - bordersize, y + height, width + bordersize * 2, bordersize)
+
+	end
+
+end
+
 return graphics
