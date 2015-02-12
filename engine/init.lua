@@ -14,6 +14,8 @@ engine.state		= require(engine.path .. 'modules.state')
 
 function engine.load()
 
+	math.randomseed(os.time())
+
 	print("Loaded VideahEngine " .. engine.global.version)
 
 end
