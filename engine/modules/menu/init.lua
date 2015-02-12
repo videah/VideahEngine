@@ -1,4 +1,4 @@
--- Dependencies: input --
+-- Dependencies: input, graphics --
 
 local path = ... .. "."
 
@@ -13,13 +13,18 @@ menu.bg.tileoffset = 0
 menu.title = {}
 
 menu.config = require(path .. 'config') -- Load menu config.
-menu.config.bg.image = love.graphics.newImage(game.path .. menu.config.bg.image)
+menu.config.bg.image = engine.graphics.newImage(game.path .. menu.config.bg.image .. "hur")
 
 if menu.config.title.type == "image" then
-	menu.config.title.image = love.graphics.newImage(game.path .. menu.config.title.image)
+	menu.config.title.image = engine.graphics.newImage(game.path .. menu.config.title.image)
 end
 
+-- Dependencies --
+
 assert(engine.input, "The 'menu' module requires the 'input' module to be loaded.")
+assert(engine.graphics, "The 'menu' module requires the 'graphics' module to be loaded.")
+
+------------------
 
 engine.input.bind("l", "menu.leftclick")
 
