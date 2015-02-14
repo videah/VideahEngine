@@ -31,8 +31,8 @@ engine.input.mouse.bind("l", "menu.leftclick")
 function menu.draw()
 
 	menu.bg.draw()
-	menu.sidepanel.draw()
 	menu.title.draw()
+	menu.sidepanel.draw()
 
 end
 
