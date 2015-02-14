@@ -20,7 +20,7 @@ function engine.load()
 
 	math.randomseed(os.time())
 
-	print("Loaded VideahEngine " .. engine.global.version)
+	print("Loaded VideahEngine " .. _g.version)
 
 end
 
@@ -33,13 +33,13 @@ function engine.draw()
 	engine.ui.draw()
 
 	-- Debug --
-	if engine.global.debug then
+	if _g.debug then
 		engine.debug.draw()
 	end
 
-	engine.global.fps = love.timer.getFPS()
-	engine.global.cursorx = love.mouse.getX()
-	engine.global.cursory = love.mouse.getY()
+	_g.fps = love.timer.getFPS()
+	_g.cursorx = love.mouse.getX()
+	_g.cursory = love.mouse.getY()
 
 end
 
@@ -59,8 +59,8 @@ end
 
 function engine.resize(w, h)
 
-	global.screenWidth = w
-	global.screenHeight = h
+	_g.screenWidth = w
+	_g.screenHeight = h
 
 end
 
