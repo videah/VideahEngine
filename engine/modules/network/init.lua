@@ -5,6 +5,7 @@ network._port = "18025"
 network._ip = "127.0.0.1"
 
 network.client = {}
+network.server = {}
 
 
 function network.startServer()
@@ -27,14 +28,14 @@ function network.startServer()
 
 	end
 
-	network.server = lube.tcpServer()
-	network.server:listen(network._port)
-	network.server:setPing(true, 16, "areYouStillThere?\n")
-	network.server.callbacks.connect = network.onConnect
-	network.server.callbacks.recv = network.onReceive
-	network.server.callbacks.disconnect = network.onDisconnect
-	network.server.handshake = "Hi!"
-	print("Loaded server ...")
+	network.serv = lube.tcpServer()
+	network.serv:listen(network._port)
+	network.serv:setPing(true, 16, "areYouStillThere?\n")
+	network.serv.callbacks.connect = network.onConnect
+	network.serv.callbacks.recv = network.onReceive
+	network.serv.callbacks.disconnect = network.onDisconnect
+	network.serv.handshake = "Hi!"
+	print("Successfully started server on port " .. network._port)
 
 end
 
@@ -60,7 +61,13 @@ if SERVER then
 
 	function network.update(dt)
 
-		network.server:update(dt)
+		network.serv:update(dt)
+
+	end
+
+	function network.server.send(data)
+
+		network.serv:send(data)
 
 	end
 
@@ -93,6 +100,8 @@ if CLIENT then
 	function network.client.disconnect()
 
 		network.cli:disconnect()
+
+		print("Disconnected client from server.")
 
 	end
 
