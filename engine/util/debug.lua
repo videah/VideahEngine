@@ -140,7 +140,7 @@ _Debug.overlay = function()
 		if err then --Add a red and fancy prefix
 			love.graphics.setColor(255, 0, 0)
 			love.graphics.print("[Error]", x, y)
-			x = 50
+			x = _Debug.Font:getWidth("[Error]") + 5
 		end
 		love.graphics.setColor(255, 255, 255)
 		love.graphics.print(msg, x, y)
