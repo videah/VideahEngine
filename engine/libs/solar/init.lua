@@ -145,9 +145,15 @@ function solar.draw()
 			value = solar.list[i].func()
 		end
 
+		-- Add quotations to the logic --
+
+		if type(value) == "string" and solar.theme.quotations then
+			value = '"' .. value .. '"'
+		end
+
 		-- Fix Booleans --
 
-		if value == true or value == false then
+		if value == true or value == false or value == nil then
 			value = tostring(value)
 		end
 
@@ -155,7 +161,7 @@ function solar.draw()
 			local lengthstring = tostring(solar.list[i].name .. ": " .. value)
 
 			if solar.theme.font:getWidth(lengthstring) > highestwidth then
-				solar.highestwidth = solar.theme.font:getWidth(lengthstring)
+				highestwidth = solar.theme.font:getWidth(lengthstring)
 			end
 
 		elseif format == "bar" then
@@ -165,7 +171,7 @@ function solar.draw()
 		end
 	end
 
-	solar.width = 15 + highestwidth
+	solar.width = highestwidth + 8
 
 	-- Find how many types of objects --
 
@@ -257,9 +263,9 @@ function solar.draw()
 			value = func
 		end
 
-		-- Fix Booleans --
+		-- Fix Booleans and nil --
 
-		if value == true or value == false then
+		if value == true or value == false or value == nil then
 			value = tostring(func)
 		end
 
@@ -277,6 +283,8 @@ function solar.draw()
 					love.graphics.setColor(solar.theme.color.boolean_true)
 				elseif value == "false" and type(func) == "boolean" then
 					love.graphics.setColor(solar.theme.color.boolean_false)
+				elseif value == "nil" and type(func) == "nil" then
+					love.graphics.setColor(solar.theme.color.null)
 				elseif type(value) == "string" then
 					love.graphics.setColor(solar.theme.color.string)
 				elseif type(value) == "number" then
@@ -285,7 +293,7 @@ function solar.draw()
 			end
 
 			-- Pretty quotations --
-			if type(func) == "string" then
+			if type(func) == "string" and solar.theme.quotations then
 				value = '"' .. value .. '"'
 			end
 

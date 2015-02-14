@@ -1,11 +1,14 @@
 engine = {}
 engine.path = ... .. '.'
 
+engine.class		= require(engine.path .. 'util.middleclass')
+
 engine.graphics		= require(engine.path .. 'modules.graphics')
 engine.global 		= require(engine.path .. 'modules.global')
 engine.input		= require(engine.path .. 'modules.input')
 engine.menu			= require(engine.path .. 'modules.menu')
 engine.state		= require(engine.path .. 'modules.state')
+engine.network		= require(engine.path .. 'modules.network')
 
 engine.debug 		= require(engine.path .. 'libs.solar')
 engine.splash 		= require(engine.path .. 'libs.splashy')
@@ -42,11 +45,15 @@ end
 
 function engine.update(dt)
 
+	engine.input.update(dt)
+
 	if engine.state:isCurrentState("splash") then
 		engine.splash.update(dt)
 	end
 
 	engine.ui.update(dt)
+
+	engine.network.update(dt)
 
 end
 
@@ -60,6 +67,7 @@ end
 function engine.mousepressed(x, y, button)
 
 	engine.ui.mousepressed(x, y, button)
+	engine.input.mousepressed(x, y, button)
 
 end
  

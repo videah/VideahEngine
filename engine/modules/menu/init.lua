@@ -13,7 +13,7 @@ menu.bg.tileoffset = 0
 menu.title = {}
 
 menu.config = require(path .. 'config') -- Load menu config.
-menu.config.bg.image = engine.graphics.newImage(game.path .. menu.config.bg.image .. "hur")
+menu.config.bg.image = engine.graphics.newImage(game.path .. menu.config.bg.image)
 
 if menu.config.title.type == "image" then
 	menu.config.title.image = engine.graphics.newImage(game.path .. menu.config.title.image)
@@ -26,7 +26,7 @@ assert(engine.graphics, "The 'menu' module requires the 'graphics' module to be 
 
 ------------------
 
-engine.input.bind("l", "menu.leftclick")
+engine.input.mouse.bind("l", "menu.leftclick")
 
 function menu.draw()
 
@@ -121,11 +121,13 @@ function menu.button.update(dt)
 	for i=1, #menu.buttonlist do
 
 		local hover = menu.buttonlist[i].hover
-
-		if engine.input.mouse.isClicked("menu.leftclick") then
 			
-			if hover then
+		if hover then
+
+			if engine.input.mouse.isBindClicked("menu.leftclick") then
+
 				menu.buttonlist[i].func()
+
 			end
 
 		end

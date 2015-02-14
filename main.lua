@@ -1,5 +1,8 @@
 require 'engine/util/debug' -- Temporary debug console
 
+CLIENT = true
+SERVER = not CLIENT
+
 game 	= require 'game'
 engine 	= require 'engine'
 

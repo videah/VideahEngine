@@ -1,139 +1,19 @@
 input = {}
-input.list = {}
 
-input.keyboard = {}
-input.keyboard.hasBeenPressed = false
+local path = ... .. '.'
 
-input.mouse = {}
-input.mouse.hasBeenPressed = false
+input.mouse = require(path .. 'mouse')
 
-input.gamepad = {}
-input.gamepad.pads = love.joystick.getJoysticks()
-input.gamepad.hasBeenPressed = false
+function input.update(dt)
 
-function input.bind(key, action)
-
-	for i=1, #input.list do
-
-		if input.list[i].action == action then
-			table.remove(input.list, i)
-		end
-
-	end
-
-	local tbl = {key = key, action = action}
-	table.insert(input.list, tbl)
+	input.mouse.update(dt)
 
 end
 
--- Keyboard --
+function input.mousepressed(x, y, button)
 
-function input.keyboard.isDown(action)
+	input.mouse.mousepressed(x, y, button)
 
-	for i=1, #input.list do
-		if input.list[i].action == action then
-			if love.keyboard.isDown(input.list[i].key) then
-				return true
-			else
-				return false
-			end
-		end
-	end
-end
-
-function input.keyboard.isPressed(action)
-
-	for i=1, #input.list do
-		if input.list[i].action == action then
-			if love.keyboard.isDown(input.list[i].key) then
-				if input.keyboard.hasBeenPressed == false then
-					input.keyboard.hasBeenPressed = true
-					return true
-				else
-					return false
-				end
-			else
-				input.keyboard.hasBeenPressed = false
-				return false
-			end
-		end
-	end
-end
-
--- Mouse --
-
-function input.mouse.isDown(action)
-
-	for i=1, #input.list do
-		if input.list[i].action == action then
-			if love.mouse.isDown(input.list[i].key) then
-				return true
-			else
-				return false
-			end
-		end
-	end
-end
-
-function input.mouse.isClicked(action)
-
-	for i=1, #input.list do
-		if input.list[i].action == action then
-			if love.mouse.isDown(input.list[i].key) then
-				if input.mouse.hasBeenPressed == false then
-					input.mouse.hasBeenPressed = true
-					return true
-				else
-					return false
-				end
-			else
-				input.mouse.hasBeenPressed = false
-				return false
-			end
-		end
-	end
-end
-
-function input.mouse:getPos()
-	return global.cursorx, global.cursory
-end
-
-function input.mouse:setPos(x, y)
-	love.mouse.setPosition(x, y)
-end
-
--- Gamepad --
-
-function input.gamepad.isDown(id, action)
-
-	for i=1, #input.list do
-		if input.list[i].action == action then
-			if input.gamepad.pads[id]:isGamepadDown(input.list[i].key) then
-				return true
-			else
-				return false
-			end
-		end
-	end
-end
-
-function input.gamepad.isPressed(id, action)
-
-	for i=1, #input.list do
-		if input.list[i].action == action then
-			if input.gamepad.pads[id]:isGamepadDown(input.list[i].key) then
-				if input.gamepad.hasBeenPressed == false then
-					input.gamepad.hasBeenPressed = true
-					return true
-				else
-					return false
-				end
-			else
-				input.gamepad.hasBeenPressed = false
-				return false
-			end
-		end
-	end
 end
 
 return input

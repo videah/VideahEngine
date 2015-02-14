@@ -11,7 +11,8 @@ theme = {
 		string 			= {230, 219, 116},
 		boolean_true 	= {174, 129, 255},
 		boolean_false 	= {174, 129, 255},
-		border			= {255, 255, 255}
+		border			= {255, 255, 255},
+		null			= {174, 129, 255}
 
 	},
 
@@ -28,7 +29,9 @@ theme = {
 	divider_size = 1,
 
 	border_enabled = true,
-	border_size = 2
+	border_size = 2,
+
+	quotations = true
 
 }
 
