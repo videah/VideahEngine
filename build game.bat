@@ -14,30 +14,30 @@ GOTO START
 :START
 cls
 for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
-echo  -----------------------------------------
-echo ^| What platform do you want to build for? ^|
-echo ^| Windows = 1                             ^|
-echo ^| Mac OS = 2                              ^|
-echo  -----------------------------------------
-echo.
+ECHO  -----------------------------------------
+ECHO ^| What platform do you want to build for? ^|
+ECHO ^| Windows = 1                             ^|
+ECHO ^| Mac OS = 2                              ^|
+ECHO  -----------------------------------------
+ECHO.
 set/p "cho=>"
 if %cho%==1 GOTO WIN
 if %cho%==2 GOTO MAC
-goto START
+GOTO START
 
 :WIN
 cls
 for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
-echo  ---------------------------------------------
-echo ^| What architecture do you want to build for? ^|
-echo ^| x86 = 1                                     ^|
-echo ^| x64 = 2                                     ^|
-echo  ---------------------------------------------
-echo.
+ECHO  ---------------------------------------------
+ECHO ^| What architecture do you want to build for? ^|
+ECHO ^| x86 = 1                                     ^|
+ECHO ^| x64 = 2                                     ^|
+ECHO  ---------------------------------------------
+ECHO.
 set/p "cho=>"
 if %cho%==1 GOTO WIN32
 if %cho%==2 GOTO WIN64
-goto WIN
+GOTO WIN
 
 :WIN64
 ECHO Building VideahEngine 64-bit . . .
@@ -60,6 +60,7 @@ ECHO 2
 SLEEP 1
 ECHO 1
 SLEEP 1
+
 XCOPY * ..\..\..\..\%RELEASEDIR% /S /Y
 CD ..\..\..\..\src
 ..\bin\x86\win32\7za.exe a -tzip -mx9 ..\%RELEASEDIR%\game.love engine game LICENCE main.lua conf.lua
@@ -68,5 +69,6 @@ COPY /b love.exe+game.love game.exe
 DEL love.exe
 DEL game.love
 CD ..
+
 ECHO Build Successful!
 PAUSE
