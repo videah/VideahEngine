@@ -59,12 +59,6 @@ if SERVER then
 
 	network.startServer()
 
-	function network.update(dt)
-
-		network.serv:update(dt)
-
-	end
-
 	function network.server.send(data)
 
 		network.serv:send(data)
@@ -76,12 +70,6 @@ end
 if CLIENT then
 
 	network.startClient()
-
-	function network.update(dt)
-
-		network.cli:update(dt)
-
-	end
 
 	function network.client.connect(ip, port)
 
@@ -109,6 +97,18 @@ if CLIENT then
 
 		network.cli:send(data)
 
+	end
+
+end
+
+function network.update(dt)
+
+	if SERVER then
+		network.serv:update(dt)
+	end
+
+	if CLIENT then
+		network.cli:update(dt)
 	end
 
 end
