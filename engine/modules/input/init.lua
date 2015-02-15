@@ -1,4 +1,4 @@
-input = {}
+local input = {}
 
 local path = ... .. '.'
 
@@ -15,5 +15,7 @@ function input.mousepressed(x, y, button)
 	input.mouse.mousepressed(x, y, button)
 
 end
+
+input.test = true
 
 return input

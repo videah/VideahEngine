@@ -11,7 +11,7 @@ engine.state		= require(engine.path .. 'modules.state')
 engine.network		= require(engine.path .. 'modules.network')
 engine.script		= require(engine.path .. 'modules.script')
 
-engine.debug 		= require(engine.path .. 'libs.solar')
+engine.panel 		= require(engine.path .. 'libs.solar')
 engine.splash 		= require(engine.path .. 'libs.splashy')
 engine.ui 			= require(engine.path .. 'libs.loveframes')
 engine.map 			= require(engine.path .. 'libs.STI')
@@ -35,7 +35,7 @@ function engine.draw()
 
 	-- Debug --
 	if _g.debug then
-		engine.debug.draw()
+		engine.panel.draw()
 	end
 
 	_g.fps = love.timer.getFPS()

@@ -36,7 +36,7 @@ function game.load()
 	-- engine.debug.addBar("solar's Awesomeness / 5", function() return 20 end, nil, nil, nil, {52, 152, 219})
 	-- engine.debug.addDivider()
 
-	engine.debug.addVar("Mouse is clicked", function() return input.mouse.clickedbutton end)
+	engine.panel.addVar("Mouse is clicked", function() return engine.input.mouse.clickedbutton end)
 
 	--engine.input.mouse.bind("l", "click")
 

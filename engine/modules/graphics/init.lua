@@ -1,4 +1,4 @@
-graphics = {}
+local graphics = {}
 
 function graphics.newImage(filename)
 

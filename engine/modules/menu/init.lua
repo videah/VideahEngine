@@ -2,7 +2,7 @@
 
 local path = ... .. "."
 
-menu = {}
+local menu = {}
 menu.bg = {}
 menu.sidepanel = {}
 menu.button = {}

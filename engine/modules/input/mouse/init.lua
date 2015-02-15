@@ -1,4 +1,4 @@
-mouse = {}
+local mouse = {}
 mouse.bindlist = {}
 
 -- Probaby better ways of doing this. --

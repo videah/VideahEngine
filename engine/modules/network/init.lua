@@ -1,4 +1,4 @@
-network = {}
+local network = {}
 lube = require(engine.path .. 'libs.LUBE')
 
 network._port = "18025"
