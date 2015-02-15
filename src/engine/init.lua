@@ -13,7 +13,7 @@ engine.script		= require(engine.path .. 'modules.script')
 
 engine.panel 		= require(engine.path .. 'libs.solar')
 engine.splash 		= require(engine.path .. 'libs.splashy')
-engine.ui 			= require(engine.path .. 'libs.loveframes')
+engine.ui 			= require(engine.path .. 'libs.LoveFrames')
 engine.map 			= require(engine.path .. 'libs.STI')
 engine.lightworld 	= require(engine.path .. 'libs.lightworld')
 
