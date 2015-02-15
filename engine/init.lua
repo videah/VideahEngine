@@ -9,6 +9,7 @@ engine.input		= require(engine.path .. 'modules.input')
 engine.menu			= require(engine.path .. 'modules.menu')
 engine.state		= require(engine.path .. 'modules.state')
 engine.network		= require(engine.path .. 'modules.network')
+engine.script		= require(engine.path .. 'modules.script')
 
 engine.debug 		= require(engine.path .. 'libs.solar')
 engine.splash 		= require(engine.path .. 'libs.splashy')
