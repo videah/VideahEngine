@@ -57,7 +57,7 @@ function menu.sidepanel.draw()
 	local width = menu.config.sidepanel.width
 
 	love.graphics.setColor(color)
-	love.graphics.rectangle( "fill", 0, 0, width, _g.screenHeight )
+	love.graphics.rectangle( "fill", 0, 0, width, _G.screenHeight )
 	love.graphics.setColor(255, 255, 255, 255)
 
 	for i=1, #menu.buttonlist do
@@ -82,7 +82,7 @@ function menu.button.draw(i)
 
 	local buttonpos = ((i - 1) * (height + menu.config.button.gap)) -- Creates a list of buttons, rather than them all overlapping.
 
-	buttonpos = buttonpos + ((_g.screenHeight / 2)) -- Centers the starting position to screenWidth.
+	buttonpos = buttonpos + ((_G.screenHeight / 2)) -- Centers the starting position to screenWidth.
 
 	buttonpos = buttonpos - (height * #menu.buttonlist / 2) -- Centers the list to the middle button.
 
@@ -110,7 +110,7 @@ function menu.button.update(dt)
 		local x = menu.buttonlist[i].x
 		local y = menu.buttonlist[i].y
 
-		if _g.cursorx >= x and _g.cursorx <= (x + width) and _g.cursory >= y and _g.cursory <= (y + height) then
+		if _G.cursorx >= x and _G.cursorx <= (x + width) and _G.cursory >= y and _G.cursory <= (y + height) then
 			menu.buttonlist[i].hover = true
 		else
 			menu.buttonlist[i].hover = false
@@ -153,13 +153,13 @@ function menu.bg.draw()
 	elseif menu.config.type == "fill" then
 
 		love.graphics.setColor(color)
-		love.graphics.rectangle( "fill", 0, 0, _g.screenWidth, _g.screenHeight )
+		love.graphics.rectangle( "fill", 0, 0, _G.screenWidth, _G.screenHeight )
 		love.graphics.setColor(255, 255, 255, 255)
 
 	elseif menu.config.type == "scrolling_tiled" then
 
 		image:setWrap('repeat', 'repeat')
-		menu.bgQuad = love.graphics.newQuad( offset, 0, _g.screenWidth, _g.screenHeight, image:getHeight(), image:getWidth() )
+		menu.bgQuad = love.graphics.newQuad( offset, 0, _G.screenWidth, _G.screenHeight, image:getHeight(), image:getWidth() )
 		love.graphics.draw( image, menu.bgQuad, 0, 0)
 
 	end
@@ -191,11 +191,11 @@ function menu.title.draw()
 
 	if typ == "image" then
 
-		local x = _g.screenWidth / 2
+		local x = _G.screenWidth / 2
 		x = x - ((image:getWidth() * scale) / 2)
 		x = x + (menu.config.sidepanel.width / 2)
 
-		local y = _g.screenHeight / 2
+		local y = _G.screenHeight / 2
 		y = y - ((image:getHeight() * scale) / 2)
 
 		love.graphics.draw(image, x, y, 0, scale, scale)

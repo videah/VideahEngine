@@ -7,6 +7,7 @@ network._ip = "127.0.0.1"
 network.client = {}
 network.server = {}
 
+local hasLoaded = false
 
 function network.startServer()
 
@@ -37,6 +38,8 @@ function network.startServer()
 	network.serv.handshake = "Hi!"
 	print("Successfully started server on port " .. network._port)
 
+	hasLoaded = true
+
 end
 
 function network.startClient()
@@ -52,6 +55,8 @@ function network.startClient()
 	network.cli.callbacks.recv = network.onReceive
 	network.cli:setPing(true, 2, "areYouStillThere?\n")
 	print("Loaded client ...")
+
+	hasLoaded = true
 
 end
 
@@ -103,11 +108,11 @@ end
 
 function network.update(dt)
 
-	if SERVER then
+	if SERVER and hasLoaded then
 		network.serv:update(dt)
 	end
 
-	if CLIENT then
+	if CLIENT and hasLoaded then
 		network.cli:update(dt)
 	end
 

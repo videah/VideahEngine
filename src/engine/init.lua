@@ -17,11 +17,11 @@ engine.ui 			= require(engine.path .. 'libs.LoveFrames')
 engine.map 			= require(engine.path .. 'libs.STI')
 engine.lightworld 	= require(engine.path .. 'libs.lightworld')
 
-function engine.load()
+function engine.load(args)
 
 	math.randomseed(os.time())
 
-	print("Loaded VideahEngine " .. _g.version)
+	print("Loaded VideahEngine " .. _G.version)
 
 end
 
@@ -34,13 +34,13 @@ function engine.draw()
 	engine.ui.draw()
 
 	-- Debug --
-	if _g.debug then
+	if _G.debug then
 		engine.panel.draw()
 	end
 
-	_g.fps = love.timer.getFPS()
-	_g.cursorx = love.mouse.getX()
-	_g.cursory = love.mouse.getY()
+	_G.fps = love.timer.getFPS()
+	_G.cursorx = love.mouse.getX()
+	_G.cursory = love.mouse.getY()
 
 end
 
@@ -60,8 +60,8 @@ end
 
 function engine.resize(w, h)
 
-	_g.screenWidth = w
-	_g.screenHeight = h
+	_G.screenWidth = w
+	_G.screenHeight = h
 
 end
 
