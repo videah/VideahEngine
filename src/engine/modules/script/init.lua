@@ -3,7 +3,7 @@ local scriptpath = 'game/scripts/'
 
 function script.run(file)
 
-	dofile(scriptpath .. file .. ".lua")
+	love.filesystem.load(scriptpath .. file .. ".lua")()
 
 end
 
