@@ -1,7 +1,7 @@
 require 'engine/util/debug' -- Temporary debug console
 
-CLIENT = true
-SERVER = not CLIENT
+CLIENT = false
+SERVER = false
 
 game 	= require 'game'
 engine 	= require 'engine'
@@ -9,7 +9,23 @@ engine 	= require 'engine'
 -- You should never have to touch anything in here.
 -- Edit the init.lua in both the games and engine folder instead.
 
-function love.load()
+function love.load(arg)
+
+	for i, v in ipairs(arg) do
+
+		if v == "-debug" then
+			_G.debug = true
+		else
+			_G.debug = false
+		end
+
+		if v == "-dedicated" then
+			SERVER = true
+		else
+			CLIENT = true
+		end
+		
+	end
 
 	engine.load()
 	game.load()
