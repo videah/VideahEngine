@@ -447,8 +447,8 @@ _G["love"].run = function()
 	if love.event then
 		love.event.pump()
 	end
-	
-	if love.load then xpcall(love.load, _Debug.handleError) end
+
+	if love.load then love.load(arg) end
 
 	if love.timer then love.timer.step() end
 	
