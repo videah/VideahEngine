@@ -1,10 +1,7 @@
-_g = {}
-
 -- Globals --
-_g.fps = 0
-_g.version = "0.0.1"
-_g.debug = true
-_g.screenWidth = love.graphics.getWidth()
-_g.screenHeight = love.graphics.getHeight()
-_g.cursorx = love.mouse.getX()
-_g.cursory = love.mouse.getY()
+_G.fps = 0
+_G.version = "0.0.1"
+_G.screenWidth = love.graphics.getWidth()
+_G.screenHeight = love.graphics.getHeight()
+_G.cursorx = love.mouse.getX()
+_G.cursory = love.mouse.getY()
