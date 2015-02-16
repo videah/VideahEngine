@@ -61,12 +61,14 @@ function network.startServer(gui)
 		playerlist:AddColumn("Ping")
 
 		local console = engine.ui.Create("list", consolepanel)
+		console:SetPadding(5)
 
 		local textinput = engine.ui.Create("textinput", messagepanel)
 		local inputfont = love.graphics.newFont(16)
 		textinput:SetFont(inputfont)
 		textinput.OnEnter = function(object, text)
-    		print(text)
+    		print("[SERVER]: " .. text)
+    		network.server.send("[SERVER]: " .. text)
     		textinput:Clear()
 		end
 
@@ -74,7 +76,8 @@ function network.startServer(gui)
 		submitbutton:SetText("Submit")
 		submitbutton.OnClick = function()
 
-			print(textinput:GetText())
+			print("[SERVER]: " .. textinput:GetText())
+    		network.server.send("[SERVER: " .. text)
 			textinput:Clear()
 
 		end
@@ -185,11 +188,14 @@ function network.client.connect(ip, port)
 
 	if err ~= nil then
 		print("Error connecting to " .. ip .. " (" .. err .. ")")
+		return
 	end
 
 	if sucess then
 		print("Successfully connected to " .. ip .. "!")
 	end
+
+	network.client.send("N: " .. game.playername)
 
 end
 

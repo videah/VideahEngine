@@ -1,6 +1,8 @@
 game = {}
 game.path = ... .. '/'
 
+game.playername = "Untitled Player"
+
 function game.load()
 
 	-- Set default state --
