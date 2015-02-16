@@ -22,7 +22,7 @@ function love.load(arg)
 		if v == "-dedicated" then
 			SERVER = true
 		else
-			CLIENT = true
+			CLIENT = false
 		end
 		
 	end
