@@ -12,8 +12,6 @@ local hasLoaded = false
 
 function network.server.onConnect(ip, port)
 
-	print("Client connected.")
-
 end
 
 function network.server.onReceive(data, ip, port)
@@ -23,6 +21,10 @@ function network.server.onReceive(data, ip, port)
 	if packet.ptype == "join" then
 
 		print('The player ' .. packet.playername .. " has joined the server!")
+
+	elseif packet.ptype == "dc" then
+
+		print('The player ' .. packet.playername .. " has disconnected.")
 
 	else
 
@@ -48,7 +50,7 @@ function network.startServer(gui)
 	network.serv.callbacks.connect = network.server.onConnect
 	network.serv.callbacks.recv = network.server.onReceive
 	network.serv.callbacks.disconnect = network.server.onDisconnect
-	network.serv.handshake = "Hi!"
+	network.serv.handshake = "997067"
 
 	if gui then
 
@@ -73,7 +75,7 @@ function network.startClient()
 	end
 
 	network.cli = lube.tcpClient()
-	network.cli.handshake = "Hi!"
+	network.cli.handshake = "997067"
 	network.cli.callbacks.recv = network.onReceive
 	network.cli:setPing(true, 2, "areYouStillThere?\n")
 	print("Loaded client ...")
@@ -123,9 +125,11 @@ end
 
 function network.client.disconnect()
 
-	network.cli:disconnect()
+	local tbl = {ptype = "dc", playername = game.playername}
 
-	print("Disconnected client from server.")
+	network.client.send(tbl)
+
+	network.cli:disconnect()
 
 end
 
