@@ -1,4 +1,4 @@
-require 'engine/util/debug' -- Temporary debug console
+--require 'engine/util/debug' -- Temporary debug console
 
 CLIENT = false
 SERVER = false
@@ -19,7 +19,7 @@ function love.load(arg)
 	for i, v in ipairs(arg) do
 
 		if v == "-debug" then
-			_G.debug = true
+			_G.debugmode = true
 		end
 		
 	end

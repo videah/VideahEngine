@@ -16,6 +16,7 @@ engine.splash 		= require(engine.path .. 'libs.splashy')
 engine.ui 			= require(engine.path .. 'libs.LoveFrames')
 engine.map 			= require(engine.path .. 'libs.STI')
 engine.lightworld 	= require(engine.path .. 'libs.lightworld')
+engine.console		= require(engine.path .. 'libs.LOVEConsole')
 
 function engine.load(args)
 
@@ -34,9 +35,11 @@ function engine.draw()
 	engine.ui.draw()
 
 	-- Debug --
-	if _G.debug then
+	if _G.debugmode then
 		engine.panel.draw()
 	end
+
+	engine.console.draw()
 
 	_G.fps = love.timer.getFPS()
 	_G.cursorx = love.mouse.getX()
@@ -82,6 +85,8 @@ function engine.keypressed(key, unicode)
 
 	engine.ui.keypressed(key, unicode)
 
+	engine.console.keypressed(key, unicode)
+
 end
  
 function engine.keyreleased(key)
@@ -93,6 +98,8 @@ end
 function engine.textinput(text)
 
 	engine.ui.textinput(text)
+
+	engine.console.textinput(text)
 
 end
 
