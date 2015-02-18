@@ -10,21 +10,35 @@ network.server = {}
 
 local hasLoaded = false
 
-function network.server.onConnect(ip, port)
+-- Server Callbacks --
+
+function network.server.onConnect(id)
 
 end
 
-function network.server.onReceive(data, ip, port)
+function network.server.onReceive(data, id)
 
 	local ok, packet = serial.load(data)
+
+	if ok == nil then
+
+		print("Corrupt packet received: " .. packet)
+		return
+	end
 	
-	if packet.ptype == "join" then
+	if packet.ptype == "join" then -- a Player has joined the server.
 
-		print('The player ' .. packet.playername .. " has joined the server!")
+		print('Player ' .. packet.playername .. " has joined the game")
 
-	elseif packet.ptype == "dc" then
+	elseif packet.ptype == "dc" then -- a Player has left the server.
 
-		print('The player ' .. packet.playername .. " has disconnected.")
+		print('Player ' .. packet.playername .. " has left the game.")
+
+	elseif packet.ptype == "c" then -- a Player has sent a chat message.
+
+		print(packet.playername .. ": " .. packet.data.msg) -- Print the message to the server console.
+
+		network.server.send(packet) -- Send the message to all clients, including the sender.
 
 	else
 
@@ -34,9 +48,31 @@ function network.server.onReceive(data, ip, port)
 
 end
 
-function network.server.onDisconnect(ip, port)
+function network.server.onDisconnect(id)
 
 	print("Client disconnected.")
+
+end
+
+-- Client Callbacks --
+
+function network.client.onReceive(data)
+
+	local ok, packet = serial.load(data)
+
+	if packet.ptype == "c" then
+
+		if packet.playername == nil then
+
+			print("Server: " .. packet.data.msg)
+
+		else
+
+			print(packet.playername .. ": " .. packet.data.msg)
+
+		end
+
+	end
 
 end
 
@@ -68,15 +104,9 @@ function network.startClient()
 
 	CLIENT = true
 
-	function network.onReceive(data)
-
-		print(data)
-
-	end
-
 	network.cli = lube.tcpClient()
 	network.cli.handshake = "997067"
-	network.cli.callbacks.recv = network.onReceive
+	network.cli.callbacks.recv = network.client.onReceive
 	network.cli:setPing(true, 2, "areYouStillThere?\n")
 	print("Loaded client ...")
 
@@ -94,6 +124,24 @@ function network.server.send(data)
 
 end
 
+function network.server.say(msg)
+
+	local packet = {
+
+		ptype = "c",
+		playername = nil,
+		data = {
+
+			msg = msg
+
+		}
+
+	}
+
+	network.server.send(packet)
+
+end
+
 -- Client Functions --
 
 function network.client.send(data)
@@ -101,6 +149,24 @@ function network.client.send(data)
 	local tbl = data
 	local packagedtbl = serial.dump(tbl)
 	network.cli:send(packagedtbl)
+
+end
+
+function network.client.say(msg)
+
+	local packet = {
+
+		ptype = "c",
+		playername = game.playername,
+		data = {
+
+			msg = msg
+
+		}
+
+	}
+
+	network.client.send(packet)
 
 end
 
@@ -174,8 +240,9 @@ function network.loadGUI()
 	local inputfont = love.graphics.newFont(16)
 	textinput:SetFont(inputfont)
 	textinput.OnEnter = function(object, text)
-		print("[SERVER]: " .. text)
-		network.server.send("[SERVER]: " .. text)
+
+		print("Server: " .. text)
+		network.server.say(text)
 		textinput:Clear()
 	end
 
@@ -183,8 +250,8 @@ function network.loadGUI()
 	submitbutton:SetText("Submit")
 	submitbutton.OnClick = function()
 
-		print("[SERVER]: " .. textinput:GetText())
-		network.server.send("[SERVER: " .. text)
+		print("Server: " .. textinput:GetText())
+		network.server.say(textinput:GetText())
 		textinput:Clear()
 
 	end
