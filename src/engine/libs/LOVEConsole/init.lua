@@ -12,13 +12,13 @@
 
 	-> https://github.com/Catlinman/LOVEConsole/blob/master/LICENSE.md
 	
-	The configuration file (console.conf.lua) contains all the necessary settings for the console to work correctly.
+	The configuration file (config.lua) contains all the necessary settings for the console to work correctly.
 	At the moment this means that if a variable within the configuration is not set the actual console will cause errors and not work.
 
 --]]
 
 local console = {} -- Base table containing all console variables and methods.
-local conf = {} -- Table containing console settings.
+local config = {} -- Table containing console settings.
 
 local baseFont = love.graphics.getFont() -- Store the default font.
 local consoleFont = baseFont -- Temporarily store the default font which will be overwritten later on.
@@ -40,6 +40,8 @@ local consoleInputStackShift = 0 -- Amount of lines to shift the input stack by.
 local warningCount, errorCount = 0, 0 -- Track the number of unchecked errors and warnings.
 
 local screenWidth, screenHeight = love.graphics.getDimensions() -- Store the screen size.
+
+local defaultPrint = print
 
 -- Returns the current lua local path to this script.
 local function scriptPath()
@@ -108,7 +110,7 @@ end
 -- Pass a message to the console stack.
 local function stackpush(message, color)
 	if message ~= nil then
-		if #consoleStack > conf.stackMax then
+		if #consoleStack > config.stackMax then
 			table.remove(consoleStack, 1)
 		end
 
@@ -124,7 +126,7 @@ end
 -- Console functions that can be called outside of console.lua
 -- Toggle the console.
 function console.toggle(state)
-	if conf.enabled then
+	if config.enabled then
 		if state ~= true and state ~= false then
 			consoleActive = not consoleActive
 
@@ -142,7 +144,7 @@ end
 
 -- Print a string to the console. The optional color table must be defined as {r = v, g = v, b = v, a = v}.
 function console.print(message, color)
-	if conf.enabled then
+	if config.enabled then
 		if message ~= nil then
 			if not color then
 				stackpush(message, "default")
@@ -157,7 +159,7 @@ end
 
 -- Print a string to the console with warning styling and add to the warning count.
 function console.warning(message)
-	if conf.enabled then
+	if config.enabled then
 		if message ~= nil then
 			warningCount = warningCount + 1
 			stackpush("Warning: " ..message, "warning")
@@ -169,7 +171,7 @@ end
 
 -- Print a string to the console with success styling.
 function console.success(message)
-	if conf.enabled then
+	if config.enabled then
 		if message ~= nil then
 			stackpush("Success: " ..message, "success")
 		else
@@ -178,15 +180,23 @@ function console.success(message)
 	end
 end
 
--- Print a string to the console with error styling  and add to the error count.
+-- Print a string to the console with error styling and add to the error count.
 function console.error(message)
-	if conf.enabled then
+	if config.enabled then
 		if message ~= nil then
 			errorCount = errorCount + 1
 			stackpush("Error: " ..message, "error")
 		else
 			stackpush("Please supply a value before sending an error message to the console.", "warning")
 		end
+	end
+end
+
+-- Print a string to the console using the default print function.
+function print(...)
+	defaultPrint(...)
+	if config.displayPrint then
+		console.print(...)
 	end
 end
 
@@ -252,55 +262,55 @@ end
 -- These functions need to be called from main.lua
 -- Draw the console and it's contents.
 function console.draw()
-	if conf.enabled and consoleActive then
+	if config.enabled and consoleActive then
 		love.graphics.setFont(consoleFont) -- Prepare the console font.
 
 		-- Draw the console background.
-		love.graphics.setColor(conf.colors["background"].r, conf.colors["background"].g, conf.colors["background"].b, conf.colors["background"].a)
+		love.graphics.setColor(config.colors["background"].r, config.colors["background"].g, config.colors["background"].b, config.colors["background"].a)
 		love.graphics.rectangle(
 			"fill",
 			0,
 			0,
 			screenWidth,
-			conf.consoleMarginTop + conf.fontSize * 2 + conf.lineSpacing * math.max(math.min(consoleStackCount, conf.sizeMax) + 1, conf.sizeMin) +
-				(math.max(math.min(consoleStackCount, conf.sizeMax), conf.sizeMin - 1) * conf.fontSize)
+			config.consoleMarginTop + config.fontSize * 2 + config.lineSpacing * math.max(math.min(consoleStackCount, config.sizeMax) + 1, config.sizeMin) +
+				(math.max(math.min(consoleStackCount, config.sizeMax), config.sizeMin - 1) * config.fontSize)
 		)
 
 		-- Draw the console outline.
-		love.graphics.setColor(conf.colors["outline"].r, conf.colors["outline"].g, conf.colors["outline"].b, conf.colors["outline"].a)
+		love.graphics.setColor(config.colors["outline"].r, config.colors["outline"].g, config.colors["outline"].b, config.colors["outline"].a)
 		love.graphics.rectangle(
 			"fill",
 			0,
-			conf.consoleMarginTop + conf.fontSize * 2 + conf.lineSpacing * math.max(math.min(consoleStackCount, conf.sizeMax) + 1, conf.sizeMin) +
-				(math.max(math.min(consoleStackCount, conf.sizeMax), conf.sizeMin - 1) * conf.fontSize),
+			config.consoleMarginTop + config.fontSize * 2 + config.lineSpacing * math.max(math.min(consoleStackCount, config.sizeMax) + 1, config.sizeMin) +
+				(math.max(math.min(consoleStackCount, config.sizeMax), config.sizeMin - 1) * config.fontSize),
 			screenWidth,
-			conf.outlineSize
+			config.outlineSize
 		)
 
 		-- Draw the scroll indicators.
-		if #consoleStack > conf.sizeMax then
-			love.graphics.setColor(conf.colors["text"].r, conf.colors["text"].g, conf.colors["text"].b, conf.colors["text"].a)
+		if #consoleStack > config.sizeMax then
+			love.graphics.setColor(config.colors["text"].r, config.colors["text"].g, config.colors["text"].b, config.colors["text"].a)
 
 			-- Show scroll arrows if there are more lines to display.
-			if consoleStackShift ~= math.min(#consoleStack - conf.sizeMax, conf.stackMax) then
-				love.graphics.printf(conf.scrollChar, screenWidth - conf.consoleMarginEdge, conf.consoleMarginTop, 1, "right")
+			if consoleStackShift ~= math.min(#consoleStack - config.sizeMax, config.stackMax) then
+				love.graphics.printf(config.scrollChar, screenWidth - config.consoleMarginEdge, config.consoleMarginTop, 1, "right")
 			end
 
 			if consoleStackShift ~= 0 then
-				love.graphics.printf(conf.scrollChar, screenWidth - conf.consoleMarginEdge, conf.consoleMarginTop + (conf.lineSpacing * conf.sizeMax) + (conf.sizeMax * conf.fontSize), 1, "right")
+				love.graphics.printf(config.scrollChar, screenWidth - config.consoleMarginEdge, config.consoleMarginTop + (config.lineSpacing * config.sizeMax) + (config.sizeMax * config.fontSize), 1, "right")
 			end
 		end
 
 		-- Draw the message stack with the message coloring.
-		for i in range(math.min(conf.sizeMax, #consoleStack)) do
-			local entry = consoleStack[math.max(1, (#consoleStack - math.min(conf.sizeMax, #consoleStack) + i - consoleStackShift))]
+		for i in range(math.min(config.sizeMax, #consoleStack)) do
+			local entry = consoleStack[math.max(1, (#consoleStack - math.min(config.sizeMax, #consoleStack) + i - consoleStackShift))]
 
 			if type(entry.color) == "string" then
-				if conf.colors[entry.color] then
-					local c = conf.colors[entry.color]
+				if config.colors[entry.color] then
+					local c = config.colors[entry.color]
 					love.graphics.setColor(c.r, c.g, c.b, c.a)
 				else
-					love.graphics.setColor(conf.colors["text"].r, conf.colors["text"].g, conf.colors["text"].b, conf.colors["text"].a)
+					love.graphics.setColor(config.colors["text"].r, config.colors["text"].g, config.colors["text"].b, config.colors["text"].a)
 				end
 
 			elseif type(entry.color) == "table" then
@@ -308,53 +318,53 @@ function console.draw()
 				love.graphics.setColor(r, g, b, a)
 
 			else
-				love.graphics.setColor(conf.colors["text"].r, conf.colors["text"].g, conf.colors["text"].b, conf.colors["text"].a)
+				love.graphics.setColor(config.colors["text"].r, config.colors["text"].g, config.colors["text"].b, config.colors["text"].a)
 			end
 
-			love.graphics.print(tostring(entry.message), conf.consoleMarginEdge, conf.consoleMarginTop + (conf.lineSpacing * i) + ((i - 1) * conf.fontSize))
+			love.graphics.print(tostring(entry.message), config.consoleMarginEdge, config.consoleMarginTop + (config.lineSpacing * i) + ((i - 1) * config.fontSize))
 		end
 
 		-- Draw the input line.
 		local consoleInputEdited = consoleInput
-		if math.ceil(os.clock() * conf.cursorSpeed) % 2 == 0 then
+		if math.ceil(os.clock() * config.cursorSpeed) % 2 == 0 then
 			consoleInputEdited = string.insert(consoleInput ,"|", consoleCursorIndex)
 		else
 			consoleInputEdited = string.insert(consoleInput ," ", consoleCursorIndex)
 		end
 
-		love.graphics.setColor(conf.colors["input"].r, conf.colors["input"].g, conf.colors["input"].b, conf.colors["input"].a)
-		love.graphics.print(string.format("%s %s", conf.inputChar, consoleInputEdited), conf.consoleMarginEdge,conf.consoleMarginTop +
-			(conf.lineSpacing * math.max(math.min(consoleStackCount, conf.sizeMax) + 1, 1)) +
-			(math.min(consoleStackCount, conf.sizeMax) * conf.fontSize)
+		love.graphics.setColor(config.colors["input"].r, config.colors["input"].g, config.colors["input"].b, config.colors["input"].a)
+		love.graphics.print(string.format("%s %s", config.inputChar, consoleInputEdited), config.consoleMarginEdge,config.consoleMarginTop +
+			(config.lineSpacing * math.max(math.min(consoleStackCount, config.sizeMax) + 1, 1)) +
+			(math.min(consoleStackCount, config.sizeMax) * config.fontSize)
 		)
 
 		-- Reset the color and font in case someone decides to do drawing after the console (which doesn't make sense but who cares).
 		love.graphics.setColor(255, 255, 255, 255)
 		love.graphics.setFont(baseFont)
 
-	elseif conf.enabled and conf.alert and consoleActive == false then
+	elseif config.enabled and config.alert and consoleActive == false then
 		love.graphics.setFont(consoleFont) -- Prepare the console font.
 
 		-- Draw the information widgets if the console is hidden and there are warnings and or errors.
 		if warningCount > 0 or errorCount > 0 then
-			local width = 6 * conf.fontSize
-			local height = conf.fontSize * 1.5
+			local width = 6 * config.fontSize
+			local height = config.fontSize * 1.5
 
 			-- Draw the box outline border.
-			love.graphics.setColor(conf.colors["outline"].r, conf.colors["outline"].g, conf.colors["outline"].b, conf.colors["outline"].a)
-			love.graphics.rectangle("fill", 0, 0, width + conf.outlineSize * 2, height + conf.outlineSize * 2)
+			love.graphics.setColor(config.colors["outline"].r, config.colors["outline"].g, config.colors["outline"].b, config.colors["outline"].a)
+			love.graphics.rectangle("fill", 0, 0, width + config.outlineSize * 2, height + config.outlineSize * 2)
 
 			-- Draw the box background.
-			love.graphics.setColor(conf.colors["background"].r, conf.colors["background"].g, conf.colors["background"].b, conf.colors["background"].a)
-			love.graphics.rectangle("fill", conf.outlineSize, conf.outlineSize, width, height)
+			love.graphics.setColor(config.colors["background"].r, config.colors["background"].g, config.colors["background"].b, config.colors["background"].a)
+			love.graphics.rectangle("fill", config.outlineSize, config.outlineSize, width, height)
 
 			-- Draw the warning count.
-			love.graphics.setColor(conf.colors["warning"].r, conf.colors["warning"].g, conf.colors["warning"].b, conf.colors["warning"].a)
-			love.graphics.printf(math.min(9999, warningCount), conf.outlineSize + (width / 5 + conf.fontSize / 2), conf.outlineSize + (conf.fontSize / 6), 2, "center")
+			love.graphics.setColor(config.colors["warning"].r, config.colors["warning"].g, config.colors["warning"].b, config.colors["warning"].a)
+			love.graphics.printf(math.min(9999, warningCount), config.outlineSize + (width / 5 + config.fontSize / 2), config.outlineSize + (config.fontSize / 6), 2, "center")
 
 			-- Draw the error count.
-			love.graphics.setColor(conf.colors["error"].r, conf.colors["error"].g, conf.colors["error"].b, conf.colors["error"].a)
-			love.graphics.printf(math.min(9999, errorCount), width + conf.outlineSize - (width / 5 + conf.fontSize / 2), conf.outlineSize + (conf.fontSize / 6), 2, "center")
+			love.graphics.setColor(config.colors["error"].r, config.colors["error"].g, config.colors["error"].b, config.colors["error"].a)
+			love.graphics.printf(math.min(9999, errorCount), width + config.outlineSize - (width / 5 + config.fontSize / 2), config.outlineSize + (config.fontSize / 6), 2, "center")
 		end
 	end
 end
@@ -364,8 +374,8 @@ love.keyboard.setKeyRepeat(true)
 
 -- Receive pressed keys and interpret them.
 function console.keypressed(key)
-	if conf.enabled then
-		if key == conf.keys.toggle then
+	if config.enabled then
+		if key == config.keys.toggle then
 			-- Update the screen size and display the console.
 			screenWidth, screenHeight = love.graphics.getDimensions()
 			console.toggle()
@@ -373,24 +383,28 @@ function console.keypressed(key)
 		elseif consoleActive then
 			if key == "return" then
 				if consoleInput ~= "" then
-					-- Store the line in the stack.
-					if #consoleInputStack > conf.stackMax then
-						table.remove(consoleInputStack, 1)
+					if consoleInput:match("%S") then
+						-- Store the line in the stack.
+						if #consoleInputStack > config.stackMax then
+							table.remove(consoleInputStack, 1)
+						end
+
+						consoleInputStack[#consoleInputStack + 1] = consoleInput
+						consoleInputStackCount = #consoleInputStack
+
+						-- Execute the given string command and reset the input field.
+						console.perform(consoleInput)
+						consoleInput = ""
+
+						-- Also reset the stack shift.
+						consoleStackShift = 0
+						consoleInputStackShift = 0
+
+						-- Reset the cursor index
+						consoleCursorIndex = 0
+					else
+						consoleInput = ""
 					end
-
-					consoleInputStack[#consoleInputStack + 1] = consoleInput
-					consoleInputStackCount = #consoleInputStack
-
-					-- Execute the given string command and reset the input field.
-					console.perform(consoleInput)
-					consoleInput = ""
-
-					-- Also reset the stack shift.
-					consoleStackShift = 0
-					consoleInputStackShift = 0
-
-					-- Reset the cursor index
-					consoleCursorIndex = 0
 				end
 
 			elseif key == "backspace" then
@@ -402,39 +416,39 @@ function console.keypressed(key)
 			elseif key == "delete" then
 				consoleInput = string.pop(consoleInput, consoleCursorIndex)
 
-			elseif key == conf.keys.scrollUp then
-				if #consoleStack > conf.sizeMax then
+			elseif key == config.keys.scrollUp then
+				if #consoleStack > config.sizeMax then
 					-- Move the stack up.
-					consoleStackShift = math.min(math.min(#consoleStack - conf.sizeMax, conf.stackMax), consoleStackShift + 1)
+					consoleStackShift = math.min(math.min(#consoleStack - config.sizeMax, config.stackMax), consoleStackShift + 1)
 				end
 
-			elseif key == conf.keys.scrollDown then
+			elseif key == config.keys.scrollDown then
 				-- Move the stack down.
 				consoleStackShift = math.max(consoleStackShift - 1, 0)
 			
-			elseif key == conf.keys.scrollTop then
+			elseif key == config.keys.scrollTop then
 				-- Make sure that we can actually scroll and if so, move the stack shift to show the top most line.
-				if #consoleStack > conf.sizeMax then
-					consoleStackShift = math.min(#consoleStack - conf.sizeMax, conf.stackMax)
+				if #consoleStack > config.sizeMax then
+					consoleStackShift = math.min(#consoleStack - config.sizeMax, config.stackMax)
 				end
 
-			elseif key == conf.keys.scrollBottom then
+			elseif key == config.keys.scrollBottom then
 				-- Set the shift amount to zero so the newest line is the last.
 				consoleStackShift = 0
 
-			elseif key == conf.keys.scrollUp then
-				if #consoleStack > conf.sizeMax then
+			elseif key == config.keys.scrollUp then
+				if #consoleStack > config.sizeMax then
 					-- Move the stack up.
-					consoleStackShift = math.min(math.min(#consoleStack - conf.sizeMax, conf.stackMax), consoleStackShift + 1)
+					consoleStackShift = math.min(math.min(#consoleStack - config.sizeMax, config.stackMax), consoleStackShift + 1)
 				end
 
-			elseif key == conf.keys.cursorLeft then
+			elseif key == config.keys.cursorLeft then
 				consoleCursorIndex = math.max(consoleCursorIndex - 1, 0)
 
-			elseif key == conf.keys.cursorRight then
+			elseif key == config.keys.cursorRight then
 				consoleCursorIndex = math.min(consoleCursorIndex + 1, #consoleInput)
 
-			elseif key == conf.keys.inputUp then
+			elseif key == config.keys.inputUp then
 				consoleInputStackShift = math.min(consoleInputStackShift + 1, #consoleInputStack)
 
 				local entry = consoleInputStack[#consoleInputStack - consoleInputStackShift + 1]
@@ -444,7 +458,7 @@ function console.keypressed(key)
 
 				consoleCursorIndex = #consoleInput
 
-			elseif key == conf.keys.inputDown then
+			elseif key == config.keys.inputDown then
 				consoleInputStackShift = math.max(consoleInputStackShift - 1, 0)
 
 				local entry = consoleInputStack[#consoleInputStack - consoleInputStackShift + 1]
@@ -463,40 +477,45 @@ end
 -- Send text input to the console input field.
 function console.textinput(s)
 	-- If the key is the toggle key and the ignoreToggleKey option is enabled, clear the input.
-	if conf.ignoreToggleKey and s == conf.keys.toggle then
+	if config.ignoreToggleKey and s == config.keys.toggle then
 		s = ""
 	end
 
-	if conf.enabled and consoleActive and s ~= "" then
+	if config.enabled and consoleActive and s ~= "" then
 		-- Insert the character and clean out all UTF8 characters since they break everything otherwise.
 		consoleInput = string.insert(consoleInput, string.stripUTF8(s), consoleCursorIndex)
 		consoleCursorIndex = math.min(#consoleInput, consoleCursorIndex + 1)
 	end
 end
 
+-- If the window is resized whilst the console is open, resize the console.
+function console.resize(w, h)
+	screenWidth, screenHeight = w, h
+end
+
 -- Execute the configuration file and initialize user consoleCommands.
 local loaded, data
-loaded, data = pcall(love.filesystem.load, scriptPath() .."console.conf.lua")
+loaded, data = pcall(love.filesystem.load, scriptPath() .."config.lua")
 
 if not loaded then
 	print("[Console] Failed to load the configuration file due to the following error: " .. tostring(data))
-	conf.enabled, consoleActive, consoleStatus = false, false, data
+	config.enabled, consoleActive, consoleStatus = false, false, data
 else
 	loaded, data = pcall(data)
 
 	if not loaded then
 		print("[Console] Executing the configuration file returned the following error: " .. tostring(data))
-		conf.enabled, consoleActive, consoleStatus = false, false, data
+		config.enabled, consoleActive, consoleStatus = false, false, data
 	else
-		conf = data
+		config = data
 
 		-- Load font data.
 		local fontstatus, data = pcall(
 			function()
-				if conf.fontName ~= "" then
-					return love.graphics.newFont(conf.fontName, conf.fontSize)
+				if config.fontName ~= "" then
+					return love.graphics.newFont(config.fontName, config.fontSize)
 				else
-					return love.graphics.newFont(conf.fontSize)
+					return love.graphics.newFont(config.fontSize)
 				end
 			end
 		)
@@ -555,9 +574,9 @@ console.addCommand("help", function(args)
 		console.print("Available commands are:")
 		for k, v in pairs(consoleCommands) do
 			if v.description ~= "" then
-				console.print(string.format("%s - %s", k, v.description), conf.colors.success)
+				console.print(string.format("%s - %s", k, v.description), config.colors.success)
 			else
-				console.print(k, conf.colors.success)
+				console.print(k, config.colors.success)
 			end
 		end
 	else
@@ -589,5 +608,34 @@ console.addCommand("alias", function(args)
 		console.print("Missing command arguments. Requires two.")
 	end
 end, "Creates a new command list entry mimicking another command. Arguments: [command to alias] [alias name]")
+
+-- Custom Commands --
+
+console.addCommand("connect", function(args)
+	if args then
+		engine.network.client.connect(args[1], "18025")
+	else
+		-- Error is returned to the console. In case of console.execute, error is returned to the "out" variable.
+		console.print("Missing required arguments")
+	end
+end, "Connects to a server. - Arguments: [ip address]")
+
+console.addCommand("say", function(args)
+	if args then
+		engine.network.client.say(table.concat(args, " "))
+	else
+		console.print("Missing required arguments")
+	end
+end, "Send player message. Arguments: [message]")
+
+
+console.addCommand("name", function(args)
+	if args then
+		game.playername = table.concat(args, " ")
+		console.print("Set player name to: " .. game.playername)
+	else
+		console.print("Missing required arguments")
+	end
+end, "Sets current username. Arguments: [name]")
 
 return console

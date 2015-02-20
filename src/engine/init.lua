@@ -16,7 +16,7 @@ engine.splash 		= require(engine.path .. 'libs.splashy')
 engine.ui 			= require(engine.path .. 'libs.LoveFrames')
 engine.map 			= require(engine.path .. 'libs.STI')
 engine.lightworld 	= require(engine.path .. 'libs.lightworld')
-engine.console		= require(engine.path .. 'libs.LOVEConsole')
+engine.console		= require(engine.path .. 'libs.loveConsole')
 
 function engine.load(args)
 
@@ -65,6 +65,8 @@ function engine.resize(w, h)
 
 	_G.screenWidth = w
 	_G.screenHeight = h
+
+	engine.console.resize(w, h)
 
 end
 
