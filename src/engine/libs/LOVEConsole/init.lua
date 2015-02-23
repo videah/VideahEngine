@@ -41,6 +41,10 @@ local warningCount, errorCount = 0, 0 -- Track the number of unchecked errors an
 
 local screenWidth, screenHeight = love.graphics.getDimensions() -- Store the screen size.
 
+local consoleX, consoleY = 0, 0
+
+local enableInput = true
+
 local defaultPrint = print
 
 -- Returns the current lua local path to this script.
@@ -121,6 +125,28 @@ local function stackpush(message, color)
 
 		consoleStackCount = #consoleStack
 	end
+end
+
+function console.setPosition(x, y)
+
+	consoleX, consoleY = x, y
+
+	config.consoleMarginEdge = 5 + consoleX
+
+	config.consoleMarginTop = consoleY
+
+end
+
+function console.setSize(w, h)
+
+	screenWidth, screenHeight = w, h
+
+end
+
+function console.receiveInput(bool)
+
+	enableInput = bool
+
 end
 
 -- Console functions that can be called outside of console.lua
@@ -269,22 +295,10 @@ function console.draw()
 		love.graphics.setColor(config.colors["background"].r, config.colors["background"].g, config.colors["background"].b, config.colors["background"].a)
 		love.graphics.rectangle(
 			"fill",
-			0,
-			0,
+			consoleX, 
+			consoleY,
 			screenWidth,
-			config.consoleMarginTop + config.fontSize * 2 + config.lineSpacing * math.max(math.min(consoleStackCount, config.sizeMax) + 1, config.sizeMin) +
-				(math.max(math.min(consoleStackCount, config.sizeMax), config.sizeMin - 1) * config.fontSize)
-		)
-
-		-- Draw the console outline.
-		love.graphics.setColor(config.colors["outline"].r, config.colors["outline"].g, config.colors["outline"].b, config.colors["outline"].a)
-		love.graphics.rectangle(
-			"fill",
-			0,
-			config.consoleMarginTop + config.fontSize * 2 + config.lineSpacing * math.max(math.min(consoleStackCount, config.sizeMax) + 1, config.sizeMin) +
-				(math.max(math.min(consoleStackCount, config.sizeMax), config.sizeMin - 1) * config.fontSize),
-			screenWidth,
-			config.outlineSize
+			screenHeight
 		)
 
 		-- Draw the scroll indicators.
@@ -324,19 +338,21 @@ function console.draw()
 			love.graphics.print(tostring(entry.message), config.consoleMarginEdge, config.consoleMarginTop + (config.lineSpacing * i) + ((i - 1) * config.fontSize))
 		end
 
-		-- Draw the input line.
-		local consoleInputEdited = consoleInput
-		if math.ceil(os.clock() * config.cursorSpeed) % 2 == 0 then
-			consoleInputEdited = string.insert(consoleInput ,"|", consoleCursorIndex)
-		else
-			consoleInputEdited = string.insert(consoleInput ," ", consoleCursorIndex)
-		end
+		if enableInput then
+			-- Draw the input line.
+			local consoleInputEdited = consoleInput
+			if math.ceil(os.clock() * config.cursorSpeed) % 2 == 0 then
+				consoleInputEdited = string.insert(consoleInput ,"|", consoleCursorIndex)
+			else
+				consoleInputEdited = string.insert(consoleInput ," ", consoleCursorIndex)
+			end
 
-		love.graphics.setColor(config.colors["input"].r, config.colors["input"].g, config.colors["input"].b, config.colors["input"].a)
-		love.graphics.print(string.format("%s %s", config.inputChar, consoleInputEdited), config.consoleMarginEdge,config.consoleMarginTop +
-			(config.lineSpacing * math.max(math.min(consoleStackCount, config.sizeMax) + 1, 1)) +
-			(math.min(consoleStackCount, config.sizeMax) * config.fontSize)
-		)
+			love.graphics.setColor(config.colors["input"].r, config.colors["input"].g, config.colors["input"].b, config.colors["input"].a)
+			love.graphics.print(string.format("%s %s", config.inputChar, consoleInputEdited), config.consoleMarginEdge,config.consoleMarginTop +
+				(config.lineSpacing * math.max(math.min(consoleStackCount, config.sizeMax) + 1, 1)) +
+				(math.min(consoleStackCount, config.sizeMax) * config.fontSize)
+			)
+		end
 
 		-- Reset the color and font in case someone decides to do drawing after the console (which doesn't make sense but who cares).
 		love.graphics.setColor(255, 255, 255, 255)
@@ -352,7 +368,7 @@ function console.draw()
 
 			-- Draw the box outline border.
 			love.graphics.setColor(config.colors["outline"].r, config.colors["outline"].g, config.colors["outline"].b, config.colors["outline"].a)
-			love.graphics.rectangle("fill", 0, 0, width + config.outlineSize * 2, height + config.outlineSize * 2)
+			love.graphics.rectangle("fill", consoleX, consoleY, width + config.outlineSize * 2, height + config.outlineSize * 2)
 
 			-- Draw the box background.
 			love.graphics.setColor(config.colors["background"].r, config.colors["background"].g, config.colors["background"].b, config.colors["background"].a)
@@ -377,7 +393,7 @@ function console.keypressed(key)
 	if config.enabled then
 		if key == config.keys.toggle then
 			-- Update the screen size and display the console.
-			screenWidth, screenHeight = love.graphics.getDimensions()
+			--screenWidth, screenHeight = love.graphics.getDimensions()
 			console.toggle()
 
 		elseif consoleActive then
@@ -476,15 +492,17 @@ end
 
 -- Send text input to the console input field.
 function console.textinput(s)
-	-- If the key is the toggle key and the ignoreToggleKey option is enabled, clear the input.
-	if config.ignoreToggleKey and s == config.keys.toggle then
-		s = ""
-	end
+	if enableInput then
+		-- If the key is the toggle key and the ignoreToggleKey option is enabled, clear the input.
+		if config.ignoreToggleKey and s == config.keys.toggle then
+			s = ""
+		end
 
-	if config.enabled and consoleActive and s ~= "" then
-		-- Insert the character and clean out all UTF8 characters since they break everything otherwise.
-		consoleInput = string.insert(consoleInput, string.stripUTF8(s), consoleCursorIndex)
-		consoleCursorIndex = math.min(#consoleInput, consoleCursorIndex + 1)
+		if config.enabled and consoleActive and s ~= "" then
+			-- Insert the character and clean out all UTF8 characters since they break everything otherwise.
+			consoleInput = string.insert(consoleInput, string.stripUTF8(s), consoleCursorIndex)
+			consoleCursorIndex = math.min(#consoleInput, consoleCursorIndex + 1)
+		end
 	end
 end
 
@@ -526,6 +544,10 @@ else
 		end
 	end
 end
+
+config.consoleMarginEdge = config.consoleMarginEdge + consoleX
+
+config.consoleMarginTop = config.consoleMarginTop + consoleY
 
 -- Some base functions to make life just a little easier.
 
@@ -637,5 +659,17 @@ console.addCommand("name", function(args)
 		console.print("Missing required arguments")
 	end
 end, "Sets current username. Arguments: [name]")
+
+if SERVER then
+
+	console.addCommand("say", function(args)
+		if args then
+			engine.network.server.say(table.concat(args, " "))
+		else
+			console.print("Missing required arguments")
+		end
+	end, "Send server message. Arguments: [message]")
+
+end
 
 return console

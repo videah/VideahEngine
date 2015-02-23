@@ -23,8 +23,8 @@ config.ignoreToggleKey = true -- If true, the toggle key will not be inputted to
 config.displayPrint = true -- If true the default print function will print to the console.
 
 config.stackMax = 100  -- Maximum number of lines stored in the console stack before old lines are removed.
-config.sizeMin = 100 -- Minimum lines the console should display before extending to the max size.
-config.sizeMax = 10 -- Maximum number of entries to print at a time.
+config.sizeMin = 33 -- Minimum lines the console should display before extending to the max size.
+config.sizeMax = 25 -- Maximum number of entries to print at a time.
 config.shiftAmount = 1 -- Amount of lines to move over while scrolling up and down.
 
 config.keys.toggle = "`" -- Key used to toggle the console during runtime.

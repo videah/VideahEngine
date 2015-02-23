@@ -218,6 +218,7 @@ function network.loadGUI()
 	function love.draw()
 
 		engine.ui.draw()
+		engine.console.draw()
 
 	end
 
@@ -241,8 +242,9 @@ function network.loadGUI()
 	textinput:SetFont(inputfont)
 	textinput.OnEnter = function(object, text)
 
-		print("Server: " .. text)
-		network.server.say(text)
+		if text ~= "" then
+			engine.console.perform(text)
+		end
 		textinput:Clear()
 	end
 
@@ -250,8 +252,9 @@ function network.loadGUI()
 	submitbutton:SetText("Submit")
 	submitbutton.OnClick = function()
 
-		print("Server: " .. textinput:GetText())
-		network.server.say(textinput:GetText())
+		if textinput:GetText() ~= "" then
+			engine.console.perform(textinput:GetText())
+		end
 		textinput:Clear()
 
 	end
@@ -291,6 +294,9 @@ function network.loadGUI()
 		submitbutton:SetSize(150, messagepanel:GetHeight())
 		submitbutton:SetPos(messagepanel:GetWidth() - submitbutton:GetWidth(), 0)
 
+		engine.console.receiveInput(false)
+		engine.console.setPosition(5, 30)
+		engine.console.setSize(console:GetWidth(), console:GetHeight())
 
 	end
 
