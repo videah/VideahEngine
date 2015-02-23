@@ -222,6 +222,13 @@ function network.loadGUI()
 
 	end
 
+	function love.update(dt)
+
+		engine.ui.update(dt)
+		network.serv:update(dt)
+
+	end
+
 	local frame = engine.ui.Create("frame")
 	frame:ShowCloseButton(false)
 	frame:SetDraggable(false)
