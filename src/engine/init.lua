@@ -16,7 +16,7 @@ engine.splash 		= require(engine.path .. 'libs.splashy')
 engine.ui 			= require(engine.path .. 'libs.LoveFrames')
 engine.map 			= require(engine.path .. 'libs.STI')
 engine.lightworld 	= require(engine.path .. 'libs.lightworld')
-engine.console		= require(engine.path .. 'libs.loveConsole')
+engine.console		= require(engine.path .. 'libs.loveconsole')
 
 function engine.load(args)
 
