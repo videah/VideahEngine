@@ -1,24 +1,29 @@
 engine = {}
 engine.path = ... .. '.'
 
-engine.class		= require(engine.path .. 'util.middleclass')
-
-engine.graphics		= require(engine.path .. 'modules.graphics')
-engine.global 		= require(engine.path .. 'modules.global')
-engine.input		= require(engine.path .. 'modules.input')
-engine.menu			= require(engine.path .. 'modules.menu')
-engine.state		= require(engine.path .. 'modules.state')
-engine.network		= require(engine.path .. 'modules.network')
-engine.script		= require(engine.path .. 'modules.script')
-
-engine.panel 		= require(engine.path .. 'libs.solar')
-engine.splash 		= require(engine.path .. 'libs.splashy')
-engine.ui 			= require(engine.path .. 'libs.LoveFrames')
-engine.map 			= require(engine.path .. 'libs.STI')
-engine.lightworld 	= require(engine.path .. 'libs.lightworld')
-engine.console		= require(engine.path .. 'libs.loveconsole')
-
 function engine.load(args)
+
+	engine.class		= require(engine.path .. 'util.middleclass')
+
+	engine.graphics		= require(engine.path .. 'modules.graphics')
+	engine.global 		= require(engine.path .. 'modules.global')
+	engine.input		= require(engine.path .. 'modules.input')
+	engine.menu			= require(engine.path .. 'modules.menu')
+	engine.state		= require(engine.path .. 'modules.state')
+	engine.network		= require(engine.path .. 'modules.network')
+	engine.script		= require(engine.path .. 'modules.script')
+
+	engine.panel 		= require(engine.path .. 'libs.solar')
+	engine.splash 		= require(engine.path .. 'libs.splashy')
+	engine.ui 			= require(engine.path .. 'libs.LoveFrames')
+	engine.map 			= require(engine.path .. 'libs.STI')
+	engine.lightworld 	= require(engine.path .. 'libs.lightworld')
+
+	if CLIENT then
+		engine.console		= require(engine.path .. 'libs.loveconsole')
+	else
+		engine.console		= require(engine.path .. 'libs.loveserverconsole')
+	end
 
 	math.randomseed(os.time())
 

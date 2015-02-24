@@ -16,18 +16,25 @@ function love.load(arg)
 		args[v] = true
 	end
 
-	for i, v in ipairs(arg) do
+	if args["-debug"] then
+		_G.debugmode = true
+	end
 
-		if v == "-debug" then
-			_G.debugmode = true
-		end
-		
+
+	if args["-dedicated"] then
+		SERVER = true
+	else
+		CLIENT = true
 	end
 
 	engine.load()
 	game.load()
 
-	if args["-dedicated"] then
+	if CLIENT then
+		engine.network.startClient()
+	end
+
+	if SERVER then
 		if args["-gui"] then
 			engine.network.startServer(true)
 		else
@@ -35,11 +42,6 @@ function love.load(arg)
 		end
 	end
 
-	if SERVER == false then
-
-		engine.network.startClient()
-
-	end
 
 end
 

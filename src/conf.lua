@@ -8,6 +8,6 @@ function love.conf(c)
 
 	c.window.width = 1280
 	c.window.height = 720
-	c.window.resizable = false
+	c.window.resizable = true
 
 end

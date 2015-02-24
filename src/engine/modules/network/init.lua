@@ -22,8 +22,9 @@ function network.server.onReceive(data, id)
 
 	if ok == nil then
 
-		print("Corrupt packet received: " .. packet)
+		engine.console.error("Corrupt packet received: " .. packet)
 		return
+
 	end
 	
 	if packet.ptype == "join" then -- a Player has joined the server.
@@ -42,7 +43,7 @@ function network.server.onReceive(data, id)
 
 	else
 
-		print("Unknown packet received.")
+		engine.console.error("Unknown packet received.")
 
 	end
 
@@ -78,8 +79,6 @@ end
 
 function network.startServer(gui)
 
-	SERVER = true
-
 	network.serv = lube.tcpServer()
 	network.serv:listen(network._port)
 	network.serv:setPing(true, 16, "areYouStillThere?\n")
@@ -94,15 +93,13 @@ function network.startServer(gui)
 
 	end
 
-	print("Successfully started server on port " .. network._port)
+	engine.console.success("Successfully started server on port " .. network._port)
 
 	hasLoaded = true
 
 end
 
 function network.startClient()
-
-	CLIENT = true
 
 	network.cli = lube.tcpClient()
 	network.cli.handshake = "997067"
@@ -125,6 +122,8 @@ function network.server.send(data)
 end
 
 function network.server.say(msg)
+
+	print("Server: " .. msg)
 
 	local packet = {
 
@@ -172,14 +171,14 @@ end
 
 function network.client.connect(ip, port)
 
-	local sucess, err = network.cli:connect(ip, port)
+	local success, err = network.cli:connect(ip, port)
 
 	if err ~= nil then
 		print("Error connecting to " .. ip .. " (" .. err .. ")")
 		return
 	end
 
-	if sucess then
+	if success then
 		print("Successfully connected to " .. ip .. "!")
 	end
 
