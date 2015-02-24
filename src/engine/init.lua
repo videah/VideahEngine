@@ -6,6 +6,7 @@ function engine.load(args)
 	engine.class		= require(engine.path .. 'util.middleclass')
 
 	engine.graphics		= require(engine.path .. 'modules.graphics')
+	engine.camera		= require(engine.path .. 'modules.camera')
 	engine.global 		= require(engine.path .. 'modules.global')
 	engine.input		= require(engine.path .. 'modules.input')
 	engine.menu			= require(engine.path .. 'modules.menu')
@@ -32,12 +33,6 @@ function engine.load(args)
 	end
 
 	print("Loaded VideahEngine " .. _G.version)
-
-print([[This is a multiline string.
-You can't see this
-As you can see, the console does not properly handle them
-as text just overlaps with each other.
-]])
 
 end
 

@@ -642,7 +642,9 @@ console.addCommand("say", function(args)
 end, "Send server message. Arguments: [message]")
 
 console.addCommand("status", function(args)
+
 	engine.network.server.status()
+	
 end, "Displays server information. Arguments: None.")
 
 return console

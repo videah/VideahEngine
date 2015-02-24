@@ -28,12 +28,26 @@ function game.draw()
 		engine.menu.draw()
 	end
 
+	if engine.state:isCurrentState("game") then
+
+		engine.camera:set()
+
+			-- Game Draw Code Here --
+
+		engine.camera:unset()
+
+	end
+
 end
 
 function game.update(dt)
 
 	if engine.state:isCurrentState("menu") then
 		engine.menu.update(dt)
+	end
+
+	if engine.state:isCurrentState("game") then
+		engine.camera.update(dt)
 	end
 
 end
