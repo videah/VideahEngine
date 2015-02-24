@@ -6,9 +6,37 @@ network._port = "18025"
 network._ip = "127.0.0.1"
 
 network.client = {}
+network.client._id = nil
+
 network.server = {}
+network.server.playerlist = {}
 
 local hasLoaded = false
+
+-- Utility --
+
+local function generateID(length)
+
+	local charset = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" -- Characters
+	local s = "" -- Create a blank string
+	local tbl = {} -- Create a table to hold randomized charset
+
+	for i=1, #charset do
+		tbl[i] = string.sub(charset, i, i) -- Insert individual charset characters into the table
+	end
+
+	for i=#charset, 2, -1 do
+		local r = math.random(i)
+		tbl[i], tbl[r] = tbl[r], tbl[i] -- Randomly swap the charset around
+	end
+
+	for i=1, length do
+		r = math.random(#charset)
+		s = s .. tbl[r] -- Add a random character to the string
+	end
+
+	return s -- Finally, return the randomly generated string
+end
 
 -- Server Callbacks --
 
@@ -29,7 +57,11 @@ function network.server.onReceive(data, id)
 	
 	if packet.ptype == "join" then -- a Player has joined the server.
 
-		print('Player ' .. packet.playername .. " has joined the game")
+		print('Player ' .. packet.playername .. " (ID: " .. packet.playerid .. ") has joined the game")
+
+		local tbl = {name = packet.playername, id = packet.playerid}
+
+		table.insert(network.server.playerlist, tbl)
 
 	elseif packet.ptype == "dc" then -- a Player has left the server.
 
@@ -81,7 +113,7 @@ function network.startServer(gui)
 
 	network.serv = lube.tcpServer()
 	network.serv:listen(network._port)
-	network.serv:setPing(true, 16, "areYouStillThere?\n")
+	--network.serv:setPing(true, 16, "PING")
 	network.serv.callbacks.connect = network.server.onConnect
 	network.serv.callbacks.recv = network.server.onReceive
 	network.serv.callbacks.disconnect = network.server.onDisconnect
@@ -104,7 +136,7 @@ function network.startClient()
 	network.cli = lube.tcpClient()
 	network.cli.handshake = "997067"
 	network.cli.callbacks.recv = network.client.onReceive
-	network.cli:setPing(true, 2, "areYouStillThere?\n")
+	--network.cli:setPing(true, 2, "PING")
 	print("Loaded client ...")
 
 	hasLoaded = true
@@ -141,6 +173,20 @@ function network.server.say(msg)
 
 end
 
+function network.server.status()
+
+	print("Number of Players: " .. engine.network.server.getNumberOfPlayers() .. "/" .. "?")
+
+	print(serial.block(engine.network.server.playerlist))
+
+end
+
+function network.server.getNumberOfPlayers()
+
+	return #engine.network.server.playerlist
+
+end
+
 -- Client Functions --
 
 function network.client.send(data)
@@ -173,6 +219,8 @@ function network.client.connect(ip, port)
 
 	local success, err = network.cli:connect(ip, port)
 
+	network.client._id = generateID(16)
+
 	if err ~= nil then
 		print("Error connecting to " .. ip .. " (" .. err .. ")")
 		return
@@ -182,7 +230,7 @@ function network.client.connect(ip, port)
 		print("Successfully connected to " .. ip .. "!")
 	end
 
-	local tbl = {ptype = "join", playername = game.playername}
+	local tbl = {ptype = "join", playerid = network.client._id, playername = game.playername}
 
 	network.client.send(tbl)
 

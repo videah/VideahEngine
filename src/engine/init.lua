@@ -27,7 +27,17 @@ function engine.load(args)
 
 	math.randomseed(os.time())
 
+	for i=1, 3 do
+		math.random() -- Warm up random number generator
+	end
+
 	print("Loaded VideahEngine " .. _G.version)
+
+print([[This is a multiline string.
+You can't see this
+As you can see, the console does not properly handle them
+as text just overlaps with each other.
+]])
 
 end
 
