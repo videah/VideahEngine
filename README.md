@@ -2,7 +2,7 @@
 
 Personal Love2D Engine Project.
 
-Code is a bit of a mess right now and needs cleaning.
+Everything is Work in Progress, and there is currently no documentation.
 
 ## Licence
 
