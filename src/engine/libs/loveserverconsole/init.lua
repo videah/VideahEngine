@@ -647,4 +647,12 @@ console.addCommand("status", function(args)
 	
 end, "Displays server information. Arguments: None.")
 
+console.addCommand("map", function(args)
+	if args then
+		engine.map.loadmap(args[1])
+	else
+		console.print("Missing required arguments")
+	end
+end, "Sets the current map. Arguments: [mapname]")
+
 return console

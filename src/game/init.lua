@@ -32,6 +32,8 @@ function game.draw()
 
 		engine.camera:set()
 
+			engine.map.draw()
+
 			-- Game Draw Code Here --
 
 		engine.camera:unset()
@@ -48,6 +50,11 @@ function game.update(dt)
 
 	if engine.state:isCurrentState("game") then
 		engine.camera.update(dt)
+
+		if love.keyboard.isDown("down") then
+			engine.camera:move("down", 100 * dt)
+		end
+
 	end
 
 end

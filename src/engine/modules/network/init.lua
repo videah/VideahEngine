@@ -59,9 +59,22 @@ function network.server.onReceive(data, id)
 
 		print('Player ' .. packet.playername .. " (ID: " .. packet.playerid .. ") has joined the game")
 
-		local tbl = {name = packet.playername, id = packet.playerid}
+		local playerinfo = {name = packet.playername, id = packet.playerid}
 
-		table.insert(network.server.playerlist, tbl)
+		table.insert(network.server.playerlist, playerinfo)
+
+		local infopacket = {
+
+			ptype = "si",
+			data = {
+
+				mapname = engine.map.currentmapname
+
+			}
+
+		}
+
+		network.server.send(infopacket, id)
 
 	elseif packet.ptype == "dc" then -- a Player has left the server.
 
@@ -104,6 +117,10 @@ function network.client.onReceive(data)
 			print(packet.playername .. ": " .. packet.data.msg)
 
 		end
+
+	elseif packet.ptype == "si" then
+
+		print("Server is currently running on the map" .. packet.data.mapname)
 
 	end
 

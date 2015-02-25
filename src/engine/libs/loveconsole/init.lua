@@ -622,7 +622,7 @@ console.addCommand("connect", function(args)
 		-- Error is returned to the console. In case of console.execute, error is returned to the "out" variable.
 		console.print("Missing required arguments")
 	end
-end, "Connects to a server. - Arguments: [ip address]")
+end, "Connects to a server. Arguments: [ip address]")
 
 console.addCommand("say", function(args)
 	if args then
@@ -641,5 +641,13 @@ console.addCommand("name", function(args)
 		console.print("Missing required arguments")
 	end
 end, "Sets current username. Arguments: [name]")
+
+console.addCommand("map", function(args)
+	if args then
+		engine.map.loadmap(args[1])
+	else
+		console.print("Missing required arguments")
+	end
+end, "Sets the current map. Arguments: [mapname]")
 
 return console
