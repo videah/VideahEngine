@@ -55,6 +55,18 @@ function game.update(dt)
 			engine.camera:move("down", 100 * dt)
 		end
 
+		if love.keyboard.isDown("left") then
+			engine.camera:move("left", 100 * dt)
+		end
+
+		if love.keyboard.isDown("right") then
+			engine.camera:move("right", 100 * dt)
+		end
+
+		if love.keyboard.isDown("up") then
+			engine.camera:move("up", 100 * dt)
+		end
+
 	end
 
 end

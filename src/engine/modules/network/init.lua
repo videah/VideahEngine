@@ -78,7 +78,7 @@ function network.server.onReceive(data, id)
 
 	elseif packet.ptype == "dc" then -- a Player has left the server.
 
-		print('Player ' .. packet.playername .. " has left the game.")
+		print('Player ' .. packet.playername .. " has left the game. (Reason: " .. packet.reason .. ")")
 
 	elseif packet.ptype == "c" then -- a Player has sent a chat message.
 
@@ -120,7 +120,16 @@ function network.client.onReceive(data)
 
 	elseif packet.ptype == "si" then
 
-		print("Server is currently running on the map" .. packet.data.mapname)
+		if packet.data.mapname then
+
+			print("Server is currently running on the map" .. packet.data.mapname)
+
+		else
+
+			engine.console.error("The server is currently not running a map.")
+			network.client.disconnect("The server is currently not running a map.")
+
+		end
 
 	end
 
@@ -253,13 +262,13 @@ function network.client.connect(ip, port)
 
 end
 
-function network.client.disconnect()
+function network.client.disconnect(reason)
 
-	local tbl = {ptype = "dc", playername = game.playername}
+	local tbl = {ptype = "dc", reason = reason, playername = game.playername}
 
 	network.client.send(tbl)
 
-	network.cli:disconnect()
+	--network.cli:disconnect() -- Currently not working, waiting on LUBE being fixed.
 
 end
 
