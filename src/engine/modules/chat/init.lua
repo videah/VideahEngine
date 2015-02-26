@@ -6,6 +6,8 @@ local config = require(path .. "config")
 local chatStack = {}
 local chatHistoryStack = {}
 
+local chatInput = ""
+
 local chatFocused = true
 
 local function drawText(text, x, y, r, sx, sy, ox, oy, kx, ky)
@@ -58,12 +60,20 @@ function chat.draw()
 
 	local x, y = config.chatPositionX, config.chatPositionY
 	local width, height = config.chatWidth, config.chatHeight
-	local fontdiff = difference(config.bigfont:getHeight(), config.font:getHeight())
 
 	if chatFocused then
+
 		love.graphics.setColor(config.color.bg)
 		love.graphics.rectangle("fill", x, y, width, height)
+
+		love.graphics.setColor(config.color.textbox)
+		love.graphics.rectangle("fill", x + 4, y + height - 29, width - 8, 25)
 		love.graphics.setColor(255, 255, 255, 255)
+
+		love.graphics.setFont(config.font)
+
+		drawText(chatInput, x + 4, y + height - 29)
+
 	end
 
 	love.graphics.setFont(config.font)
@@ -81,10 +91,20 @@ function chat.draw()
 
 		love.graphics.setFont(config.font)
 
-		drawText(message, x + config.bigfont:getWidth(player .. ": "), height + fontdiff * 2)
+		local fontdiff = (config.bigfont:getHeight() / 2) - (config.font:getHeight() / 2)
+
+		drawText(message, x + config.bigfont:getWidth(player .. ": "), height + fontdiff)
 
 		love.graphics.setColor(255, 255, 255, 255)
 
+	end
+
+end
+
+function chat.textinput(s)
+
+	if chatFocused then
+		chatInput = chatInput .. s
 	end
 
 end

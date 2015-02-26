@@ -8,9 +8,10 @@ config.chatPositionY = _G.screenHeight - config.chatHeight - 15
 
 config.maximumChatLines = 100
 
-config.font = love.graphics.newFont(16)
-config.bigfont = love.graphics.newFont(17)
+config.font = love.graphics.newFont("game/data/fonts/minecraft.ttf", 16)
+config.bigfont = love.graphics.newFont("game/data/fonts/minecraft.ttf", 17)
 
-config.color.bg = {26, 26, 26, 200}
+config.color.bg = {26, 26, 26, 155}
+config.color.textbox = {36, 36, 36, 200}
 
 return config

@@ -112,6 +112,8 @@ end
 
 function engine.textinput(text)
 
+	engine.chat.textinput(text)
+
 	engine.ui.textinput(text)
 
 	engine.console.textinput(text)
