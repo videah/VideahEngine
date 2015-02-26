@@ -71,6 +71,18 @@ function camera:getY()
 	return self.y
 end
 
+function camera:getMousePosition()
+	return math.floor(_G.cursorx + self.x), math.floor(_G.cursory + self.y)
+end
+
+function camera:getMouseX()
+	return math.floor(_G.cursorx + self.x)
+end
+
+function camera:getMouseY()
+	return math.floor(_G.cursory + self.y)
+end
+
 -- Camera Shake --
 
 function camera:shake(intesity, duration)
