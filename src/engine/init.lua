@@ -13,6 +13,7 @@ function engine.load(args)
 	engine.menu			= require(engine.path .. 'modules.menu')
 	engine.state		= require(engine.path .. 'modules.state')
 	engine.network		= require(engine.path .. 'modules.network')
+	engine.chat			= require(engine.path .. 'modules.chat')
 	engine.script		= require(engine.path .. 'modules.script')
 
 	engine.panel 		= require(engine.path .. 'libs.solar')
@@ -43,6 +44,8 @@ function engine.draw()
 	end
 
 	engine.ui.draw()
+
+	engine.chat.draw()
 
 	-- Debug --
 	if _G.debugmode then

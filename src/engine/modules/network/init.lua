@@ -118,6 +118,8 @@ function network.client.onReceive(data)
 
 		end
 
+		engine.chat.say(packet.data.msg, packet.playername)
+
 	elseif packet.ptype == "si" then
 
 		if packet.data.mapname then
