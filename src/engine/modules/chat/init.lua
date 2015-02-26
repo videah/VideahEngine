@@ -131,7 +131,17 @@ function chat.draw()
 		local fontdiff = (config.bigfont:getHeight() / 2) - (config.font:getHeight() / 2)
 
 		for k=1, #chatEmotes do
-			message = string.gsub(message, chatEmotes[k].name, "  ")
+			for word in string.gmatch(message, "%a+") do
+				if word == chatEmotes[k].name then
+					message = string.gsub(message, word, "  ")
+				end
+			end
+
+			for word in string.gmatch(message, ":.") do
+				if word == chatEmotes[k].name then
+					message = string.gsub(message, word, "  ")
+				end
+			end
 		end
 
 		drawText(message, (x + 4) + config.bigfont:getWidth(player .. ": "), height + fontdiff)
@@ -207,6 +217,12 @@ function chat.drawEmotes()
 				end
 			end
 
+			for word in string.gmatch(message, ":.") do
+				if word == chatEmotes[i].name then
+					numofemotes = numofemotes + 1
+				end
+			end
+
 			message = string.gsub(message, chatEmotes[i].name, "")
 			for j=1, numofemotes do
 				if string.find(chatStack[k].message, chatEmotes[i].name) ~= nil then
@@ -221,6 +237,52 @@ function chat.drawEmotes()
 		end
 	end
 end
+
+-- function chat.drawEmotes()
+
+-- 	local x, y = config.chatPositionX, config.chatPositionY
+-- 	local emoteAmount = 0
+
+-- 	for i=1, #chatStack do
+
+-- 		local message = chatStack[i].message
+-- 		local player = chatStack[i].player
+
+-- 		for k=1, #chatEmotes do
+
+-- 			local start, finish = string.find(chatStack[i].message, chatEmotes[k].name)
+
+-- 			for word in string.gmatch(message, "%a+") do
+-- 				if word == chatEmotes[k].name then
+-- 					emoteAmount = emoteAmount + 1
+-- 				end
+-- 			end
+
+-- 			local emotey = y + ((i - 1) * config.font:getHeight())
+
+
+-- 			for j=1, emoteAmount do
+
+-- 				if string.find(message, chatEmotes[k].name) ~= nil then
+
+-- 					message = string.gsub(message, chatEmotes[i].name, "")
+
+-- 					message = string.sub(message, 0, start - 1)
+
+-- 					local emotex = config.font:getWidth(player .. ": " .. message) + (chatEmotes[k].image:getWidth() * j)
+-- 					--emotex = emotex - config.font:getWidth(chatEmotes[k].name)
+
+-- 					love.graphics.draw(chatEmotes[k].image, emotex, emotey)
+
+-- 				end
+
+-- 			end
+
+-- 		end
+
+-- 	end
+
+-- end
 
 --chat.say("This is a test message.", "module.chat")
 

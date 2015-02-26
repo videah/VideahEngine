@@ -16,11 +16,6 @@ function love.load(arg)
 		args[v] = true
 	end
 
-	if args["-debug"] then
-		_G.debugmode = true
-	end
-
-
 	if args["-dedicated"] then
 		SERVER = true
 	else
@@ -40,6 +35,10 @@ function love.load(arg)
 		else
 			engine.network.startServer(false)
 		end
+	end
+
+	if args["-debug"] then
+		_G.debugmode = true
 	end
 
 end
