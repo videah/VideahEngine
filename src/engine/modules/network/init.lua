@@ -7,6 +7,7 @@ network._ip = "127.0.0.1"
 
 network.client = {}
 network.client._id = nil
+network.client._connected = false
 
 network.server = {}
 network.server.playerlist = {}
@@ -153,6 +154,12 @@ function network.startServer(gui)
 
 	end
 
+	function love.keypressed(key, isrepeat)
+
+		engine.console.keypressed(key, isrepeat)
+
+	end
+
 	engine.console.success("Successfully started server on port " .. network._port)
 
 	hasLoaded = true
@@ -256,6 +263,7 @@ function network.client.connect(ip, port)
 
 	if success then
 		print("Successfully connected to " .. ip .. "!")
+		network.client._connected = true
 	end
 
 	local tbl = {ptype = "join", playerid = network.client._id, playername = game.playername}
@@ -272,6 +280,10 @@ function network.client.disconnect(reason)
 
 	--network.cli:disconnect() -- Currently not working, waiting on LUBE being fixed.
 
+end
+
+function network.client.isConnected()
+	return network.client._connected
 end
 
 -- Update --

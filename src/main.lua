@@ -42,7 +42,6 @@ function love.load(arg)
 		end
 	end
 
-
 end
 
 function love.draw()

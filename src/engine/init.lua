@@ -98,6 +98,8 @@ end
  
 function engine.keypressed(key, unicode)
 
+	engine.chat.keypressed(key, unicode)
+
 	engine.ui.keypressed(key, unicode)
 
 	engine.console.keypressed(key, unicode)

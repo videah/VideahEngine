@@ -6,6 +6,8 @@ config.chatHeight = 300
 config.chatPositionX = 15
 config.chatPositionY = _G.screenHeight - config.chatHeight - 15
 
+config.cursorSpeed = 2
+
 config.maximumChatLines = 100
 
 config.font = love.graphics.newFont("game/data/fonts/minecraft.ttf", 16)
