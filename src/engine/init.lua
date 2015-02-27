@@ -62,8 +62,6 @@ end
 
 function engine.update(dt)
 
-	engine.input.update(dt)
-
 	if engine.state:isCurrentState("splash") then
 		engine.splash.update(dt)
 	end
@@ -86,7 +84,6 @@ end
 function engine.mousepressed(x, y, button)
 
 	engine.ui.mousepressed(x, y, button)
-	engine.input.mousepressed(x, y, button)
 
 end
  

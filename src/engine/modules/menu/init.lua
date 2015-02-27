@@ -124,7 +124,7 @@ function menu.button.update(dt)
 			
 		if hover then
 
-			if engine.input.mouse.isBindClicked("menu.leftclick") then
+			if engine.input.mouse.isDown("menu.leftclick") then
 
 				menu.buttonlist[i].func()
 
