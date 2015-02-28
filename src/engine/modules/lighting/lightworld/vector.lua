@@ -43,4 +43,17 @@ function vector:dist(b)
   return math.sqrt(math.pow(b.x - self.x, 2) + math.pow(b.y-self.y, 2))
 end
 
+function vector:unpack()
+  return self.x, self.y
+end
+
+function vector:rotate(theta)
+  return new((math.cos(theta) * self.x) - (math.sin(theta) * self.y),
+            (math.sin(theta) * self.x) + (math.cos(theta) * self.y))
+end
+
+function vector:scale(sx, sy)
+  return new(self.x * sx, self.y * sy)
+end
+
 return setmetatable({new = new}, {__call = function(_, ...) return new(...) end})

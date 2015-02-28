@@ -180,11 +180,17 @@ end
 
 -- Server Functions
 
-function network.server.send(data)
+function network.server.send(data, id)
+
+	id = id or nil
 
 	local tbl = data
 	local packagedtbl = serial.dump(tbl)
-	network.serv:send(packagedtbl)
+	if id == nil then
+		network.serv:send(packagedtbl)
+	else
+		network.serv:send(packagedtbl, id)
+	end
 
 end
 

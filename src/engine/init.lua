@@ -15,11 +15,11 @@ function engine.load(args)
 	engine.network		= require(engine.path .. 'modules.network')
 	engine.chat			= require(engine.path .. 'modules.chat')
 	engine.script		= require(engine.path .. 'modules.script')
+	engine.lighting		= require(engine.path .. 'modules.lighting')
 
 	engine.panel 		= require(engine.path .. 'libs.solar')
 	engine.splash 		= require(engine.path .. 'libs.splashy')
 	engine.ui 			= require(engine.path .. 'libs.LoveFrames')
-	engine.lightworld 	= require(engine.path .. 'libs.lightworld')
 
 	if CLIENT then
 		engine.console		= require(engine.path .. 'libs.loveconsole')
