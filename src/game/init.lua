@@ -38,6 +38,8 @@ function game.draw()
 
 		engine.camera:unset()
 
+		engine.chat.draw()
+
 	end
 
 end
@@ -67,6 +69,42 @@ function game.update(dt)
 			engine.camera:move("up", 100 * dt)
 		end
 
+	end
+
+end
+
+function game.resize(w, h)
+
+end
+
+function game.mousepressed(x, y, button)
+
+end
+ 
+function game.mousereleased(x, y, button)
+
+end
+ 
+function game.keypressed(key, unicode)
+
+	if engine.state:isCurrentState("game") then
+
+		engine.chat.keypressed(key, unicode)
+
+	end
+
+end
+ 
+function game.keyreleased(key)
+
+end
+
+function game.textinput(text)
+
+	if engine.state:isCurrentState("game") then
+
+		engine.chat.textinput(text)
+		
 	end
 
 end

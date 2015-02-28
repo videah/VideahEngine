@@ -15,17 +15,20 @@ local chatEmotes = {}
 local chatInput = ""
 local chatFocused = false
 
-local chatEmoteFiles = love.filesystem.getDirectoryItems(path .. "emotes")
+if config.emotes.enabled then
 
-for k, file in ipairs(chatEmoteFiles) do
-	name = string.gsub(file, "colon", ":")
-	name = string.gsub(name, ".png", "")
-	print(name)
-	if file ~= "Thumbs.db" then -- I hate these things.
-		chatEmotes[#chatEmotes + 1] = {
-		name = name,
-		image = love.graphics.newImage(path .. "emotes/" .. file)
-		}
+	local chatEmoteFiles = love.filesystem.getDirectoryItems(path .. "emotes")
+
+	for k, file in ipairs(chatEmoteFiles) do
+		name = string.gsub(file, "colon", ":")
+		name = string.gsub(name, ".png", "")
+		print(name)
+		if file ~= "Thumbs.db" then -- I hate these things.
+			chatEmotes[#chatEmotes + 1] = {
+			name = name,
+			image = love.graphics.newImage(path .. "emotes/" .. file)
+			}
+		end
 	end
 end
 
@@ -130,16 +133,19 @@ function chat.draw()
 
 		local fontdiff = (config.bigfont:getHeight() / 2) - (config.font:getHeight() / 2)
 
-		for k=1, #chatEmotes do
-			for word in string.gmatch(message, "%a+") do
-				if word == chatEmotes[k].name then
-					message = string.gsub(message, word, "  ")
-				end
-			end
+		if config.emotes.enabled then
 
-			for word in string.gmatch(message, ":.") do
-				if word == chatEmotes[k].name then
-					message = string.gsub(message, word, "  ")
+			for k=1, #chatEmotes do
+				for word in string.gmatch(message, "%a+") do
+					if word == chatEmotes[k].name then
+						message = string.gsub(message, word, "  ")
+					end
+				end
+
+				for word in string.gmatch(message, ":.") do
+					if word == chatEmotes[k].name then
+						message = string.gsub(message, word, "  ")
+					end
 				end
 			end
 		end
@@ -197,6 +203,8 @@ function chat.textinput(s)
 end
 
 function chat.drawEmotes()
+
+	if config.emotes.enabled == false then return end
 
 	local x, y = config.chatPositionX, config.chatPositionY
 

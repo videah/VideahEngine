@@ -45,8 +45,6 @@ function engine.draw()
 
 	engine.ui.draw()
 
-	engine.chat.draw()
-
 	-- Debug --
 	if _G.debugmode then
 		engine.panel.draw()
@@ -95,8 +93,6 @@ end
  
 function engine.keypressed(key, unicode)
 
-	engine.chat.keypressed(key, unicode)
-
 	engine.ui.keypressed(key, unicode)
 
 	engine.console.keypressed(key, unicode)
@@ -110,8 +106,6 @@ function engine.keyreleased(key)
 end
 
 function engine.textinput(text)
-
-	engine.chat.textinput(text)
 
 	engine.ui.textinput(text)
 
