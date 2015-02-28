@@ -1,5 +1,3 @@
---require 'engine/util/debug' -- Temporary debug console
-
 CLIENT = false
 SERVER = false
 
