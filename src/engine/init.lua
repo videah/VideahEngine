@@ -75,6 +75,7 @@ function engine.resize(w, h)
 	_G.screenWidth = w
 	_G.screenHeight = h
 
+	engine.map.resize(w, h)
 	engine.console.resize(w, h)
 
 end

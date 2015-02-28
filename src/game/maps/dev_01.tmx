@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="dev" tilewidth="64" tileheight="64">
+  <image source="../data/images/tilesheets/dev.png" width="512" height="256"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjZmBgYKYyZsKB8cnhUk+seej2Y3MPOebhcw+p5pFjJz3Dj5Qwxhf2tAo/SuOXVEyr+MAXfrjyEzn5jdr+HTVveJhHTQwAi50DoQ==
+  </data>
+ </layer>
+ <objectgroup name="Collision">
+  <object x="0" y="0" width="64" height="1280"/>
+  <object x="64" y="1216" width="1216" height="64"/>
+  <object x="1216" y="0" width="64" height="1216"/>
+  <object x="64" y="0" width="1152" height="64"/>
+  <object x="64" y="704" width="128" height="64"/>
+  <object x="320" y="704" width="512" height="64"/>
+  <object x="896" y="704" width="320" height="64"/>
+  <object x="448" y="640" width="64" height="64"/>
+  <object x="448" y="64" width="64" height="512"/>
+  <object x="320" y="448" width="128" height="64"/>
+  <object x="64" y="448" width="128" height="64"/>
+  <object x="640" y="128" width="128" height="128"/>
+  <object x="768" y="128" width="64" height="64"/>
+  <object x="640" y="256" width="64" height="64"/>
+  <object x="640" y="448" width="128" height="128"/>
+  <object x="768" y="512" width="64" height="64"/>
+  <object x="640" y="384" width="64" height="64"/>
+  <object x="960" y="448" width="128" height="128"/>
+  <object x="896" y="512" width="64" height="64"/>
+  <object x="1024" y="384" width="64" height="64"/>
+  <object x="960" y="128" width="128" height="128"/>
+  <object x="896" y="128" width="64" height="64"/>
+  <object x="1024" y="256" width="64" height="64"/>
+ </objectgroup>
+</map>
