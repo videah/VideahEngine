@@ -29,25 +29,55 @@ local packet = {
 
 ## Server
 
-### ``network.server.send(packet, id):``
+### network.server.send
 
 Sends a packet to connected clients.
 
-### Arguments:
+##### Synopsis
+
+``network.server.send(packet, id)``
+
+##### Arguments
+
+``table``  <sub>packet</sub>
 
 
-##### `` packet: table ``
+``clientid`` <sub>id</sub>
 
-
-*Optional*:
-
-##### `` id: clientid `` 
-
-
-### Usage:
-
+### Example:
+Sends the chat message ``"This is a test message!"`` from ``TestName`` to all clients.
 ```lua
 local packet = {
-engine.network.server.send(tbl)
-```
 
+		ptype = "c",
+		playername = "TestName", -- If nil, the receiver will assume it's the server.
+		data = {
+
+			msg = "This is a test message!"
+
+		}
+}
+
+engine.network.server.send(packet)
+
+```
+-------------
+### network.server.say
+
+Sends a chat message from the server to all connected clients.
+
+##### Synopsis
+
+``network.server.say(message)``
+
+##### Arguments
+
+``string``  <sub>message</sub>
+
+
+### Example:
+Sends the chat message ``"This is the server speaking!"`` from ``Server`` to all clients.
+```lua
+engine.network.server.say("This is the server speaking!")
+
+```
