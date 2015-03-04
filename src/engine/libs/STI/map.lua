@@ -335,7 +335,7 @@ function Map:initLightCollision(world)
 		local shape
 
 		if objshape == "polyline" then
-			shape = world:newBody(unpack(vertices))
+			shape = world:newPolygon(unpack(vertices))
 		else
 			shape = world:newPolygon(unpack(vertices))
 		end
