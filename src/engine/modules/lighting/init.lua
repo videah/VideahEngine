@@ -1,8 +1,8 @@
 local lighting = {}
-local lightworld = require(... .. ".lightworld")
+local LightWorld = require(... .. ".lightworld")
 
 function lighting.newWorld(...)
-	return lightworld(...)
+	return LightWorld(...)
 end
 
 return lighting

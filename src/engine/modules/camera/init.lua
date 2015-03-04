@@ -60,15 +60,42 @@ function camera:move(direction, amount)
 end
 
 function camera:getPosition()
-	return self.x, self.y
+
+	local finalx = -self.x + -self.shakeX
+	local finaly = -self.y + -self.shakeY
+
+	if self.strict then
+		finalx = math.floor(finalx)
+		finaly = math.floor(finaly)
+	end
+
+	return finalx, finaly
 end
 
 function camera:getX()
-	return self.x
+
+	local finalx = -self.x + -self.shakeX
+
+	if self.strict then
+		finalx = math.floor(finalx)
+	end
+
+	return finalx
 end
 
 function camera:getY()
-	return self.y
+
+	local finaly = -self.y + -self.shakeY
+
+	if self.strict then
+		finaly = math.floor(finaly)
+	end
+	
+	return finaly
+end
+
+function camera:getScale()
+	return self.scale
 end
 
 function camera:getMousePosition()

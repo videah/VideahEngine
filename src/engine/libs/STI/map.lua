@@ -324,7 +324,208 @@ function Map:initWorldCollision(world)
 			end
 		end
 	end
+	engine.console.print("Loaded physics colliders...", {r = 241, g = 196, b = 15, a = 255})
+	return collision
+end
 
+function Map:initLightCollision(world)
+	local collision = {}
+
+	local function addObjectToWorld(objshape, vertices)
+		local shape
+
+		if objshape == "polyline" then
+			shape = world:newBody(unpack(vertices))
+		else
+			shape = world:newPolygon(unpack(vertices))
+		end
+
+		local obj = {
+			shape = shape,
+		}
+
+		table.insert(collision, obj)
+	end
+
+	local function getPolygonVertices(object, tile, precalc)
+		local ox, oy = 0, 0
+
+		if not precalc then
+			ox = object.x
+			oy = object.y
+		end
+
+		local vertices = {}
+		for _, vertex in ipairs(object.polygon) do
+			table.insert(vertices, tile.x + ox + vertex.x)
+			table.insert(vertices, tile.y + oy + vertex.y)
+		end
+
+		return vertices
+	end
+
+	local function calculateObjectPosition(object, tile)
+		local o = {
+			shape	= object.shape,
+			x		= object.x,
+			y		= object.y,
+			w		= object.width,
+			h		= object.height,
+			polygon	= object.polygon or object.polyline or object.ellipse or object.rectangle
+		}
+		local t		= tile or { x=0, y=0 }
+
+		if o.shape == "rectangle" then
+			o.r = object.rotation or 0
+			local cos = math.cos(math.rad(o.r))
+			local sin = math.sin(math.rad(o.r))
+
+			if object.gid then
+				local tileset = self.tiles[object.gid].tileset
+				local lid = object.gid - self.tilesets[tileset].firstgid
+				local tile = {}
+
+				-- This fixes a height issue
+				 o.y = o.y + self.tiles[object.gid].offset.y
+
+				for _, t in ipairs(self.tilesets[tileset].tiles) do
+					if t.id == lid then
+						tile = t
+						break
+					end
+				end
+
+				if tile.objectGroup then
+					for _, obj in ipairs(tile.objectGroup.objects) do
+						-- Every object in the tile
+						calculateObjectPosition(obj, object)
+					end
+
+					return
+				else
+					o.w = self.tiles[object.gid].width
+					o.h = self.tiles[object.gid].height
+				end
+			end
+
+			o.polygon = {
+				{ x=o.x,		y=o.y },
+				{ x=o.x + o.w,	y=o.y },
+				{ x=o.x + o.w,	y=o.y + o.h },
+				{ x=o.x,		y=o.y + o.h },
+			}
+
+			for _, vertex in ipairs(o.polygon) do
+				if self.orientation == "isometric" then
+					vertex.x, vertex.y = self:convertIsometricToScreen(vertex.x, vertex.y)
+				end
+
+				vertex.x, vertex.y = rotateVertex(vertex, o.x, o.y, cos, sin)
+			end
+
+			local vertices = getPolygonVertices(o, t, true)
+			addObjectToWorld(o.shape, vertices)
+		elseif o.shape == "ellipse" then
+			if not o.polygon then
+				o.polygon = convertEllipseToPolygon(o.x, o.y, o.w, o.h)
+			end
+			local vertices	= getPolygonVertices(o, t, true)
+			local triangles	= framework.triangulate(vertices)
+
+			for _, triangle in ipairs(triangles) do
+				addObjectToWorld(o.shape, triangle)
+			end
+		elseif o.shape == "polygon" then
+			local precalc = false
+			if not t.gid then precalc = true end
+
+			local vertices	= getPolygonVertices(o, t, precalc)
+			local triangles	= framework.triangulate(vertices)
+
+			for _, triangle in ipairs(triangles) do
+				addObjectToWorld(o.shape, triangle)
+			end
+		elseif o.shape == "polyline" then
+			local precalc = false
+			if not t.gid then precalc = true end
+
+			local vertices	= getPolygonVertices(o, t, precalc)
+			addObjectToWorld(o.shape, vertices)
+		end
+	end
+
+	for _, tileset in ipairs(self.tilesets) do
+		for _, tile in ipairs(tileset.tiles) do
+			local gid = tileset.firstgid + tile.id
+
+			if tile.objectGroup then
+				if self.tileInstances[gid] then
+					for _, instance in ipairs(self.tileInstances[gid]) do
+						for _, object in ipairs(tile.objectGroup.objects) do
+							-- Every object in every instance of a tile
+							calculateObjectPosition(object, instance)
+						end
+					end
+				end
+			elseif tile.properties.lightcollider == "true" then
+				for _, instance in ipairs(self.tileInstances[gid]) do
+					-- Every instance of a tile
+					local object = {
+						shape	= "rectangle",
+						x		= 0,
+						y		= 0,
+						width	= tileset.tilewidth,
+						height	= tileset.tileheight,
+					}
+
+					calculateObjectPosition(object, instance)
+				end
+			end
+		end
+	end
+
+	for _, layer in ipairs(self.layers) do
+		if layer.properties.lightcollider == "true" then
+			-- Entire layer
+			if layer.type == "tilelayer" then
+				for y, tiles in ipairs(layer.data) do
+					for x, tile in pairs(tiles) do
+						local object = {
+							shape	= "rectangle",
+							x		= x * self.width + tile.offset.x,
+							y		= y * self.height + tile.offset.y,
+							width	= tile.width,
+							height	= tile.height,
+						}
+						calculateObjectPosition(object)
+					end
+				end
+			elseif layer.type == "objectgroup" then
+				for _, object in ipairs(layer.objects) do
+					calculateObjectPosition(object)
+				end
+			elseif layer.type == "imagelayer" then
+				local object = {
+					shape	= "rectangle",
+					x		= layer.x or 0,
+					y		= layer.y or 0,
+					width	= layer.width,
+					height	= layer.height,
+				}
+				calculateObjectPosition(object)
+			end
+		end
+
+		if layer.type == "objectgroup" then
+			for _, object in ipairs(layer.objects) do
+				if object.properties.lightcollider == "true" then
+					-- Individual objects
+					calculateObjectPosition(object)
+				end
+			end
+		end
+	end
+	engine.console.print("Loaded lighting colliders...", {r = 241, g = 196, b = 15, a = 255})
 	return collision
 end
 

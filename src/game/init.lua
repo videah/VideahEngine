@@ -32,7 +32,11 @@ function game.draw()
 
 		engine.camera:set()
 
+		engine.map.lightworld:draw(function()
+
 			engine.map.draw()
+
+		end)
 
 			-- Game Draw Code Here --
 
@@ -52,6 +56,9 @@ function game.update(dt)
 
 	if engine.state:isCurrentState("game") then
 		engine.camera.update(dt)
+
+		engine.map.lightworld:update(dt)
+		engine.map.lightworld:setTranslation(engine.camera:getX(), engine.camera:getY(), engine.camera:getScale())
 
 		if love.keyboard.isDown("down") then
 			engine.camera:move("down", 100 * dt)
@@ -78,6 +85,8 @@ function game.resize(w, h)
 end
 
 function game.mousepressed(x, y, button)
+
+	lightMouse = engine.map.lightworld:newLight(engine.camera:getMouseX(), engine.camera:getMouseY(), 255, 255, 255, 300)
 
 end
  
