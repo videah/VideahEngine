@@ -26,11 +26,21 @@ function map.loadmap(mapname)
 	end
 end
 
-function map.unload()
+function map.unload(mapname)
 
-	map.currentmap = nil
-	map.currentmapname = nil
-	engine.console.success("Unloaded current map.")
+	if map.currentmap ~= nil then
+
+		map.lightcollisions = nil
+		engine.console.print("Unloaded light colliders...", {r = 241, g = 196, b = 15, a = 255})
+
+		map.physicscollisions = nil
+		engine.console.print("Unloaded physics colliders...", {r = 241, g = 196, b = 15, a = 255})
+
+		map.currentmap = nil
+		map.currentmapname = nil
+		engine.console.success("Unloaded map '" .. mapname .. "'")
+		
+	end
 
 end
 
