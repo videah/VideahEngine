@@ -180,12 +180,13 @@ function chat.keypressed(key, unicode)
 				chatInput = ""
 				chatFocused = false
 			end
-			elseif key == "backspace" then
-				if string.len(chatInput) ~= 0 then
+		elseif key == "backspace" then
+			if string.len(chatInput) ~= 0 then
 				chatInput = string.pop(chatInput, string.len(chatInput) - 1)
-			elseif love.keyboard.isDown("lctrl", "rctrl") and love.keyboard.isDown("v") then
-				chatInput = string.insert(chatInput, love.system.getClipboardText(), string.len(chatInput))
 			end
+		end
+		if love.keyboard.isDown("lctrl", "rctrl") and love.keyboard.isDown("v") then
+			chatInput = string.insert(chatInput, love.system.getClipboardText(), string.len(chatInput))
 		end
 	else
 
