@@ -23,7 +23,7 @@ local config = {} -- Table containing console settings.
 local baseFont = love.graphics.getFont() -- Store the default font.
 local consoleFont = baseFont -- Temporarily store the default font which will be overwritten later on.
 
-local consoleCommands = {} -- Table containing command callbacks.
+console.consoleCommands = {} -- Table containing command callbacks.
 local consoleInput = "" -- String containing a user entered string command.
 local consoleActive = true -- If true the console will be shown.
 local consoleStatus = "" -- Variable holding the last fatal error message.
@@ -228,8 +228,8 @@ end
 
 -- Add a command to the command table. Callback is the function executed when the command is run.
 function console.addCommand(name, callback, description)
-	if not consoleCommands[name] then
-		consoleCommands[name] = {["callback"] = callback, ["description"] = description or ""}
+	if not console.consoleCommands[name] then
+		console.consoleCommands[name] = {["callback"] = callback, ["description"] = description or ""}
 	else
 		print("[Console] The command with the name of " .. name .. " already exists in the command table.")
 	end
@@ -237,8 +237,8 @@ end
 
 -- Remove a command from the command table.
 function console.removeCommand(name)
-	if consoleCommands[name] then
-		consoleCommands[name] = nil
+	if console.consoleCommands[name] then
+		console.consoleCommands[name] = nil
 		collectgarbage()
 	else
 		print("[Console] Unable to find the command with the name of " .. name .. " in the command table.")
@@ -253,19 +253,19 @@ function console.perform(line)
 	-- Remove the command argument from the argument table
 	table.remove(arguments, 1)
 
-	if consoleCommands[command] then
+	if console.consoleCommands[command] then
 		local status, err
 
 		if arguments[1] then
 			status, err = pcall(
 				function()
-					 consoleCommands[command].callback(arguments)
+					 console.consoleCommands[command].callback(arguments)
 				end
 			)
 		else
 			status, err = pcall(
 				function()
-					 consoleCommands[command].callback()
+					 console.consoleCommands[command].callback()
 				end
 			)
 		end
@@ -511,7 +511,7 @@ function console.resize(w, h)
 	screenWidth, screenHeight = w, h
 end
 
--- Execute the configuration file and initialize user consoleCommands.
+-- Execute the configuration file and initialize user console.consoleCommands.
 local loaded, data
 loaded, data = pcall(love.filesystem.load, scriptPath() .."config.lua")
 
@@ -548,111 +548,5 @@ end
 config.consoleMarginEdge = config.consoleMarginEdge + consoleX
 
 config.consoleMarginTop = config.consoleMarginTop + consoleY
-
--- Some base functions to make life just a little easier.
-
--- We wrap functions in a custom callback.
-console.addCommand("clear", function() console.clear() end, "Clears the entire console.")
-console.addCommand("quit", function() love.event.quit() end, "Attempts to close the application.")
-
--- Command callbacks can also receive a table of string arguments.
-console.addCommand("print", function(args)
-	if args then
-		console.print(table.concat(args, " "))
-	else
-		-- Error is returned to the console. In case of console.execute, error is returned to the "out" variable.
-		console.print("Missing required arguments")
-	end
-end, "Prints trailing command arguments as a formatted string - Arguments: [string to print]")
-
--- Executes a lua command and prints it's return value to the console.
-console.addCommand("run", function(args)
-	if args then
-		local value = assert(loadstring(string.format("return %s", table.concat(args, " "))))()
-
-		if value then
-			console.print(string.format("Returned %s", tostring(value)))
-		else
-			console.print(string.format("Executing %s returned nil", table.concat(args, " ")))
-		end
-	else
-		console.print("Missing the argument lua code to execute")
-	end
-end, "Executes the supplied lua function - Arguments: [lua command to execute] - Example: 'console.print(\"Do the fishstick!\")'")
-
--- Same as run with the difference of not returning a value and so avoiding errors while assigning new values to variables.
-console.addCommand("set", function(args)
-	if args then
-		assert(loadstring(string.format('%s', table.concat(args, " "))))()
-		console.print("Variable entry set")
-	else
-		console.print("Missing the argument lua code to set")
-	end
-end, "Sets a supplied variable - Arguments: [lua assignment to execute] - Example: 'console.enabled = false'")
-
--- Amazing help command of doom. It helps people.
-console.addCommand("help", function(args)
-	if not args then
-		console.print("Available commands are:")
-		for k, v in pairs(consoleCommands) do
-			if v.description ~= "" then
-				console.print(string.format("%s - %s", k, v.description), config.colors.success)
-			else
-				console.print(k, config.colors.success)
-			end
-		end
-	else
-		local name = table.concat(args, " ")
-		if consoleCommands[name] then
-			if consoleCommands[name].description then
-				console.print(string.format("%s - %s", name, consoleCommands[name].description), {r = 0, g = 255, b = 0})
-			else
-				console.print(string.format("The command with the name of '%s' does not have a description.", name))
-			end
-		else
-			console.print(string.format("The command with the name of '%s' was not found in the command table.", name))
-		end
-	end
-end, "Outputs the names and descriptions of all available console commands or just a single one - Arguments: [command to fetch information on]")
-
--- Creates a new command entry that points to another command.
-console.addCommand("alias", function(args)
-	if args then
-		if args[1] and args[2] then
-			if consoleCommands[args[1]] then
-				console.addCommand(args[2], consoleCommands[args[1]].callback, consoleCommands[args[1]].description)
-				console.print(string.format("Successfully assigned the alias of '%s' to the command of '%s'.", args[2], args[1]))
-			end
-		else
-			console.print("Missing command arguments. Requires two.")
-		end
-	else
-		console.print("Missing command arguments. Requires two.")
-	end
-end, "Creates a new command list entry mimicking another command. Arguments: [command to alias] [alias name]")
-
--- Server Commands --
-
-console.addCommand("say", function(args)
-	if args then
-		engine.network.server.say(table.concat(args, " "))
-	else
-		console.print("Missing required arguments")
-	end
-end, "Send server message. Arguments: [message]")
-
-console.addCommand("status", function(args)
-
-	engine.network.server.status()
-	
-end, "Displays server information. Arguments: None.")
-
-console.addCommand("map", function(args)
-	if args then
-		engine.map.loadmap(args[1])
-	else
-		console.print("Missing required arguments")
-	end
-end, "Sets the current map. Arguments: [mapname]")
 
 return console

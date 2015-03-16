@@ -27,6 +27,8 @@ function engine.load(args)
 		engine.console		= require(engine.path .. 'libs.loveserverconsole')
 	end
 
+	require(engine.path .. 'cfg.cmds') -- Load Console Commands
+
 	math.randomseed(os.time())
 
 	for i=1, 3 do
