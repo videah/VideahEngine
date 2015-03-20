@@ -12,32 +12,62 @@ title VideahEngine Build System
 GOTO START
 
 :START
-cls
-for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
+CLS
+FOR /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
 ECHO  -----------------------------------------
 ECHO ^| What platform do you want to build for? ^|
 ECHO ^| Windows = 1                             ^|
 ECHO ^| Mac OS = 2                              ^|
+ECHO ^| Android = 3                             ^|
 ECHO  -----------------------------------------
 ECHO.
-set/p "cho=>"
-if %cho%==1 GOTO WIN
-if %cho%==2 GOTO MAC
+SET/p "cho=>"
+IF %cho%==1 GOTO WIN
+IF %cho%==2 GOTO MAC
+IF %cho%==3 GOTO AND
 GOTO START
 
 :WIN
-cls
-for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
+CLS
+FOR /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
 ECHO  ---------------------------------------------
 ECHO ^| What architecture do you want to build for? ^|
 ECHO ^| x86 = 1                                     ^|
 ECHO ^| x64 = 2                                     ^|
 ECHO  ---------------------------------------------
 ECHO.
-set/p "cho=>"
-if %cho%==1 GOTO WIN32
-if %cho%==2 GOTO WIN64
+SET/p "cho=>"
+IF %cho%==1 GOTO WIN32
+IF %cho%==2 GOTO WIN64
 GOTO WIN
+
+:MAC
+CLS
+FOR /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
+ECHO.
+ECHO Building for Mac OS is currently unsupported.
+ECHO.
+PAUSE
+GOTO QUIT
+
+
+:AND
+CLS
+FOR /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
+IF NOT EXIST bin\mobile\love-android-sdl2 (
+	ECHO.
+	ECHO Could not find bin\mobile\love-android-sdl2
+	ECHO.
+	ECHO love-android-sdl2 is required to build VideahEngine for android.
+	ECHO Please download and build love-android-sdl2 then try again.
+	ECHO.
+	PAUSE
+	GOTO QUIT) ELSE (
+	
+	ECHO TODO: Add android building :v
+	PAUSE QUIT
+	GOTO QUIT
+	)
 
 :WIN64
 ECHO Building VideahEngine 64-bit . . .
@@ -72,3 +102,5 @@ CD ..
 
 ECHO Build Successful!
 PAUSE
+
+:QUIT
