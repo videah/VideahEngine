@@ -70,7 +70,7 @@ end
 -- Shared Commands --
 
 -- We wrap functions in a custom callback.
-engine.console.addCommand("clear", function() console.clear() end, "Clears the entire console.")
+engine.console.addCommand("clear", function() engine.console.clear() end, "Clears the entire console.")
 engine.console.addCommand("quit", function() love.event.quit() end, "Attempts to close the application.")
 
 -- Command callbacks can also receive a table of string arguments.
