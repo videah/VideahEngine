@@ -5,18 +5,22 @@ game.playername = "Untitled Player"
 
 function game.load()
 
+	-- Player Bindings --
 	engine.input.keyboard.bind("w", "player_up")
 	engine.input.keyboard.bind("s", "player_down")
 	engine.input.keyboard.bind("a", "player_left")
 	engine.input.keyboard.bind("d", "player_right")
 
+
+	-- Create the Player --
 	game.player = engine.script.require("player"):new(0, 0, 50, 50)
 
 	-- Set default state --
 	engine.state.setState("splash")
 
 	-- Splash Screen --
-	engine.splash.addSplash(love.graphics.newImage("game/data/images/splashes/love.png"))
+	engine.splash.addSplash(engine.graphics.newImage("game/data/images/splashes/videahenginesplash.png"))
+	engine.splash.addSplash(engine.graphics.newImage("game/data/images/splashes/love.png"))
 	engine.splash.onComplete(function() engine.state.setState("menu") end)
 
 	-- Debug Vars --

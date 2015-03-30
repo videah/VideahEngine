@@ -6,7 +6,12 @@ return {
   height = 20,
   tilewidth = 64,
   tileheight = 64,
-  properties = {},
+  backgroundcolor = { 128, 128, 128 },
+  properties = {
+    ["ambientBlue"] = "55",
+    ["ambientGreen"] = "55",
+    ["ambientRed"] = "55"
+  },
   tilesets = {
     {
       name = "dev",

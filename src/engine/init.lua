@@ -100,6 +100,14 @@ function engine.keypressed(key, unicode)
 
 	engine.console.keypressed(key, unicode)
 
+	if engine.state:isCurrentState("splash") then
+
+		if key == " " then
+			engine.splash.skipSplash()
+		end
+
+	end
+
 end
  
 function engine.keyreleased(key)
