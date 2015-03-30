@@ -23,16 +23,20 @@ function love.load(arg)
 	engine.load()
 	game.load()
 
-	if CLIENT then
-		engine.network.startClient()
-	end
+	if engine.network then
 
-	if SERVER then
-		if args["-gui"] then
-			engine.network.startServer(true)
-		else
-			engine.network.startServer(false)
+		if CLIENT then
+			engine.network.startClient()
 		end
+
+		if SERVER then
+			if args["-gui"] then
+				engine.network.startServer(true)
+			else
+				engine.network.startServer(false)
+			end
+		end
+
 	end
 
 	if args["-debug"] then
