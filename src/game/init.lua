@@ -5,6 +5,13 @@ game.playername = "Untitled Player"
 
 function game.load()
 
+	engine.input.keyboard.bind("w", "player_up")
+	engine.input.keyboard.bind("s", "player_down")
+	engine.input.keyboard.bind("a", "player_left")
+	engine.input.keyboard.bind("d", "player_right")
+
+	game.player = engine.script.require("player"):new(0, 0, 50, 50)
+
 	-- Set default state --
 	engine.state.setState("splash")
 
@@ -14,6 +21,8 @@ function game.load()
 
 	-- Debug Vars --
 	engine.panel.addVar("FPS", function() return _G.fps end)
+	engine.panel.addVar("player.x", function() return game.player.x end)
+	engine.panel.addVar("player.y", function() return game.player.y end)
 	--engine.input.mouse.bind("l", "click")
 
 	-- Menu Buttons --
@@ -35,6 +44,8 @@ function game.draw()
 		engine.map.lightworld:draw(function()
 
 			engine.map.draw()
+
+			game.player:draw()
 
 		end)
 
@@ -75,6 +86,8 @@ function game.update(dt)
 		if love.keyboard.isDown("up") then
 			engine.camera:move("up", 100 * dt)
 		end
+
+		game.player:update(dt)
 
 	end
 

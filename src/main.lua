@@ -55,7 +55,12 @@ end
 function love.update(dt)
 
 	engine.update(dt)
-	game.update(dt)
+
+	if engine.console.getActive() == false then
+
+		game.update(dt)
+
+	end
 
 end
 
@@ -69,35 +74,60 @@ end
 function love.mousepressed(x, y, button)
 
 	engine.mousepressed(x, y, button)
-	game.mousepressed(x, y, button)
+
+	if engine.console.getActive() == false then
+
+		game.mousepressed(x, y, button)
+
+	end
 
 end
  
 function love.mousereleased(x, y, button)
 
 	engine.mousereleased(x, y, button)
-	game.mousereleased(x, y, button)
+
+	if engine.console.getActive() == false then
+
+		game.mousereleased(x, y, button)
+
+	end
 
 end
  
 function love.keypressed(key, unicode)
 
 	engine.keypressed(key, unicode)
-	game.keypressed(key, unicode)
+
+	if engine.console.getActive() == false then
+
+		game.keypressed(key, unicode)
+
+	end
 
 end
  
 function love.keyreleased(key)
 
 	engine.keyreleased(key)
-	game.keyreleased(key)
+
+	if engine.console.getActive() == false then
+
+		game.keyreleased(key)
+
+	end
 
 end
 
 function love.textinput(text)
 
 	engine.textinput(text)
-	game.textinput(text)
+
+	if engine.console.getActive() == false then
+
+		game.textinput(text)
+
+	end
 
 end
 

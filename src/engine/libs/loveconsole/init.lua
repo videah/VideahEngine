@@ -259,6 +259,12 @@ function console.clear()
 	warningCount, errorCount = 0, 0
 end
 
+function console.getActive()
+
+	return consoleActive
+
+end
+
 -- These functions need to be called from main.lua
 -- Draw the console and it's contents.
 function console.draw()
