@@ -9,7 +9,7 @@ end
 
 function script.require(filepath)
 
-	require(scriptpath .. filepath)
+	return require(scriptpath .. filepath)
 
 end
 
