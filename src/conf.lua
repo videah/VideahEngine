@@ -9,5 +9,6 @@ function love.conf(c)
 	c.window.width = 1280
 	c.window.height = 720
 	c.window.resizable = true
+	c.window.icon = "game/data/images/engineicon.png"
 
 end
