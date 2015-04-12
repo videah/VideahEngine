@@ -91,7 +91,7 @@ function server.onReceive(data, id)
 
 		for i, player in ipairs(server.playerlist) do
 			if packet.playerid == player.id then
-				table.remove(server.playerlist)
+				table.remove(server.playerlist, i)
 				break
 			end
 		end
