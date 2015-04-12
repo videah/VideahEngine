@@ -23,6 +23,10 @@ function love.load(arg)
 	engine.load()
 	game.load()
 
+	if not engine.config.exists("game") and not SERVER then
+		engine.config.save("game", engine.config.defaultCFG())
+	end
+
 	if engine.network then
 
 		if CLIENT then
@@ -30,9 +34,12 @@ function love.load(arg)
 		end
 
 		if SERVER then
+
+			if not engine.config.exists("server") then
+				engine.config.save("server", engine.config.defaultServerCFG())
+			end
+
 			love.window.setMode(1280, 720)
-			engine.map.loadmap("dev_01")
-			love.window.setTitle("VideahEngine Server")
 			if args["-gui"] then
 				engine.network.server.start(true)
 			else
@@ -44,10 +51,6 @@ function love.load(arg)
 
 	if args["-debug"] then
 		_G.debugmode = true
-	end
-
-	if not engine.config.exists("game") then
-		engine.config.save("game", engine.config.defaultCFG())
 	end
 
 end

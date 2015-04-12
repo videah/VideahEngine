@@ -3,7 +3,7 @@ local confighandler = require(engine.path .. 'util.LIP')
 
 function config.load(file)
 
-	local data = confighandler.load(file)
+	local data = confighandler.load(file .. ".cfg")
 	return data
 end
 
@@ -30,6 +30,25 @@ function config.defaultCFG()
 			borderless = false,
 			resolutionwidth = 800,
 			resolutionheight = 600
+
+		}
+
+	}
+
+	return tbl
+
+end
+
+function config.defaultServerCFG()
+
+
+	local tbl = {
+
+		settings = {
+
+			name = "VideahEngine Server",
+			map = "dev_01",
+			maxplayers = 16
 
 		}
 

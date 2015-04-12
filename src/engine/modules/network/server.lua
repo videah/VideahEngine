@@ -6,6 +6,14 @@ server.playerlist = {}
 
 function server.start(port, gui)
 
+	server.cfg = engine.config.load("server")
+
+	server.name = server.cfg.settings.name or "VideahServer"
+	server.maxplayers = server.cfg.settings.maxplayers or 16
+	server.map = server.cfg.settings.map
+
+	love.window.setTitle(server.name)
+
 	server._serv = lube.tcpServer()
 	server._serv:listen(engine.network._port)
 	server._serv.callbacks.connect = server.onConnect
@@ -22,6 +30,8 @@ function server.start(port, gui)
 		engine.console.keypressed(key, isrepeat)
 
 	end
+
+	engine.map.loadmap(server.map)
 
 	engine.console.success("Successfully started server on port " .. engine.network._port)
 
@@ -61,6 +71,9 @@ function server.onReceive(data, id)
 			ptype = "si",
 			data = {
 
+				servername = server.name,
+				numofplayers = server.getNumberOfPlayers(),
+				maxplayers = server.maxplayers,
 				mapname = engine.map.currentmapname
 
 			}
@@ -142,7 +155,7 @@ end
 
 function server.status()
 
-	print("Number of Players: " .. server.getNumberOfPlayers() .. "/" .. "?")
+	print("Number of Players: " .. server.getNumberOfPlayers() .. "/" .. server.maxplayers)
 
 	for i, player in ipairs(server.playerlist) do
 		print(i .. "	" .. player.name .. " (" .. player.id .. ")")

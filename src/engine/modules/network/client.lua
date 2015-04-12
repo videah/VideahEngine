@@ -40,7 +40,15 @@ function client.onReceive(data)
 
 	elseif packet.ptype == "si" then
 
+		if packet.data.numofplayers > packet.data.maxplayers then
+			engine.console.error("Could not connect to server: Server Full")
+			client.disconnect("Server Full")
+			return
+		end
+
 		if packet.data.mapname then
+
+			print("Successfully joined server: " .. packet.data.servername)
 
 			print("Server is currently running on the map " .. packet.data.mapname)
 
