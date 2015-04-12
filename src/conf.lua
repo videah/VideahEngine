@@ -10,6 +10,6 @@ function love.conf(c)
 	c.window.height = 1080
 	c.window.resizable = false
 	c.window.borderless = true
-	c.window.icon = "game/data/images/engineicon.png"
+	c.window.icon = "engine/data/images/icon.png"
 
 end
