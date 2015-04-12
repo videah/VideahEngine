@@ -79,7 +79,16 @@ function network.server.onReceive(data, id)
 
 	elseif packet.ptype == "dc" then -- a Player has left the server.
 
+		packet.reason = packet.reason or "disconnect"
+
 		print('Player ' .. packet.playername .. " has left the game. (Reason: " .. packet.reason .. ")")
+
+		for i, player in ipairs(network.server.playerlist) do
+			if packet.playerid == player.id then
+				table.remove(network.server.playerlist)
+				break
+			end
+		end
 
 	elseif packet.ptype == "c" then -- a Player has sent a chat message.
 
@@ -125,7 +134,13 @@ function network.client.onReceive(data)
 
 		if packet.data.mapname then
 
-			print("Server is currently running on the map" .. packet.data.mapname)
+			print("Server is currently running on the map " .. packet.data.mapname)
+
+			success = engine.map.loadmap(packet.data.mapname)
+
+			if not success then
+				network.client.disconnect("Error loading map.")
+			end
 
 		else
 
@@ -218,7 +233,9 @@ function network.server.status()
 
 	print("Number of Players: " .. engine.network.server.getNumberOfPlayers() .. "/" .. "?")
 
-	print(serial.block(engine.network.server.playerlist))
+	for i, player in ipairs(network.server.playerlist) do
+		print(i .. "	" .. player.name .. " (" .. player.id .. ")")
+	end
 
 end
 
@@ -258,6 +275,10 @@ end
 
 function network.client.connect(ip, port)
 
+	if network.client._connected then
+		network.client.disconnect("Changing server.")
+	end
+
 	local success, err = network.cli:connect(ip, port)
 
 	network.client._id = generateID(16)
@@ -280,7 +301,7 @@ end
 
 function network.client.disconnect(reason)
 
-	local tbl = {ptype = "dc", reason = reason, playername = game.playername}
+	local tbl = {ptype = "dc", reason = reason, playername = game.playername, playerid = network.client._id}
 
 	network.client.send(tbl)
 

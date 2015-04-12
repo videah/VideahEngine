@@ -40,8 +40,10 @@ function map.loadmap(mapname)
 		map.lightcollisions = map.currentmap:initLightCollision(map.lightworld)
 		engine.console.success("Loaded map '" .. mapname .. "'")
 
+		return true
 	else
 		engine.console.error("Could not load map '" .. mapname .. "' (map file not found.)")
+		return false
 	end
 end
 

@@ -32,6 +32,7 @@ function love.load(arg)
 		if SERVER then
 			love.window.setMode(1280, 720)
 			engine.map.loadmap("dev_01")
+			love.window.setTitle("VideahEngine Server")
 			if args["-gui"] then
 				engine.network.startServer(true)
 			else
