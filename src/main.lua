@@ -26,7 +26,7 @@ function love.load(arg)
 	if engine.network then
 
 		if CLIENT then
-			engine.network.startClient()
+			engine.network.client.start()
 		end
 
 		if SERVER then
@@ -34,9 +34,9 @@ function love.load(arg)
 			engine.map.loadmap("dev_01")
 			love.window.setTitle("VideahEngine Server")
 			if args["-gui"] then
-				engine.network.startServer(true)
+				engine.network.server.start(true)
 			else
-				engine.network.startServer(false)
+				engine.network.server.start(false)
 			end
 		end
 
