@@ -74,7 +74,8 @@ function server.onReceive(data, id)
 				servername = server.name,
 				numofplayers = server.getNumberOfPlayers(),
 				maxplayers = server.maxplayers,
-				mapname = engine.map.currentmapname
+				mapname = engine.map.currentmapname,
+				playerlist = server.playerlist
 
 			}
 

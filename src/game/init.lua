@@ -62,6 +62,10 @@ function game.draw()
 
 		engine.chat.draw()
 
+		if love.keyboard.isDown("tab") then
+			engine.network.client.drawScoreBoard()
+		end
+
 	end
 
 end

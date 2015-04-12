@@ -5,6 +5,8 @@ local serial = require(engine.path .. 'util.serial')
 client._id = nil
 client._connected = false
 
+client.playerlist = {}
+
 function client.start()
 
 	client._cli = lube.tcpClient()
@@ -23,6 +25,13 @@ end
 function client.onReceive(data)
 
 	local ok, packet = serial.load(data)
+
+	if ok == nil then
+
+		engine.console.error("Corrupt packet received: " .. packet)
+		return
+
+	end
 
 	if packet.ptype == "c" then
 
@@ -49,6 +58,10 @@ function client.onReceive(data)
 		if packet.data.mapname then
 
 			print("Successfully joined server: " .. packet.data.servername)
+
+			client.playerlist = packet.data.playerlist
+
+			print(packet.data.playerlist)
 
 			print("Server is currently running on the map " .. packet.data.mapname)
 
@@ -137,6 +150,24 @@ end
 
 function client.isConnected()
 	return client._connected
+end
+
+function client.drawScoreBoard()
+
+	local width = 500
+	local height = 250
+
+	local x = (_G.screenWidth / 2) - (width / 2)
+	local y = (_G.screenHeight / 2) - (height / 2)
+
+	love.graphics.setColor(50, 50, 50)
+	love.graphics.rectangle("fill", x, y, width, height)
+	love.graphics.setColor(255, 255, 255)
+
+	for i, player in ipairs(client.playerlist) do
+		love.graphics.print(player.name, x + 25, y + (25 * i))
+	end
+
 end
 
 return client
