@@ -46,6 +46,10 @@ function love.load(arg)
 		_G.debugmode = true
 	end
 
+	if not engine.config.exists("game") then
+		engine.config.save("game", engine.config.defaultCFG())
+	end
+
 end
 
 function love.draw()

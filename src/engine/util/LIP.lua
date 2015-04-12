@@ -66,7 +66,7 @@ function LIP.save(fileName, data)
 	assert(type(fileName) == 'string', 'Parameter "fileName" must be a string.');
 	assert(type(data) == 'table', 'Parameter "data" must be a table.');
 	local lovefile = love.filesystem.newFile(fileName)
-	local file = assert(lovefile:open('w+b'), 'Error loading file :' .. fileName);
+	--local file = assert(love.filesystem.write('w+b'), 'Error loading file :' .. fileName);
 	local contents = '';
 	for section, param in pairs(data) do
 		contents = contents .. ('[%s]\r\n'):format(section);
@@ -75,7 +75,7 @@ function LIP.save(fileName, data)
 		end
 		contents = contents .. '\r\n';
 	end
-	lovefile:write(contents);
+	love.filesystem.write(fileName, contents);
 	lovefile:close();
 end
 

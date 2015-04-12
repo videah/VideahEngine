@@ -5,6 +5,7 @@ function engine.load(args)
 
 	engine.class		= require(engine.path .. 'util.middleclass')
 
+	engine.config		= require(engine.path .. 'modules.config')
 	engine.graphics		= require(engine.path .. 'modules.graphics')
 	engine.camera		= require(engine.path .. 'modules.camera')
 	engine.global 		= require(engine.path .. 'modules.global')
