@@ -30,6 +30,8 @@ function love.load(arg)
 		end
 
 		if SERVER then
+			love.window.setMode(1280, 720)
+			engine.map.loadmap("dev_01")
 			if args["-gui"] then
 				engine.network.startServer(true)
 			else
