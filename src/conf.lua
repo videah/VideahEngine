@@ -6,9 +6,10 @@ function love.conf(c)
 	c.author = "Ruairidh 'VideahGams' Carmichael"
 	c.identity = "VideahEngine"
 
-	c.window.width = 1280
-	c.window.height = 720
-	c.window.resizable = true
+	c.window.width = 1920
+	c.window.height = 1080
+	c.window.resizable = false
+	c.window.borderless = true
 	c.window.icon = "game/data/images/engineicon.png"
 
 end

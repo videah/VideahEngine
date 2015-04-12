@@ -1,18 +1,57 @@
-local camera = {}
+local Camera = engine.class("Camera")
 
-camera.x = 0
-camera.y = 0
-camera.angle = 0
+function Camera:initialize(x, y, scale, strict)
 
-camera.strict = true
+	self.x = x or 0
+	self.y = y or 0
 
-camera.shakeX = 0
-camera.shakeY = 0
-camera.shaking = false
-camera.shakeIntensity = 10
-camera.shakeDuration = nil
+	if type(scale) == "table" then
+		self.scale = {scale[1], scale[2]}
+	else
+		self.scale = scale or 1
+	end
 
-function camera:set()
+	self.shakeX = 0
+	self.shakeY = 0
+
+	self.angle = 0
+
+	self.strict = self.strict or false
+
+	self.shaking = false
+	self.shakeIntensity = 0
+	self.shakeDuration = nil
+
+end
+
+function Camera:update(dt)
+
+	-- TODO: Fix camera shake.
+
+	if self.shaking then
+
+		local shakeoffsetx = math.random(-self.shakeIntensity, self.shakeIntensity)
+		local shakeoffsety = math.random(-self.shakeIntensity, self.shakeIntensity)
+
+		self.shakeX, self.shakeY = self:getPosition()
+
+		self.shakeX = self.shakeX + shakeoffsetx
+		self.shakeY = self.shakeY + shakeoffsety
+
+		if self.shakeDuration ~= nil then
+			self.shakeIntensity = self.shakeIntensity - (1 / (self.shakeDuration * 10))
+			if self.shakeIntensity <= 0 then
+				self.shakeDuration = nil
+				self.shaking = false
+			end
+		end
+	else
+		self.shakeX, self.shakeY = 0, 0
+	end
+end
+
+
+function Camera:set()
 
 	local finalx = -self.x + -self.shakeX
 	local finaly = -self.y + -self.shakeY
@@ -22,31 +61,40 @@ function camera:set()
 		finaly = math.floor(finaly)
 	end
 
+	if type(self.scale) == "table" then
+		local sx, sy = self.scale[1], self.scale[2]
+	else
+		local sx, sy = self.scale
+	end
+
 	love.graphics.push()
-	love.graphics.scale(self.scale)
+	love.graphics.scale(sx, sy)
 	love.graphics.translate(finalx, finaly)
 	love.graphics.rotate(-self.angle)
 
 end
 
-function camera:unset()
+function Camera:unset()
 
 	love.graphics.pop()
 
 end
 
--- Positioning --
-
-function camera:setPosition(x, y)
-
+function Camera:setPosition(x, y)
 	self.x, self.y = x, y
-
 end
 
-function camera:move(direction, amount)
+function Camera:shake(intesity, duration)
+	self.shaking = true
+	self.shakeIntensity = intesity or 1
+	self.shakeDuration = duration or nil
+end
+
+function Camera:move(direction, amount)
+
+	amount = amount or 5
 
 	local dir = string.lower(direction)
-
 	if dir == "up" then
 		self.y = self.y - amount
 	elseif dir == "down" then
@@ -56,96 +104,47 @@ function camera:move(direction, amount)
 	elseif dir == "right" then
 		self.x = self.x + amount
 	end
-
 end
 
-function camera:getPosition()
-
-	local finalx = -self.x + -self.shakeX
-	local finaly = -self.y + -self.shakeY
-
-	if self.strict then
-		finalx = math.floor(finalx)
-		finaly = math.floor(finaly)
-	end
-
-	return finalx, finaly
-end
-
-function camera:getX()
-
-	local finalx = -self.x + -self.shakeX
-
-	if self.strict then
-		finalx = math.floor(finalx)
-	end
-
-	return finalx
-end
-
-function camera:getY()
-
-	local finaly = -self.y + -self.shakeY
-
-	if self.strict then
-		finaly = math.floor(finaly)
-	end
-	
-	return finaly
-end
-
-function camera:getScale()
-	return self.scale
-end
-
-function camera:getMousePosition()
+function Camera:getMousePosition()
 	return math.floor(_G.cursorx + self.x), math.floor(_G.cursory + self.y)
 end
 
-function camera:getMouseX()
+function Camera:getMouseX()
 	return math.floor(_G.cursorx + self.x)
 end
 
-function camera:getMouseY()
+function Camera:getMouseY()
 	return math.floor(_G.cursory + self.y)
 end
 
--- Camera Shake --
-
-function camera:shake(intesity, duration)
-
-	self.shaking = true
-	self.shakeIntensity = intesity or 10
-	self.shakeDuration = duration or nil
-
-end
-
-function camera.update(dt)
-
-	if camera.shaking then
-
-		local shakeoffsetx = math.random(-camera.shakeIntensity, camera.shakeIntensity)
-		local shakeoffsety = math.random(-camera.shakeIntensity, camera.shakeIntensity)
-
-		camera.shakeX, camera.shakeY = camera:getPosition()
-
-		camera.shakeX = camera.shakeX + shakeoffsetx
-		camera.shakeY = camera.shakeY + shakeoffsety
-
-		if camera.shakeDuration ~= nil then
-			camera.shakeIntensity = camera.shakeIntensity - (1 / (camera.shakeDuration * 10))
-
-			if camera.shakeIntensity <= 0 then
-				camera.shakeDuration = nil
-				camera.shaking = false
-			end
-		end
-	else
-
-		camera.shakeX, camera.shakeY = 0, 0
-
+function Camera:getPosition()
+	local finalx = -self.x + -self.shakeX
+	local finaly = -self.y + -self.shakeY
+	if self.strict then
+		finalx = math.floor(finalx)
+		finaly = math.floor(finaly)
 	end
-
+	return finalx, finaly
 end
 
-return camera
+function Camera:getX()
+	local finalx = -self.x + -self.shakeX
+	if self.strict then
+		finalx = math.floor(finalx)
+	end
+	return finalx
+end
+function Camera:getY()
+	local finaly = -self.y + -self.shakeY
+	if self.strict then
+		finaly = math.floor(finaly)
+	end
+	return finaly
+end
+
+function Camera:getScale()
+	return self.scale
+end
+
+return Camera

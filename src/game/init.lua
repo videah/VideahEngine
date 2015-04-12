@@ -11,6 +11,9 @@ function game.load()
 	engine.input.keyboard.bind("a", "player_left")
 	engine.input.keyboard.bind("d", "player_right")
 
+	-- Create the Camera --
+
+	game.camera = engine.camera:new(0, 0, 1, true)
 
 	-- Create the Player --
 	game.player = engine.script.require("player"):new(0, 0, 50, 50)
@@ -43,7 +46,7 @@ function game.draw()
 
 	if engine.state:isCurrentState("game") then
 
-		engine.camera:set()
+		game.camera:set()
 
 		engine.map.lightworld:draw(function()
 
@@ -55,7 +58,7 @@ function game.draw()
 
 			-- Game Draw Code Here --
 
-		engine.camera:unset()
+		game.camera:unset()
 
 		engine.chat.draw()
 
@@ -70,25 +73,25 @@ function game.update(dt)
 	end
 
 	if engine.state:isCurrentState("game") then
-		engine.camera.update(dt)
+		game.camera:update(dt)
 
 		engine.map.lightworld:update(dt)
-		engine.map.lightworld:setTranslation(engine.camera:getX(), engine.camera:getY(), engine.camera:getScale())
+		engine.map.lightworld:setTranslation(game.camera:getX(), game.camera:getY(), game.camera:getScale())
 
 		if love.keyboard.isDown("down") then
-			engine.camera:move("down", 100 * dt)
+			game.camera:move("down", 100 * dt)
 		end
 
 		if love.keyboard.isDown("left") then
-			engine.camera:move("left", 100 * dt)
+			game.camera:move("left", 100 * dt)
 		end
 
 		if love.keyboard.isDown("right") then
-			engine.camera:move("right", 100 * dt)
+			game.camera:move("right", 100 * dt)
 		end
 
 		if love.keyboard.isDown("up") then
-			engine.camera:move("up", 100 * dt)
+			game.camera:move("up", 100 * dt)
 		end
 
 		game.player:update(dt)
@@ -103,7 +106,7 @@ end
 
 function game.mousepressed(x, y, button)
 
-	lightMouse = engine.map.lightworld:newLight(engine.camera:getMouseX(), engine.camera:getMouseY(), 255, 255, 255, 300)
+	lightMouse = engine.map.lightworld:newLight(game.camera:getMouseX(), game.camera:getMouseY(), 255, 255, 255, 300)
 
 end
  
@@ -116,6 +119,8 @@ function game.keypressed(key, unicode)
 	if engine.state:isCurrentState("game") then
 
 		engine.chat.keypressed(key, unicode)
+
+		if key == "escape" then engine.state.setState("menu") end
 
 	end
 
