@@ -50,7 +50,7 @@ function engine.draw()
 
 	-- Debug --
 	if _G.debugmode then
-		engine.panel.draw()
+		-- engine.panel.draw()
 	end
 
 	engine.console.draw()

@@ -5,6 +5,8 @@ game.playername = "Untitled Player"
 
 function game.load()
 
+	game.panel = engine.panel:new(15, 15, {theme = "monokai"})
+
 	-- Player Bindings --
 	engine.input.keyboard.bind("w", "player_up")
 	engine.input.keyboard.bind("s", "player_down")
@@ -27,9 +29,9 @@ function game.load()
 	engine.splash.onComplete(function() engine.state.setState("menu") end)
 
 	-- Debug Vars --
-	engine.panel.addVar("FPS", function() return _G.fps end)
-	engine.panel.addVar("player.x", function() return game.player.x end)
-	engine.panel.addVar("player.y", function() return game.player.y end)
+	-- engine.panel.addVar("FPS", function() return _G.fps end)
+	-- engine.panel.addVar("player.x", function() return game.player.x end)
+	-- engine.panel.addVar("player.y", function() return game.player.y end)
 	--engine.input.mouse.bind("l", "click")
 
 	-- Menu Buttons --
@@ -67,6 +69,8 @@ function game.draw()
 		end
 
 	end
+
+	game.panel:draw()
 
 end
 

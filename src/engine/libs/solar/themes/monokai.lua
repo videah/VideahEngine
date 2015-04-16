@@ -23,7 +23,8 @@ theme = {
 	bg_type = "tiled-image",
 	bg_image = love.graphics.newImage("game/data/images/menubg.png"),
 
-	bar_size = 20,
+	gap_horizontal = 5,
+	gap_vertical = 5,
 
 	divider_gap = 10,
 	divider_size = 1,
