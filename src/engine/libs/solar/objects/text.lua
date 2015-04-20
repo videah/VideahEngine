@@ -11,6 +11,7 @@ function Text:initialize(var, settings)
 	self.text = var
 
 	self.font = self.settings.font
+	self.width = self.font:getWidth(self.text)
 	self.height = self.font:getHeight()
 
 	Base:initialize(self, Text, settings)

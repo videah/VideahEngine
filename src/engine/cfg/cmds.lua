@@ -84,7 +84,7 @@ engine.console.addCommand("print", function(args)
 end, "Prints trailing command arguments as a formatted string - Arguments: [string to print]")
 
 -- Executes a lua command and prints it's return value to the console.
-engine.console.addCommand("run", function(args)
+engine.console.addCommand("lua_run", function(args)
 	if args then
 		local value = assert(loadstring(string.format("return %s", table.concat(args, " "))))()
 

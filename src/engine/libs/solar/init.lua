@@ -45,9 +45,7 @@ function Solar:initialize(x, y, settings)
 
 	print(string.format("Created debug panel at: X:%s Y:%s", self.x, self.y))
 
-	self:newObject("MuchWow", "var")
-	self:newObject("MuchWow", "var")
-	self:newObject("MuchWow", "var")
+	self:newObject(function() return _G.fps end, "var")
 
 
 
@@ -62,6 +60,8 @@ end
 
 function Solar:draw()
 
+	self.width = 0
+
 	local finalheight = 0
 	local offseth = self.theme.gap_horizontal or 0
 	local offsetv = self.theme.gap_vertical or 0
@@ -70,8 +70,13 @@ function Solar:draw()
 
 		finalheight = finalheight + (object.height + offsetv)
 
+		if object.width > self.width then
+			self.width = object.width
+		end
+
 	end
 
+	self.width = self.width + (offseth * 2)
 	self.height = finalheight + offsetv
 
 	love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
