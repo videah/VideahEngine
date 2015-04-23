@@ -136,15 +136,16 @@ do
                 minOffY = math.min(minOffY, offy)
 
                 local px, py = cx + x, cy + y + offy
-                if segment.draw then segment.draw(px, py) end
+                if segment.draw then segment.draw(px, py, limity) end
                 if segment.str then 
                     if moreparams.border then
-                        -- love.graphics.setColor(0, 0, 0, 255)
-                        -- love.graphics.print(segment.str, px + 1, py) 
-                        -- love.graphics.print(segment.str, px, py + 1) 
-                        -- love.graphics.print(segment.str, px - 1, py) 
-                        -- love.graphics.print(segment.str, px, py - 1) 
-                        -- love.graphics.setColor(255, 255, 255)
+                        local r, g, b, a = love.graphics.getColor()
+                        love.graphics.setColor(0, 0, 0, 255)
+                        love.graphics.print(segment.str, px + 1, py) 
+                        love.graphics.print(segment.str, px, py + 1) 
+                        love.graphics.print(segment.str, px - 1, py) 
+                        love.graphics.print(segment.str, px, py - 1) 
+                        love.graphics.setColor(r, g, b, a)
                     end
                     love.graphics.print(segment.str, px, py) 
                 end

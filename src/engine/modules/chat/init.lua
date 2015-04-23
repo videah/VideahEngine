@@ -2,21 +2,6 @@
 
 local chat = {}
 
-local chatEmoteFiles = love.filesystem.getDirectoryItems("engine/modules/chat/emotes")
-
-for k, file in ipairs(chatEmoteFiles) do
-	local name = string.gsub(file, ".png", "")
-	print(name)
-	if file ~= "Thumbs.db" then -- I hate these things.
-		engine.graphics.printc[name] = function()
-
-			local img = love.graphics.newImage('engine/modules/chat/emotes/' .. file)
-			return {size = {img:getWidth(), img:getHeight()}, draw = function(x, y) love.graphics.draw(img, x, y, 0.0, scale, scale) end, appendSpace = true}
-
-		end
-	end
-end
-
 chat.ChatLine = engine.class("ChatLine")
 
 function chat.ChatLine:initialize(string, x, y, width, height, owner)
@@ -65,6 +50,21 @@ function chat.ChatBox:initialize(x, y, width, height, options)
 	self.buffer = {}
 
 	self.index = 1
+
+	local chatEmoteFiles = love.filesystem.getDirectoryItems("engine/modules/chat/emotes")
+
+	for k, file in ipairs(chatEmoteFiles) do
+		local name = string.gsub(file, ".png", "")
+		print(name)
+		if file ~= "Thumbs.db" then -- I hate these things.
+			engine.graphics.printc[name] = function()
+
+				local img = love.graphics.newImage('engine/modules/chat/emotes/' .. file)
+				return {size = {self.font:getHeight(), self.font:getHeight()}, draw = function(x, y) love.graphics.draw(img, x, y, 0.0, self.font:getHeight() / img:getHeight(), self.font:getHeight() / img:getWidth()) end, appendSpace = true}
+
+			end
+		end
+	end
 
 end
 

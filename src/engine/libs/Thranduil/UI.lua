@@ -2,7 +2,7 @@ local ui_path = tostring(...):sub(1, -3)
 local UI = {}
 require(ui_path .. 'utf8-l')
 UI.Object = require(ui_path .. 'classic/classic')
-UI.Input = require(ui_path .. 'input/Input')
+UI.Input = require(ui_path .. 'Input/Input')
 UI.Text = require(ui_path .. 'popo/Text')
 UI.Math = require(ui_path .. 'mlib/mlib')
 
