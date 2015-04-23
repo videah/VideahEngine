@@ -122,9 +122,11 @@ end
 
 function game.mousepressed(x, y, button)
 
-	lightMouse = engine.map.lightworld:newLight(game.camera:getMouseX(), game.camera:getMouseY(), 255, 255, 255, 300)
+	local result = game.chat:mousepressed(x, y, button)
 
-	game.chat:mousepressed(x, y, button)
+	if result then return end
+
+	lightMouse = engine.map.lightworld:newLight(game.camera:getMouseX(), game.camera:getMouseY(), 255, 255, 255, 300)
 
 end
  
@@ -137,6 +139,7 @@ function game.keypressed(key, unicode)
 	if engine.state:isCurrentState("game") then
 
 		if key == "escape" then engine.state.setState("menu") end
+		if key == "return" then game.chat:toggle() end
 
 	end
 

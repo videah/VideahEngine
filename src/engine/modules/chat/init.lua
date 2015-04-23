@@ -6,6 +6,8 @@ chat.ChatLine = engine.class("ChatLine")
 
 function chat.ChatLine:initialize(string, x, y, width, height, owner)
 
+	if not CLIENT then return end
+
 	self.text = string
 
 	self.owner = owner
@@ -25,6 +27,8 @@ end
 
 function chat.ChatLine:draw()
 
+	if not CLIENT then return end
+
 	engine.graphics.printc(string.format("[white]%s: %s", self.owner, self.text), self.x, self.y, self.width, nil, self.height, nil, {border = true})
 
 end
@@ -32,6 +36,8 @@ end
 chat.ChatBox = engine.class("ChatBox")
 
 function chat.ChatBox:initialize(x, y, width, height, options)
+
+	if not CLIENT then return end
 
 	self.options = options or {}
 	self.font = self.options.font or love.graphics.setNewFont(18)
@@ -70,6 +76,8 @@ end
 
 function chat.ChatBox:say(message, player)
 
+	if not CLIENT then return end
+
 	if message == nil then return end
 
 	player = player or "Server"
@@ -86,9 +94,11 @@ end
 
 function chat.ChatBox:mousepressed(x, y, button)
 
+	if not CLIENT then return end
+
 	if self.active then
 
-		if button == "wd" and self.index < #self.buffer then
+		if button == "wd" and self.index < #self.buffer - self.maxDisplayLines + 2 then
 			self.index = self.index + 1
 		end
 
@@ -96,11 +106,19 @@ function chat.ChatBox:mousepressed(x, y, button)
 			self.index = self.index - 1
 		end
 
+		return true
+
+	else
+
+		return false
+
 	end
 
 end
 
 function chat.ChatBox:draw()
+
+	if not CLIENT then return end
 
 	if self.active then
 
@@ -127,11 +145,18 @@ end
 
 function chat.ChatBox:toggle()
 
+	if not CLIENT then return end
+
+	self.index = #self.buffer - (self.maxDisplayLines - 1)
+	if self.index < 1 then self.index = 1 end
+
 	self.active = not self.active
 
 end
 
 function chat.ChatBox:isBufferFull()
+
+	if not CLIENT then return end
 
 	if #self.buffer > self.maxlines then
 		table.remove(self.buffer, 1)

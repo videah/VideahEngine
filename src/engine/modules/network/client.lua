@@ -45,7 +45,7 @@ function client.onReceive(data)
 
 		end
 
-		engine.chat.say(packet.data.msg, packet.playername)
+		game.chat:say(packet.data.msg, packet.playername)
 
 	elseif packet.ptype == "si" then
 
