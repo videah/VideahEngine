@@ -1,4 +1,19 @@
 local graphics = {}
+local path = ... .. '.'
+
+graphics.printc = require(path .. 'superprintf')
+
+-- Print Content properties --
+
+	-- Colors --
+
+	graphics.printc['white'] = function() return graphics.printc.color("", {255, 255, 255, 255}) end -- Red
+	graphics.printc['red'] = function() return graphics.printc.color("", {255, 0, 0, 255}) end -- Red
+	graphics.printc['green'] = function() return graphics.printc.color("", {0, 255, 0, 255}) end -- Green
+	graphics.printc['blue'] = function() return graphics.printc.color("", {0, 0, 255, 255}) end -- Blue
+	graphics.printc['rainbow'] = function() return graphics.printc.color("", {math.random(0, 255), math.random(0, 255), math.random(0, 255), 255}) end -- Rainbow
+
+------------------------------
 
 function graphics.newImage(filename)
 
@@ -56,6 +71,12 @@ function graphics.rectangle(mode, x, y, width, height, bordersize)
 		love.graphics.rectangle("fill", x - bordersize, y + height, width + bordersize * 2, bordersize)
 
 	end
+
+end
+
+function graphics.missingTex()
+
+	return love.graphics.newImage('engine/data/images/missing.png')
 
 end
 

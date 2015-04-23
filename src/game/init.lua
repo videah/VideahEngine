@@ -7,6 +7,13 @@ function game.load()
 
 	game.panel = engine.panel:new(15, 15, {theme = "monokai"})
 
+	game.chat = engine.chat.ChatBox:new(15, _G.screenHeight - 315, 500, 300)
+	game.chat:say("This is a test message.", "Test Person")
+	game.chat:say("The new chatbox [red] supports [green] colors [blue] :D", "Test Person")
+	game.chat:say("And emotes [Kappa] [colonv]", "Test Person")
+	game.chat:say("You can even color emotes!", "Test Person")
+	game.chat:say("[red][colonv] [green][colonv] [blue][colonv]", "Test Person")
+
 	-- Player Bindings --
 	engine.input.keyboard.bind("w", "player_up")
 	engine.input.keyboard.bind("s", "player_down")
@@ -36,6 +43,7 @@ function game.load()
 
 	-- Menu Buttons --
 	engine.menu.addButton("Start", 0, 0, function() engine.state.setState("game") end)
+	engine.menu.addButton("Options", 0, 0, function() print("TODO: Add options menu.") end)
 	engine.menu.addButton("Quit", 0, 0, function() love.event.quit() end)
 
 end
@@ -62,7 +70,7 @@ function game.draw()
 
 		game.camera:unset()
 
-		engine.chat.draw()
+		game.chat:draw()
 
 		if love.keyboard.isDown("tab") then
 			engine.network.client.drawScoreBoard()
@@ -116,6 +124,8 @@ function game.mousepressed(x, y, button)
 
 	lightMouse = engine.map.lightworld:newLight(game.camera:getMouseX(), game.camera:getMouseY(), 255, 255, 255, 300)
 
+	game.chat:mousepressed(x, y, button)
+
 end
  
 function game.mousereleased(x, y, button)
@@ -125,8 +135,6 @@ end
 function game.keypressed(key, unicode)
 
 	if engine.state:isCurrentState("game") then
-
-		engine.chat.keypressed(key, unicode)
 
 		if key == "escape" then engine.state.setState("menu") end
 
@@ -142,7 +150,7 @@ function game.textinput(text)
 
 	if engine.state:isCurrentState("game") then
 
-		engine.chat.textinput(text)
+
 		
 	end
 

@@ -12,6 +12,7 @@ function engine.load(args)
 	engine.input		= require(engine.path .. 'modules.input')
 	engine.lighting		= require(engine.path .. 'modules.lighting')
 	engine.map 			= require(engine.path .. 'modules.map')
+	engine.entity		= require(engine.path .. 'modules.entity')
 	engine.menu			= require(engine.path .. 'modules.menu')
 	engine.state		= require(engine.path .. 'modules.state')
 	engine.network		= require(engine.path .. 'modules.network')
@@ -20,7 +21,7 @@ function engine.load(args)
 
 	engine.panel 		= require(engine.path .. 'libs.solar')
 	engine.splash 		= require(engine.path .. 'libs.splashy')
-	engine.ui 			= require(engine.path .. 'libs.LoveFrames')
+	engine.ui 			= require(engine.path .. 'libs.Thranduil.UI')
 
 	if CLIENT then
 		engine.console		= require(engine.path .. 'libs.loveconsole')
@@ -36,6 +37,8 @@ function engine.load(args)
 		math.random() -- Warm up random number generator
 	end
 
+	engine.ui.registerEvents()
+
 	print("Loaded VideahEngine " .. _G.version)
 
 end
@@ -45,8 +48,6 @@ function engine.draw()
 	if engine.state:isCurrentState("splash") then
 		engine.splash.draw()
 	end
-
-	engine.ui.draw()
 
 	-- Debug --
 	if _G.debugmode then
@@ -59,6 +60,8 @@ function engine.draw()
 	_G.cursorx = love.mouse.getX()
 	_G.cursory = love.mouse.getY()
 
+	love.graphics.setColor(255, 255, 255, 255)
+
 end
 
 function engine.update(dt)
@@ -66,8 +69,6 @@ function engine.update(dt)
 	if engine.state:isCurrentState("splash") then
 		engine.splash.update(dt)
 	end
-
-	engine.ui.update(dt)
 
 	engine.network.update(dt)
 
@@ -85,19 +86,17 @@ end
 
 function engine.mousepressed(x, y, button)
 
-	engine.ui.mousepressed(x, y, button)
+
 
 end
  
 function engine.mousereleased(x, y, button)
 
-	engine.ui.mousereleased(x, y, button)
+
 
 end
  
 function engine.keypressed(key, unicode)
-
-	engine.ui.keypressed(key, unicode)
 
 	engine.console.keypressed(key, unicode)
 
@@ -113,13 +112,11 @@ end
  
 function engine.keyreleased(key)
 
-	engine.ui.keyreleased(key)
+
 
 end
 
 function engine.textinput(text)
-
-	engine.ui.textinput(text)
 
 	engine.console.textinput(text)
 

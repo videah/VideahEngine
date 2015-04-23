@@ -179,6 +179,7 @@ function server:update(dt)
 	self:accept()
 	-- Start handling messages.
 	local data, clientid = self:receive()
+	if data then print(data) end
 	while data do
 		local hs, conn = data:match("^(.+)([%+%-])\n?$")
 		if hs == self.handshake and conn == "+" then

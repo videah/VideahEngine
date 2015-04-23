@@ -3,7 +3,7 @@ local lube = require(engine.path .. 'libs.LUBE')
 local serial = require(engine.path .. 'util.serial')
 
 client._id = nil
-client._connected = false
+client._CONNECTED = false
 
 client.playerlist = {}
 
@@ -114,7 +114,7 @@ end
 
 function client.connect(ip, port)
 
-	if client._connected then
+	if client._CONNECTED then
 		client.disconnect("Changing server.")
 	end
 
@@ -129,7 +129,7 @@ function client.connect(ip, port)
 
 	if success then
 		print("Successfully connected to " .. ip .. "!")
-		client._connected = true
+		client._CONNECTED = true
 	end
 
 	local tbl = {ptype = "join", playerid = client._id, playername = game.playername}
@@ -144,12 +144,12 @@ function client.disconnect(reason)
 
 	client.send(tbl)
 
-	--client._cli:disconnect() -- Currently not working, waiting on LUBE being fixed.
+	client._cli:disconnect() -- Currently not working, waiting on LUBE being fixed.
 
 end
 
 function client.isConnected()
-	return client._connected
+	return client._CONNECTED
 end
 
 function client.drawScoreBoard()
