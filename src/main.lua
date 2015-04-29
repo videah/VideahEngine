@@ -20,6 +20,10 @@ function love.load(arg)
 		CLIENT = true
 	end
 
+	if args["-debug"] then
+		_G.debugmode = true
+	end
+
 	engine.load()
 	game.load()
 
@@ -47,10 +51,6 @@ function love.load(arg)
 			end
 		end
 
-	end
-
-	if args["-debug"] then
-		_G.debugmode = true
 	end
 
 end

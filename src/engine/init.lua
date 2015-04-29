@@ -29,6 +29,8 @@ function engine.load(args)
 		engine.console		= require(engine.path .. 'libs.loveserverconsole')
 	end
 
+	engine.webconsole = require(engine.path .. 'modules.webconsole')
+
 	require(engine.path .. 'cfg.cmds') -- Load Console Commands
 
 	math.randomseed(os.time())
@@ -71,6 +73,8 @@ function engine.update(dt)
 	end
 
 	engine.network.update(dt)
+
+	engine.webconsole.update(dt)
 
 end
 
