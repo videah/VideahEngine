@@ -45,9 +45,9 @@ function Solar:initialize(x, y, settings)
 
 	print(string.format("Created debug panel at: X:%s Y:%s", self.x, self.y))
 
-	self:newObject(function() return _G.fps end, "var")
-
-
+	self:newObject("Debug Panel", "text", {align = "center"})
+	self:newObject("fps", "var")
+	self:newObject(love.graphics.newImage("engine/data/images/missing.png"), "image", {scalex = 0.5, scaley = 0.5})
 
 end
 
@@ -81,10 +81,17 @@ function Solar:draw()
 
 	love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
 
+	local objheight = 0
+
 	for i, object in ipairs(self.objects) do
+
 		object:setPanelPos(self.x, self.y)
-		object:setPos(offseth, (object.height * (i - 1)) + (offsetv * i))
+		object:setPanelSize(self.width, self.height)
+		object:setPos(offseth, objheight + (offsetv * i))
 		object:draw()
+
+		objheight = objheight + object.height
+
 	end
 
 end
@@ -103,6 +110,10 @@ function Solar:newObject(var, obj, settings)
 
 	settings = settings or {}
 	settings.panelx, settings.panely = self.x, self.y
+	settings.panelw, settings.panelh = self.width, self.height
+
+	settings.offseth = self.theme.gap_horizontal
+	settings.offsetv = self.theme.gap_vertical
 
 	-- Defaults --
 	settings.font = settings.font or self.theme.font
