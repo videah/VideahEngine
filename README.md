@@ -1,4 +1,10 @@
 ![](https://i.imgur.com/bQYMoGm.png)
+=====
+
+![](https://img.shields.io/github/issues/VideahGams/VideahEngine.svg)
+![](https://img.shields.io/github/forks/VideahGams/VideahEngine.svg)
+![](https://img.shields.io/github/stars/VideahGams/VideahEngine.svg)
+![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Personal Love2D Engine Project.
 
