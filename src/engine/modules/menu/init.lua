@@ -12,21 +12,21 @@ menu.bg.tileoffset = 0
 
 menu.title = {}
 
-menu.config = require(path .. 'config') -- Load menu config.
-menu.config.bg.image = engine.graphics.newImage(game.path .. menu.config.bg.image)
+menu.config = require(path .. 'cfg') -- Load menu config.
+menu.config.bg.image = graphics.newImage(game.path .. menu.config.bg.image)
 
 if menu.config.title.type == "image" then
-	menu.config.title.image = engine.graphics.newImage(game.path .. menu.config.title.image)
+	menu.config.title.image = graphics.newImage(game.path .. menu.config.title.image)
 end
 
 -- Dependencies --
 
-assert(engine.input, "The 'menu' module requires the 'input' module to be loaded.")
-assert(engine.graphics, "The 'menu' module requires the 'graphics' module to be loaded.")
+depend("input")
+depend("graphics")
 
 ------------------
 
-engine.input.mouse.bind("l", "menu.leftclick")
+input.mouse.bind("l", "menu.leftclick")
 
 function menu.draw()
 
@@ -124,7 +124,7 @@ function menu.button.update(dt)
 			
 		if hover then
 
-			if engine.input.mouse.isDown("menu.leftclick") then
+			if input.mouse.isDown("menu.leftclick") then
 
 				menu.buttonlist[i].func()
 

@@ -1,5 +1,5 @@
-local Char = engine.script.require("char")
-Player = engine.class("Player", Char)
+local Char = script.require("char")
+Player = class("Player", Char)
 
 --[[---------------------------------------------------------
 	- func: initialize(x, y, width, height, health)
@@ -27,19 +27,19 @@ end
 --]]---------------------------------------------------------
 function Player:update(dt)
 
-	if engine.input.keyboard.isDown("player_up") then
+	if input.keyboard.isDown("player_up") then
 		self.y = self.y - self.speed
 	end
 
-	if engine.input.keyboard.isDown("player_down") then
+	if input.keyboard.isDown("player_down") then
 		self.y = self.y + self.speed
 	end
 
-	if engine.input.keyboard.isDown("player_left") then
+	if input.keyboard.isDown("player_left") then
 		self.x = self.x - self.speed
 	end
 
-	if engine.input.keyboard.isDown("player_right") then
+	if input.keyboard.isDown("player_right") then
 		self.x = self.x + self.speed
 	end
 

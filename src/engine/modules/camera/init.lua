@@ -1,4 +1,4 @@
-local Camera = engine.class("Camera")
+local Camera = class("Camera")
 
 function Camera:initialize(x, y, scale, strict)
 

@@ -5,9 +5,9 @@ game.playername = "Untitled Player"
 
 function game.load()
 
-	game.panel = engine.panel:new(15, 15, {theme = "monokai"})
+	game.panel = panel:new(15, 15, {theme = "monokai"})
 
-	game.chat = engine.chat.ChatBox:new(15, _G.screenHeight - 315, 500, 300)
+	game.chat = chat.ChatBox:new(15, _G.screenHeight - 315, 500, 300)
 	game.chat:say("This is a test message.", "Test Person")
 	game.chat:say("The new chatbox [red] supports [green] colors [blue] :D", "Test Person")
 	game.chat:say("And emotes [Kappa] [colonv]", "Test Person")
@@ -15,52 +15,52 @@ function game.load()
 	game.chat:say("[red][colonv] [green][colonv] [blue][colonv]", "Test Person")
 
 	-- Player Bindings --
-	engine.input.keyboard.bind("w", "player_up")
-	engine.input.keyboard.bind("s", "player_down")
-	engine.input.keyboard.bind("a", "player_left")
-	engine.input.keyboard.bind("d", "player_right")
+	input.keyboard.bind("w", "player_up")
+	input.keyboard.bind("s", "player_down")
+	input.keyboard.bind("a", "player_left")
+	input.keyboard.bind("d", "player_right")
 
 	-- Create the Camera --
 
-	game.camera = engine.camera:new(0, 0, 1, true)
+	game.camera = camera:new(0, 0, 1, true)
 
 	-- Create the Player --
-	game.player = engine.script.require("player"):new(0, 0, 50, 50)
+	game.player = script.require("player"):new(0, 0, 50, 50)
 
 	-- Set default state --
-	engine.state.setState("splash")
+	state.setState("splash")
 
 	-- Splash Screen --
-	engine.splash.addSplash(engine.graphics.newImage("game/data/images/splashes/videahenginesplash.png"))
-	engine.splash.addSplash(engine.graphics.newImage("game/data/images/splashes/love.png"))
-	engine.splash.onComplete(function() engine.state.setState("menu") end)
+	splash.addSplash(graphics.newImage("game/data/images/splashes/videahenginesplash.png"))
+	splash.addSplash(graphics.newImage("game/data/images/splashes/love.png"))
+	splash.onComplete(function() state.setState("menu") end)
 
 	-- Debug Vars --
-	-- engine.panel.addVar("FPS", function() return _G.fps end)
-	-- engine.panel.addVar("player.x", function() return game.player.x end)
-	-- engine.panel.addVar("player.y", function() return game.player.y end)
-	--engine.input.mouse.bind("l", "click")
+	-- panel.addVar("FPS", function() return _G.fps end)
+	-- panel.addVar("player.x", function() return game.player.x end)
+	-- panel.addVar("player.y", function() return game.player.y end)
+	--input.mouse.bind("l", "click")
 
 	-- Menu Buttons --
-	engine.menu.addButton("Start", 0, 0, function() engine.state.setState("game") end)
-	engine.menu.addButton("Options", 0, 0, function() print("TODO: Add options menu.") end)
-	engine.menu.addButton("Quit", 0, 0, function() love.event.quit() end)
+	menu.addButton("Start", 0, 0, function() state.setState("game") end)
+	menu.addButton("Options", 0, 0, function() print("TODO: Add options menu.") end)
+	menu.addButton("Quit", 0, 0, function() love.event.quit() end)
 
 end
 
 function game.draw()
 
-	if engine.state:isCurrentState("menu") then	
-		engine.menu.draw()
+	if state:isCurrentState("menu") then	
+		menu.draw()
 	end
 
-	if engine.state:isCurrentState("game") then
+	if state:isCurrentState("game") then
 
 		game.camera:set()
 
-		engine.map.lightworld:draw(function()
+		map.lightworld:draw(function()
 
-			engine.map.draw()
+			map.draw()
 
 			game.player:draw()
 
@@ -73,7 +73,7 @@ function game.draw()
 		game.chat:draw()
 
 		if love.keyboard.isDown("tab") then
-			engine.network.client.drawScoreBoard()
+			network.client.drawScoreBoard()
 		end
 
 	end
@@ -84,15 +84,15 @@ end
 
 function game.update(dt)
 
-	if engine.state:isCurrentState("menu") then
-		engine.menu.update(dt)
+	if state:isCurrentState("menu") then
+		menu.update(dt)
 	end
 
-	if engine.state:isCurrentState("game") then
+	if state:isCurrentState("game") then
 		game.camera:update(dt)
 
-		engine.map.lightworld:update(dt)
-		engine.map.lightworld:setTranslation(game.camera:getX(), game.camera:getY(), game.camera:getScale())
+		map.lightworld:update(dt)
+		map.lightworld:setTranslation(game.camera:getX(), game.camera:getY(), game.camera:getScale())
 
 		if love.keyboard.isDown("down") then
 			game.camera:move("down", 100 * dt)
@@ -126,7 +126,7 @@ function game.mousepressed(x, y, button)
 
 	if result then return end
 
-	lightMouse = engine.map.lightworld:newLight(game.camera:getMouseX(), game.camera:getMouseY(), 255, 255, 255, 300)
+	lightMouse = map.lightworld:newLight(game.camera:getMouseX(), game.camera:getMouseY(), 255, 255, 255, 300)
 
 end
  
@@ -136,9 +136,9 @@ end
  
 function game.keypressed(key, unicode)
 
-	if engine.state:isCurrentState("game") then
+	if state:isCurrentState("game") then
 
-		if key == "escape" then engine.state.setState("menu") end
+		if key == "escape" then state.setState("menu") end
 		if key == "return" then game.chat:toggle() end
 
 	end
@@ -151,7 +151,7 @@ end
 
 function game.textinput(text)
 
-	if engine.state:isCurrentState("game") then
+	if state:isCurrentState("game") then
 
 
 		

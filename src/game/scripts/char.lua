@@ -1,4 +1,4 @@
-local Char = engine.class("Character")
+local Char = class("Character")
 
 --[[---------------------------------------------------------
 	- func: initialize(x, y, width, height, health)
@@ -65,7 +65,7 @@ end
 function Char:hurt(amount)
 
 	if amount ~= nil and amount < 0 then
-		engine.console.warning("Char:hurt() is for hurting the Character. Use Char:heal() instead.")
+		console.warning("Char:hurt() is for hurting the Character. Use Char:heal() instead.")
 		return end
 	self.health = self.health - (amount or 10)
 
