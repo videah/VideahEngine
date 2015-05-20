@@ -1,6 +1,6 @@
-color 4F	
+COLOR 4F	
 @ECHO OFF
-title VideahEngine Build System
+TITLE VideahEngine Build System
 
 ::: _____  _    _            _    _____            _           
 :::|  |  ||_| _| | ___  ___ | |_ |   __| ___  ___ |_| ___  ___ 
@@ -64,8 +64,8 @@ IF NOT EXIST bin\mobile\love-android-sdl2 (
 	PAUSE
 	GOTO QUIT) ELSE (
 	
-	ECHO TODO: Add android building :v
-	PAUSE QUIT
+	GOTO BUILDAND
+	PAUSE
 	GOTO QUIT
 	)
 
@@ -77,7 +77,7 @@ CD bin\x64\win64\love
 GOTO BUILD
 
 :WIN32
-echo Building VideahEngine 32-bit . . .
+ECHO Building VideahEngine 32-bit . . .
 SET RELEASEDIR="Release (x86)"
 MKDIR %RELEASEDIR%
 CD bin\x86\win32\love
@@ -102,5 +102,33 @@ CD ..
 
 ECHO Build Successful!
 PAUSE
+GOTO QUIT
+
+:BUILDAND
+ECHO Building VideahEngine for Android . . .
+ECHO Building in 3 . . .
+SLEEP 1
+ECHO 2
+SLEEP 1
+ECHO 1
+SLEEP 1
+
+SET ASSETDIR="bin\mobile\love-android-sdl2\assets"
+SET RELEASEDIR="Release (Android)"
+MKDIR %ASSETDIR%
+MKDIR %RELEASEDIR%
+CD src
+..\bin\x86\win32\7za.exe a -tzip -mx9 ..\%ASSETDIR%\game.love engine game LICENCE main.lua conf.lua
+CD ..\%ASSETDIR%\..\
+ECHO Compiling apk . . .
+START /w cmd /k "TITLE VideahEngine APK Compiler && ant debug && EXIT"
+CD bin
+XCOPY *.apk ..\..\..\..\%RELEASEDIR% /Y
+CD ..\..\..\..\%RELEASEDIR%
+DEL *-unaligned.apk
+ECHO Build Successful!
+PAUSE
+GOTO QUIT
 
 :QUIT
+EXIT
