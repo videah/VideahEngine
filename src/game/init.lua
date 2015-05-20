@@ -61,7 +61,9 @@ function game.draw()
 
 			map.draw()
 
-		game.player:draw()
+			game.camera:lookAt(game.player)
+
+			game.player:draw()
 
 		end)
 

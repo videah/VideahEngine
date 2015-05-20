@@ -147,4 +147,13 @@ function Camera:getScale()
 	return self.scale
 end
 
+function Camera:lookAt(entity)
+
+	local x = (entity.x - (_G.screenWidth / 2)) + (entity.width / 2)
+	local y = (entity.y - (_G.screenHeight / 2)) + (entity.height / 2)
+
+	self:setPosition(x, y)
+
+end
+
 return Camera
