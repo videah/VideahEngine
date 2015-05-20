@@ -5,6 +5,14 @@ function engine.load(args)
 
 	require(engine.path .. 'modules')
 
+	if CLIENT then
+		console	= require(engine.path .. 'libs/loveconsole')
+	else
+		console	= require(engine.path .. 'libs/loveserverconsole')
+	end
+
+	webconsole = loadModule('webconsole')
+
 	class		= require(engine.path .. 'util/middleclass')
 
 	cfg 		= loadModule('config')
@@ -24,14 +32,6 @@ function engine.load(args)
 	panel 		= require(engine.path .. 'libs/solar')
 	splash 		= require(engine.path .. 'libs/splashy')
 	ui 			= require(engine.path .. 'libs/Thranduil.UI')
-
-	if CLIENT then
-		console	= require(engine.path .. 'libs/loveconsole')
-	else
-		console	= require(engine.path .. 'libs/loveserverconsole')
-	end
-
-	webconsole = loadModule('webconsole')
 
 	require(engine.path .. 'cfg.cmds') -- Load Console Commands
 
