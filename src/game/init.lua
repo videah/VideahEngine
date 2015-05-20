@@ -1,6 +1,5 @@
 game = {}
 game.path = ... .. '/'
-
 game.playername = "Untitled Player"
 
 function game.load()
@@ -25,7 +24,7 @@ function game.load()
 	game.camera = camera:new(0, 0, 1, true)
 
 	-- Create the Player --
-	game.player = script.require("player"):new(0, 0, 50, 50)
+	game.player = entity.create("player", 0, 0, 50, 50)
 
 	-- Set default state --
 	state.setState("splash")
@@ -37,8 +36,8 @@ function game.load()
 
 	-- Debug Vars --
 	-- panel.addVar("FPS", function() return _G.fps end)
-	-- panel.addVar("player.x", function() return game.player.x end)
-	-- panel.addVar("player.y", function() return game.player.y end)
+	-- panel.addVar("player.x", function() returngame.player.x end)
+	-- panel.addVar("player.y", function() returngame.player.y end)
 	--input.mouse.bind("l", "click")
 
 	-- Menu Buttons --
@@ -62,7 +61,7 @@ function game.draw()
 
 			map.draw()
 
-			game.player:draw()
+		game.player:draw()
 
 		end)
 
@@ -110,7 +109,7 @@ function game.update(dt)
 			game.camera:move("up", 100 * dt)
 		end
 
-		game.player:update(dt)
+	game.player:update(dt)
 
 	end
 

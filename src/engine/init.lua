@@ -1,11 +1,11 @@
 engine = {}
-engine.path = ... .. '.'
+engine.path = ... .. '/'
 
 function engine.load(args)
 
 	require(engine.path .. 'modules')
 
-	class		= require(engine.path .. 'util.middleclass')
+	class		= require(engine.path .. 'util/middleclass')
 
 	cfg 		= loadModule('config')
 	graphics	= loadModule('graphics')
@@ -21,17 +21,17 @@ function engine.load(args)
 	chat		= loadModule('chat')
 	script		= loadModule('script')
 
-	panel 		= require(engine.path .. 'libs.solar')
-	splash 		= require(engine.path .. 'libs.splashy')
-	ui 			= require(engine.path .. 'libs.Thranduil.UI')
+	panel 		= require(engine.path .. 'libs/solar')
+	splash 		= require(engine.path .. 'libs/splashy')
+	ui 			= require(engine.path .. 'libs/Thranduil.UI')
 
 	if CLIENT then
-		console	= require(engine.path .. 'libs.loveconsole')
+		console	= require(engine.path .. 'libs/loveconsole')
 	else
-		console	= require(engine.path .. 'libs.loveserverconsole')
+		console	= require(engine.path .. 'libs/loveserverconsole')
 	end
 
-	webconsole = require(engine.path .. 'modules.webconsole')
+	webconsole = loadModule('webconsole')
 
 	require(engine.path .. 'cfg.cmds') -- Load Console Commands
 
