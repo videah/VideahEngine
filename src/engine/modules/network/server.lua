@@ -6,7 +6,7 @@ server.playerlist = {}
 
 function server.start(port, gui)
 
-	server.cfg = engine.config.load("server")
+	server.cfg = cfg.load("server")
 
 	server.name = server.cfg.settings.name or "VideahServer"
 	server.maxplayers = server.cfg.settings.maxplayers or 16
@@ -15,7 +15,7 @@ function server.start(port, gui)
 	love.window.setTitle(server.name)
 
 	server._serv = lube.tcpServer()
-	server._serv:listen(engine.network._port)
+	server._serv:listen(network._port)
 	server._serv.callbacks.connect = server.onConnect
 	server._serv.callbacks.recv = server.onReceive
 	server._serv.callbacks.disconnect = server.onDisconnect
@@ -27,15 +27,15 @@ function server.start(port, gui)
 
 	function love.keypressed(key, isrepeat)
 
-		engine.console.keypressed(key, isrepeat)
+		console.keypressed(key, isrepeat)
 
 	end
 
-	engine.map.loadmap(server.map)
+	map.loadmap(server.map)
 
-	engine.console.success("Successfully started server on port " .. engine.network._port)
+	console.success("Successfully started server on port " .. network._port)
 
-	engine.network._hasLoaded = true
+	network._hasLoaded = true
 
 end
 
@@ -53,7 +53,7 @@ function server.onReceive(data, id)
 
 	if ok == nil then
 
-		engine.console.error("Corrupt packet received: " .. packet)
+		console.error("Corrupt packet received: " .. packet)
 		return
 
 	end
@@ -74,7 +74,7 @@ function server.onReceive(data, id)
 				servername = server.name,
 				numofplayers = server.getNumberOfPlayers(),
 				maxplayers = server.maxplayers,
-				mapname = engine.map.currentmapname,
+				mapname = map.currentmapname,
 				playerlist = server.playerlist
 
 			}
@@ -104,7 +104,7 @@ function server.onReceive(data, id)
 
 	else
 
-		engine.console.error("Unknown packet received.")
+		console.error("Unknown packet received.")
 
 	end
 

@@ -1,4 +1,5 @@
 local path =  ... .. '.'
+loadedmodules = {}
 
 function loadModule(name)
 
@@ -8,6 +9,26 @@ function loadModule(name)
 		print(string.format("Loaded engine module '%s' ...", name))
 	end
 
+	if loadedMod then
+		loadedmodules[#loadedmodules + 1] = name
+	end
+
 	return loadedMod
+
+end
+
+function depend(name)
+
+	for i=1, #loadedmodules do
+
+		if loadedmodules[i] == name then
+
+			return true
+
+		end
+
+	end
+
+	error("The '" + name + "' module is required for certain loaded modules to work.")
 
 end

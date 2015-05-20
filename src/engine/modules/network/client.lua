@@ -14,7 +14,7 @@ function client.start()
 	client._cli.callbacks.recv = client.onReceive
 	print("Loaded client ...")
 
-	engine.network._hasLoaded = true
+	network._hasLoaded = true
 
 end
 
@@ -28,7 +28,7 @@ function client.onReceive(data)
 
 	if ok == nil then
 
-		engine.console.error("Corrupt packet received: " .. packet)
+		console.error("Corrupt packet received: " .. packet)
 		return
 
 	end
@@ -50,7 +50,7 @@ function client.onReceive(data)
 	elseif packet.ptype == "si" then
 
 		if packet.data.numofplayers > packet.data.maxplayers then
-			engine.console.error("Could not connect to server: Server Full")
+			console.error("Could not connect to server: Server Full")
 			client.disconnect("Server Full")
 			return
 		end
@@ -65,7 +65,7 @@ function client.onReceive(data)
 
 			print("Server is currently running on the map " .. packet.data.mapname)
 
-			success = engine.map.loadmap(packet.data.mapname)
+			success = map.loadmap(packet.data.mapname)
 
 			if not success then
 				client.disconnect("Error loading map.")
@@ -73,7 +73,7 @@ function client.onReceive(data)
 
 		else
 
-			engine.console.error("The server is currently not running a map.")
+			console.error("The server is currently not running a map.")
 			client.disconnect("The server is currently not running a map.")
 
 		end
@@ -120,7 +120,7 @@ function client.connect(ip, port)
 
 	local success, err = client._cli:connect(ip, port)
 
-	client._id = engine.network.generateID(16)
+	client._id = network.generateID(16)
 
 	if err ~= nil then
 		print("Error connecting to " .. ip .. " (" .. err .. ")")
