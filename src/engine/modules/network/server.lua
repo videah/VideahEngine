@@ -51,6 +51,8 @@ function server.onReceive(data, id)
 
 	local ok, packet = serial.load(data)
 
+	hook.Call("ServerOnReceive", packet)
+
 	if ok == nil then
 
 		console.error("Corrupt packet received: " .. packet)
@@ -59,6 +61,8 @@ function server.onReceive(data, id)
 	end
 	
 	if packet.ptype == "join" then -- a Player has joined the server.
+
+		hook.Call("OnPlayerJoin", packet)
 
 		print('Player ' .. packet.playername .. " (ID: " .. packet.playerid .. ") has joined the game")
 
@@ -84,6 +88,8 @@ function server.onReceive(data, id)
 		server.send(infopacket, id)
 
 	elseif packet.ptype == "dc" then -- a Player has left the server.
+
+		hook.Call("OnPlayerDisconnect", packet)
 
 		packet.reason = packet.reason or "disconnect"
 
