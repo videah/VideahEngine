@@ -15,6 +15,7 @@ function engine.load(args)
 
 	class		= require(engine.path .. 'util/middleclass')
 
+	hook		= loadModule('hook')
 	cfg 		= loadModule('config')
 	graphics	= loadModule('graphics')
 	camera		= loadModule('camera')
