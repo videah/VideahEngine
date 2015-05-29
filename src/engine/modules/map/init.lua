@@ -1,8 +1,10 @@
+-- TODO: Redo all this.
+
 local maphandler = require(engine.path .. 'libs.STI')
 local map = {}
 
 map.currentmap = nil
-map.currentmapname = nil
+map.currentmapname = "nil"
 map.lightworld = lighting.newWorld({ambient = {0, 0, 0}})
 love.physics.setMeter(64)
 map.physicsworld = love.physics.newWorld(0,0)
