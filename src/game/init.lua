@@ -1,8 +1,11 @@
 game = {}
 game.path = ... .. '/'
-game.playername = "Untitled Player"
 
 function game.load()
+
+	game.playername = "Untitled Player"
+
+	map.loadmap("dev_01")
 
 	game.panel = panel:new(15, 15, {theme = "monokai"})
 
@@ -24,7 +27,7 @@ function game.load()
 	game.camera = camera:new(0, 0, 1, true)
 
 	-- Create the Player --
-	game.player = entity.create("player", 0, 0, 50, 50)
+	game.player = entity.create("player", 0, 0, 50, 50, 100, 200)
 
 	-- Set default state --
 	state.setState("splash")
@@ -39,6 +42,8 @@ function game.load()
 	-- panel.addVar("player.x", function() returngame.player.x end)
 	-- panel.addVar("player.y", function() returngame.player.y end)
 	--input.mouse.bind("l", "click")
+
+	game.panel:newObject("var", "game.player.speed")
 
 	-- Menu Buttons --
 	menu.addButton("Start", 0, 0, function() state.setState("game") end)
@@ -64,6 +69,8 @@ function game.draw()
 			game.camera:lookAt(game.player)
 
 			game.player:draw()
+
+			network.client.draw()
 
 		end)
 
@@ -129,13 +136,15 @@ function game.mousepressed(x, y, button)
 
 	lightMouse = map.lightworld:newLight(game.camera:getMouseX(), game.camera:getMouseY(), 255, 255, 255, 300)
 
+	input.mouse.mousepressed(x, y, button)
+
 end
  
 function game.mousereleased(x, y, button)
 
 end
  
-function game.keypressed(key, unicode)
+function game.keypressed(key, isrepeat)
 
 	if state:isCurrentState("game") then
 
@@ -143,6 +152,8 @@ function game.keypressed(key, unicode)
 		if key == "return" then game.chat:toggle() end
 
 	end
+
+	input.keyboard.keypressed(key, isrepeat)
 
 end
  

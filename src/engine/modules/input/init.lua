@@ -57,7 +57,7 @@ function input.gamepad.bind(key, action)
 
 end
 
--- Input --
+-- isDown --
 
 function input.keyboard.isDown(action)
 
@@ -87,6 +87,20 @@ function input.mouse.isDown(action)
 			end
 		end
 	end
+end
+
+-- isPressed Callbacks --
+
+function input.keyboard.keypressed(key, isrepeat)
+
+	hook.Call("keyboardPressed", key, isrepeat)
+
+end
+
+function input.mouse.mousepressed(x, y, button)
+
+	hook.Call("mousePressed", x, y, button)
+
 end
 
 return input

@@ -9,8 +9,8 @@ function Char:initialize(x, y, width, height, health, speed)
 	self.x = x or 0
 	self.y = y or 0
 
-	self.width = width or 0
-	self.height = height or 0
+	self.width = width or 50
+	self.height = height or 50
 
 	self.health = health or 100
 

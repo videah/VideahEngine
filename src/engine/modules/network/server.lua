@@ -3,6 +3,9 @@ local lube = require(engine.path .. 'libs.LUBE')
 local serial = require(engine.path .. 'util.serial')
 
 server.playerlist = {}
+server.entitylist = {}
+
+local t = 0
 
 function server.start(port, gui)
 
@@ -85,7 +88,9 @@ function server.onReceive(data, id)
 
 		}
 
-		server.send(infopacket, id)
+		--server.send(infopacket, id)
+
+		server.track(entity.create("player"), {"x", "y"}, packet.playername)
 
 	elseif packet.ptype == "dc" then -- a Player has left the server.
 
@@ -122,6 +127,48 @@ function server.onDisconnect(id)
 
 end
 
+--------------
+--  UPDATE  --
+--------------
+
+function server.update(dt)
+
+	local updatepacket = {
+
+		ptype = "eup",
+		data = {}
+
+	}
+
+	t = t + dt
+
+	if t > (1 / server.cfg.settings.tickrate) then
+
+		for i=1, #server.entitylist do
+
+			local ent = {}
+			ent.name = server.entitylist[i].name or nil
+			ent.id = server.entitylist[i].id
+			ent.updatevars = server.entitylist[i].updatevars
+			ent.values = {}
+
+			for j=1, #server.entitylist[i].updatevars do
+				local var = server.entitylist[i].updatevars[j]
+				ent.values[var] = server.entitylist[i][var]
+			end
+
+			updatepacket.data[i] = ent
+
+		end
+
+		server.send(updatepacket)
+
+		t = t - (1 / server.cfg.settings.tickrate)
+
+	end
+
+end
+
 -----------------
 --  FUNCTIONS  --
 -----------------
@@ -153,6 +200,52 @@ function server.say(msg)
 			msg = msg
 
 		}
+
+	}
+
+	server.send(packet)
+
+end
+
+function server.track(entity, vars, name)
+
+	entity.id = #server.entitylist + 1
+	entity.name = name or nil
+	entity.updatevars = vars
+
+	table.insert(server.entitylist, entity)
+
+	local packet = {
+
+		ptype = "track",
+		entname = entity.type,
+		id = entity.id,
+		name = entity.name,
+		vars = vars,
+		data = {}
+
+	}
+
+	for i=1, #vars do
+		packet.data[vars[i]] = entity[vars[i]]
+	end
+
+	server.send(packet)
+
+end
+
+function server.untrack(entity)
+
+	for i=1, #server.entitylist do
+		if server.entitylist[i].name == entity or server.entitylist[i].id == entity then
+			table.remove(server.entitylist, i)
+		end
+	end
+
+	local packet = {
+
+		ptype = "utrack",
+		entity = entity
 
 	}
 

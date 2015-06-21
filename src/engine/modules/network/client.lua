@@ -6,6 +6,7 @@ client._id = nil
 client._CONNECTED = false
 
 client.playerlist = {}
+client.entitylist = {}
 
 function client.start()
 
@@ -77,6 +78,48 @@ function client.onReceive(data)
 			client.disconnect("The server is currently not running a map.")
 
 		end
+
+	elseif packet.ptype == "track" then
+
+		local ent = entity.create(packet.entname)
+		ent.id = packet.id
+		ent.name = packet.name or nil
+		ent.updatevars = vars
+
+		for i=1, #packet.data do
+
+			ent[vars[i]] = packet.data[vars[i]]
+
+		end
+
+		table.insert(client.entitylist, ent)
+
+	elseif packet.ptype == "eup" then
+
+		for i=1, #packet.data do
+			for j=1, #client.entitylist do
+				if packet.data[i].name == client.entitylist[i].name or packet.data[i].id == client.entitylist[i].id then
+					for k=1, #packet.data[i].updatevars do
+						local var = packet.data[i].updatevars[k]
+						client.entitylist[i][var] = packet.data[i].values[var]
+					end
+				end
+			end
+		end
+
+	end
+
+end
+
+-----------
+--  DRAW --
+-----------
+
+function client.draw()
+
+	for i=1, #client.entitylist do
+
+		client.entitylist[i]:draw()
 
 	end
 

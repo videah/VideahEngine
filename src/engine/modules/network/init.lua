@@ -39,6 +39,7 @@ function network.update(dt)
 
 	if SERVER and network._hasLoaded then
 		network.server._serv:update(dt)
+		network.server.update(dt)
 	end
 
 	if CLIENT and network._hasLoaded then

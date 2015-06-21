@@ -16,7 +16,7 @@ function Camera:initialize(x, y, scale, strict)
 
 	self.angle = 0
 
-	self.strict = self.strict or false
+	self.strict = strict or false
 
 	self.shaking = false
 	self.shakeIntensity = 0
