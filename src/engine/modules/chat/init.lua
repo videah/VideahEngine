@@ -51,7 +51,7 @@ function chat.ChatBox:initialize(x, y, width, height, options)
 	self.maxlines = 100
 	self.maxDisplayLines = math.floor((self.height / self.font:getHeight()))
 
-	self.active = true
+	self.active = false
 
 	self.buffer = {}
 

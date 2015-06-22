@@ -90,7 +90,7 @@ function server.onReceive(data, id)
 
 		--server.send(infopacket, id)
 
-		server.track(entity.create("player"), {"x", "y"}, packet.playername)
+		server.track(entity.create("player"), {"x", "y"}, packet.playername, packet.playername)
 
 	elseif packet.ptype == "dc" then -- a Player has left the server.
 
@@ -112,6 +112,47 @@ function server.onReceive(data, id)
 		print(packet.playername .. ": " .. packet.data.msg) -- Print the message to the server console.
 
 		server.send(packet) -- Send the message to all clients, including the sender.
+
+	elseif packet.ptype == "em" then
+
+		hook.Call("OnNetworkedEntityModify")
+
+		local modEntity
+
+		for i=1, #server.entitylist do
+			local ent = server.entitylist[i]
+			if ent.id == packet.id or ent.name == packet.name then
+				modEntity = packet.name or packet.id
+			end
+		end
+
+		if packet.type == "player" then
+
+			if packet.action == "player_up" and packet.status == true then
+
+				server.setEntityVar(packet.id, "y", server.getEntityVar(packet.id, "y") - 5)
+
+			end
+
+			if packet.action == "player_down" and packet.status == true then
+
+				server.setEntityVar(packet.id, "y", server.getEntityVar(packet.id, "y") + 5)
+
+			end
+
+			if packet.action == "player_left" and packet.status == true then
+
+				server.setEntityVar(packet.id, "x", server.getEntityVar(packet.id, "x") - 5)
+
+			end
+
+			if packet.action == "player_right" and packet.status == true then
+
+				server.setEntityVar(packet.id, "x", server.getEntityVar(packet.id, "x") + 5)
+
+			end
+
+		end
 
 	else
 
@@ -207,11 +248,12 @@ function server.say(msg)
 
 end
 
-function server.track(entity, vars, name)
+function server.track(entity, vars, name, owner)
 
 	entity.id = #server.entitylist + 1
 	entity.name = name or nil
 	entity.updatevars = vars
+	entity.owner = owner or nil
 
 	table.insert(server.entitylist, entity)
 
@@ -250,6 +292,30 @@ function server.untrack(entity)
 	}
 
 	server.send(packet)
+
+end
+
+function server.getEntityVar(entity, var)
+
+	for i=1, #server.entitylist do
+		local ent = server.entitylist[i]
+		if ent.id == entity or ent.name == entity then
+			return ent[var]
+		end
+	end
+
+end
+
+function server.setEntityVar(entity, var, value)
+
+	for i=1, #server.entitylist do
+		local ent = server.entitylist[i]
+		print(entity)
+		print(ent.id)
+		if ent.id == entity or ent.name == entity then
+			server.entitylist[i][var] = value
+		end
+	end
 
 end
 

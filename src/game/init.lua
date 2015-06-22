@@ -118,9 +118,13 @@ function game.update(dt)
 			game.camera:move("up", 100 * dt)
 		end
 
-	game.player:update(dt)
+		if not network.client.isConnected() then
+			game.player:update(dt)
+		end
 
 	end
+
+	hook.Call("Think", dt)
 
 end
 

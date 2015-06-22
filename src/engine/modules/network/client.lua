@@ -85,6 +85,7 @@ function client.onReceive(data)
 		ent.id = packet.id
 		ent.name = packet.name or nil
 		ent.updatevars = vars
+		ent.owner = packet.owner
 
 		for i=1, #packet.data do
 
@@ -93,6 +94,8 @@ function client.onReceive(data)
 		end
 
 		table.insert(client.entitylist, ent)
+
+		hook.Add("Think", "ControlNetworkPlayer", function() client.entitylist[1]:update(dt) end)
 
 	elseif packet.ptype == "eup" then
 
@@ -193,6 +196,28 @@ end
 
 function client.isConnected()
 	return client._CONNECTED
+end
+
+function client.modifyEntity(entity, action, status)
+
+	if client.isConnected() then
+
+		local packet = {
+
+			ptype = "em",
+			type = entity.type,
+			id = entity.id,
+			name = entity.name or nil,
+			owner = entity.owner or nil,
+			action = action,
+			status = status
+
+		}
+
+		network.client.send(packet)
+
+	end
+
 end
 
 function client.drawScoreBoard()
