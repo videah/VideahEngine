@@ -10,7 +10,7 @@ client.entitylist = {}
 
 function client.start()
 
-	client._cli = lube.tcpClient()
+	client._cli = lube.lubeClient()
 	client._cli.handshake = "997067"
 	client._cli.callbacks.recv = client.onReceive
 	print("Loaded client ...")
@@ -98,7 +98,6 @@ function client.onReceive(data)
 		hook.Add("Think", "ControlNetworkPlayer", function() client.entitylist[1]:update(dt) end)
 
 	elseif packet.ptype == "eup" then
-
 		for i=1, #packet.data do
 			for j=1, #client.entitylist do
 				if packet.data[i].name == client.entitylist[i].name or packet.data[i].id == client.entitylist[i].id then

@@ -17,7 +17,7 @@ function server.start(port, gui)
 
 	love.window.setTitle(server.name)
 
-	server._serv = lube.tcpServer()
+	server._serv = lube.lubeServer()
 	server._serv:listen(network._port)
 	server._serv.callbacks.connect = server.onConnect
 	server._serv.callbacks.recv = server.onReceive
@@ -88,7 +88,7 @@ function server.onReceive(data, id)
 
 		}
 
-		--server.send(infopacket, id)
+		server.send(infopacket, id)
 
 		server.track(entity.create("player"), {"x", "y"}, packet.playername, packet.playername)
 
@@ -163,8 +163,6 @@ function server.onReceive(data, id)
 end
 
 function server.onDisconnect(id)
-
-	print("Client disconnected.")
 
 end
 
@@ -310,8 +308,6 @@ function server.setEntityVar(entity, var, value)
 
 	for i=1, #server.entitylist do
 		local ent = server.entitylist[i]
-		print(entity)
-		print(ent.id)
 		if ent.id == entity or ent.name == entity then
 			server.entitylist[i][var] = value
 		end
