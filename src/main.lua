@@ -9,6 +9,8 @@ engine 	= require 'engine'
 
 function love.load(arg)
 
+	require('engine.modules.error') -- Error Handling.
+
 	local args = {}
 	for i, v in ipairs(arg) do
 		args[v] = true
