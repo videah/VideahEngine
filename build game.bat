@@ -18,13 +18,15 @@ ECHO  -----------------------------------------
 ECHO ^| What platform do you want to build for? ^|
 ECHO ^| Windows = 1                             ^|
 ECHO ^| Mac OS = 2                              ^|
-ECHO ^| Android = 3                             ^|
+ECHO ^| Linux/Love2D = 3                        ^|
+ECHO ^| Android = 4                             ^|
 ECHO  -----------------------------------------
 ECHO.
 SET/p "cho=>"
 IF %cho%==1 GOTO WIN
 IF %cho%==2 GOTO MAC
-IF %cho%==3 GOTO AND
+IF %cho%==3 GOTO LIN
+IF %cho%==4 GOTO AND
 GOTO START
 
 :WIN
@@ -49,7 +51,6 @@ ECHO Building for Mac OS is currently unsupported.
 ECHO.
 PAUSE
 GOTO QUIT
-
 
 :AND
 CLS
@@ -126,6 +127,23 @@ CD bin
 XCOPY *.apk ..\..\..\..\%RELEASEDIR% /Y
 CD ..\..\..\..\%RELEASEDIR%
 DEL *-unaligned.apk
+ECHO Build Successful!
+PAUSE
+GOTO QUIT
+
+:LIN
+ECHO Building VideahEngine for Linux/Love2D . . .
+ECHO Building in 3 . . .
+SLEEP 1
+ECHO 2
+SLEEP 1
+ECHO 1
+SLEEP 1
+
+SET RELEASEDIR="Release (Linux)"
+MKDIR %RELEASEDIR%
+CD src\
+..\bin\x86\win32\7za.exe a -tzip -mx9 ..\%RELEASEDIR%\game.love engine game LICENCE main.lua conf.lua
 ECHO Build Successful!
 PAUSE
 GOTO QUIT
