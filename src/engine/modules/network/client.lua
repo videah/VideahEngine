@@ -85,7 +85,6 @@ function client.onReceive(data)
 		ent.id = packet.id
 		ent.name = packet.name or nil
 		ent.updatevars = vars
-		ent.owner = packet.owner
 
 		for i=1, #packet.data do
 
@@ -95,7 +94,12 @@ function client.onReceive(data)
 
 		table.insert(client.entitylist, ent)
 
-		hook.Add("Think", "ControlNetworkPlayer", function() client.entitylist[1]:update(dt) end)
+		for i=1, #client.entitylist do
+			if game.playername == client.entitylist[i].name then
+				hook.Add("Think", "ControlNetworkPlayer", function() client.entitylist[i]:update(dt) end)
+				break
+			end
+		end
 
 	elseif packet.ptype == "eup" then
 		for i=1, #packet.data do

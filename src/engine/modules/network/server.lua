@@ -90,7 +90,7 @@ function server.onReceive(data, id)
 
 		server.send(infopacket, id)
 
-		server.track(entity.create("player"), {"x", "y"}, packet.playername, packet.playername)
+		server.track(entity.create("player"), {"x", "y"}, packet.playername, id)
 
 	elseif packet.ptype == "dc" then -- a Player has left the server.
 
