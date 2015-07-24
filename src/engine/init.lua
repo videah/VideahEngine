@@ -1,10 +1,11 @@
 engine = {}
-engine.path = ... .. '.'
+engine.path = ... .. '/'
 
 function engine.load(args)
 
 	require(engine.path .. 'modules')
 
+<<<<<<< HEAD
 	if SERVER then
 		engine.console	= require(engine.path .. 'libs.loveserverconsole')
 	else
@@ -32,6 +33,36 @@ function engine.load(args)
 	engine.panel 		= require(engine.path .. 'libs.solar')
 	engine.splash 		= require(engine.path .. 'libs.splashy')
 	engine.ui 			= require(engine.path .. 'libs.Thranduil.UI')
+=======
+	if CLIENT then
+		console	= require(engine.path .. 'libs/loveconsole')
+	else
+		console	= require(engine.path .. 'libs/loveserverconsole')
+	end
+
+	webconsole = loadModule('webconsole')
+
+	class		= require(engine.path .. 'util/middleclass')
+
+	hook		= loadModule('hook')
+	cfg 		= loadModule('config')
+	graphics	= loadModule('graphics')
+	camera		= loadModule('camera')
+	global 		= loadModule('global')
+	input		= loadModule('input')
+	lighting	= loadModule('lighting')
+	map 		= loadModule('map')
+	entity		= loadModule('entity')
+	menu		= loadModule('menu')
+	state		= loadModule('state')
+	network		= loadModule('network')
+	chat		= loadModule('chat')
+	script		= loadModule('script')
+
+	panel 		= require(engine.path .. 'libs/solar')
+	splash 		= require(engine.path .. 'libs/splashy')
+	ui 			= require(engine.path .. 'libs/Thranduil.UI')
+>>>>>>> 7a0b3b1c9b5d5a7f8f51e0a97acdf5e46afd4d91
 
 	require(engine.path .. 'cfg.cmds') -- Load Console Commands
 
@@ -41,7 +72,7 @@ function engine.load(args)
 		math.random() -- Warm up random number generator
 	end
 
-	engine.ui.registerEvents()
+	ui.registerEvents()
 
 	print("Loaded VideahEngine " .. _G.version)
 
@@ -49,16 +80,16 @@ end
 
 function engine.draw()
 
-	if engine.state:isCurrentState("splash") then
-		engine.splash.draw()
+	if state:isCurrentState("splash") then
+		splash.draw()
 	end
 
 	-- Debug --
 	if _G.debugmode then
-		-- engine.panel.draw()
+		-- panel.draw()
 	end
 
-	engine.console.draw()
+	console.draw()
 
 	_G.fps = love.timer.getFPS()
 	_G.cursorx = love.mouse.getX()
@@ -70,13 +101,13 @@ end
 
 function engine.update(dt)
 
-	if engine.state:isCurrentState("splash") then
-		engine.splash.update(dt)
+	if state:isCurrentState("splash") then
+		splash.update(dt)
 	end
 
-	engine.network.update(dt)
+	network.update(dt)
 
-	engine.webconsole.update(dt)
+	webconsole.update(dt)
 
 end
 
@@ -85,8 +116,8 @@ function engine.resize(w, h)
 	_G.screenWidth = w
 	_G.screenHeight = h
 
-	engine.map.resize(w, h)
-	engine.console.resize(w, h)
+	map.resize(w, h)
+	console.resize(w, h)
 
 end
 
@@ -104,12 +135,12 @@ end
  
 function engine.keypressed(key, unicode)
 
-	engine.console.keypressed(key, unicode)
+	console.keypressed(key, unicode)
 
-	if engine.state:isCurrentState("splash") then
+	if state:isCurrentState("splash") then
 
 		if key == " " then
-			engine.splash.skipSplash()
+			splash.skipSplash()
 		end
 
 	end
@@ -124,7 +155,7 @@ end
 
 function engine.textinput(text)
 
-	engine.console.textinput(text)
+	console.textinput(text)
 
 end
 

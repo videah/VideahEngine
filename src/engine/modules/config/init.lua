@@ -48,7 +48,8 @@ function config.defaultServerCFG()
 
 			name = "VideahEngine Server",
 			map = "dev_01",
-			maxplayers = 16
+			maxplayers = 16,
+			tickrate = 60
 
 		}
 

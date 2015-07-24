@@ -11,9 +11,9 @@ function Var:initialize(var, settings)
 
 	if type(self.var) == "string" then self.name = self.var end
 
-	self.name = self.name or settings.name or "Variable"
+	self.name = settings.name or self.name or "Variable"
 
-	self.font = self.settings.font
+	self.font = self.settings.font or love.graphics.newFont(16)
 	self.width = self.font:getWidth("HurpDurp")
 	self.height = self.font:getHeight()
 
@@ -34,10 +34,6 @@ function Var:draw()
 	self.width = self.font:getWidth(self.name .. ": ") + self.font:getWidth(self:getVar())
 
 	love.graphics.setColor(255, 255, 255)
-
-end
-
-function Var:update(dt)
 
 end
 

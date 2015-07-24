@@ -6,15 +6,16 @@ client._id = nil
 client._CONNECTED = false
 
 client.playerlist = {}
+client.entitylist = {}
 
 function client.start()
 
-	client._cli = lube.tcpClient()
+	client._cli = lube.lubeClient()
 	client._cli.handshake = "997067"
 	client._cli.callbacks.recv = client.onReceive
 	print("Loaded client ...")
 
-	engine.network._hasLoaded = true
+	network._hasLoaded = true
 
 end
 
@@ -28,7 +29,7 @@ function client.onReceive(data)
 
 	if ok == nil then
 
-		engine.console.error("Corrupt packet received: " .. packet)
+		console.error("Corrupt packet received: " .. packet)
 		return
 
 	end
@@ -50,7 +51,7 @@ function client.onReceive(data)
 	elseif packet.ptype == "si" then
 
 		if packet.data.numofplayers > packet.data.maxplayers then
-			engine.console.error("Could not connect to server: Server Full")
+			console.error("Could not connect to server: Server Full")
 			client.disconnect("Server Full")
 			return
 		end
@@ -65,7 +66,7 @@ function client.onReceive(data)
 
 			print("Server is currently running on the map " .. packet.data.mapname)
 
-			success = engine.map.loadmap(packet.data.mapname)
+			success = map.loadmap(packet.data.mapname)
 
 			if not success then
 				client.disconnect("Error loading map.")
@@ -73,10 +74,58 @@ function client.onReceive(data)
 
 		else
 
-			engine.console.error("The server is currently not running a map.")
+			console.error("The server is currently not running a map.")
 			client.disconnect("The server is currently not running a map.")
 
 		end
+
+	elseif packet.ptype == "track" then
+
+		local ent = entity.create(packet.entname)
+		ent.id = packet.id
+		ent.name = packet.name or nil
+		ent.updatevars = vars
+
+		for i=1, #packet.data do
+
+			ent[vars[i]] = packet.data[vars[i]]
+
+		end
+
+		table.insert(client.entitylist, ent)
+
+		for i=1, #client.entitylist do
+			if game.playername == client.entitylist[i].name then
+				hook.Add("Think", "ControlNetworkPlayer", function() client.entitylist[i]:update(dt) end)
+				break
+			end
+		end
+
+	elseif packet.ptype == "eup" then
+		for i=1, #packet.data do
+			for j=1, #client.entitylist do
+				if packet.data[i].name == client.entitylist[i].name or packet.data[i].id == client.entitylist[i].id then
+					for k=1, #packet.data[i].updatevars do
+						local var = packet.data[i].updatevars[k]
+						client.entitylist[i][var] = packet.data[i].values[var]
+					end
+				end
+			end
+		end
+
+	end
+
+end
+
+-----------
+--  DRAW --
+-----------
+
+function client.draw()
+
+	for i=1, #client.entitylist do
+
+		client.entitylist[i]:draw()
 
 	end
 
@@ -120,7 +169,7 @@ function client.connect(ip, port)
 
 	local success, err = client._cli:connect(ip, port)
 
-	client._id = engine.network.generateID(16)
+	client._id = network.generateID(16)
 
 	if err ~= nil then
 		print("Error connecting to " .. ip .. " (" .. err .. ")")
@@ -150,6 +199,28 @@ end
 
 function client.isConnected()
 	return client._CONNECTED
+end
+
+function client.modifyEntity(entity, action, status)
+
+	if client.isConnected() then
+
+		local packet = {
+
+			ptype = "em",
+			type = entity.type,
+			id = entity.id,
+			name = entity.name or nil,
+			owner = entity.owner or nil,
+			action = action,
+			status = status
+
+		}
+
+		network.client.send(packet)
+
+	end
+
 end
 
 function client.drawScoreBoard()

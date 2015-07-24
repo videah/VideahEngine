@@ -15,8 +15,6 @@ function Text:initialize(var, settings)
 	self.width = self.font:getWidth(self.text)
 	self.height = self.font:getHeight()
 
-	self.settings.underline = true
-
 	print("     Created Text Object")
 
 end
@@ -36,10 +34,6 @@ function Text:draw()
 	end
 
 	love.graphics.setColor(255, 255, 255)
-
-end
-
-function Text:update(dt)
 
 end
 

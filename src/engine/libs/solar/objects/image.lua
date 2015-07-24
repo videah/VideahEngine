@@ -39,8 +39,4 @@ function Image:draw()
 
 end
 
-function Image:update(dt)
-
-end
-
 return Image

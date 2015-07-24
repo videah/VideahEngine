@@ -10,8 +10,8 @@ do
             command = command:sub(1, argSep - 1)
         end
 
-        if engine.graphics.printc[command] ~= nil then
-            local cmdFunc = engine.graphics.printc[command]
+        if graphics.printc[command] ~= nil then
+            local cmdFunc = graphics.printc[command]
             return 0, cmdFunc(cmd, arguments)
         else
             return 1

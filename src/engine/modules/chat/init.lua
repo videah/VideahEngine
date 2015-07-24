@@ -2,7 +2,7 @@
 
 local chat = {}
 
-chat.ChatLine = engine.class("ChatLine")
+chat.ChatLine = class("ChatLine")
 
 function chat.ChatLine:initialize(string, x, y, width, height, owner)
 
@@ -29,11 +29,11 @@ function chat.ChatLine:draw()
 
 	if not CLIENT then return end
 
-	engine.graphics.printc(string.format("[white]%s: %s", self.owner, self.text), self.x, self.y, self.width, nil, self.height, nil, {border = true})
+	graphics.printc(string.format("[white]%s: %s", self.owner, self.text), self.x, self.y, self.width, nil, self.height, nil, {border = true})
 
 end
 
-chat.ChatBox = engine.class("ChatBox")
+chat.ChatBox = class("ChatBox")
 
 function chat.ChatBox:initialize(x, y, width, height, options)
 
@@ -51,7 +51,7 @@ function chat.ChatBox:initialize(x, y, width, height, options)
 	self.maxlines = 100
 	self.maxDisplayLines = math.floor((self.height / self.font:getHeight()))
 
-	self.active = true
+	self.active = false
 
 	self.buffer = {}
 
@@ -63,7 +63,7 @@ function chat.ChatBox:initialize(x, y, width, height, options)
 		local name = string.gsub(file, ".png", "")
 		print(name)
 		if file ~= "Thumbs.db" then -- I hate these things.
-			engine.graphics.printc[name] = function()
+			graphics.printc[name] = function()
 
 				local img = love.graphics.newImage('engine/modules/chat/emotes/' .. file)
 				return {size = {self.font:getHeight(), self.font:getHeight()}, draw = function(x, y) love.graphics.draw(img, x, y, 0.0, self.font:getHeight() / img:getHeight(), self.font:getHeight() / img:getWidth()) end, appendSpace = true}

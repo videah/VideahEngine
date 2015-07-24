@@ -3,10 +3,13 @@ local lube = require(engine.path .. 'libs.LUBE')
 local serial = require(engine.path .. 'util.serial')
 
 server.playerlist = {}
+server.entitylist = {}
+
+local t = 0
 
 function server.start(port, gui)
 
-	server.cfg = engine.config.load("server")
+	server.cfg = cfg.load("server")
 
 	server.name = server.cfg.settings.name or "VideahServer"
 	server.maxplayers = server.cfg.settings.maxplayers or 16
@@ -14,8 +17,8 @@ function server.start(port, gui)
 
 	love.window.setTitle(server.name)
 
-	server._serv = lube.tcpServer()
-	server._serv:listen(engine.network._port)
+	server._serv = lube.lubeServer()
+	server._serv:listen(network._port)
 	server._serv.callbacks.connect = server.onConnect
 	server._serv.callbacks.recv = server.onReceive
 	server._serv.callbacks.disconnect = server.onDisconnect
@@ -27,15 +30,15 @@ function server.start(port, gui)
 
 	function love.keypressed(key, isrepeat)
 
-		engine.console.keypressed(key, isrepeat)
+		console.keypressed(key, isrepeat)
 
 	end
 
-	engine.map.loadmap(server.map)
+	map.loadmap(server.map)
 
-	engine.console.success("Successfully started server on port " .. engine.network._port)
+	console.success("Successfully started server on port " .. network._port)
 
-	engine.network._hasLoaded = true
+	network._hasLoaded = true
 
 end
 
@@ -51,14 +54,18 @@ function server.onReceive(data, id)
 
 	local ok, packet = serial.load(data)
 
+	hook.Call("ServerOnReceive", packet)
+
 	if ok == nil then
 
-		engine.console.error("Corrupt packet received: " .. packet)
+		console.error("Corrupt packet received: " .. packet)
 		return
 
 	end
 	
 	if packet.ptype == "join" then -- a Player has joined the server.
+
+		hook.Call("OnPlayerJoin", packet)
 
 		print('Player ' .. packet.playername .. " (ID: " .. packet.playerid .. ") has joined the game")
 
@@ -74,7 +81,7 @@ function server.onReceive(data, id)
 				servername = server.name,
 				numofplayers = server.getNumberOfPlayers(),
 				maxplayers = server.maxplayers,
-				mapname = engine.map.currentmapname,
+				mapname = map.currentmapname,
 				playerlist = server.playerlist
 
 			}
@@ -83,7 +90,11 @@ function server.onReceive(data, id)
 
 		server.send(infopacket, id)
 
+		server.track(entity.create("player"), {"x", "y"}, packet.playername, id)
+
 	elseif packet.ptype == "dc" then -- a Player has left the server.
+
+		hook.Call("OnPlayerDisconnect", packet)
 
 		packet.reason = packet.reason or "disconnect"
 
@@ -102,9 +113,50 @@ function server.onReceive(data, id)
 
 		server.send(packet) -- Send the message to all clients, including the sender.
 
+	elseif packet.ptype == "em" then
+
+		hook.Call("OnNetworkedEntityModify")
+
+		local modEntity
+
+		for i=1, #server.entitylist do
+			local ent = server.entitylist[i]
+			if ent.id == packet.id or ent.name == packet.name then
+				modEntity = packet.name or packet.id
+			end
+		end
+
+		if packet.type == "player" then
+
+			if packet.action == "player_up" and packet.status == true then
+
+				server.setEntityVar(packet.id, "y", server.getEntityVar(packet.id, "y") - 5)
+
+			end
+
+			if packet.action == "player_down" and packet.status == true then
+
+				server.setEntityVar(packet.id, "y", server.getEntityVar(packet.id, "y") + 5)
+
+			end
+
+			if packet.action == "player_left" and packet.status == true then
+
+				server.setEntityVar(packet.id, "x", server.getEntityVar(packet.id, "x") - 5)
+
+			end
+
+			if packet.action == "player_right" and packet.status == true then
+
+				server.setEntityVar(packet.id, "x", server.getEntityVar(packet.id, "x") + 5)
+
+			end
+
+		end
+
 	else
 
-		engine.console.error("Unknown packet received.")
+		console.error("Unknown packet received.")
 
 	end
 
@@ -112,7 +164,47 @@ end
 
 function server.onDisconnect(id)
 
-	print("Client disconnected.")
+end
+
+--------------
+--  UPDATE  --
+--------------
+
+function server.update(dt)
+
+	local updatepacket = {
+
+		ptype = "eup",
+		data = {}
+
+	}
+
+	t = t + dt
+
+	if t > (1 / server.cfg.settings.tickrate) then
+
+		for i=1, #server.entitylist do
+
+			local ent = {}
+			ent.name = server.entitylist[i].name or nil
+			ent.id = server.entitylist[i].id
+			ent.updatevars = server.entitylist[i].updatevars
+			ent.values = {}
+
+			for j=1, #server.entitylist[i].updatevars do
+				local var = server.entitylist[i].updatevars[j]
+				ent.values[var] = server.entitylist[i][var]
+			end
+
+			updatepacket.data[i] = ent
+
+		end
+
+		server.send(updatepacket)
+
+		t = t - (1 / server.cfg.settings.tickrate)
+
+	end
 
 end
 
@@ -151,6 +243,75 @@ function server.say(msg)
 	}
 
 	server.send(packet)
+
+end
+
+function server.track(entity, vars, name, owner)
+
+	entity.id = #server.entitylist + 1
+	entity.name = name or nil
+	entity.updatevars = vars
+	entity.owner = owner or nil
+
+	table.insert(server.entitylist, entity)
+
+	local packet = {
+
+		ptype = "track",
+		entname = entity.type,
+		id = entity.id,
+		name = entity.name,
+		vars = vars,
+		data = {}
+
+	}
+
+	for i=1, #vars do
+		packet.data[vars[i]] = entity[vars[i]]
+	end
+
+	server.send(packet)
+
+end
+
+function server.untrack(entity)
+
+	for i=1, #server.entitylist do
+		if server.entitylist[i].name == entity or server.entitylist[i].id == entity then
+			table.remove(server.entitylist, i)
+		end
+	end
+
+	local packet = {
+
+		ptype = "utrack",
+		entity = entity
+
+	}
+
+	server.send(packet)
+
+end
+
+function server.getEntityVar(entity, var)
+
+	for i=1, #server.entitylist do
+		local ent = server.entitylist[i]
+		if ent.id == entity or ent.name == entity then
+			return ent[var]
+		end
+	end
+
+end
+
+function server.setEntityVar(entity, var, value)
+
+	for i=1, #server.entitylist do
+		local ent = server.entitylist[i]
+		if ent.id == entity or ent.name == entity then
+			server.entitylist[i][var] = value
+		end
+	end
 
 end
 

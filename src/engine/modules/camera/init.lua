@@ -1,4 +1,4 @@
-local Camera = engine.class("Camera")
+local Camera = class("Camera")
 
 function Camera:initialize(x, y, scale, strict)
 
@@ -16,7 +16,7 @@ function Camera:initialize(x, y, scale, strict)
 
 	self.angle = 0
 
-	self.strict = self.strict or false
+	self.strict = strict or false
 
 	self.shaking = false
 	self.shakeIntensity = 0
@@ -145,6 +145,15 @@ end
 
 function Camera:getScale()
 	return self.scale
+end
+
+function Camera:lookAt(entity)
+
+	local x = (entity.x - (_G.screenWidth / 2)) + (entity.width / 2)
+	local y = (entity.y - (_G.screenHeight / 2)) + (entity.height / 2)
+
+	self:setPosition(x, y)
+
 end
 
 return Camera

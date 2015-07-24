@@ -324,7 +324,7 @@ function Map:initWorldCollision(world)
 			end
 		end
 	end
-	engine.console.print("Loaded physics colliders...", {r = 52, g = 152, b = 219})
+	console.print("Loaded physics colliders...", {r = 52, g = 152, b = 219})
 	return collision
 end
 
@@ -525,7 +525,7 @@ function Map:initLightCollision(world)
 			end
 		end
 	end
-	engine.console.print("Loaded lighting colliders...", {r = 52, g = 152, b = 219})
+	console.print("Loaded lighting colliders...", {r = 52, g = 152, b = 219})
 	return collision
 end
 

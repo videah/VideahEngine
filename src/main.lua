@@ -9,6 +9,8 @@ engine 	= require 'engine'
 
 function love.load(arg)
 
+	require('engine.modules.error') -- Error Handling.
+
 	local args = {}
 	for i, v in ipairs(arg) do
 		args[v] = true
@@ -27,27 +29,27 @@ function love.load(arg)
 	engine.load()
 	game.load()
 
-	if not engine.config.exists("game") and not SERVER then
-		engine.config.save("game", engine.config.defaultCFG())
+	if not cfg.exists("game") and not SERVER then
+		cfg.save("game", cfg.defaultCFG())
 	end
 
-	if engine.network then
+	if network then
 
 		if CLIENT then
-			engine.network.client.start()
+			network.client.start()
 		end
 
 		if SERVER then
 
-			if not engine.config.exists("server") then
-				engine.config.save("server", engine.config.defaultServerCFG())
+			if not cfg.exists("server") then
+				cfg.save("server", cfg.defaultServerCFG())
 			end
 
 			love.window.setMode(1280, 720)
 			if args["-gui"] then
-				engine.network.server.start(true)
+				network.server.start(true)
 			else
-				engine.network.server.start(false)
+				network.server.start(false)
 			end
 		end
 
@@ -66,7 +68,7 @@ function love.update(dt)
 
 	engine.update(dt)
 
-	if engine.console.getActive() == false then
+	if console.getActive() == false then
 
 		game.update(dt)
 
@@ -85,7 +87,7 @@ function love.mousepressed(x, y, button)
 
 	engine.mousepressed(x, y, button)
 
-	if engine.console.getActive() == false then
+	if console.getActive() == false then
 
 		game.mousepressed(x, y, button)
 
@@ -97,7 +99,7 @@ function love.mousereleased(x, y, button)
 
 	engine.mousereleased(x, y, button)
 
-	if engine.console.getActive() == false then
+	if console.getActive() == false then
 
 		game.mousereleased(x, y, button)
 
@@ -109,7 +111,7 @@ function love.keypressed(key, unicode)
 
 	engine.keypressed(key, unicode)
 
-	if engine.console.getActive() == false then
+	if console.getActive() == false then
 
 		game.keypressed(key, unicode)
 
@@ -121,7 +123,7 @@ function love.keyreleased(key)
 
 	engine.keyreleased(key)
 
-	if engine.console.getActive() == false then
+	if console.getActive() == false then
 
 		game.keyreleased(key)
 
@@ -133,7 +135,7 @@ function love.textinput(text)
 
 	engine.textinput(text)
 
-	if engine.console.getActive() == false then
+	if console.getActive() == false then
 
 		game.textinput(text)
 
@@ -144,11 +146,11 @@ end
 function love.quit()
 
 	if CLIENT then
-		engine.network.client.disconnect()
+		network.client.disconnect()
 	end
 
 	if SERVER then
-		engine.network.server.send("shutdown")
+		network.server.send("shutdown")
 	end
 
 	print("Shutting down ...")

@@ -1,9 +1,11 @@
+-- TODO: Redo all this.
+
 local maphandler = require(engine.path .. 'libs.STI')
 local map = {}
 
 map.currentmap = nil
-map.currentmapname = nil
-map.lightworld = engine.lighting.newWorld({ambient = {0, 0, 0}})
+map.currentmapname = "nil"
+map.lightworld = lighting.newWorld({ambient = {0, 0, 0}})
 love.physics.setMeter(64)
 map.physicsworld = love.physics.newWorld(0,0)
 map.lightcollisions = nil
@@ -11,13 +13,13 @@ map.physicscollisions = nil
 
 function map.loadmap(mapname)
 
-	engine.console.print("Started to load map '" .. mapname .. "'...", {r = 52, g = 152, b = 219})
+	console.print("Started to load map '" .. mapname .. "'...", {r = 52, g = 152, b = 219})
 
 	if pcall(function() map.currentmap = maphandler.new(game.path .. "maps/" .. mapname) end) then
 
 		if map.currentmap.properties.ambientRed == nil or map.currentmap.properties.ambientGreen == nil or map.currentmap.properties.ambientBlue == nil then
 
-			engine.console.warning("No ambience settings found. Setting lighting to fullbright.")
+			console.warning("No ambience settings found. Setting lighting to fullbright.")
 
 		end
 
@@ -26,7 +28,7 @@ function map.loadmap(mapname)
 		local ambB = tonumber(map.currentmap.properties.ambientBlue) or 255
 
 		map.currentmapname = mapname
-		map.lightworld = engine.lighting.newWorld()
+		map.lightworld = lighting.newWorld()
 
 		-- Ambience --
 
@@ -34,15 +36,15 @@ function map.loadmap(mapname)
 		map.lightworld.ambient[2] = ambG
 		map.lightworld.ambient[3] = ambB
 
-		engine.console.print("Loaded map ambience...", {r = 52, g = 152, b = 219})
+		console.print("Loaded map ambience...", {r = 52, g = 152, b = 219})
 
 		map.physicscollisions = map.currentmap:initWorldCollision(map.physicsworld)
 		map.lightcollisions = map.currentmap:initLightCollision(map.lightworld)
-		engine.console.success("Loaded map '" .. mapname .. "'")
+		console.success("Loaded map '" .. mapname .. "'")
 
 		return true
 	else
-		engine.console.error("Could not load map '" .. mapname .. "' (map file not found.)")
+		console.error("Could not load map '" .. mapname .. "' (map file not found.)")
 		return false
 	end
 end
@@ -52,14 +54,14 @@ function map.unload(mapname)
 	if map.currentmap ~= nil then
 
 		map.lightcollisions = nil
-		engine.console.print("Unloaded light colliders...", {r = 241, g = 196, b = 15, a = 255})
+		console.print("Unloaded light colliders...", {r = 241, g = 196, b = 15, a = 255})
 
 		map.physicscollisions = nil
-		engine.console.print("Unloaded physics colliders...", {r = 241, g = 196, b = 15, a = 255})
+		console.print("Unloaded physics colliders...", {r = 241, g = 196, b = 15, a = 255})
 
 		map.currentmap = nil
 		map.currentmapname = nil
-		engine.console.success("Unloaded map '" .. mapname .. "'")
+		console.success("Unloaded map '" .. mapname .. "'")
 		
 	end
 
