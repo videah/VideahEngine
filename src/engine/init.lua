@@ -5,39 +5,10 @@ function engine.load(args)
 
 	require(engine.path .. 'modules')
 
-<<<<<<< HEAD
 	if SERVER then
-		engine.console	= require(engine.path .. 'libs.loveserverconsole')
+		console	= require(engine.path .. 'libs.loveserverconsole')
 	else
-		engine.console	= require(engine.path .. 'libs.loveconsole')
-	end
-
-	engine.webconsole = require(engine.path .. 'modules.webconsole')
-
-	engine.class		= require(engine.path .. 'util.middleclass')
-
-	engine.config		= loadModule('config')
-	engine.graphics		= loadModule('graphics')
-	engine.camera		= loadModule('camera')
-	engine.global 		= loadModule('global')
-	engine.input		= loadModule('input')
-	engine.lighting		= loadModule('lighting')
-	engine.map 			= loadModule('map')
-	engine.entity		= loadModule('entity')
-	engine.menu			= loadModule('menu')
-	engine.state		= loadModule('state')
-	engine.network		= loadModule('network')
-	engine.chat			= loadModule('chat')
-	engine.script		= loadModule('script')
-
-	engine.panel 		= require(engine.path .. 'libs.solar')
-	engine.splash 		= require(engine.path .. 'libs.splashy')
-	engine.ui 			= require(engine.path .. 'libs.Thranduil.UI')
-=======
-	if CLIENT then
-		console	= require(engine.path .. 'libs/loveconsole')
-	else
-		console	= require(engine.path .. 'libs/loveserverconsole')
+		console	= require(engine.path .. 'libs.loveconsole')
 	end
 
 	webconsole = loadModule('webconsole')
@@ -62,7 +33,6 @@ function engine.load(args)
 	panel 		= require(engine.path .. 'libs/solar')
 	splash 		= require(engine.path .. 'libs/splashy')
 	ui 			= require(engine.path .. 'libs/Thranduil.UI')
->>>>>>> 7a0b3b1c9b5d5a7f8f51e0a97acdf5e46afd4d91
 
 	require(engine.path .. 'cfg.cmds') -- Load Console Commands
 
