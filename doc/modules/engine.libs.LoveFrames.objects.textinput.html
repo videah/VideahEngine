@@ -1,0 +1,1993 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>VideahEngine Docs</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>VideahEngine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/engine.libs.LoveFrames.html">engine.libs.LoveFrames</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.debug.html">engine.libs.LoveFrames.libraries.debug</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.skins.html">engine.libs.LoveFrames.libraries.skins</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.templates.html">engine.libs.LoveFrames.libraries.templates</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.util.html">engine.libs.LoveFrames.libraries.util</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.base.html">engine.libs.LoveFrames.objects.base</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.button.html">engine.libs.LoveFrames.objects.button</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.checkbox.html">engine.libs.LoveFrames.objects.checkbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.collapsiblecategory.html">engine.libs.LoveFrames.objects.collapsiblecategory</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.columnlist.html">engine.libs.LoveFrames.objects.columnlist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.form.html">engine.libs.LoveFrames.objects.form</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.frame.html">engine.libs.LoveFrames.objects.frame</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.grid.html">engine.libs.LoveFrames.objects.grid</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.image.html">engine.libs.LoveFrames.objects.image</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.imagebutton.html">engine.libs.LoveFrames.objects.imagebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.closebutton.html">engine.libs.LoveFrames.objects.internal.closebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.linenumberspanel.html">engine.libs.LoveFrames.objects.internal.linenumberspanel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.menuoption.html">engine.libs.LoveFrames.objects.internal.menuoption</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.modalbackground.html">engine.libs.LoveFrames.objects.internal.modalbackground</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollarea.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbar.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbody.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbody</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.sliderbutton.html">engine.libs.LoveFrames.objects.internal.sliderbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tabbutton.html">engine.libs.LoveFrames.objects.internal.tabbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tooltip.html">engine.libs.LoveFrames.objects.internal.tooltip</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenode.html">engine.libs.LoveFrames.objects.internal.treenode</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenodebutton.html">engine.libs.LoveFrames.objects.internal.treenodebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.list.html">engine.libs.LoveFrames.objects.list</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.menu.html">engine.libs.LoveFrames.objects.menu</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.multichoice.html">engine.libs.LoveFrames.objects.multichoice</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.numberbox.html">engine.libs.LoveFrames.objects.numberbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.panel.html">engine.libs.LoveFrames.objects.panel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.progressbar.html">engine.libs.LoveFrames.objects.progressbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.radiobutton.html">engine.libs.LoveFrames.objects.radiobutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.slider.html">engine.libs.LoveFrames.objects.slider</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tabs.html">engine.libs.LoveFrames.objects.tabs</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.text.html">engine.libs.LoveFrames.objects.text</a></li>
+  <li><strong>engine.libs.LoveFrames.objects.textinput</strong></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tree.html">engine.libs.LoveFrames.objects.tree</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Blue.skin.html">engine.libs.LoveFrames.skins.Blue.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Orange.skin.html">engine.libs.LoveFrames.skins.Orange.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.templates.base.html">engine.libs.LoveFrames.templates.base</a></li>
+  <li><a href="../modules/engine.modules.error.html">engine.modules.error</a></li>
+  <li><a href="../modules/engine.modules.hook.html">engine.modules.hook</a></li>
+  <li><a href="../modules/engine.modules.html">engine.modules</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>engine.libs.LoveFrames.objects.textinput</code></h1>
+<p>-- Love Frames - A GUI library for LOVE --
+	-- Copyright (c) 2012-2014 Kenny Shields --</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#newobject:initialize">newobject:initialize ()</a></td>
+	<td class="summary">- func: initialize()
+	- desc: initializes the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:update">newobject:update (dt)</a></td>
+	<td class="summary">- func: update(deltatime)
+	- desc: updates the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:draw">newobject:draw ()</a></td>
+	<td class="summary">- func: draw()
+	- desc: draws the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousepressed">newobject:mousepressed (x, y, button)</a></td>
+	<td class="summary">- func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousereleased">newobject:mousereleased (x, y, button)</a></td>
+	<td class="summary">- func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:keypressed">newobject:keypressed (key, isrepeat)</a></td>
+	<td class="summary">- func: keypressed(key, isrepeat)
+	- desc: called when the player presses a key</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:keyreleased">newobject:keyreleased (key)</a></td>
+	<td class="summary">- func: keyreleased(key)
+	- desc: called when the player releases a key</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:textinput">newobject:textinput (text)</a></td>
+	<td class="summary">- func: textinput(text)
+	- desc: called when the inputs text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:RunKey">newobject:RunKey (key, istext)</a></td>
+	<td class="summary">- func: RunKey(key, istext)
+	- desc: runs a key event on the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:MoveIndicator">newobject:MoveIndicator (num, exact)</a></td>
+	<td class="summary">- func: MoveIndicator(num, exact)
+	- desc: moves the object's indicator</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:UpdateIndicator">newobject:UpdateIndicator ()</a></td>
+	<td class="summary">- func: UpdateIndicator()
+	- desc: updates the object's text insertion position
+			indicator</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:AddIntoText">newobject:AddIntoText (t, p)</a></td>
+	<td class="summary">- func: AddIntoText(t, p)
+	- desc: adds text into the object's text at a given
+			position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:RemoveFromText">newobject:RemoveFromText (p)</a></td>
+	<td class="summary">- func: RemoveFromText(p)
+	- desc: removes text from the object's text a given
+			position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetTextCollisions">newobject:GetTextCollisions (x, y)</a></td>
+	<td class="summary">- func: GetTextCollisions(x, y)
+	- desc: gets text collisions with the mouse</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:PositionText">newobject:PositionText ()</a></td>
+	<td class="summary">- func: PositionText()
+	- desc: positions the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetTextOffsetX">newobject:SetTextOffsetX (num)</a></td>
+	<td class="summary">- func: SetTextOffsetX(num)
+	- desc: sets the object's text x offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetTextOffsetY">newobject:SetTextOffsetY (num)</a></td>
+	<td class="summary">- func: SetTextOffsetY(num)
+	- desc: sets the object's text y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetFont">newobject:SetFont (font)</a></td>
+	<td class="summary">- func: SetFont(font)
+	- desc: sets the object's font</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetFont">newobject:GetFont ()</a></td>
+	<td class="summary">- func: GetFont()
+	- desc: gets the object's font</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetFocus">newobject:SetFocus (focus)</a></td>
+	<td class="summary">- func: SetFocus(focus)
+	- desc: sets the object's focus</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetFocus">newobject:GetFocus ()</a></td>
+	<td class="summary">- func: GetFocus()
+	- desc: gets the object's focus</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetIndicatorVisibility">newobject:GetIndicatorVisibility ()</a></td>
+	<td class="summary">- func: GetIndicatorVisibility()
+	- desc: gets the object's indicator visibility</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetLimit">newobject:SetLimit (limit)</a></td>
+	<td class="summary">- func: SetLimit(limit)
+	- desc: sets the object's text limit</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetUsable">newobject:SetUsable (usable)</a></td>
+	<td class="summary">- func: SetUsable(usable)
+	- desc: sets what characters can be used for the
+			object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetUsable">newobject:GetUsable ()</a></td>
+	<td class="summary">- func: GetUsable()
+	- desc: gets what characters can be used for the
+			object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetUnusable">newobject:SetUnusable (unusable)</a></td>
+	<td class="summary">- func: SetUnusable(unusable)
+	- desc: sets what characters can not be used for the
+			object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetUnusable">newobject:GetUnusable ()</a></td>
+	<td class="summary">- func: GetUnusable()
+	- desc: gets what characters can not be used for the
+			object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:Clear">newobject:Clear ()</a></td>
+	<td class="summary">- func: Clear()
+	- desc: clears the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetText">newobject:SetText (text)</a></td>
+	<td class="summary">- func: SetText(text)
+	- desc: sets the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetText">newobject:GetText ()</a></td>
+	<td class="summary">- func: GetText()
+	- desc: gets the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMultiline">newobject:SetMultiline (bool)</a></td>
+	<td class="summary">- func: SetMultiline(bool)
+	- desc: enables or disables allowing multiple lines for
+			text entry</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMultiLine">newobject:GetMultiLine ()</a></td>
+	<td class="summary">- func: GetMultiLine()
+	- desc: gets whether or not the object is using multiple
+			lines</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetVerticalScrollBody">newobject:GetVerticalScrollBody ()</a></td>
+	<td class="summary">- func: GetVerticalScrollBody()
+	- desc: gets the object's vertical scroll body</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetHorizontalScrollBody">newobject:GetHorizontalScrollBody ()</a></td>
+	<td class="summary">- func: GetHorizontalScrollBody()
+	- desc: gets the object's horizontal scroll body</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:HasVerticalScrollBar">newobject:HasVerticalScrollBar ()</a></td>
+	<td class="summary">- func: HasVerticalScrollBar()
+	- desc: gets whether or not the object has a vertical
+			scroll bar</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:HasHorizontalScrollBar">newobject:HasHorizontalScrollBar ()</a></td>
+	<td class="summary">- func: HasHorizontalScrollBar()
+	- desc: gets whether or not the object has a horizontal
+			scroll bar</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetLineNumbersPanel">newobject:GetLineNumbersPanel ()</a></td>
+	<td class="summary">- func: GetLineNumbersPanel()
+	- desc: gets the object's line numbers panel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:ShowLineNumbers">newobject:ShowLineNumbers (bool)</a></td>
+	<td class="summary">- func: ShowLineNumbers(bool)
+	- desc: sets whether or not to show line numbers when
+			using multiple lines</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetTextX">newobject:GetTextX ()</a></td>
+	<td class="summary">- func: GetTextX()
+	- desc: gets the object's text x</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetTextY">newobject:GetTextY ()</a></td>
+	<td class="summary">- func: GetTextY()
+	- desc: gets the object's text y</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:IsAllTextSelected">newobject:IsAllTextSelected ()</a></td>
+	<td class="summary">- func: IsAllTextSelected()
+	- desc: gets whether or not all of the object's text is
+			selected</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetLines">newobject:GetLines ()</a></td>
+	<td class="summary">- func: GetLines()
+	- desc: gets the object's lines</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetOffsetX">newobject:GetOffsetX ()</a></td>
+	<td class="summary">- func: GetOffsetX()
+	- desc: gets the object's x offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetOffsetY">newobject:GetOffsetY ()</a></td>
+	<td class="summary">- func: GetOffsetY()
+	- desc: gets the object's y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetIndicatorX">newobject:GetIndicatorX ()</a></td>
+	<td class="summary">- func: GetIndicatorX()
+	- desc: gets the object's indicator's xpos</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetIndicatorY">newobject:GetIndicatorY ()</a></td>
+	<td class="summary">- func: GetIndicatorY()
+	- desc: gets the object's indicator's ypos</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetLineNumbersEnabled">newobject:GetLineNumbersEnabled ()</a></td>
+	<td class="summary">- func: GetLineNumbersEnabled()
+	- desc: gets whether line numbers are enabled on the
+			object or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetItemWidth">newobject:GetItemWidth ()</a></td>
+	<td class="summary">- func: GetItemWidth()
+	- desc: gets the object's item width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetItemHeight">newobject:GetItemHeight ()</a></td>
+	<td class="summary">- func: GetItemHeight()
+	- desc: gets the object's item height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetTabReplacement">newobject:SetTabReplacement (tabreplacement)</a></td>
+	<td class="summary">- func: SetTabReplacement(tabreplacement)
+	- desc: sets a string to replace tabs with</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetTabReplacement">newobject:GetTabReplacement ()</a></td>
+	<td class="summary">- func: GetTabReplacement()
+	- desc: gets the object's tab replacement</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetEditable">newobject:SetEditable (bool)</a></td>
+	<td class="summary">- func: SetEditable(bool)
+	- desc: sets whether or not the user can edit the
+			object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetEditable">newobject:GetEditable ()</a></td>
+	<td class="summary">- func: GetEditable
+	- desc: gets whether or not the user can edit the
+			object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetButtonScrollAmount">newobject:SetButtonScrollAmount (amount)</a></td>
+	<td class="summary">- func: SetButtonScrollAmount(speed)
+	- desc: sets the scroll amount of the object's scrollbar
+			buttons</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetButtonScrollAmount">newobject:GetButtonScrollAmount ()</a></td>
+	<td class="summary">- func: GetButtonScrollAmount()
+	- desc: gets the scroll amount of the object's scrollbar
+			buttons</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMouseWheelScrollAmount">newobject:SetMouseWheelScrollAmount (amount)</a></td>
+	<td class="summary">- func: SetMouseWheelScrollAmount(amount)
+	- desc: sets the scroll amount of the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetButtonScrollAmount">newobject:GetButtonScrollAmount ()</a></td>
+	<td class="summary">- func: GetMouseWheelScrollAmount()
+	- desc: gets the scroll amount of the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetAutoScroll">newobject:SetAutoScroll (bool)</a></td>
+	<td class="summary">- func: SetAutoScroll(bool)
+	- desc: sets whether or not the object should autoscroll
+			when in multiline mode</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetAutoScroll">newobject:GetAutoScroll ()</a></td>
+	<td class="summary">- func: GetAutoScroll()
+	- desc: gets whether or not the object should autoscroll
+			when in multiline mode</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetRepeatDelay">newobject:SetRepeatDelay (delay)</a></td>
+	<td class="summary">- func: SetRepeatDelay(delay)
+	- desc: sets the object's repeat delay</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetRepeatDelay">newobject:GetRepeatDelay ()</a></td>
+	<td class="summary">- func: GetRepeatDelay()
+	- desc: gets the object's repeat delay</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetRepeatRate">newobject:SetRepeatRate (rate)</a></td>
+	<td class="summary">- func: SetRepeatRate(rate)
+	- desc: sets the object's repeat rate</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetRepeatRate">newobject:GetRepeatRate ()</a></td>
+	<td class="summary">- func: GetRepeatRate()
+	- desc: gets the object's repeat rate</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetValue">newobject:SetValue (value)</a></td>
+	<td class="summary">- func: SetValue(value)
+	- desc: sets the object's value (alias of SetText)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetValue">newobject:GetValue ()</a></td>
+	<td class="summary">- func: GetValue()
+	- desc: gets the object's value (alias of GetText)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetVisible">newobject:SetVisible (bool)</a></td>
+	<td class="summary">- func: SetVisible(bool)
+	- desc: sets the object's visibility</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:Copy">newobject:Copy ()</a></td>
+	<td class="summary">- func: Copy()
+	- desc: copies the object's text to the user's clipboard</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:Paste">newobject:Paste ()</a></td>
+	<td class="summary">- func: Paste()
+	- desc: pastes the current contents of the clipboard
+			into the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SelectAll">newobject:SelectAll ()</a></td>
+	<td class="summary">- func: SelectAll()
+	- desc: selects all of the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:DeselectAll">newobject:DeselectAll ()</a></td>
+	<td class="summary">- func: DeselectAll()
+	- desc: deselects all of the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMasked">newobject:SetMasked (masked)</a></td>
+	<td class="summary">- func: SetMasked(masked)
+	- desc: sets whether or not the object is masked</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMasked">newobject:GetMasked ()</a></td>
+	<td class="summary">- func: GetMasked()
+	- desc: gets whether or not the object is masked</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMaskChar">newobject:SetMaskChar (char)</a></td>
+	<td class="summary">- func: SetMaskChar(char)
+	- desc: sets the object's mask character</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMaskChar">newobject:GetMaskChar ()</a></td>
+	<td class="summary">- func: GetMaskChar()
+	- desc: gets the object's mask character</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetPlaceholderText">newobject:SetPlaceholderText (text)</a></td>
+	<td class="summary">- func: SetPlaceholderText(text)
+	- desc: sets the object's placeholder text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetPlaceholderText">newobject:GetPlaceholderText ()</a></td>
+	<td class="summary">- func: GetPlaceholderText()
+	- desc: gets the object's placeholder text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:ClearLine">newobject:ClearLine (line)</a></td>
+	<td class="summary">- func: ClearLine(line)
+	- desc: clears the specified line</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetTrackingEnabled">newobject:SetTrackingEnabled (bool)</a></td>
+	<td class="summary">- func: SetTrackingEnabled(bool)
+	- desc: sets whether or not the object should
+			automatically scroll to the position of its
+			indicator</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetTrackingEnabled">newobject:GetTrackingEnabled ()</a></td>
+	<td class="summary">- func: GetTrackingEnabled()
+	- desc: gets whether or not the object should
+			automatically scroll to the position of its
+			indicator</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "newobject:initialize"></a>
+    <strong>newobject:initialize ()</strong>
+    </dt>
+    <dd>
+    - func: initialize()
+	- desc: initializes the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:update"></a>
+    <strong>newobject:update (dt)</strong>
+    </dt>
+    <dd>
+    - func: update(deltatime)
+	- desc: updates the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:draw"></a>
+    <strong>newobject:draw ()</strong>
+    </dt>
+    <dd>
+    - func: draw()
+	- desc: draws the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousepressed"></a>
+    <strong>newobject:mousepressed (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousereleased"></a>
+    <strong>newobject:mousereleased (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:keypressed"></a>
+    <strong>newobject:keypressed (key, isrepeat)</strong>
+    </dt>
+    <dd>
+    - func: keypressed(key, isrepeat)
+	- desc: called when the player presses a key
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+
+        </li>
+        <li><span class="parameter">isrepeat</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:keyreleased"></a>
+    <strong>newobject:keyreleased (key)</strong>
+    </dt>
+    <dd>
+    - func: keyreleased(key)
+	- desc: called when the player releases a key
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:textinput"></a>
+    <strong>newobject:textinput (text)</strong>
+    </dt>
+    <dd>
+    - func: textinput(text)
+	- desc: called when the inputs text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">text</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:RunKey"></a>
+    <strong>newobject:RunKey (key, istext)</strong>
+    </dt>
+    <dd>
+    - func: RunKey(key, istext)
+	- desc: runs a key event on the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+
+        </li>
+        <li><span class="parameter">istext</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:MoveIndicator"></a>
+    <strong>newobject:MoveIndicator (num, exact)</strong>
+    </dt>
+    <dd>
+    - func: MoveIndicator(num, exact)
+	- desc: moves the object's indicator
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">num</span>
+
+        </li>
+        <li><span class="parameter">exact</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:UpdateIndicator"></a>
+    <strong>newobject:UpdateIndicator ()</strong>
+    </dt>
+    <dd>
+    - func: UpdateIndicator()
+	- desc: updates the object's text insertion position
+			indicator
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:AddIntoText"></a>
+    <strong>newobject:AddIntoText (t, p)</strong>
+    </dt>
+    <dd>
+    - func: AddIntoText(t, p)
+	- desc: adds text into the object's text at a given
+			position
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+
+        </li>
+        <li><span class="parameter">p</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:RemoveFromText"></a>
+    <strong>newobject:RemoveFromText (p)</strong>
+    </dt>
+    <dd>
+    - func: RemoveFromText(p)
+	- desc: removes text from the object's text a given
+			position
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">p</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetTextCollisions"></a>
+    <strong>newobject:GetTextCollisions (x, y)</strong>
+    </dt>
+    <dd>
+    - func: GetTextCollisions(x, y)
+	- desc: gets text collisions with the mouse
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:PositionText"></a>
+    <strong>newobject:PositionText ()</strong>
+    </dt>
+    <dd>
+    - func: PositionText()
+	- desc: positions the object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetTextOffsetX"></a>
+    <strong>newobject:SetTextOffsetX (num)</strong>
+    </dt>
+    <dd>
+    - func: SetTextOffsetX(num)
+	- desc: sets the object's text x offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">num</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetTextOffsetY"></a>
+    <strong>newobject:SetTextOffsetY (num)</strong>
+    </dt>
+    <dd>
+    - func: SetTextOffsetY(num)
+	- desc: sets the object's text y offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">num</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetFont"></a>
+    <strong>newobject:SetFont (font)</strong>
+    </dt>
+    <dd>
+    - func: SetFont(font)
+	- desc: sets the object's font
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">font</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetFont"></a>
+    <strong>newobject:GetFont ()</strong>
+    </dt>
+    <dd>
+    - func: GetFont()
+	- desc: gets the object's font
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetFocus"></a>
+    <strong>newobject:SetFocus (focus)</strong>
+    </dt>
+    <dd>
+    - func: SetFocus(focus)
+	- desc: sets the object's focus
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">focus</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetFocus"></a>
+    <strong>newobject:GetFocus ()</strong>
+    </dt>
+    <dd>
+    - func: GetFocus()
+	- desc: gets the object's focus
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetIndicatorVisibility"></a>
+    <strong>newobject:GetIndicatorVisibility ()</strong>
+    </dt>
+    <dd>
+    - func: GetIndicatorVisibility()
+	- desc: gets the object's indicator visibility
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetLimit"></a>
+    <strong>newobject:SetLimit (limit)</strong>
+    </dt>
+    <dd>
+    - func: SetLimit(limit)
+	- desc: sets the object's text limit
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">limit</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetUsable"></a>
+    <strong>newobject:SetUsable (usable)</strong>
+    </dt>
+    <dd>
+    - func: SetUsable(usable)
+	- desc: sets what characters can be used for the
+			object's text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">usable</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetUsable"></a>
+    <strong>newobject:GetUsable ()</strong>
+    </dt>
+    <dd>
+    - func: GetUsable()
+	- desc: gets what characters can be used for the
+			object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetUnusable"></a>
+    <strong>newobject:SetUnusable (unusable)</strong>
+    </dt>
+    <dd>
+    - func: SetUnusable(unusable)
+	- desc: sets what characters can not be used for the
+			object's text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">unusable</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetUnusable"></a>
+    <strong>newobject:GetUnusable ()</strong>
+    </dt>
+    <dd>
+    - func: GetUnusable()
+	- desc: gets what characters can not be used for the
+			object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:Clear"></a>
+    <strong>newobject:Clear ()</strong>
+    </dt>
+    <dd>
+    - func: Clear()
+	- desc: clears the object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetText"></a>
+    <strong>newobject:SetText (text)</strong>
+    </dt>
+    <dd>
+    - func: SetText(text)
+	- desc: sets the object's text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">text</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetText"></a>
+    <strong>newobject:GetText ()</strong>
+    </dt>
+    <dd>
+    - func: GetText()
+	- desc: gets the object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMultiline"></a>
+    <strong>newobject:SetMultiline (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetMultiline(bool)
+	- desc: enables or disables allowing multiple lines for
+			text entry
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMultiLine"></a>
+    <strong>newobject:GetMultiLine ()</strong>
+    </dt>
+    <dd>
+    - func: GetMultiLine()
+	- desc: gets whether or not the object is using multiple
+			lines
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetVerticalScrollBody"></a>
+    <strong>newobject:GetVerticalScrollBody ()</strong>
+    </dt>
+    <dd>
+    - func: GetVerticalScrollBody()
+	- desc: gets the object's vertical scroll body
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetHorizontalScrollBody"></a>
+    <strong>newobject:GetHorizontalScrollBody ()</strong>
+    </dt>
+    <dd>
+    - func: GetHorizontalScrollBody()
+	- desc: gets the object's horizontal scroll body
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:HasVerticalScrollBar"></a>
+    <strong>newobject:HasVerticalScrollBar ()</strong>
+    </dt>
+    <dd>
+    - func: HasVerticalScrollBar()
+	- desc: gets whether or not the object has a vertical
+			scroll bar
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:HasHorizontalScrollBar"></a>
+    <strong>newobject:HasHorizontalScrollBar ()</strong>
+    </dt>
+    <dd>
+    - func: HasHorizontalScrollBar()
+	- desc: gets whether or not the object has a horizontal
+			scroll bar
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetLineNumbersPanel"></a>
+    <strong>newobject:GetLineNumbersPanel ()</strong>
+    </dt>
+    <dd>
+    - func: GetLineNumbersPanel()
+	- desc: gets the object's line numbers panel
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:ShowLineNumbers"></a>
+    <strong>newobject:ShowLineNumbers (bool)</strong>
+    </dt>
+    <dd>
+    - func: ShowLineNumbers(bool)
+	- desc: sets whether or not to show line numbers when
+			using multiple lines
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetTextX"></a>
+    <strong>newobject:GetTextX ()</strong>
+    </dt>
+    <dd>
+    - func: GetTextX()
+	- desc: gets the object's text x
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetTextY"></a>
+    <strong>newobject:GetTextY ()</strong>
+    </dt>
+    <dd>
+    - func: GetTextY()
+	- desc: gets the object's text y
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:IsAllTextSelected"></a>
+    <strong>newobject:IsAllTextSelected ()</strong>
+    </dt>
+    <dd>
+    - func: IsAllTextSelected()
+	- desc: gets whether or not all of the object's text is
+			selected
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetLines"></a>
+    <strong>newobject:GetLines ()</strong>
+    </dt>
+    <dd>
+    - func: GetLines()
+	- desc: gets the object's lines
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetOffsetX"></a>
+    <strong>newobject:GetOffsetX ()</strong>
+    </dt>
+    <dd>
+    - func: GetOffsetX()
+	- desc: gets the object's x offset
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetOffsetY"></a>
+    <strong>newobject:GetOffsetY ()</strong>
+    </dt>
+    <dd>
+    - func: GetOffsetY()
+	- desc: gets the object's y offset
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetIndicatorX"></a>
+    <strong>newobject:GetIndicatorX ()</strong>
+    </dt>
+    <dd>
+    - func: GetIndicatorX()
+	- desc: gets the object's indicator's xpos
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetIndicatorY"></a>
+    <strong>newobject:GetIndicatorY ()</strong>
+    </dt>
+    <dd>
+    - func: GetIndicatorY()
+	- desc: gets the object's indicator's ypos
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetLineNumbersEnabled"></a>
+    <strong>newobject:GetLineNumbersEnabled ()</strong>
+    </dt>
+    <dd>
+    - func: GetLineNumbersEnabled()
+	- desc: gets whether line numbers are enabled on the
+			object or not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetItemWidth"></a>
+    <strong>newobject:GetItemWidth ()</strong>
+    </dt>
+    <dd>
+    - func: GetItemWidth()
+	- desc: gets the object's item width
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetItemHeight"></a>
+    <strong>newobject:GetItemHeight ()</strong>
+    </dt>
+    <dd>
+    - func: GetItemHeight()
+	- desc: gets the object's item height
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetTabReplacement"></a>
+    <strong>newobject:SetTabReplacement (tabreplacement)</strong>
+    </dt>
+    <dd>
+    - func: SetTabReplacement(tabreplacement)
+	- desc: sets a string to replace tabs with
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tabreplacement</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetTabReplacement"></a>
+    <strong>newobject:GetTabReplacement ()</strong>
+    </dt>
+    <dd>
+    - func: GetTabReplacement()
+	- desc: gets the object's tab replacement
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetEditable"></a>
+    <strong>newobject:SetEditable (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetEditable(bool)
+	- desc: sets whether or not the user can edit the
+			object's text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetEditable"></a>
+    <strong>newobject:GetEditable ()</strong>
+    </dt>
+    <dd>
+    - func: GetEditable
+	- desc: gets whether or not the user can edit the
+			object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetButtonScrollAmount"></a>
+    <strong>newobject:SetButtonScrollAmount (amount)</strong>
+    </dt>
+    <dd>
+    - func: SetButtonScrollAmount(speed)
+	- desc: sets the scroll amount of the object's scrollbar
+			buttons
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">amount</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetButtonScrollAmount"></a>
+    <strong>newobject:GetButtonScrollAmount ()</strong>
+    </dt>
+    <dd>
+    - func: GetButtonScrollAmount()
+	- desc: gets the scroll amount of the object's scrollbar
+			buttons
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMouseWheelScrollAmount"></a>
+    <strong>newobject:SetMouseWheelScrollAmount (amount)</strong>
+    </dt>
+    <dd>
+    - func: SetMouseWheelScrollAmount(amount)
+	- desc: sets the scroll amount of the mouse wheel
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">amount</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetButtonScrollAmount"></a>
+    <strong>newobject:GetButtonScrollAmount ()</strong>
+    </dt>
+    <dd>
+    - func: GetMouseWheelScrollAmount()
+	- desc: gets the scroll amount of the mouse wheel
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetAutoScroll"></a>
+    <strong>newobject:SetAutoScroll (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetAutoScroll(bool)
+	- desc: sets whether or not the object should autoscroll
+			when in multiline mode
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetAutoScroll"></a>
+    <strong>newobject:GetAutoScroll ()</strong>
+    </dt>
+    <dd>
+    - func: GetAutoScroll()
+	- desc: gets whether or not the object should autoscroll
+			when in multiline mode
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetRepeatDelay"></a>
+    <strong>newobject:SetRepeatDelay (delay)</strong>
+    </dt>
+    <dd>
+    - func: SetRepeatDelay(delay)
+	- desc: sets the object's repeat delay
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">delay</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetRepeatDelay"></a>
+    <strong>newobject:GetRepeatDelay ()</strong>
+    </dt>
+    <dd>
+    - func: GetRepeatDelay()
+	- desc: gets the object's repeat delay
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetRepeatRate"></a>
+    <strong>newobject:SetRepeatRate (rate)</strong>
+    </dt>
+    <dd>
+    - func: SetRepeatRate(rate)
+	- desc: sets the object's repeat rate
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">rate</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetRepeatRate"></a>
+    <strong>newobject:GetRepeatRate ()</strong>
+    </dt>
+    <dd>
+    - func: GetRepeatRate()
+	- desc: gets the object's repeat rate
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetValue"></a>
+    <strong>newobject:SetValue (value)</strong>
+    </dt>
+    <dd>
+    - func: SetValue(value)
+	- desc: sets the object's value (alias of SetText)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetValue"></a>
+    <strong>newobject:GetValue ()</strong>
+    </dt>
+    <dd>
+    - func: GetValue()
+	- desc: gets the object's value (alias of GetText)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetVisible"></a>
+    <strong>newobject:SetVisible (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetVisible(bool)
+	- desc: sets the object's visibility
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:Copy"></a>
+    <strong>newobject:Copy ()</strong>
+    </dt>
+    <dd>
+    - func: Copy()
+	- desc: copies the object's text to the user's clipboard
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:Paste"></a>
+    <strong>newobject:Paste ()</strong>
+    </dt>
+    <dd>
+    - func: Paste()
+	- desc: pastes the current contents of the clipboard
+			into the object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SelectAll"></a>
+    <strong>newobject:SelectAll ()</strong>
+    </dt>
+    <dd>
+    - func: SelectAll()
+	- desc: selects all of the object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:DeselectAll"></a>
+    <strong>newobject:DeselectAll ()</strong>
+    </dt>
+    <dd>
+    - func: DeselectAll()
+	- desc: deselects all of the object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMasked"></a>
+    <strong>newobject:SetMasked (masked)</strong>
+    </dt>
+    <dd>
+    - func: SetMasked(masked)
+	- desc: sets whether or not the object is masked
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">masked</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMasked"></a>
+    <strong>newobject:GetMasked ()</strong>
+    </dt>
+    <dd>
+    - func: GetMasked()
+	- desc: gets whether or not the object is masked
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMaskChar"></a>
+    <strong>newobject:SetMaskChar (char)</strong>
+    </dt>
+    <dd>
+    - func: SetMaskChar(char)
+	- desc: sets the object's mask character
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">char</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMaskChar"></a>
+    <strong>newobject:GetMaskChar ()</strong>
+    </dt>
+    <dd>
+    - func: GetMaskChar()
+	- desc: gets the object's mask character
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetPlaceholderText"></a>
+    <strong>newobject:SetPlaceholderText (text)</strong>
+    </dt>
+    <dd>
+    - func: SetPlaceholderText(text)
+	- desc: sets the object's placeholder text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">text</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetPlaceholderText"></a>
+    <strong>newobject:GetPlaceholderText ()</strong>
+    </dt>
+    <dd>
+    - func: GetPlaceholderText()
+	- desc: gets the object's placeholder text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:ClearLine"></a>
+    <strong>newobject:ClearLine (line)</strong>
+    </dt>
+    <dd>
+    - func: ClearLine(line)
+	- desc: clears the specified line
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">line</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetTrackingEnabled"></a>
+    <strong>newobject:SetTrackingEnabled (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetTrackingEnabled(bool)
+	- desc: sets whether or not the object should
+			automatically scroll to the position of its
+			indicator
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetTrackingEnabled"></a>
+    <strong>newobject:GetTrackingEnabled ()</strong>
+    </dt>
+    <dd>
+    - func: GetTrackingEnabled()
+	- desc: gets whether or not the object should
+			automatically scroll to the position of its
+			indicator
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-08-09 15:38:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

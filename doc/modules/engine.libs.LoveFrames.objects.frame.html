@@ -1,0 +1,1098 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>VideahEngine Docs</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>VideahEngine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/engine.libs.LoveFrames.html">engine.libs.LoveFrames</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.debug.html">engine.libs.LoveFrames.libraries.debug</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.skins.html">engine.libs.LoveFrames.libraries.skins</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.templates.html">engine.libs.LoveFrames.libraries.templates</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.util.html">engine.libs.LoveFrames.libraries.util</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.base.html">engine.libs.LoveFrames.objects.base</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.button.html">engine.libs.LoveFrames.objects.button</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.checkbox.html">engine.libs.LoveFrames.objects.checkbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.collapsiblecategory.html">engine.libs.LoveFrames.objects.collapsiblecategory</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.columnlist.html">engine.libs.LoveFrames.objects.columnlist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.form.html">engine.libs.LoveFrames.objects.form</a></li>
+  <li><strong>engine.libs.LoveFrames.objects.frame</strong></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.grid.html">engine.libs.LoveFrames.objects.grid</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.image.html">engine.libs.LoveFrames.objects.image</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.imagebutton.html">engine.libs.LoveFrames.objects.imagebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.closebutton.html">engine.libs.LoveFrames.objects.internal.closebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.linenumberspanel.html">engine.libs.LoveFrames.objects.internal.linenumberspanel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.menuoption.html">engine.libs.LoveFrames.objects.internal.menuoption</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.modalbackground.html">engine.libs.LoveFrames.objects.internal.modalbackground</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollarea.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbar.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbody.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbody</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.sliderbutton.html">engine.libs.LoveFrames.objects.internal.sliderbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tabbutton.html">engine.libs.LoveFrames.objects.internal.tabbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tooltip.html">engine.libs.LoveFrames.objects.internal.tooltip</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenode.html">engine.libs.LoveFrames.objects.internal.treenode</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenodebutton.html">engine.libs.LoveFrames.objects.internal.treenodebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.list.html">engine.libs.LoveFrames.objects.list</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.menu.html">engine.libs.LoveFrames.objects.menu</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.multichoice.html">engine.libs.LoveFrames.objects.multichoice</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.numberbox.html">engine.libs.LoveFrames.objects.numberbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.panel.html">engine.libs.LoveFrames.objects.panel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.progressbar.html">engine.libs.LoveFrames.objects.progressbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.radiobutton.html">engine.libs.LoveFrames.objects.radiobutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.slider.html">engine.libs.LoveFrames.objects.slider</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tabs.html">engine.libs.LoveFrames.objects.tabs</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.text.html">engine.libs.LoveFrames.objects.text</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.textinput.html">engine.libs.LoveFrames.objects.textinput</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tree.html">engine.libs.LoveFrames.objects.tree</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Blue.skin.html">engine.libs.LoveFrames.skins.Blue.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Orange.skin.html">engine.libs.LoveFrames.skins.Orange.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.templates.base.html">engine.libs.LoveFrames.templates.base</a></li>
+  <li><a href="../modules/engine.modules.error.html">engine.modules.error</a></li>
+  <li><a href="../modules/engine.modules.hook.html">engine.modules.hook</a></li>
+  <li><a href="../modules/engine.modules.html">engine.modules</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>engine.libs.LoveFrames.objects.frame</code></h1>
+<p>-- Love Frames - A GUI library for LOVE --
+	-- Copyright (c) 2012-2014 Kenny Shields --</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#newobject:initialize">newobject:initialize ()</a></td>
+	<td class="summary">- func: initialize()
+	- desc: initializes the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:update">newobject:update (dt)</a></td>
+	<td class="summary">- func: update(deltatime)
+	- desc: updates the element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:draw">newobject:draw ()</a></td>
+	<td class="summary">- func: draw()
+	- desc: draws the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousepressed">newobject:mousepressed (x, y, button)</a></td>
+	<td class="summary">- func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousereleased">newobject:mousereleased (x, y, button)</a></td>
+	<td class="summary">- func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetName">newobject:SetName (name)</a></td>
+	<td class="summary">- func: SetName(name)
+	- desc: sets the object's name</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetName">newobject:GetName ()</a></td>
+	<td class="summary">- func: GetName()
+	- desc: gets the object's name</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetDraggable">newobject:SetDraggable (bool)</a></td>
+	<td class="summary">- func: SetDraggable(true/false)
+	- desc: sets whether the object can be dragged or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetDraggable">newobject:GetDraggable ()</a></td>
+	<td class="summary">- func: GetDraggable()
+	- desc: gets whether the object can be dragged ot not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetScreenLocked">newobject:SetScreenLocked (bool)</a></td>
+	<td class="summary">- func: SetScreenLocked(bool)
+	- desc: sets whether the object can be moved passed the
+			boundaries of the window or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetScreenLocked">newobject:GetScreenLocked ()</a></td>
+	<td class="summary">- func: GetScreenLocked()
+	- desc: gets whether the object can be moved passed the
+			boundaries of window or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:ShowCloseButton">newobject:ShowCloseButton (bool)</a></td>
+	<td class="summary">- func: ShowCloseButton(bool)
+	- desc: sets whether the object's close button should
+			be drawn</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:MakeTop">newobject:MakeTop ()</a></td>
+	<td class="summary">- func: MakeTop()
+	- desc: makes the object the top object in the drawing
+			order</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetModal">newobject:SetModal (bool)</a></td>
+	<td class="summary">- func: SetModal(bool)
+	- desc: sets whether or not the object is in a modal
+			state</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetModal">newobject:GetModal ()</a></td>
+	<td class="summary">- func: GetModal()
+	- desc: gets whether or not the object is in a modal
+			state</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetVisible">newobject:SetVisible (bool)</a></td>
+	<td class="summary">- func: SetVisible(bool)
+	- desc: set's whether the object is visible or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetParentLocked">newobject:SetParentLocked (bool)</a></td>
+	<td class="summary">- func: SetParentLocked(bool)
+	- desc: sets whether the object can be moved passed the
+			boundaries of its parent or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetParentLocked">newobject:GetParentLocked ()</a></td>
+	<td class="summary">- func: GetParentLocked(bool)
+	- desc: gets whether the object can be moved passed the
+			boundaries of its parent or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetIcon">newobject:SetIcon (icon)</a></td>
+	<td class="summary">- func: SetIcon(icon)
+	- desc: sets the object's icon</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetIcon">newobject:GetIcon ()</a></td>
+	<td class="summary">- func: GetIcon()
+	- desc: gets the object's icon</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetDockable">newobject:SetDockable (dockable)</a></td>
+	<td class="summary">- func: SetDockable(dockable)
+	- desc: sets whether or not the object can dock onto
+			another object of its type or be docked
+			by another object of its type</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetDockable">newobject:GetDockable ()</a></td>
+	<td class="summary">- func: GetDockable()
+	- desc: gets whether or not the object can dock onto
+			another object of its type or be docked
+			by another object of its type</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetDockZoneSize">newobject:SetDockZoneSize (size)</a></td>
+	<td class="summary">- func: SetDockZoneSize(size)
+	- desc: sets the size of the object's docking zone</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetDockZoneSize">newobject:GetDockZoneSize ()</a></td>
+	<td class="summary">- func: GetDockZoneSize(size)
+	- desc: gets the size of the object's docking zone</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetResizable">newobject:SetResizable (bool)</a></td>
+	<td class="summary">- func: SetResizable(bool)
+	- desc: sets whether or not the object can be resized</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetResizable">newobject:GetResizable ()</a></td>
+	<td class="summary">- func: GetResizable()
+	- desc: gets whether or not the object can be resized</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMinWidth">newobject:SetMinWidth (width)</a></td>
+	<td class="summary">- func: SetMinWidth(width)
+	- desc: sets the object's minimum width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMinWidth">newobject:GetMinWidth ()</a></td>
+	<td class="summary">- func: GetMinWidth()
+	- desc: gets the object's minimum width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMaxWidth">newobject:SetMaxWidth (width)</a></td>
+	<td class="summary">- func: SetMaxWidth(width)
+	- desc: sets the object's maximum width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMaxWidth">newobject:GetMaxWidth ()</a></td>
+	<td class="summary">- func: GetMaxWidth()
+	- desc: gets the object's maximum width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMinHeight">newobject:SetMinHeight (height)</a></td>
+	<td class="summary">- func: SetMinHeight(height)
+	- desc: sets the object's minimum height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMinHeight">newobject:GetMinHeight ()</a></td>
+	<td class="summary">- func: GetMinHeight()
+	- desc: gets the object's minimum height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMaxHeight">newobject:SetMaxHeight (height)</a></td>
+	<td class="summary">- func: SetMaxHeight(height)
+	- desc: sets the object's maximum height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMaxHeight">newobject:GetMaxHeight ()</a></td>
+	<td class="summary">- func: GetMaxHeight()
+	- desc: gets the object's maximum height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMinSize">newobject:SetMinSize (width, height)</a></td>
+	<td class="summary">- func: SetMinSize(width, height)
+	- desc: sets the object's minimum size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMinSize">newobject:GetMinSize ()</a></td>
+	<td class="summary">- func: GetMinSize()
+	- desc: gets the object's minimum size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMaxSize">newobject:SetMaxSize (width, height)</a></td>
+	<td class="summary">- func: SetMaxSize(width, height)
+	- desc: sets the object's maximum size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMaxSize">newobject:GetMaxSize ()</a></td>
+	<td class="summary">- func: GetMaxSize()
+	- desc: gets the object's maximum size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetAlwaysOnTop">newobject:SetAlwaysOnTop (bool)</a></td>
+	<td class="summary">- func: SetAlwaysOnTop(bool)
+	- desc: sets whether or not a frame should always be
+			drawn on top of other objects</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetAlwaysOnTop">newobject:GetAlwaysOnTop ()</a></td>
+	<td class="summary">- func: GetAlwaysOnTop()
+	- desc: gets whether or not a frame should always be
+			drawn on top of other objects</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "newobject:initialize"></a>
+    <strong>newobject:initialize ()</strong>
+    </dt>
+    <dd>
+    - func: initialize()
+	- desc: initializes the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:update"></a>
+    <strong>newobject:update (dt)</strong>
+    </dt>
+    <dd>
+    - func: update(deltatime)
+	- desc: updates the element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:draw"></a>
+    <strong>newobject:draw ()</strong>
+    </dt>
+    <dd>
+    - func: draw()
+	- desc: draws the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousepressed"></a>
+    <strong>newobject:mousepressed (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousereleased"></a>
+    <strong>newobject:mousereleased (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetName"></a>
+    <strong>newobject:SetName (name)</strong>
+    </dt>
+    <dd>
+    - func: SetName(name)
+	- desc: sets the object's name
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetName"></a>
+    <strong>newobject:GetName ()</strong>
+    </dt>
+    <dd>
+    - func: GetName()
+	- desc: gets the object's name
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetDraggable"></a>
+    <strong>newobject:SetDraggable (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetDraggable(true/false)
+	- desc: sets whether the object can be dragged or not
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetDraggable"></a>
+    <strong>newobject:GetDraggable ()</strong>
+    </dt>
+    <dd>
+    - func: GetDraggable()
+	- desc: gets whether the object can be dragged ot not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetScreenLocked"></a>
+    <strong>newobject:SetScreenLocked (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetScreenLocked(bool)
+	- desc: sets whether the object can be moved passed the
+			boundaries of the window or not
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetScreenLocked"></a>
+    <strong>newobject:GetScreenLocked ()</strong>
+    </dt>
+    <dd>
+    - func: GetScreenLocked()
+	- desc: gets whether the object can be moved passed the
+			boundaries of window or not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:ShowCloseButton"></a>
+    <strong>newobject:ShowCloseButton (bool)</strong>
+    </dt>
+    <dd>
+    - func: ShowCloseButton(bool)
+	- desc: sets whether the object's close button should
+			be drawn
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:MakeTop"></a>
+    <strong>newobject:MakeTop ()</strong>
+    </dt>
+    <dd>
+    - func: MakeTop()
+	- desc: makes the object the top object in the drawing
+			order
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetModal"></a>
+    <strong>newobject:SetModal (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetModal(bool)
+	- desc: sets whether or not the object is in a modal
+			state
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetModal"></a>
+    <strong>newobject:GetModal ()</strong>
+    </dt>
+    <dd>
+    - func: GetModal()
+	- desc: gets whether or not the object is in a modal
+			state
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetVisible"></a>
+    <strong>newobject:SetVisible (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetVisible(bool)
+	- desc: set's whether the object is visible or not
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetParentLocked"></a>
+    <strong>newobject:SetParentLocked (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetParentLocked(bool)
+	- desc: sets whether the object can be moved passed the
+			boundaries of its parent or not
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetParentLocked"></a>
+    <strong>newobject:GetParentLocked ()</strong>
+    </dt>
+    <dd>
+    - func: GetParentLocked(bool)
+	- desc: gets whether the object can be moved passed the
+			boundaries of its parent or not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetIcon"></a>
+    <strong>newobject:SetIcon (icon)</strong>
+    </dt>
+    <dd>
+    - func: SetIcon(icon)
+	- desc: sets the object's icon
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">icon</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetIcon"></a>
+    <strong>newobject:GetIcon ()</strong>
+    </dt>
+    <dd>
+    - func: GetIcon()
+	- desc: gets the object's icon
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetDockable"></a>
+    <strong>newobject:SetDockable (dockable)</strong>
+    </dt>
+    <dd>
+    - func: SetDockable(dockable)
+	- desc: sets whether or not the object can dock onto
+			another object of its type or be docked
+			by another object of its type
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dockable</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetDockable"></a>
+    <strong>newobject:GetDockable ()</strong>
+    </dt>
+    <dd>
+    - func: GetDockable()
+	- desc: gets whether or not the object can dock onto
+			another object of its type or be docked
+			by another object of its type
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetDockZoneSize"></a>
+    <strong>newobject:SetDockZoneSize (size)</strong>
+    </dt>
+    <dd>
+    - func: SetDockZoneSize(size)
+	- desc: sets the size of the object's docking zone
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">size</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetDockZoneSize"></a>
+    <strong>newobject:GetDockZoneSize ()</strong>
+    </dt>
+    <dd>
+    - func: GetDockZoneSize(size)
+	- desc: gets the size of the object's docking zone
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetResizable"></a>
+    <strong>newobject:SetResizable (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetResizable(bool)
+	- desc: sets whether or not the object can be resized
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetResizable"></a>
+    <strong>newobject:GetResizable ()</strong>
+    </dt>
+    <dd>
+    - func: GetResizable()
+	- desc: gets whether or not the object can be resized
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMinWidth"></a>
+    <strong>newobject:SetMinWidth (width)</strong>
+    </dt>
+    <dd>
+    - func: SetMinWidth(width)
+	- desc: sets the object's minimum width
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMinWidth"></a>
+    <strong>newobject:GetMinWidth ()</strong>
+    </dt>
+    <dd>
+    - func: GetMinWidth()
+	- desc: gets the object's minimum width
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMaxWidth"></a>
+    <strong>newobject:SetMaxWidth (width)</strong>
+    </dt>
+    <dd>
+    - func: SetMaxWidth(width)
+	- desc: sets the object's maximum width
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMaxWidth"></a>
+    <strong>newobject:GetMaxWidth ()</strong>
+    </dt>
+    <dd>
+    - func: GetMaxWidth()
+	- desc: gets the object's maximum width
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMinHeight"></a>
+    <strong>newobject:SetMinHeight (height)</strong>
+    </dt>
+    <dd>
+    - func: SetMinHeight(height)
+	- desc: sets the object's minimum height
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">height</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMinHeight"></a>
+    <strong>newobject:GetMinHeight ()</strong>
+    </dt>
+    <dd>
+    - func: GetMinHeight()
+	- desc: gets the object's minimum height
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMaxHeight"></a>
+    <strong>newobject:SetMaxHeight (height)</strong>
+    </dt>
+    <dd>
+    - func: SetMaxHeight(height)
+	- desc: sets the object's maximum height
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">height</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMaxHeight"></a>
+    <strong>newobject:GetMaxHeight ()</strong>
+    </dt>
+    <dd>
+    - func: GetMaxHeight()
+	- desc: gets the object's maximum height
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMinSize"></a>
+    <strong>newobject:SetMinSize (width, height)</strong>
+    </dt>
+    <dd>
+    - func: SetMinSize(width, height)
+	- desc: sets the object's minimum size
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">height</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMinSize"></a>
+    <strong>newobject:GetMinSize ()</strong>
+    </dt>
+    <dd>
+    - func: GetMinSize()
+	- desc: gets the object's minimum size
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMaxSize"></a>
+    <strong>newobject:SetMaxSize (width, height)</strong>
+    </dt>
+    <dd>
+    - func: SetMaxSize(width, height)
+	- desc: sets the object's maximum size
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">height</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMaxSize"></a>
+    <strong>newobject:GetMaxSize ()</strong>
+    </dt>
+    <dd>
+    - func: GetMaxSize()
+	- desc: gets the object's maximum size
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetAlwaysOnTop"></a>
+    <strong>newobject:SetAlwaysOnTop (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetAlwaysOnTop(bool)
+	- desc: sets whether or not a frame should always be
+			drawn on top of other objects
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetAlwaysOnTop"></a>
+    <strong>newobject:GetAlwaysOnTop ()</strong>
+    </dt>
+    <dd>
+    - func: GetAlwaysOnTop()
+	- desc: gets whether or not a frame should always be
+			drawn on top of other objects
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-08-09 15:38:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

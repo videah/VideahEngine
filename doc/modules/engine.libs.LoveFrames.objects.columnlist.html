@@ -1,0 +1,1302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>VideahEngine Docs</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>VideahEngine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/engine.libs.LoveFrames.html">engine.libs.LoveFrames</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.debug.html">engine.libs.LoveFrames.libraries.debug</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.skins.html">engine.libs.LoveFrames.libraries.skins</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.templates.html">engine.libs.LoveFrames.libraries.templates</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.util.html">engine.libs.LoveFrames.libraries.util</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.base.html">engine.libs.LoveFrames.objects.base</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.button.html">engine.libs.LoveFrames.objects.button</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.checkbox.html">engine.libs.LoveFrames.objects.checkbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.collapsiblecategory.html">engine.libs.LoveFrames.objects.collapsiblecategory</a></li>
+  <li><strong>engine.libs.LoveFrames.objects.columnlist</strong></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.form.html">engine.libs.LoveFrames.objects.form</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.frame.html">engine.libs.LoveFrames.objects.frame</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.grid.html">engine.libs.LoveFrames.objects.grid</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.image.html">engine.libs.LoveFrames.objects.image</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.imagebutton.html">engine.libs.LoveFrames.objects.imagebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.closebutton.html">engine.libs.LoveFrames.objects.internal.closebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.linenumberspanel.html">engine.libs.LoveFrames.objects.internal.linenumberspanel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.menuoption.html">engine.libs.LoveFrames.objects.internal.menuoption</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.modalbackground.html">engine.libs.LoveFrames.objects.internal.modalbackground</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollarea.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbar.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbody.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbody</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.sliderbutton.html">engine.libs.LoveFrames.objects.internal.sliderbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tabbutton.html">engine.libs.LoveFrames.objects.internal.tabbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tooltip.html">engine.libs.LoveFrames.objects.internal.tooltip</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenode.html">engine.libs.LoveFrames.objects.internal.treenode</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenodebutton.html">engine.libs.LoveFrames.objects.internal.treenodebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.list.html">engine.libs.LoveFrames.objects.list</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.menu.html">engine.libs.LoveFrames.objects.menu</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.multichoice.html">engine.libs.LoveFrames.objects.multichoice</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.numberbox.html">engine.libs.LoveFrames.objects.numberbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.panel.html">engine.libs.LoveFrames.objects.panel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.progressbar.html">engine.libs.LoveFrames.objects.progressbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.radiobutton.html">engine.libs.LoveFrames.objects.radiobutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.slider.html">engine.libs.LoveFrames.objects.slider</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tabs.html">engine.libs.LoveFrames.objects.tabs</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.text.html">engine.libs.LoveFrames.objects.text</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.textinput.html">engine.libs.LoveFrames.objects.textinput</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tree.html">engine.libs.LoveFrames.objects.tree</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Blue.skin.html">engine.libs.LoveFrames.skins.Blue.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Orange.skin.html">engine.libs.LoveFrames.skins.Orange.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.templates.base.html">engine.libs.LoveFrames.templates.base</a></li>
+  <li><a href="../modules/engine.modules.error.html">engine.modules.error</a></li>
+  <li><a href="../modules/engine.modules.hook.html">engine.modules.hook</a></li>
+  <li><a href="../modules/engine.modules.html">engine.modules</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>engine.libs.LoveFrames.objects.columnlist</code></h1>
+<p>-- Love Frames - A GUI library for LOVE --
+	-- Copyright (c) 2012-2014 Kenny Shields --</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#newobject:initialize">newobject:initialize ()</a></td>
+	<td class="summary">- func: initialize()
+	- desc: intializes the element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:update">newobject:update (dt)</a></td>
+	<td class="summary">- func: update(deltatime)
+	- desc: updates the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:draw">newobject:draw ()</a></td>
+	<td class="summary">- func: draw()
+	- desc: draws the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousepressed">newobject:mousepressed (x, y, button)</a></td>
+	<td class="summary">- func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousereleased">newobject:mousereleased (x, y, button)</a></td>
+	<td class="summary">- func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:PositionColumns">newobject:PositionColumns ()</a></td>
+	<td class="summary">- func: PositionColumns()
+	- desc: positions the object's columns</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:AddColumn">newobject:AddColumn (name)</a></td>
+	<td class="summary">- func: AddColumn(name)
+	- desc: gives the object a new column with the specified
+			name</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:AddRow">newobject:AddRow (...)</a></td>
+	<td class="summary">- func: AddRow(...)
+	- desc: adds a row of data to the object's list</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetColumnSize">newobject:GetColumnSize ()</a></td>
+	<td class="summary">- func: Getchildrenize()
+	- desc: gets the size of the object's children</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetSize">newobject:SetSize (width, height, r1, r2)</a></td>
+	<td class="summary">- func: SetSize(width, height, r1, r2)
+	- desc: sets the object's size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetWidth">newobject:SetWidth (width, relative)</a></td>
+	<td class="summary">- func: SetWidth(width, relative)
+	- desc: sets the object's width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetHeight">newobject:SetHeight (height, relative)</a></td>
+	<td class="summary">- func: SetHeight(height, relative)
+	- desc: sets the object's height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMaxColorIndex">newobject:SetMaxColorIndex (num)</a></td>
+	<td class="summary">- func: SetMaxColorIndex(num)
+	- desc: sets the object's max color index for
+			alternating row colors</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:Clear">newobject:Clear ()</a></td>
+	<td class="summary">- func: Clear()
+	- desc: removes all items from the object's list</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetAutoScroll">newobject:SetAutoScroll (bool)</a></td>
+	<td class="summary">- func: SetAutoScroll(bool)
+	- desc: sets whether or not the list's scrollbar should
+			auto scroll to the bottom when a new object is
+			added to the list</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetButtonScrollAmount">newobject:SetButtonScrollAmount (amount)</a></td>
+	<td class="summary">- func: SetButtonScrollAmount(speed)
+	- desc: sets the scroll amount of the object's scrollbar
+			buttons</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetButtonScrollAmount">newobject:GetButtonScrollAmount ()</a></td>
+	<td class="summary">- func: GetButtonScrollAmount()
+	- desc: gets the scroll amount of the object's scrollbar
+			buttons</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMouseWheelScrollAmount">newobject:SetMouseWheelScrollAmount (amount)</a></td>
+	<td class="summary">- func: SetMouseWheelScrollAmount(amount)
+	- desc: sets the scroll amount of the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetButtonScrollAmount">newobject:GetButtonScrollAmount ()</a></td>
+	<td class="summary">- func: GetMouseWheelScrollAmount()
+	- desc: gets the scroll amount of the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetColumnHeight">newobject:SetColumnHeight (height)</a></td>
+	<td class="summary">- func: SetColumnHeight(height)
+	- desc: sets the height of the object's columns</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SelectRow">newobject:SelectRow (row, ctrl)</a></td>
+	<td class="summary">- func: SelectRow(row, ctrl)
+	- desc: selects the specfied row in the object's list
+			of rows</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:DeselectRow">newobject:DeselectRow (row)</a></td>
+	<td class="summary">- func: DeselectRow(row)
+	- desc: deselects the specfied row in the object's list
+			of rows</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetSelectedRows">newobject:GetSelectedRows ()</a></td>
+	<td class="summary">- func: GetSelectedRows()
+	- desc: gets the object's selected rows</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetSelectionEnabled">newobject:SetSelectionEnabled (bool)</a></td>
+	<td class="summary">- func: SetSelectionEnabled(bool)
+	- desc: sets whether or not the object's rows can be
+			selected</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetSelectionEnabled">newobject:GetSelectionEnabled ()</a></td>
+	<td class="summary">- func: GetSelectionEnabled()
+	- desc: gets whether or not the object's rows can be
+			selected</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMultiselectEnabled">newobject:SetMultiselectEnabled (bool)</a></td>
+	<td class="summary">- func: SetMultiselectEnabled(bool)
+	- desc: sets whether or not the object can have more
+			than one row selected</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMultiselectEnabled">newobject:GetMultiselectEnabled ()</a></td>
+	<td class="summary">- func: GetMultiselectEnabled()
+	- desc: gets whether or not the object can have more
+			than one row selected</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:RemoveColumn">newobject:RemoveColumn (id)</a></td>
+	<td class="summary">- func: RemoveColumn(id)
+	- desc: removes a column</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetColumnName">newobject:SetColumnName (id, name)</a></td>
+	<td class="summary">- func: SetColumnName(id, name)
+	- desc: sets a column's name</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetColumnName">newobject:GetColumnName (id)</a></td>
+	<td class="summary">- func: GetColumnName(id)
+	- desc: gets a column's name</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SizeToChildren">newobject:SizeToChildren (max)</a></td>
+	<td class="summary">- func: SizeToChildren(max)
+	- desc: sizes the object to match the combined height
+			of its children
+	- note: Credit to retupmoc258, the original author of
+			this method.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:RemoveRow">newobject:RemoveRow (id)</a></td>
+	<td class="summary">- func: RemoveRow(id)
+	- desc: removes a row from the object's list</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetCellText">newobject:SetCellText (text, rowid, columnid)</a></td>
+	<td class="summary">- func: SetCellText(text, rowid, columnid)
+	- desc: sets a cell's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetCellText">newobject:GetCellText (rowid, columnid)</a></td>
+	<td class="summary">- func: GetCellText(rowid, columnid)
+	- desc: gets a cell's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetRowColumnData">newobject:SetRowColumnData (rowid, columndata)</a></td>
+	<td class="summary">- func: SetRowColumnData(rowid, columndata)
+	- desc: sets the columndata of the specified row</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetTotalColumnWidth">newobject:GetTotalColumnWidth ()</a></td>
+	<td class="summary">- func: GetTotalColumnWidth()
+	- desc: gets the combined width of the object's columns</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetColumnWidth">newobject:SetColumnWidth (id, width)</a></td>
+	<td class="summary">- func: SetColumnWidth(id, width)
+	- desc: sets the width of the specified column</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetColumnWidth">newobject:GetColumnWidth (id)</a></td>
+	<td class="summary">- func: GetColumnWidth(id)
+	- desc: gets the width of the specified column</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:ResizeColumns">newobject:ResizeColumns ()</a></td>
+	<td class="summary">- func: ResizeColumns()
+	- desc: resizes the object's columns to fit within the
+	        width of the object's list area</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetDefaultColumnWidth">newobject:SetDefaultColumnWidth (width)</a></td>
+	<td class="summary">- func: SetDefaultColumnWidth(width)
+	- desc: sets the object's default column width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetDefaultColumnWidth">newobject:GetDefaultColumnWidth ()</a></td>
+	<td class="summary">- func: GetDefaultColumnWidth()
+	- desc: gets the object's default column width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetColumnResizeEnabled">newobject:SetColumnResizeEnabled (bool)</a></td>
+	<td class="summary">- func: SetColumnResizeEnabled(bool)
+	- desc: sets whether or not the object's columns can
+			be resized</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetColumnResizeEnabled">newobject:GetColumnResizeEnabled ()</a></td>
+	<td class="summary">- func: GetColumnResizeEnabled()
+	- desc: gets whether or not the object's columns can
+			be resized</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SizeColumnToData">newobject:SizeColumnToData (columnid)</a></td>
+	<td class="summary">- func: SizeColumnToData(columnid)
+	- desc: sizes a column to the width of its largest data
+			string</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetColumnOrder">newobject:SetColumnOrder (curid, newid)</a></td>
+	<td class="summary">- func: SetColumnOrder(curid, newid)
+	- desc: sets the order of the specified column</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "newobject:initialize"></a>
+    <strong>newobject:initialize ()</strong>
+    </dt>
+    <dd>
+    - func: initialize()
+	- desc: intializes the element
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:update"></a>
+    <strong>newobject:update (dt)</strong>
+    </dt>
+    <dd>
+    - func: update(deltatime)
+	- desc: updates the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:draw"></a>
+    <strong>newobject:draw ()</strong>
+    </dt>
+    <dd>
+    - func: draw()
+	- desc: draws the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousepressed"></a>
+    <strong>newobject:mousepressed (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousereleased"></a>
+    <strong>newobject:mousereleased (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:PositionColumns"></a>
+    <strong>newobject:PositionColumns ()</strong>
+    </dt>
+    <dd>
+    - func: PositionColumns()
+	- desc: positions the object's columns
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:AddColumn"></a>
+    <strong>newobject:AddColumn (name)</strong>
+    </dt>
+    <dd>
+    - func: AddColumn(name)
+	- desc: gives the object a new column with the specified
+			name
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:AddRow"></a>
+    <strong>newobject:AddRow (...)</strong>
+    </dt>
+    <dd>
+    - func: AddRow(...)
+	- desc: adds a row of data to the object's list
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetColumnSize"></a>
+    <strong>newobject:GetColumnSize ()</strong>
+    </dt>
+    <dd>
+    - func: Getchildrenize()
+	- desc: gets the size of the object's children
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetSize"></a>
+    <strong>newobject:SetSize (width, height, r1, r2)</strong>
+    </dt>
+    <dd>
+    - func: SetSize(width, height, r1, r2)
+	- desc: sets the object's size
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">height</span>
+
+        </li>
+        <li><span class="parameter">r1</span>
+
+        </li>
+        <li><span class="parameter">r2</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetWidth"></a>
+    <strong>newobject:SetWidth (width, relative)</strong>
+    </dt>
+    <dd>
+    - func: SetWidth(width, relative)
+	- desc: sets the object's width
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">relative</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetHeight"></a>
+    <strong>newobject:SetHeight (height, relative)</strong>
+    </dt>
+    <dd>
+    - func: SetHeight(height, relative)
+	- desc: sets the object's height
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">height</span>
+
+        </li>
+        <li><span class="parameter">relative</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMaxColorIndex"></a>
+    <strong>newobject:SetMaxColorIndex (num)</strong>
+    </dt>
+    <dd>
+    - func: SetMaxColorIndex(num)
+	- desc: sets the object's max color index for
+			alternating row colors
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">num</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:Clear"></a>
+    <strong>newobject:Clear ()</strong>
+    </dt>
+    <dd>
+    - func: Clear()
+	- desc: removes all items from the object's list
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetAutoScroll"></a>
+    <strong>newobject:SetAutoScroll (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetAutoScroll(bool)
+	- desc: sets whether or not the list's scrollbar should
+			auto scroll to the bottom when a new object is
+			added to the list
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetButtonScrollAmount"></a>
+    <strong>newobject:SetButtonScrollAmount (amount)</strong>
+    </dt>
+    <dd>
+    - func: SetButtonScrollAmount(speed)
+	- desc: sets the scroll amount of the object's scrollbar
+			buttons
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">amount</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetButtonScrollAmount"></a>
+    <strong>newobject:GetButtonScrollAmount ()</strong>
+    </dt>
+    <dd>
+    - func: GetButtonScrollAmount()
+	- desc: gets the scroll amount of the object's scrollbar
+			buttons
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMouseWheelScrollAmount"></a>
+    <strong>newobject:SetMouseWheelScrollAmount (amount)</strong>
+    </dt>
+    <dd>
+    - func: SetMouseWheelScrollAmount(amount)
+	- desc: sets the scroll amount of the mouse wheel
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">amount</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetButtonScrollAmount"></a>
+    <strong>newobject:GetButtonScrollAmount ()</strong>
+    </dt>
+    <dd>
+    - func: GetMouseWheelScrollAmount()
+	- desc: gets the scroll amount of the mouse wheel
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetColumnHeight"></a>
+    <strong>newobject:SetColumnHeight (height)</strong>
+    </dt>
+    <dd>
+    - func: SetColumnHeight(height)
+	- desc: sets the height of the object's columns
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">height</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SelectRow"></a>
+    <strong>newobject:SelectRow (row, ctrl)</strong>
+    </dt>
+    <dd>
+    - func: SelectRow(row, ctrl)
+	- desc: selects the specfied row in the object's list
+			of rows
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">row</span>
+
+        </li>
+        <li><span class="parameter">ctrl</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:DeselectRow"></a>
+    <strong>newobject:DeselectRow (row)</strong>
+    </dt>
+    <dd>
+    - func: DeselectRow(row)
+	- desc: deselects the specfied row in the object's list
+			of rows
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">row</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetSelectedRows"></a>
+    <strong>newobject:GetSelectedRows ()</strong>
+    </dt>
+    <dd>
+    - func: GetSelectedRows()
+	- desc: gets the object's selected rows
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetSelectionEnabled"></a>
+    <strong>newobject:SetSelectionEnabled (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetSelectionEnabled(bool)
+	- desc: sets whether or not the object's rows can be
+			selected
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetSelectionEnabled"></a>
+    <strong>newobject:GetSelectionEnabled ()</strong>
+    </dt>
+    <dd>
+    - func: GetSelectionEnabled()
+	- desc: gets whether or not the object's rows can be
+			selected
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMultiselectEnabled"></a>
+    <strong>newobject:SetMultiselectEnabled (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetMultiselectEnabled(bool)
+	- desc: sets whether or not the object can have more
+			than one row selected
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMultiselectEnabled"></a>
+    <strong>newobject:GetMultiselectEnabled ()</strong>
+    </dt>
+    <dd>
+    - func: GetMultiselectEnabled()
+	- desc: gets whether or not the object can have more
+			than one row selected
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:RemoveColumn"></a>
+    <strong>newobject:RemoveColumn (id)</strong>
+    </dt>
+    <dd>
+    - func: RemoveColumn(id)
+	- desc: removes a column
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetColumnName"></a>
+    <strong>newobject:SetColumnName (id, name)</strong>
+    </dt>
+    <dd>
+    - func: SetColumnName(id, name)
+	- desc: sets a column's name
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+
+        </li>
+        <li><span class="parameter">name</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetColumnName"></a>
+    <strong>newobject:GetColumnName (id)</strong>
+    </dt>
+    <dd>
+    - func: GetColumnName(id)
+	- desc: gets a column's name
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SizeToChildren"></a>
+    <strong>newobject:SizeToChildren (max)</strong>
+    </dt>
+    <dd>
+    - func: SizeToChildren(max)
+	- desc: sizes the object to match the combined height
+			of its children
+	- note: Credit to retupmoc258, the original author of
+			this method.  This version has a few slight
+			modifications.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">max</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:RemoveRow"></a>
+    <strong>newobject:RemoveRow (id)</strong>
+    </dt>
+    <dd>
+    - func: RemoveRow(id)
+	- desc: removes a row from the object's list
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetCellText"></a>
+    <strong>newobject:SetCellText (text, rowid, columnid)</strong>
+    </dt>
+    <dd>
+    - func: SetCellText(text, rowid, columnid)
+	- desc: sets a cell's text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">text</span>
+
+        </li>
+        <li><span class="parameter">rowid</span>
+
+        </li>
+        <li><span class="parameter">columnid</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetCellText"></a>
+    <strong>newobject:GetCellText (rowid, columnid)</strong>
+    </dt>
+    <dd>
+    - func: GetCellText(rowid, columnid)
+	- desc: gets a cell's text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">rowid</span>
+
+        </li>
+        <li><span class="parameter">columnid</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetRowColumnData"></a>
+    <strong>newobject:SetRowColumnData (rowid, columndata)</strong>
+    </dt>
+    <dd>
+    - func: SetRowColumnData(rowid, columndata)
+	- desc: sets the columndata of the specified row
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">rowid</span>
+
+        </li>
+        <li><span class="parameter">columndata</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetTotalColumnWidth"></a>
+    <strong>newobject:GetTotalColumnWidth ()</strong>
+    </dt>
+    <dd>
+    - func: GetTotalColumnWidth()
+	- desc: gets the combined width of the object's columns
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetColumnWidth"></a>
+    <strong>newobject:SetColumnWidth (id, width)</strong>
+    </dt>
+    <dd>
+    - func: SetColumnWidth(id, width)
+	- desc: sets the width of the specified column
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+
+        </li>
+        <li><span class="parameter">width</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetColumnWidth"></a>
+    <strong>newobject:GetColumnWidth (id)</strong>
+    </dt>
+    <dd>
+    - func: GetColumnWidth(id)
+	- desc: gets the width of the specified column
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:ResizeColumns"></a>
+    <strong>newobject:ResizeColumns ()</strong>
+    </dt>
+    <dd>
+    - func: ResizeColumns()
+	- desc: resizes the object's columns to fit within the
+	        width of the object's list area
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetDefaultColumnWidth"></a>
+    <strong>newobject:SetDefaultColumnWidth (width)</strong>
+    </dt>
+    <dd>
+    - func: SetDefaultColumnWidth(width)
+	- desc: sets the object's default column width
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetDefaultColumnWidth"></a>
+    <strong>newobject:GetDefaultColumnWidth ()</strong>
+    </dt>
+    <dd>
+    - func: GetDefaultColumnWidth()
+	- desc: gets the object's default column width
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetColumnResizeEnabled"></a>
+    <strong>newobject:SetColumnResizeEnabled (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetColumnResizeEnabled(bool)
+	- desc: sets whether or not the object's columns can
+			be resized
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetColumnResizeEnabled"></a>
+    <strong>newobject:GetColumnResizeEnabled ()</strong>
+    </dt>
+    <dd>
+    - func: GetColumnResizeEnabled()
+	- desc: gets whether or not the object's columns can
+			be resized
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SizeColumnToData"></a>
+    <strong>newobject:SizeColumnToData (columnid)</strong>
+    </dt>
+    <dd>
+    - func: SizeColumnToData(columnid)
+	- desc: sizes a column to the width of its largest data
+			string
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">columnid</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetColumnOrder"></a>
+    <strong>newobject:SetColumnOrder (curid, newid)</strong>
+    </dt>
+    <dd>
+    - func: SetColumnOrder(curid, newid)
+	- desc: sets the order of the specified column
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">curid</span>
+
+        </li>
+        <li><span class="parameter">newid</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-08-09 15:38:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

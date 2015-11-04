@@ -1,0 +1,798 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>VideahEngine Docs</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>VideahEngine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/engine.libs.LoveFrames.html">engine.libs.LoveFrames</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.debug.html">engine.libs.LoveFrames.libraries.debug</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.skins.html">engine.libs.LoveFrames.libraries.skins</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.templates.html">engine.libs.LoveFrames.libraries.templates</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.util.html">engine.libs.LoveFrames.libraries.util</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.base.html">engine.libs.LoveFrames.objects.base</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.button.html">engine.libs.LoveFrames.objects.button</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.checkbox.html">engine.libs.LoveFrames.objects.checkbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.collapsiblecategory.html">engine.libs.LoveFrames.objects.collapsiblecategory</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.columnlist.html">engine.libs.LoveFrames.objects.columnlist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.form.html">engine.libs.LoveFrames.objects.form</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.frame.html">engine.libs.LoveFrames.objects.frame</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.grid.html">engine.libs.LoveFrames.objects.grid</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.image.html">engine.libs.LoveFrames.objects.image</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.imagebutton.html">engine.libs.LoveFrames.objects.imagebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.closebutton.html">engine.libs.LoveFrames.objects.internal.closebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.linenumberspanel.html">engine.libs.LoveFrames.objects.internal.linenumberspanel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.menuoption.html">engine.libs.LoveFrames.objects.internal.menuoption</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.modalbackground.html">engine.libs.LoveFrames.objects.internal.modalbackground</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollarea.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbar.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbody.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbody</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.sliderbutton.html">engine.libs.LoveFrames.objects.internal.sliderbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tabbutton.html">engine.libs.LoveFrames.objects.internal.tabbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tooltip.html">engine.libs.LoveFrames.objects.internal.tooltip</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenode.html">engine.libs.LoveFrames.objects.internal.treenode</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenodebutton.html">engine.libs.LoveFrames.objects.internal.treenodebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.list.html">engine.libs.LoveFrames.objects.list</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.menu.html">engine.libs.LoveFrames.objects.menu</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.multichoice.html">engine.libs.LoveFrames.objects.multichoice</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.numberbox.html">engine.libs.LoveFrames.objects.numberbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.panel.html">engine.libs.LoveFrames.objects.panel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.progressbar.html">engine.libs.LoveFrames.objects.progressbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.radiobutton.html">engine.libs.LoveFrames.objects.radiobutton</a></li>
+  <li><strong>engine.libs.LoveFrames.objects.slider</strong></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tabs.html">engine.libs.LoveFrames.objects.tabs</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.text.html">engine.libs.LoveFrames.objects.text</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.textinput.html">engine.libs.LoveFrames.objects.textinput</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tree.html">engine.libs.LoveFrames.objects.tree</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Blue.skin.html">engine.libs.LoveFrames.skins.Blue.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Orange.skin.html">engine.libs.LoveFrames.skins.Orange.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.templates.base.html">engine.libs.LoveFrames.templates.base</a></li>
+  <li><a href="../modules/engine.modules.error.html">engine.modules.error</a></li>
+  <li><a href="../modules/engine.modules.hook.html">engine.modules.hook</a></li>
+  <li><a href="../modules/engine.modules.html">engine.modules</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>engine.libs.LoveFrames.objects.slider</code></h1>
+<p>-- Love Frames - A GUI library for LOVE --
+	-- Copyright (c) 2012-2014 Kenny Shields --</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#newobject:initialize">newobject:initialize ()</a></td>
+	<td class="summary">- func: initialize()
+	- desc: initializes the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:update">newobject:update (dt)</a></td>
+	<td class="summary">- func: update(deltatime)
+	- desc: updates the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:draw">newobject:draw ()</a></td>
+	<td class="summary">- func: draw()
+	- desc: draws the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousepressed">newobject:mousepressed (x, y, button)</a></td>
+	<td class="summary">- func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetValue">newobject:SetValue (value)</a></td>
+	<td class="summary">- func: SetValue(value)
+	- desc: sets the object's value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetValue">newobject:GetValue ()</a></td>
+	<td class="summary">- func: GetValue()
+	- desc: gets the object's value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMax">newobject:SetMax (max)</a></td>
+	<td class="summary">- func: SetMax(max)
+	- desc: sets the object's maximum value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMax">newobject:GetMax ()</a></td>
+	<td class="summary">- func: GetMax()
+	- desc: gets the object's maximum value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMin">newobject:SetMin (min)</a></td>
+	<td class="summary">- func: SetMin(min)
+	- desc: sets the object's minimum value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMin">newobject:GetMin ()</a></td>
+	<td class="summary">- func: GetMin()
+	- desc: gets the object's minimum value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMinMax">newobject:SetMinMax (min, max)</a></td>
+	<td class="summary">- func: SetMinMax()
+	- desc: sets the object's minimum and maximum values</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMinMax">newobject:GetMinMax ()</a></td>
+	<td class="summary">- func: GetMinMax()
+	- desc: gets the object's minimum and maximum values</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetText">newobject:SetText (text)</a></td>
+	<td class="summary">- func: SetText(name)
+	- desc: sets the objects's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetText">newobject:GetText ()</a></td>
+	<td class="summary">- func: GetText()
+	- desc: gets the objects's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetDecimals">newobject:SetDecimals (decimals)</a></td>
+	<td class="summary">- func: SetDecimals(decimals)
+	- desc: sets how many decimals the object's value
+			can have</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetDecimals">newobject:GetDecimals ()</a></td>
+	<td class="summary">- func: GetDecimals()
+	- desc: gets how many decimals the object's value
+			can have</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetButtonSize">newobject:SetButtonSize (width, height)</a></td>
+	<td class="summary">- func: SetButtonSize(width, height)
+	- desc: sets the objects's button size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetButtonSize">newobject:GetButtonSize ()</a></td>
+	<td class="summary">- func: GetButtonSize()
+	- desc: gets the objects's button size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetSlideType">newobject:SetSlideType (slidetype)</a></td>
+	<td class="summary">- func: SetSlideType(slidetype)
+	- desc: sets the objects's slide type</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetSlideType">newobject:GetSlideType ()</a></td>
+	<td class="summary">- func: GetSlideType()
+	- desc: gets the objects's slide type</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetScrollable">newobject:SetScrollable (bool)</a></td>
+	<td class="summary">- func: SetScrollable(bool)
+	- desc: sets whether or not the object can be scrolled
+			via the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetScrollable">newobject:GetScrollable ()</a></td>
+	<td class="summary">- func: GetScrollable()
+	- desc: gets whether or not the object can be scrolled
+			via the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetScrollIncrease">newobject:SetScrollIncrease (increase)</a></td>
+	<td class="summary">- func: SetScrollIncrease(increase)
+	- desc: sets the amount to increase the object's value
+			by when scrolling with the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetScrollIncrease">newobject:GetScrollIncrease ()</a></td>
+	<td class="summary">- func: GetScrollIncrease()
+	- desc: gets the amount to increase the object's value
+			by when scrolling with the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetScrollDecrease">newobject:SetScrollDecrease (decrease)</a></td>
+	<td class="summary">- func: SetScrollDecrease(decrease)
+	- desc: sets the amount to decrease the object's value
+			by when scrolling with the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetScrollDecrease">newobject:GetScrollDecrease ()</a></td>
+	<td class="summary">- func: GetScrollDecrease()
+	- desc: gets the amount to decrease the object's value
+			by when scrolling with the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetEnabled">newobject:SetEnabled (bool)</a></td>
+	<td class="summary">- func: SetEnabled(bool)
+	- desc: sets whether or not the object is enabled</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetEnabled">newobject:GetEnabled ()</a></td>
+	<td class="summary">- func: GetEnabled()
+	- desc: gets whether or not the object is enabled</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "newobject:initialize"></a>
+    <strong>newobject:initialize ()</strong>
+    </dt>
+    <dd>
+    - func: initialize()
+	- desc: initializes the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:update"></a>
+    <strong>newobject:update (dt)</strong>
+    </dt>
+    <dd>
+    - func: update(deltatime)
+	- desc: updates the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:draw"></a>
+    <strong>newobject:draw ()</strong>
+    </dt>
+    <dd>
+    - func: draw()
+	- desc: draws the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousepressed"></a>
+    <strong>newobject:mousepressed (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetValue"></a>
+    <strong>newobject:SetValue (value)</strong>
+    </dt>
+    <dd>
+    - func: SetValue(value)
+	- desc: sets the object's value
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetValue"></a>
+    <strong>newobject:GetValue ()</strong>
+    </dt>
+    <dd>
+    - func: GetValue()
+	- desc: gets the object's value
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMax"></a>
+    <strong>newobject:SetMax (max)</strong>
+    </dt>
+    <dd>
+    - func: SetMax(max)
+	- desc: sets the object's maximum value
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">max</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMax"></a>
+    <strong>newobject:GetMax ()</strong>
+    </dt>
+    <dd>
+    - func: GetMax()
+	- desc: gets the object's maximum value
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMin"></a>
+    <strong>newobject:SetMin (min)</strong>
+    </dt>
+    <dd>
+    - func: SetMin(min)
+	- desc: sets the object's minimum value
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">min</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMin"></a>
+    <strong>newobject:GetMin ()</strong>
+    </dt>
+    <dd>
+    - func: GetMin()
+	- desc: gets the object's minimum value
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMinMax"></a>
+    <strong>newobject:SetMinMax (min, max)</strong>
+    </dt>
+    <dd>
+    - func: SetMinMax()
+	- desc: sets the object's minimum and maximum values
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">min</span>
+
+        </li>
+        <li><span class="parameter">max</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMinMax"></a>
+    <strong>newobject:GetMinMax ()</strong>
+    </dt>
+    <dd>
+    - func: GetMinMax()
+	- desc: gets the object's minimum and maximum values
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetText"></a>
+    <strong>newobject:SetText (text)</strong>
+    </dt>
+    <dd>
+    - func: SetText(name)
+	- desc: sets the objects's text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">text</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetText"></a>
+    <strong>newobject:GetText ()</strong>
+    </dt>
+    <dd>
+    - func: GetText()
+	- desc: gets the objects's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetDecimals"></a>
+    <strong>newobject:SetDecimals (decimals)</strong>
+    </dt>
+    <dd>
+    - func: SetDecimals(decimals)
+	- desc: sets how many decimals the object's value
+			can have
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">decimals</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetDecimals"></a>
+    <strong>newobject:GetDecimals ()</strong>
+    </dt>
+    <dd>
+    - func: GetDecimals()
+	- desc: gets how many decimals the object's value
+			can have
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetButtonSize"></a>
+    <strong>newobject:SetButtonSize (width, height)</strong>
+    </dt>
+    <dd>
+    - func: SetButtonSize(width, height)
+	- desc: sets the objects's button size
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">height</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetButtonSize"></a>
+    <strong>newobject:GetButtonSize ()</strong>
+    </dt>
+    <dd>
+    - func: GetButtonSize()
+	- desc: gets the objects's button size
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetSlideType"></a>
+    <strong>newobject:SetSlideType (slidetype)</strong>
+    </dt>
+    <dd>
+    - func: SetSlideType(slidetype)
+	- desc: sets the objects's slide type
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">slidetype</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetSlideType"></a>
+    <strong>newobject:GetSlideType ()</strong>
+    </dt>
+    <dd>
+    - func: GetSlideType()
+	- desc: gets the objects's slide type
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetScrollable"></a>
+    <strong>newobject:SetScrollable (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetScrollable(bool)
+	- desc: sets whether or not the object can be scrolled
+			via the mouse wheel
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetScrollable"></a>
+    <strong>newobject:GetScrollable ()</strong>
+    </dt>
+    <dd>
+    - func: GetScrollable()
+	- desc: gets whether or not the object can be scrolled
+			via the mouse wheel
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetScrollIncrease"></a>
+    <strong>newobject:SetScrollIncrease (increase)</strong>
+    </dt>
+    <dd>
+    - func: SetScrollIncrease(increase)
+	- desc: sets the amount to increase the object's value
+			by when scrolling with the mouse wheel
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">increase</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetScrollIncrease"></a>
+    <strong>newobject:GetScrollIncrease ()</strong>
+    </dt>
+    <dd>
+    - func: GetScrollIncrease()
+	- desc: gets the amount to increase the object's value
+			by when scrolling with the mouse wheel
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetScrollDecrease"></a>
+    <strong>newobject:SetScrollDecrease (decrease)</strong>
+    </dt>
+    <dd>
+    - func: SetScrollDecrease(decrease)
+	- desc: sets the amount to decrease the object's value
+			by when scrolling with the mouse wheel
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">decrease</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetScrollDecrease"></a>
+    <strong>newobject:GetScrollDecrease ()</strong>
+    </dt>
+    <dd>
+    - func: GetScrollDecrease()
+	- desc: gets the amount to decrease the object's value
+			by when scrolling with the mouse wheel
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetEnabled"></a>
+    <strong>newobject:SetEnabled (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetEnabled(bool)
+	- desc: sets whether or not the object is enabled
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetEnabled"></a>
+    <strong>newobject:GetEnabled ()</strong>
+    </dt>
+    <dd>
+    - func: GetEnabled()
+	- desc: gets whether or not the object is enabled
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-08-09 15:38:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>VideahEngine Docs</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>VideahEngine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/engine.libs.LoveFrames.html">engine.libs.LoveFrames</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.debug.html">engine.libs.LoveFrames.libraries.debug</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.skins.html">engine.libs.LoveFrames.libraries.skins</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.templates.html">engine.libs.LoveFrames.libraries.templates</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.util.html">engine.libs.LoveFrames.libraries.util</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.base.html">engine.libs.LoveFrames.objects.base</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.button.html">engine.libs.LoveFrames.objects.button</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.checkbox.html">engine.libs.LoveFrames.objects.checkbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.collapsiblecategory.html">engine.libs.LoveFrames.objects.collapsiblecategory</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.columnlist.html">engine.libs.LoveFrames.objects.columnlist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.form.html">engine.libs.LoveFrames.objects.form</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.frame.html">engine.libs.LoveFrames.objects.frame</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.grid.html">engine.libs.LoveFrames.objects.grid</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.image.html">engine.libs.LoveFrames.objects.image</a></li>
+  <li><strong>engine.libs.LoveFrames.objects.imagebutton</strong></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.closebutton.html">engine.libs.LoveFrames.objects.internal.closebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.linenumberspanel.html">engine.libs.LoveFrames.objects.internal.linenumberspanel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.menuoption.html">engine.libs.LoveFrames.objects.internal.menuoption</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.modalbackground.html">engine.libs.LoveFrames.objects.internal.modalbackground</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollarea.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbar.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbody.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbody</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.sliderbutton.html">engine.libs.LoveFrames.objects.internal.sliderbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tabbutton.html">engine.libs.LoveFrames.objects.internal.tabbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tooltip.html">engine.libs.LoveFrames.objects.internal.tooltip</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenode.html">engine.libs.LoveFrames.objects.internal.treenode</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenodebutton.html">engine.libs.LoveFrames.objects.internal.treenodebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.list.html">engine.libs.LoveFrames.objects.list</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.menu.html">engine.libs.LoveFrames.objects.menu</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.multichoice.html">engine.libs.LoveFrames.objects.multichoice</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.numberbox.html">engine.libs.LoveFrames.objects.numberbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.panel.html">engine.libs.LoveFrames.objects.panel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.progressbar.html">engine.libs.LoveFrames.objects.progressbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.radiobutton.html">engine.libs.LoveFrames.objects.radiobutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.slider.html">engine.libs.LoveFrames.objects.slider</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tabs.html">engine.libs.LoveFrames.objects.tabs</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.text.html">engine.libs.LoveFrames.objects.text</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.textinput.html">engine.libs.LoveFrames.objects.textinput</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tree.html">engine.libs.LoveFrames.objects.tree</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Blue.skin.html">engine.libs.LoveFrames.skins.Blue.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Orange.skin.html">engine.libs.LoveFrames.skins.Orange.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.templates.base.html">engine.libs.LoveFrames.templates.base</a></li>
+  <li><a href="../modules/engine.modules.error.html">engine.modules.error</a></li>
+  <li><a href="../modules/engine.modules.hook.html">engine.modules.hook</a></li>
+  <li><a href="../modules/engine.modules.html">engine.modules</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>engine.libs.LoveFrames.objects.imagebutton</code></h1>
+<p>-- Love Frames - A GUI library for LOVE --
+	-- Copyright (c) 2012-2014 Kenny Shields --
+ get the current require path</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#newobject:initialize">newobject:initialize ()</a></td>
+	<td class="summary">- func: initialize()
+	- desc: initializes the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:update">newobject:update (dt)</a></td>
+	<td class="summary">- func: update(deltatime)
+	- desc: updates the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:draw">newobject:draw ()</a></td>
+	<td class="summary">- func: draw()
+	- desc: draws the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousepressed">newobject:mousepressed (x, y, button)</a></td>
+	<td class="summary">- func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousereleased">newobject:mousereleased (x, y, button)</a></td>
+	<td class="summary">- func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetText">newobject:SetText (text)</a></td>
+	<td class="summary">- func: SetText(text)
+	- desc: sets the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetText">newobject:GetText ()</a></td>
+	<td class="summary">- func: GetText()
+	- desc: gets the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetClickable">newobject:SetClickable (bool)</a></td>
+	<td class="summary">- func: SetClickable(bool)
+	- desc: sets whether the object can be clicked or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetClickable">newobject:GetClickable ()</a></td>
+	<td class="summary">- func: GetClickable(bool)
+	- desc: gets whether the object can be clicked or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetEnabled">newobject:SetEnabled (bool)</a></td>
+	<td class="summary">- func: SetClickable(bool)
+	- desc: sets whether the object is enabled or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetEnabled">newobject:GetEnabled ()</a></td>
+	<td class="summary">- func: GetEnabled()
+	- desc: gets whether the object is enabled or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetImage">newobject:SetImage (image)</a></td>
+	<td class="summary">- func: SetImage(image)
+	- desc: sets the object's image</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetImage">newobject:GetImage ()</a></td>
+	<td class="summary">- func: GetImage()
+	- desc: gets whether the object is enabled or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SizeToImage">newobject:SizeToImage ()</a></td>
+	<td class="summary">- func: SizeToImage()
+	- desc: makes the object the same size as its image</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetImageSize">newobject:GetImageSize ()</a></td>
+	<td class="summary">- func: GetImageSize()
+	- desc: gets the size of the object's image</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetImageWidth">newobject:GetImageWidth ()</a></td>
+	<td class="summary">- func: GetImageWidth()
+	- desc: gets the width of the object's image</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetImageHeight">newobject:GetImageHeight ()</a></td>
+	<td class="summary">- func: GetImageWidth()
+	- desc: gets the height of the object's image</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetColor">newobject:SetColor (r, g, b, a)</a></td>
+	<td class="summary">- func: SetColor(r, g, b, a)
+	- desc: sets the object's color</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetColor">newobject:GetColor ()</a></td>
+	<td class="summary">- func: GetColor()
+	- desc: gets the object's color</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "newobject:initialize"></a>
+    <strong>newobject:initialize ()</strong>
+    </dt>
+    <dd>
+    - func: initialize()
+	- desc: initializes the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:update"></a>
+    <strong>newobject:update (dt)</strong>
+    </dt>
+    <dd>
+    - func: update(deltatime)
+	- desc: updates the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:draw"></a>
+    <strong>newobject:draw ()</strong>
+    </dt>
+    <dd>
+    - func: draw()
+	- desc: draws the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousepressed"></a>
+    <strong>newobject:mousepressed (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousereleased"></a>
+    <strong>newobject:mousereleased (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetText"></a>
+    <strong>newobject:SetText (text)</strong>
+    </dt>
+    <dd>
+    - func: SetText(text)
+	- desc: sets the object's text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">text</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetText"></a>
+    <strong>newobject:GetText ()</strong>
+    </dt>
+    <dd>
+    - func: GetText()
+	- desc: gets the object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetClickable"></a>
+    <strong>newobject:SetClickable (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetClickable(bool)
+	- desc: sets whether the object can be clicked or not
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetClickable"></a>
+    <strong>newobject:GetClickable ()</strong>
+    </dt>
+    <dd>
+    - func: GetClickable(bool)
+	- desc: gets whether the object can be clicked or not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetEnabled"></a>
+    <strong>newobject:SetEnabled (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetClickable(bool)
+	- desc: sets whether the object is enabled or not
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetEnabled"></a>
+    <strong>newobject:GetEnabled ()</strong>
+    </dt>
+    <dd>
+    - func: GetEnabled()
+	- desc: gets whether the object is enabled or not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetImage"></a>
+    <strong>newobject:SetImage (image)</strong>
+    </dt>
+    <dd>
+    - func: SetImage(image)
+	- desc: sets the object's image
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">image</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetImage"></a>
+    <strong>newobject:GetImage ()</strong>
+    </dt>
+    <dd>
+    - func: GetImage()
+	- desc: gets whether the object is enabled or not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SizeToImage"></a>
+    <strong>newobject:SizeToImage ()</strong>
+    </dt>
+    <dd>
+    - func: SizeToImage()
+	- desc: makes the object the same size as its image
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetImageSize"></a>
+    <strong>newobject:GetImageSize ()</strong>
+    </dt>
+    <dd>
+    - func: GetImageSize()
+	- desc: gets the size of the object's image
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetImageWidth"></a>
+    <strong>newobject:GetImageWidth ()</strong>
+    </dt>
+    <dd>
+    - func: GetImageWidth()
+	- desc: gets the width of the object's image
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetImageHeight"></a>
+    <strong>newobject:GetImageHeight ()</strong>
+    </dt>
+    <dd>
+    - func: GetImageWidth()
+	- desc: gets the height of the object's image
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetColor"></a>
+    <strong>newobject:SetColor (r, g, b, a)</strong>
+    </dt>
+    <dd>
+    - func: SetColor(r, g, b, a)
+	- desc: sets the object's color
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">r</span>
+
+        </li>
+        <li><span class="parameter">g</span>
+
+        </li>
+        <li><span class="parameter">b</span>
+
+        </li>
+        <li><span class="parameter">a</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetColor"></a>
+    <strong>newobject:GetColor ()</strong>
+    </dt>
+    <dd>
+    - func: GetColor()
+	- desc: gets the object's color
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-08-09 15:38:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

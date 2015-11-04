@@ -1,2 +1,0 @@
-print("Opened Connect Dialog.")
-

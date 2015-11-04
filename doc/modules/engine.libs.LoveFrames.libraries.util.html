@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>VideahEngine Docs</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>VideahEngine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/engine.libs.LoveFrames.html">engine.libs.LoveFrames</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.debug.html">engine.libs.LoveFrames.libraries.debug</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.skins.html">engine.libs.LoveFrames.libraries.skins</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.templates.html">engine.libs.LoveFrames.libraries.templates</a></li>
+  <li><strong>engine.libs.LoveFrames.libraries.util</strong></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.base.html">engine.libs.LoveFrames.objects.base</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.button.html">engine.libs.LoveFrames.objects.button</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.checkbox.html">engine.libs.LoveFrames.objects.checkbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.collapsiblecategory.html">engine.libs.LoveFrames.objects.collapsiblecategory</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.columnlist.html">engine.libs.LoveFrames.objects.columnlist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.form.html">engine.libs.LoveFrames.objects.form</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.frame.html">engine.libs.LoveFrames.objects.frame</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.grid.html">engine.libs.LoveFrames.objects.grid</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.image.html">engine.libs.LoveFrames.objects.image</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.imagebutton.html">engine.libs.LoveFrames.objects.imagebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.closebutton.html">engine.libs.LoveFrames.objects.internal.closebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.linenumberspanel.html">engine.libs.LoveFrames.objects.internal.linenumberspanel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.menuoption.html">engine.libs.LoveFrames.objects.internal.menuoption</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.modalbackground.html">engine.libs.LoveFrames.objects.internal.modalbackground</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollarea.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbar.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbody.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbody</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.sliderbutton.html">engine.libs.LoveFrames.objects.internal.sliderbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tabbutton.html">engine.libs.LoveFrames.objects.internal.tabbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tooltip.html">engine.libs.LoveFrames.objects.internal.tooltip</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenode.html">engine.libs.LoveFrames.objects.internal.treenode</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenodebutton.html">engine.libs.LoveFrames.objects.internal.treenodebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.list.html">engine.libs.LoveFrames.objects.list</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.menu.html">engine.libs.LoveFrames.objects.menu</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.multichoice.html">engine.libs.LoveFrames.objects.multichoice</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.numberbox.html">engine.libs.LoveFrames.objects.numberbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.panel.html">engine.libs.LoveFrames.objects.panel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.progressbar.html">engine.libs.LoveFrames.objects.progressbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.radiobutton.html">engine.libs.LoveFrames.objects.radiobutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.slider.html">engine.libs.LoveFrames.objects.slider</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tabs.html">engine.libs.LoveFrames.objects.tabs</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.text.html">engine.libs.LoveFrames.objects.text</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.textinput.html">engine.libs.LoveFrames.objects.textinput</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tree.html">engine.libs.LoveFrames.objects.tree</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Blue.skin.html">engine.libs.LoveFrames.skins.Blue.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Orange.skin.html">engine.libs.LoveFrames.skins.Orange.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.templates.base.html">engine.libs.LoveFrames.templates.base</a></li>
+  <li><a href="../modules/engine.modules.error.html">engine.modules.error</a></li>
+  <li><a href="../modules/engine.modules.hook.html">engine.modules.hook</a></li>
+  <li><a href="../modules/engine.modules.html">engine.modules</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>engine.libs.LoveFrames.libraries.util</code></h1>
+<p>-- Love Frames - A GUI library for LOVE --
+	-- Copyright (c) 2012-2014 Kenny Shields --</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.SetActiveSkin">loveframes.util.SetActiveSkin (name)</a></td>
+	<td class="summary">- func: SetActiveSkin(name)
+	- desc: sets the active skin</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.GetActiveSkin">loveframes.util.GetActiveSkin ()</a></td>
+	<td class="summary">- func: GetActiveSkin()
+	- desc: gets the active skin</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.BoundingBox">loveframes.util.BoundingBox (x1, x2, y1, y2, w1, w2, h1, h2)</a></td>
+	<td class="summary">- func: BoundingBox(x1, x2, y1, y2, w1, w2, h1, h2)
+	- desc: checks for a collision between two boxes
+	- note: I take no credit for this function</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.GetCollisions">loveframes.util.GetCollisions (object, t)</a></td>
+	<td class="summary">- func: GetCollisions(object, table)
+	- desc: gets all objects colliding with the mouse</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.GetAllObjects">loveframes.util.GetAllObjects (object, t)</a></td>
+	<td class="summary">- func: GetAllObjects(object, table)
+	- desc: gets all active objects</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.GetDirectoryContents">loveframes.util.GetDirectoryContents (dir, t)</a></td>
+	<td class="summary">- func: GetDirectoryContents(directory, table)
+	- desc: gets the contents of a directory and all of
+			its subdirectories</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.Round">loveframes.util.Round (num, idp)</a></td>
+	<td class="summary">- func: Round(num, idp)
+	- desc: rounds a number based on the decimal limit
+	- note: I take no credit for this function</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.SplitString">loveframes.util.SplitString (str, pat)</a></td>
+	<td class="summary">- func: SplitString(string, pattern)
+	- desc: splits a string into a table based on a given pattern
+	- note: I take no credit for this function</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.RemoveAll">loveframes.util.RemoveAll ()</a></td>
+	<td class="summary">- func: RemoveAll()
+	- desc: removes all gui elements</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.TableHasValue">loveframes.util.TableHasValue (table, value)</a></td>
+	<td class="summary">- func: TableHasValue(table, value)
+	- desc: checks to see if a table has a specific value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.TableHasKey">loveframes.util.TableHasKey (table, key)</a></td>
+	<td class="summary">- func: TableHasKey(table, key)
+	- desc: checks to see if a table has a specific key</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.Error">loveframes.util.Error (message)</a></td>
+	<td class="summary">- func: Error(message)
+	- desc: displays a formatted error message</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.GetCollisionCount">loveframes.util.GetCollisionCount ()</a></td>
+	<td class="summary">- func: GetCollisionCount()
+	- desc: gets the total number of objects colliding with
+			the mouse</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.GetHover">loveframes.util.GetHover ()</a></td>
+	<td class="summary">- func: GetHover()
+	- desc: returns loveframes.hover, can be used to check
+			if the mouse is colliding with a visible
+			Love Frames object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.RectangleCollisionCheck">loveframes.util.RectangleCollisionCheck (rect1, rect2)</a></td>
+	<td class="summary">- func: RectangleCollisionCheck(rect1, rect2)
+	- desc: checks for a collision between two rectangles
+			based on two tables containing rectangle sizes
+			and positions</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.DeepCopy">loveframes.util.DeepCopy (orig)</a></td>
+	<td class="summary">- func: DeepCopy(orig)
+	- desc: copies a table
+	- note: I take not credit for this function</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.GetHoverObject">loveframes.util.GetHoverObject ()</a></td>
+	<td class="summary">- func: GetHoverObject()
+	- desc: returns loveframes.hoverobject</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loveframes.util.IsCtrlDown">loveframes.util.IsCtrlDown ()</a></td>
+	<td class="summary">- func: IsCtrlDown()
+	- desc: checks for ctrl, for use with multiselect, copy,
+			paste, and such.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "loveframes.util.SetActiveSkin"></a>
+    <strong>loveframes.util.SetActiveSkin (name)</strong>
+    </dt>
+    <dd>
+    - func: SetActiveSkin(name)
+	- desc: sets the active skin
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.GetActiveSkin"></a>
+    <strong>loveframes.util.GetActiveSkin ()</strong>
+    </dt>
+    <dd>
+    - func: GetActiveSkin()
+	- desc: gets the active skin
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.BoundingBox"></a>
+    <strong>loveframes.util.BoundingBox (x1, x2, y1, y2, w1, w2, h1, h2)</strong>
+    </dt>
+    <dd>
+    - func: BoundingBox(x1, x2, y1, y2, w1, w2, h1, h2)
+	- desc: checks for a collision between two boxes
+	- note: I take no credit for this function
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x1</span>
+
+        </li>
+        <li><span class="parameter">x2</span>
+
+        </li>
+        <li><span class="parameter">y1</span>
+
+        </li>
+        <li><span class="parameter">y2</span>
+
+        </li>
+        <li><span class="parameter">w1</span>
+
+        </li>
+        <li><span class="parameter">w2</span>
+
+        </li>
+        <li><span class="parameter">h1</span>
+
+        </li>
+        <li><span class="parameter">h2</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.GetCollisions"></a>
+    <strong>loveframes.util.GetCollisions (object, t)</strong>
+    </dt>
+    <dd>
+    - func: GetCollisions(object, table)
+	- desc: gets all objects colliding with the mouse
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">object</span>
+
+        </li>
+        <li><span class="parameter">t</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.GetAllObjects"></a>
+    <strong>loveframes.util.GetAllObjects (object, t)</strong>
+    </dt>
+    <dd>
+    - func: GetAllObjects(object, table)
+	- desc: gets all active objects
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">object</span>
+
+        </li>
+        <li><span class="parameter">t</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.GetDirectoryContents"></a>
+    <strong>loveframes.util.GetDirectoryContents (dir, t)</strong>
+    </dt>
+    <dd>
+    - func: GetDirectoryContents(directory, table)
+	- desc: gets the contents of a directory and all of
+			its subdirectories
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dir</span>
+
+        </li>
+        <li><span class="parameter">t</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.Round"></a>
+    <strong>loveframes.util.Round (num, idp)</strong>
+    </dt>
+    <dd>
+    - func: Round(num, idp)
+	- desc: rounds a number based on the decimal limit
+	- note: I take no credit for this function
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">num</span>
+
+        </li>
+        <li><span class="parameter">idp</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.SplitString"></a>
+    <strong>loveframes.util.SplitString (str, pat)</strong>
+    </dt>
+    <dd>
+    - func: SplitString(string, pattern)
+	- desc: splits a string into a table based on a given pattern
+	- note: I take no credit for this function
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+        </li>
+        <li><span class="parameter">pat</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.RemoveAll"></a>
+    <strong>loveframes.util.RemoveAll ()</strong>
+    </dt>
+    <dd>
+    - func: RemoveAll()
+	- desc: removes all gui elements
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.TableHasValue"></a>
+    <strong>loveframes.util.TableHasValue (table, value)</strong>
+    </dt>
+    <dd>
+    - func: TableHasValue(table, value)
+	- desc: checks to see if a table has a specific value
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+        </li>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.TableHasKey"></a>
+    <strong>loveframes.util.TableHasKey (table, key)</strong>
+    </dt>
+    <dd>
+    - func: TableHasKey(table, key)
+	- desc: checks to see if a table has a specific key
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+        </li>
+        <li><span class="parameter">key</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.Error"></a>
+    <strong>loveframes.util.Error (message)</strong>
+    </dt>
+    <dd>
+    - func: Error(message)
+	- desc: displays a formatted error message
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">message</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.GetCollisionCount"></a>
+    <strong>loveframes.util.GetCollisionCount ()</strong>
+    </dt>
+    <dd>
+    - func: GetCollisionCount()
+	- desc: gets the total number of objects colliding with
+			the mouse
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.GetHover"></a>
+    <strong>loveframes.util.GetHover ()</strong>
+    </dt>
+    <dd>
+    - func: GetHover()
+	- desc: returns loveframes.hover, can be used to check
+			if the mouse is colliding with a visible
+			Love Frames object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.RectangleCollisionCheck"></a>
+    <strong>loveframes.util.RectangleCollisionCheck (rect1, rect2)</strong>
+    </dt>
+    <dd>
+    - func: RectangleCollisionCheck(rect1, rect2)
+	- desc: checks for a collision between two rectangles
+			based on two tables containing rectangle sizes
+			and positions
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">rect1</span>
+
+        </li>
+        <li><span class="parameter">rect2</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.DeepCopy"></a>
+    <strong>loveframes.util.DeepCopy (orig)</strong>
+    </dt>
+    <dd>
+    - func: DeepCopy(orig)
+	- desc: copies a table
+	- note: I take not credit for this function
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">orig</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.GetHoverObject"></a>
+    <strong>loveframes.util.GetHoverObject ()</strong>
+    </dt>
+    <dd>
+    - func: GetHoverObject()
+	- desc: returns loveframes.hoverobject
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "loveframes.util.IsCtrlDown"></a>
+    <strong>loveframes.util.IsCtrlDown ()</strong>
+    </dt>
+    <dd>
+    - func: IsCtrlDown()
+	- desc: checks for ctrl, for use with multiselect, copy,
+			paste, and such.  On OS X it actually looks for cmd.
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-08-09 15:38:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

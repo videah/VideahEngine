@@ -1,0 +1,868 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>VideahEngine Docs</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>VideahEngine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/engine.libs.LoveFrames.html">engine.libs.LoveFrames</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.debug.html">engine.libs.LoveFrames.libraries.debug</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.skins.html">engine.libs.LoveFrames.libraries.skins</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.templates.html">engine.libs.LoveFrames.libraries.templates</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.util.html">engine.libs.LoveFrames.libraries.util</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.base.html">engine.libs.LoveFrames.objects.base</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.button.html">engine.libs.LoveFrames.objects.button</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.checkbox.html">engine.libs.LoveFrames.objects.checkbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.collapsiblecategory.html">engine.libs.LoveFrames.objects.collapsiblecategory</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.columnlist.html">engine.libs.LoveFrames.objects.columnlist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.form.html">engine.libs.LoveFrames.objects.form</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.frame.html">engine.libs.LoveFrames.objects.frame</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.grid.html">engine.libs.LoveFrames.objects.grid</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.image.html">engine.libs.LoveFrames.objects.image</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.imagebutton.html">engine.libs.LoveFrames.objects.imagebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.closebutton.html">engine.libs.LoveFrames.objects.internal.closebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.linenumberspanel.html">engine.libs.LoveFrames.objects.internal.linenumberspanel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.menuoption.html">engine.libs.LoveFrames.objects.internal.menuoption</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.modalbackground.html">engine.libs.LoveFrames.objects.internal.modalbackground</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollarea.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbar.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbody.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbody</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.sliderbutton.html">engine.libs.LoveFrames.objects.internal.sliderbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tabbutton.html">engine.libs.LoveFrames.objects.internal.tabbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tooltip.html">engine.libs.LoveFrames.objects.internal.tooltip</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenode.html">engine.libs.LoveFrames.objects.internal.treenode</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenodebutton.html">engine.libs.LoveFrames.objects.internal.treenodebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.list.html">engine.libs.LoveFrames.objects.list</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.menu.html">engine.libs.LoveFrames.objects.menu</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.multichoice.html">engine.libs.LoveFrames.objects.multichoice</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.numberbox.html">engine.libs.LoveFrames.objects.numberbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.panel.html">engine.libs.LoveFrames.objects.panel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.progressbar.html">engine.libs.LoveFrames.objects.progressbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.radiobutton.html">engine.libs.LoveFrames.objects.radiobutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.slider.html">engine.libs.LoveFrames.objects.slider</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tabs.html">engine.libs.LoveFrames.objects.tabs</a></li>
+  <li><strong>engine.libs.LoveFrames.objects.text</strong></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.textinput.html">engine.libs.LoveFrames.objects.textinput</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tree.html">engine.libs.LoveFrames.objects.tree</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Blue.skin.html">engine.libs.LoveFrames.skins.Blue.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Orange.skin.html">engine.libs.LoveFrames.skins.Orange.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.templates.base.html">engine.libs.LoveFrames.templates.base</a></li>
+  <li><a href="../modules/engine.modules.error.html">engine.modules.error</a></li>
+  <li><a href="../modules/engine.modules.hook.html">engine.modules.hook</a></li>
+  <li><a href="../modules/engine.modules.html">engine.modules</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>engine.libs.LoveFrames.objects.text</code></h1>
+<p>-- Love Frames - A GUI library for LOVE --
+	-- Copyright (c) 2012-2014 Kenny Shields --</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#newobject:initialize">newobject:initialize ()</a></td>
+	<td class="summary">- func: initialize()
+	- desc: initializes the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:update">newobject:update (dt)</a></td>
+	<td class="summary">- func: update(deltatime)
+	- desc: updates the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:draw">newobject:draw ()</a></td>
+	<td class="summary">- func: draw()
+	- desc: draws the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousepressed">newobject:mousepressed (x, y, button)</a></td>
+	<td class="summary">- func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetText">newobject:SetText (t)</a></td>
+	<td class="summary">- func: SetText(text)
+	- desc: sets the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetText">newobject:GetText ()</a></td>
+	<td class="summary">- func: GetText()
+	- desc: gets the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetFormattedText">newobject:GetFormattedText ()</a></td>
+	<td class="summary">- func: GetFormattedText()
+	- desc: gets the object's formatted text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:DrawText">newobject:DrawText ()</a></td>
+	<td class="summary">- func: DrawText()
+	- desc: draws the object's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMaxWidth">newobject:SetMaxWidth (width)</a></td>
+	<td class="summary">- func: SetMaxWidth(width)
+	- desc: sets the object's maximum width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetMaxWidth">newobject:GetMaxWidth ()</a></td>
+	<td class="summary">- func: GetMaxWidth()
+	- desc: gets the object's maximum width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetWidth">newobject:SetWidth (width, relative)</a></td>
+	<td class="summary">- func: SetWidth(width, relative)
+	- desc: sets the object's width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetHeight">newobject:SetHeight (height)</a></td>
+	<td class="summary">- func: SetHeight()
+	- desc: sets the object's height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetSize">newobject:SetSize (width, height, relative)</a></td>
+	<td class="summary">- func: SetSize(width, height, relative)
+	- desc: sets the object's size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetFont">newobject:SetFont (font)</a></td>
+	<td class="summary">- func: SetFont(font)
+	- desc: sets the object's font
+	- note: font argument must be a font object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetFont">newobject:GetFont ()</a></td>
+	<td class="summary">- func: GetFont()
+	- desc: gets the object's font</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetLines">newobject:GetLines ()</a></td>
+	<td class="summary">- func: GetLines()
+	- desc: gets the number of lines the object's text uses</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetIgnoreNewlines">newobject:SetIgnoreNewlines (bool)</a></td>
+	<td class="summary">- func: SetIgnoreNewlines(bool)
+	- desc: sets whether the object should ignore \n or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetIgnoreNewlines">newobject:GetIgnoreNewlines ()</a></td>
+	<td class="summary">- func: GetIgnoreNewlines()
+	- desc: gets whether the object should ignore \n or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetShadow">newobject:SetShadow (bool)</a></td>
+	<td class="summary">- func: SetShadow(bool)
+	- desc: sets whether or not the object should draw a
+			shadow behind its text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetShadow">newobject:GetShadow ()</a></td>
+	<td class="summary">- func: GetShadow()
+	- desc: gets whether or not the object should draw a
+			shadow behind its text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetShadowOffsets">newobject:SetShadowOffsets (offsetx, offsety)</a></td>
+	<td class="summary">- func: SetShadowOffsets(offsetx, offsety)
+	- desc: sets the object's x and y shadow offsets</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetShadowOffsets">newobject:GetShadowOffsets ()</a></td>
+	<td class="summary">- func: GetShadowOffsets()
+	- desc: gets the object's x and y shadow offsets</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetShadowColor">newobject:SetShadowColor (r, g, b, a)</a></td>
+	<td class="summary">- func: SetShadowColor(r, g, b, a)
+	- desc: sets the object's shadow color</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetShadowColor">newobject:GetShadowColor ()</a></td>
+	<td class="summary">- func: GetShadowColor()
+	- desc: gets the object's shadow color</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetDefaultColor">newobject:SetDefaultColor (r, g, b, a)</a></td>
+	<td class="summary">- func: SetDefaultColor(r, g, b, a)
+	- desc: sets the object's default text color</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetDefaultColor">newobject:GetDefaultColor ()</a></td>
+	<td class="summary">- func: GetDefaultColor()
+	- desc: gets whether or not the object should draw a
+			shadow behind its text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetLinksEnabled">newobject:SetLinksEnabled (enabled)</a></td>
+	<td class="summary">- func: SetLinksEnabled(enabled)
+	- desc: sets whether or not the object should process
+			urls into clickable links</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetLinksEnabled">newobject:GetLinksEnabled ()</a></td>
+	<td class="summary">- func: GetLinksEnabled()
+	- desc: gets whether or not the object should process
+			urls into clickable links</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetDetectLinks">newobject:SetDetectLinks (detect)</a></td>
+	<td class="summary">- func: SetDetectLinks(detect)
+	- desc: sets whether or not the object should detect
+			links when processing new text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetDetectLinks">newobject:GetDetectLinks ()</a></td>
+	<td class="summary">- func: GetDetectLinks()
+	- desc: gets whether or not the object should detect
+			links when processing new text</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "newobject:initialize"></a>
+    <strong>newobject:initialize ()</strong>
+    </dt>
+    <dd>
+    - func: initialize()
+	- desc: initializes the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:update"></a>
+    <strong>newobject:update (dt)</strong>
+    </dt>
+    <dd>
+    - func: update(deltatime)
+	- desc: updates the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:draw"></a>
+    <strong>newobject:draw ()</strong>
+    </dt>
+    <dd>
+    - func: draw()
+	- desc: draws the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousepressed"></a>
+    <strong>newobject:mousepressed (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetText"></a>
+    <strong>newobject:SetText (t)</strong>
+    </dt>
+    <dd>
+    - func: SetText(text)
+	- desc: sets the object's text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetText"></a>
+    <strong>newobject:GetText ()</strong>
+    </dt>
+    <dd>
+    - func: GetText()
+	- desc: gets the object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetFormattedText"></a>
+    <strong>newobject:GetFormattedText ()</strong>
+    </dt>
+    <dd>
+    - func: GetFormattedText()
+	- desc: gets the object's formatted text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:DrawText"></a>
+    <strong>newobject:DrawText ()</strong>
+    </dt>
+    <dd>
+    - func: DrawText()
+	- desc: draws the object's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMaxWidth"></a>
+    <strong>newobject:SetMaxWidth (width)</strong>
+    </dt>
+    <dd>
+    - func: SetMaxWidth(width)
+	- desc: sets the object's maximum width
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetMaxWidth"></a>
+    <strong>newobject:GetMaxWidth ()</strong>
+    </dt>
+    <dd>
+    - func: GetMaxWidth()
+	- desc: gets the object's maximum width
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetWidth"></a>
+    <strong>newobject:SetWidth (width, relative)</strong>
+    </dt>
+    <dd>
+    - func: SetWidth(width, relative)
+	- desc: sets the object's width
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">relative</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetHeight"></a>
+    <strong>newobject:SetHeight (height)</strong>
+    </dt>
+    <dd>
+    - func: SetHeight()
+	- desc: sets the object's height
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">height</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetSize"></a>
+    <strong>newobject:SetSize (width, height, relative)</strong>
+    </dt>
+    <dd>
+    - func: SetSize(width, height, relative)
+	- desc: sets the object's size
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">height</span>
+
+        </li>
+        <li><span class="parameter">relative</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetFont"></a>
+    <strong>newobject:SetFont (font)</strong>
+    </dt>
+    <dd>
+    - func: SetFont(font)
+	- desc: sets the object's font
+	- note: font argument must be a font object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">font</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetFont"></a>
+    <strong>newobject:GetFont ()</strong>
+    </dt>
+    <dd>
+    - func: GetFont()
+	- desc: gets the object's font
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetLines"></a>
+    <strong>newobject:GetLines ()</strong>
+    </dt>
+    <dd>
+    - func: GetLines()
+	- desc: gets the number of lines the object's text uses
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetIgnoreNewlines"></a>
+    <strong>newobject:SetIgnoreNewlines (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetIgnoreNewlines(bool)
+	- desc: sets whether the object should ignore \n or not
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetIgnoreNewlines"></a>
+    <strong>newobject:GetIgnoreNewlines ()</strong>
+    </dt>
+    <dd>
+    - func: GetIgnoreNewlines()
+	- desc: gets whether the object should ignore \n or not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetShadow"></a>
+    <strong>newobject:SetShadow (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetShadow(bool)
+	- desc: sets whether or not the object should draw a
+			shadow behind its text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetShadow"></a>
+    <strong>newobject:GetShadow ()</strong>
+    </dt>
+    <dd>
+    - func: GetShadow()
+	- desc: gets whether or not the object should draw a
+			shadow behind its text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetShadowOffsets"></a>
+    <strong>newobject:SetShadowOffsets (offsetx, offsety)</strong>
+    </dt>
+    <dd>
+    - func: SetShadowOffsets(offsetx, offsety)
+	- desc: sets the object's x and y shadow offsets
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">offsetx</span>
+
+        </li>
+        <li><span class="parameter">offsety</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetShadowOffsets"></a>
+    <strong>newobject:GetShadowOffsets ()</strong>
+    </dt>
+    <dd>
+    - func: GetShadowOffsets()
+	- desc: gets the object's x and y shadow offsets
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetShadowColor"></a>
+    <strong>newobject:SetShadowColor (r, g, b, a)</strong>
+    </dt>
+    <dd>
+    - func: SetShadowColor(r, g, b, a)
+	- desc: sets the object's shadow color
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">r</span>
+
+        </li>
+        <li><span class="parameter">g</span>
+
+        </li>
+        <li><span class="parameter">b</span>
+
+        </li>
+        <li><span class="parameter">a</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetShadowColor"></a>
+    <strong>newobject:GetShadowColor ()</strong>
+    </dt>
+    <dd>
+    - func: GetShadowColor()
+	- desc: gets the object's shadow color
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetDefaultColor"></a>
+    <strong>newobject:SetDefaultColor (r, g, b, a)</strong>
+    </dt>
+    <dd>
+    - func: SetDefaultColor(r, g, b, a)
+	- desc: sets the object's default text color
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">r</span>
+
+        </li>
+        <li><span class="parameter">g</span>
+
+        </li>
+        <li><span class="parameter">b</span>
+
+        </li>
+        <li><span class="parameter">a</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetDefaultColor"></a>
+    <strong>newobject:GetDefaultColor ()</strong>
+    </dt>
+    <dd>
+    - func: GetDefaultColor()
+	- desc: gets whether or not the object should draw a
+			shadow behind its text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetLinksEnabled"></a>
+    <strong>newobject:SetLinksEnabled (enabled)</strong>
+    </dt>
+    <dd>
+    - func: SetLinksEnabled(enabled)
+	- desc: sets whether or not the object should process
+			urls into clickable links
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">enabled</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetLinksEnabled"></a>
+    <strong>newobject:GetLinksEnabled ()</strong>
+    </dt>
+    <dd>
+    - func: GetLinksEnabled()
+	- desc: gets whether or not the object should process
+			urls into clickable links
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetDetectLinks"></a>
+    <strong>newobject:SetDetectLinks (detect)</strong>
+    </dt>
+    <dd>
+    - func: SetDetectLinks(detect)
+	- desc: sets whether or not the object should detect
+			links when processing new text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">detect</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetDetectLinks"></a>
+    <strong>newobject:GetDetectLinks ()</strong>
+    </dt>
+    <dd>
+    - func: GetDetectLinks()
+	- desc: gets whether or not the object should detect
+			links when processing new text
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-08-09 15:38:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

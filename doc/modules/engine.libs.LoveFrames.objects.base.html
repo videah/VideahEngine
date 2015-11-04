@@ -1,0 +1,1648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>VideahEngine Docs</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>VideahEngine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/engine.libs.LoveFrames.html">engine.libs.LoveFrames</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.debug.html">engine.libs.LoveFrames.libraries.debug</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.skins.html">engine.libs.LoveFrames.libraries.skins</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.templates.html">engine.libs.LoveFrames.libraries.templates</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.util.html">engine.libs.LoveFrames.libraries.util</a></li>
+  <li><strong>engine.libs.LoveFrames.objects.base</strong></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.button.html">engine.libs.LoveFrames.objects.button</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.checkbox.html">engine.libs.LoveFrames.objects.checkbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.collapsiblecategory.html">engine.libs.LoveFrames.objects.collapsiblecategory</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.columnlist.html">engine.libs.LoveFrames.objects.columnlist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.form.html">engine.libs.LoveFrames.objects.form</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.frame.html">engine.libs.LoveFrames.objects.frame</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.grid.html">engine.libs.LoveFrames.objects.grid</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.image.html">engine.libs.LoveFrames.objects.image</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.imagebutton.html">engine.libs.LoveFrames.objects.imagebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.closebutton.html">engine.libs.LoveFrames.objects.internal.closebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.linenumberspanel.html">engine.libs.LoveFrames.objects.internal.linenumberspanel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.menuoption.html">engine.libs.LoveFrames.objects.internal.menuoption</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.modalbackground.html">engine.libs.LoveFrames.objects.internal.modalbackground</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollarea.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbar.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbody.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbody</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.sliderbutton.html">engine.libs.LoveFrames.objects.internal.sliderbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tabbutton.html">engine.libs.LoveFrames.objects.internal.tabbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tooltip.html">engine.libs.LoveFrames.objects.internal.tooltip</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenode.html">engine.libs.LoveFrames.objects.internal.treenode</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenodebutton.html">engine.libs.LoveFrames.objects.internal.treenodebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.list.html">engine.libs.LoveFrames.objects.list</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.menu.html">engine.libs.LoveFrames.objects.menu</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.multichoice.html">engine.libs.LoveFrames.objects.multichoice</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.numberbox.html">engine.libs.LoveFrames.objects.numberbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.panel.html">engine.libs.LoveFrames.objects.panel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.progressbar.html">engine.libs.LoveFrames.objects.progressbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.radiobutton.html">engine.libs.LoveFrames.objects.radiobutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.slider.html">engine.libs.LoveFrames.objects.slider</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tabs.html">engine.libs.LoveFrames.objects.tabs</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.text.html">engine.libs.LoveFrames.objects.text</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.textinput.html">engine.libs.LoveFrames.objects.textinput</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tree.html">engine.libs.LoveFrames.objects.tree</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Blue.skin.html">engine.libs.LoveFrames.skins.Blue.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Orange.skin.html">engine.libs.LoveFrames.skins.Orange.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.templates.base.html">engine.libs.LoveFrames.templates.base</a></li>
+  <li><a href="../modules/engine.modules.error.html">engine.modules.error</a></li>
+  <li><a href="../modules/engine.modules.hook.html">engine.modules.hook</a></li>
+  <li><a href="../modules/engine.modules.html">engine.modules</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>engine.libs.LoveFrames.objects.base</code></h1>
+<p>-- Love Frames - A GUI library for LOVE --
+	-- Copyright (c) 2012-2014 Kenny Shields --</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#newobject:initialize">newobject:initialize ()</a></td>
+	<td class="summary">- func: initialize()
+	- desc: initializes the element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:update">newobject:update (dt)</a></td>
+	<td class="summary">- func: update(deltatime)
+	- desc: updates the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:draw">newobject:draw ()</a></td>
+	<td class="summary">- func: draw()
+	- desc: draws the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousepressed">newobject:mousepressed (x, y, button)</a></td>
+	<td class="summary">- func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:wheelmoved">newobject:wheelmoved (x, y)</a></td>
+	<td class="summary">- func: wheelmoved(x, y)
+	- desc: called when the mouse wheel is moved</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousereleased">newobject:mousereleased (x, y, button)</a></td>
+	<td class="summary">- func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:keypressed">newobject:keypressed (key, isrepeat)</a></td>
+	<td class="summary">- func: keypressed(key, isrepeat)
+	- desc: called when the player presses a key</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:keyreleased">newobject:keyreleased (key)</a></td>
+	<td class="summary">- func: keyreleased(key)
+	- desc: called when the player releases a key</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:textinput">newobject:textinput (text)</a></td>
+	<td class="summary">- func: textinput(text)
+	- desc: called when the user inputs text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetPos">newobject:SetPos (x, y, center)</a></td>
+	<td class="summary">- func: SetPos(x, y, center)
+	- desc: sets the object's position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetX">newobject:SetX (x, center)</a></td>
+	<td class="summary">- func: SetX(x, center)
+	- desc: sets the object's x position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetY">newobject:SetY (y, center)</a></td>
+	<td class="summary">- func: SetY(y, center)
+	- desc: sets the object's y position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetPos">newobject:GetPos ()</a></td>
+	<td class="summary">- func: GetPos()
+	- desc: gets the object's position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetX">newobject:GetX ()</a></td>
+	<td class="summary">- func: GetX()
+	- desc: gets the object's x position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetY">newobject:GetY ()</a></td>
+	<td class="summary">- func: GetY()
+	- desc: gets the object's y position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetStaticPos">newobject:GetStaticPos ()</a></td>
+	<td class="summary">- func: GetStaticPos()
+	- desc: gets the object's static position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetStaticX">newobject:GetStaticX ()</a></td>
+	<td class="summary">- func: GetStaticX()
+	- desc: gets the object's static x position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetStaticY">newobject:GetStaticY ()</a></td>
+	<td class="summary">- func: GetStaticY()
+	- desc: gets the object's static y position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:Center">newobject:Center ()</a></td>
+	<td class="summary">- func: Center()
+	- desc: centers the object in the game window or in
+			its parent if it has one</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:CenterX">newobject:CenterX ()</a></td>
+	<td class="summary">- func: CenterX()
+	- desc: centers the object by its x value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:CenterY">newobject:CenterY ()</a></td>
+	<td class="summary">- func: CenterY()
+	- desc: centers the object by its y value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:CenterWithinArea">newobject:CenterWithinArea (x, y, width, height)</a></td>
+	<td class="summary">- func: CenterWithinArea()
+	- desc: centers the object within the given area</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetSize">newobject:SetSize (width, height, r1, r2)</a></td>
+	<td class="summary">- func: SetSize(width, height, r1, r2)
+	- desc: sets the object's size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetWidth">newobject:SetWidth (width, relative)</a></td>
+	<td class="summary">- func: SetWidth(width, relative)
+	- desc: sets the object's width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetHeight">newobject:SetHeight (height, relative)</a></td>
+	<td class="summary">- func: SetHeight(height, relative)
+	- desc: sets the object's height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetSize">newobject:GetSize ()</a></td>
+	<td class="summary">- func: GetSize()
+	- desc: gets the object's size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetWidth">newobject:GetWidth ()</a></td>
+	<td class="summary">- func: GetWidth()
+	- desc: gets the object's width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetHeight">newobject:GetHeight ()</a></td>
+	<td class="summary">- func: GetHeight()
+	- desc: gets the object's height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetVisible">newobject:SetVisible (bool)</a></td>
+	<td class="summary">- func: SetVisible(bool)
+	- desc: sets the object's visibility</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetVisible">newobject:GetVisible ()</a></td>
+	<td class="summary">- func: GetVisible()
+	- desc: gets the object's visibility</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetParent">newobject:SetParent (parent)</a></td>
+	<td class="summary">- func: SetParent(parent)
+	- desc: sets the object's parent</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetParent">newobject:GetParent ()</a></td>
+	<td class="summary">- func: GetParent()
+	- desc: gets the object's parent</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:Remove">newobject:Remove ()</a></td>
+	<td class="summary">- func: Remove()
+	- desc: removes the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetClickBounds">newobject:SetClickBounds (x, y, width, height)</a></td>
+	<td class="summary">- func: SetClickBounds(x, y, width, height)
+	- desc: sets a boundary box for the object's collision
+			detection</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetClickBounds">newobject:GetClickBounds ()</a></td>
+	<td class="summary">- func: GetClickBounds()
+	- desc: gets the boundary box for the object's collision
+			detection</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:RemoveClickBounds">newobject:RemoveClickBounds ()</a></td>
+	<td class="summary">- func: RemoveClickBounds()
+	- desc: removes the collision detection boundary for the
+			object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:InClickBounds">newobject:InClickBounds ()</a></td>
+	<td class="summary">- func: InClickBounds()
+	- desc: checks if the mouse is inside the object's
+			collision detection boundaries</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetBaseParent">newobject:GetBaseParent (t)</a></td>
+	<td class="summary">- func: GetBaseParent(object, t)
+	- desc: finds the object's base parent</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:CheckHover">newobject:CheckHover ()</a></td>
+	<td class="summary">- func: CheckHover()
+	- desc: checks to see if the object should be in a
+			hover state</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetHover">newobject:GetHover ()</a></td>
+	<td class="summary">- func: GetHover()
+	- desc: return if the object is in a hover state or not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetChildren">newobject:GetChildren ()</a></td>
+	<td class="summary">- func: GetChildren()
+	- desc: returns the object's children</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetInternals">newobject:GetInternals ()</a></td>
+	<td class="summary">- func: GetInternals()
+	- desc: returns the object's internals</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:IsTopList">newobject:IsTopList ()</a></td>
+	<td class="summary">- func: IsTopList()
+	- desc: returns true if the object is the top most list
+			object or false if not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:IsTopChild">newobject:IsTopChild ()</a></td>
+	<td class="summary">- func: IsTopChild()
+	- desc: returns true if the object is the top most child
+			in its parent's children table or false if not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:MoveToTop">newobject:MoveToTop ()</a></td>
+	<td class="summary">- func: MoveToTop()
+	- desc: moves the object to the top of its parent's
+			children table</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetSkin">newobject:SetSkin (name)</a></td>
+	<td class="summary">- func: SetSkin(name)
+	- desc: sets the object's skin</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetSkin">newobject:GetSkin ()</a></td>
+	<td class="summary">- func: GetSkin()
+	- desc: gets the object's skin</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetSkinName">newobject:GetSkinName ()</a></td>
+	<td class="summary">- func: GetSkinName()
+	- desc: gets the name of the object's skin</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetAlwaysUpdate">newobject:SetAlwaysUpdate (bool)</a></td>
+	<td class="summary">- func: SetAlwaysUpdate(bool)
+	- desc: sets the object's skin</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetAlwaysUpdate">newobject:GetAlwaysUpdate ()</a></td>
+	<td class="summary">- func: GetAlwaysUpdate()
+	- desc: gets whether or not the object will always update</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetRetainSize">newobject:SetRetainSize (bool)</a></td>
+	<td class="summary">- func: SetRetainSize(bool)
+	- desc: sets whether or not the object should retain its
+			size when another object tries to resize it</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetRetainSize">newobject:GetRetainSize ()</a></td>
+	<td class="summary">- func: GetRetainSize()
+	- desc: gets whether or not the object should retain its
+			size when another object tries to resize it</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:IsActive">newobject:IsActive ()</a></td>
+	<td class="summary">- func: IsActive()
+	- desc: gets whether or not the object is active within
+			its parent's child table</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetParents">newobject:GetParents ()</a></td>
+	<td class="summary">- func: GetParents()
+	- desc: returns a table of the object's parents and its
+			sub-parents</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:IsTopInternal">newobject:IsTopInternal ()</a></td>
+	<td class="summary">- func: IsTopInternal()
+	- desc: returns true if the object is the top most
+			internal in its parent's internals table or
+			false if not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:IsInternal">newobject:IsInternal ()</a></td>
+	<td class="summary">- func: IsInternal()
+	- desc: returns true if the object is internal or
+			false if not</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetType">newobject:GetType ()</a></td>
+	<td class="summary">- func: GetType()
+	- desc: gets the type of the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetDrawOrder">newobject:SetDrawOrder ()</a></td>
+	<td class="summary">- func: SetDrawOrder()
+	- desc: sets the object's draw order</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetDrawOrder">newobject:GetDrawOrder ()</a></td>
+	<td class="summary">- func: GetDrawOrder()
+	- desc: sets the object's draw order</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetProperty">newobject:SetProperty (name, value)</a></td>
+	<td class="summary">- func: SetProperty(name, value)
+	- desc: sets a property on the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetProperty">newobject:GetProperty (name)</a></td>
+	<td class="summary">- func: GetProperty(name)
+	- desc: gets the value of an object's property</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:IsInList">newobject:IsInList ()</a></td>
+	<td class="summary">- func: IsInList()
+	- desc: checks to see if an object is in a list</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetState">newobject:SetState (name)</a></td>
+	<td class="summary">- func: SetState(name)
+	- desc: sets the object's state</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetState">newobject:GetState ()</a></td>
+	<td class="summary">- func: GetState()
+	- desc: gets the object's state</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "newobject:initialize"></a>
+    <strong>newobject:initialize ()</strong>
+    </dt>
+    <dd>
+    - func: initialize()
+	- desc: initializes the element
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:update"></a>
+    <strong>newobject:update (dt)</strong>
+    </dt>
+    <dd>
+    - func: update(deltatime)
+	- desc: updates the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:draw"></a>
+    <strong>newobject:draw ()</strong>
+    </dt>
+    <dd>
+    - func: draw()
+	- desc: draws the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousepressed"></a>
+    <strong>newobject:mousepressed (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:wheelmoved"></a>
+    <strong>newobject:wheelmoved (x, y)</strong>
+    </dt>
+    <dd>
+    - func: wheelmoved(x, y)
+	- desc: called when the mouse wheel is moved
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousereleased"></a>
+    <strong>newobject:mousereleased (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:keypressed"></a>
+    <strong>newobject:keypressed (key, isrepeat)</strong>
+    </dt>
+    <dd>
+    - func: keypressed(key, isrepeat)
+	- desc: called when the player presses a key
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+
+        </li>
+        <li><span class="parameter">isrepeat</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:keyreleased"></a>
+    <strong>newobject:keyreleased (key)</strong>
+    </dt>
+    <dd>
+    - func: keyreleased(key)
+	- desc: called when the player releases a key
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:textinput"></a>
+    <strong>newobject:textinput (text)</strong>
+    </dt>
+    <dd>
+    - func: textinput(text)
+	- desc: called when the user inputs text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">text</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetPos"></a>
+    <strong>newobject:SetPos (x, y, center)</strong>
+    </dt>
+    <dd>
+    - func: SetPos(x, y, center)
+	- desc: sets the object's position
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">center</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetX"></a>
+    <strong>newobject:SetX (x, center)</strong>
+    </dt>
+    <dd>
+    - func: SetX(x, center)
+	- desc: sets the object's x position
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">center</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetY"></a>
+    <strong>newobject:SetY (y, center)</strong>
+    </dt>
+    <dd>
+    - func: SetY(y, center)
+	- desc: sets the object's y position
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">center</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetPos"></a>
+    <strong>newobject:GetPos ()</strong>
+    </dt>
+    <dd>
+    - func: GetPos()
+	- desc: gets the object's position
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetX"></a>
+    <strong>newobject:GetX ()</strong>
+    </dt>
+    <dd>
+    - func: GetX()
+	- desc: gets the object's x position
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetY"></a>
+    <strong>newobject:GetY ()</strong>
+    </dt>
+    <dd>
+    - func: GetY()
+	- desc: gets the object's y position
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetStaticPos"></a>
+    <strong>newobject:GetStaticPos ()</strong>
+    </dt>
+    <dd>
+    - func: GetStaticPos()
+	- desc: gets the object's static position
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetStaticX"></a>
+    <strong>newobject:GetStaticX ()</strong>
+    </dt>
+    <dd>
+    - func: GetStaticX()
+	- desc: gets the object's static x position
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetStaticY"></a>
+    <strong>newobject:GetStaticY ()</strong>
+    </dt>
+    <dd>
+    - func: GetStaticY()
+	- desc: gets the object's static y position
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:Center"></a>
+    <strong>newobject:Center ()</strong>
+    </dt>
+    <dd>
+    - func: Center()
+	- desc: centers the object in the game window or in
+			its parent if it has one
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:CenterX"></a>
+    <strong>newobject:CenterX ()</strong>
+    </dt>
+    <dd>
+    - func: CenterX()
+	- desc: centers the object by its x value
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:CenterY"></a>
+    <strong>newobject:CenterY ()</strong>
+    </dt>
+    <dd>
+    - func: CenterY()
+	- desc: centers the object by its y value
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:CenterWithinArea"></a>
+    <strong>newobject:CenterWithinArea (x, y, width, height)</strong>
+    </dt>
+    <dd>
+    - func: CenterWithinArea()
+	- desc: centers the object within the given area
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">height</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetSize"></a>
+    <strong>newobject:SetSize (width, height, r1, r2)</strong>
+    </dt>
+    <dd>
+    - func: SetSize(width, height, r1, r2)
+	- desc: sets the object's size
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">height</span>
+
+        </li>
+        <li><span class="parameter">r1</span>
+
+        </li>
+        <li><span class="parameter">r2</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetWidth"></a>
+    <strong>newobject:SetWidth (width, relative)</strong>
+    </dt>
+    <dd>
+    - func: SetWidth(width, relative)
+	- desc: sets the object's width
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">relative</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetHeight"></a>
+    <strong>newobject:SetHeight (height, relative)</strong>
+    </dt>
+    <dd>
+    - func: SetHeight(height, relative)
+	- desc: sets the object's height
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">height</span>
+
+        </li>
+        <li><span class="parameter">relative</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetSize"></a>
+    <strong>newobject:GetSize ()</strong>
+    </dt>
+    <dd>
+    - func: GetSize()
+	- desc: gets the object's size
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetWidth"></a>
+    <strong>newobject:GetWidth ()</strong>
+    </dt>
+    <dd>
+    - func: GetWidth()
+	- desc: gets the object's width
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetHeight"></a>
+    <strong>newobject:GetHeight ()</strong>
+    </dt>
+    <dd>
+    - func: GetHeight()
+	- desc: gets the object's height
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetVisible"></a>
+    <strong>newobject:SetVisible (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetVisible(bool)
+	- desc: sets the object's visibility
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetVisible"></a>
+    <strong>newobject:GetVisible ()</strong>
+    </dt>
+    <dd>
+    - func: GetVisible()
+	- desc: gets the object's visibility
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetParent"></a>
+    <strong>newobject:SetParent (parent)</strong>
+    </dt>
+    <dd>
+    - func: SetParent(parent)
+	- desc: sets the object's parent
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">parent</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetParent"></a>
+    <strong>newobject:GetParent ()</strong>
+    </dt>
+    <dd>
+    - func: GetParent()
+	- desc: gets the object's parent
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:Remove"></a>
+    <strong>newobject:Remove ()</strong>
+    </dt>
+    <dd>
+    - func: Remove()
+	- desc: removes the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetClickBounds"></a>
+    <strong>newobject:SetClickBounds (x, y, width, height)</strong>
+    </dt>
+    <dd>
+    - func: SetClickBounds(x, y, width, height)
+	- desc: sets a boundary box for the object's collision
+			detection
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">height</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetClickBounds"></a>
+    <strong>newobject:GetClickBounds ()</strong>
+    </dt>
+    <dd>
+    - func: GetClickBounds()
+	- desc: gets the boundary box for the object's collision
+			detection
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:RemoveClickBounds"></a>
+    <strong>newobject:RemoveClickBounds ()</strong>
+    </dt>
+    <dd>
+    - func: RemoveClickBounds()
+	- desc: removes the collision detection boundary for the
+			object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:InClickBounds"></a>
+    <strong>newobject:InClickBounds ()</strong>
+    </dt>
+    <dd>
+    - func: InClickBounds()
+	- desc: checks if the mouse is inside the object's
+			collision detection boundaries
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetBaseParent"></a>
+    <strong>newobject:GetBaseParent (t)</strong>
+    </dt>
+    <dd>
+    - func: GetBaseParent(object, t)
+	- desc: finds the object's base parent
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:CheckHover"></a>
+    <strong>newobject:CheckHover ()</strong>
+    </dt>
+    <dd>
+    - func: CheckHover()
+	- desc: checks to see if the object should be in a
+			hover state
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetHover"></a>
+    <strong>newobject:GetHover ()</strong>
+    </dt>
+    <dd>
+    - func: GetHover()
+	- desc: return if the object is in a hover state or not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetChildren"></a>
+    <strong>newobject:GetChildren ()</strong>
+    </dt>
+    <dd>
+    - func: GetChildren()
+	- desc: returns the object's children
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetInternals"></a>
+    <strong>newobject:GetInternals ()</strong>
+    </dt>
+    <dd>
+    - func: GetInternals()
+	- desc: returns the object's internals
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:IsTopList"></a>
+    <strong>newobject:IsTopList ()</strong>
+    </dt>
+    <dd>
+    - func: IsTopList()
+	- desc: returns true if the object is the top most list
+			object or false if not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:IsTopChild"></a>
+    <strong>newobject:IsTopChild ()</strong>
+    </dt>
+    <dd>
+    - func: IsTopChild()
+	- desc: returns true if the object is the top most child
+			in its parent's children table or false if not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:MoveToTop"></a>
+    <strong>newobject:MoveToTop ()</strong>
+    </dt>
+    <dd>
+    - func: MoveToTop()
+	- desc: moves the object to the top of its parent's
+			children table
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetSkin"></a>
+    <strong>newobject:SetSkin (name)</strong>
+    </dt>
+    <dd>
+    - func: SetSkin(name)
+	- desc: sets the object's skin
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetSkin"></a>
+    <strong>newobject:GetSkin ()</strong>
+    </dt>
+    <dd>
+    - func: GetSkin()
+	- desc: gets the object's skin
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetSkinName"></a>
+    <strong>newobject:GetSkinName ()</strong>
+    </dt>
+    <dd>
+    - func: GetSkinName()
+	- desc: gets the name of the object's skin
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetAlwaysUpdate"></a>
+    <strong>newobject:SetAlwaysUpdate (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetAlwaysUpdate(bool)
+	- desc: sets the object's skin
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetAlwaysUpdate"></a>
+    <strong>newobject:GetAlwaysUpdate ()</strong>
+    </dt>
+    <dd>
+    - func: GetAlwaysUpdate()
+	- desc: gets whether or not the object will always update
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetRetainSize"></a>
+    <strong>newobject:SetRetainSize (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetRetainSize(bool)
+	- desc: sets whether or not the object should retain its
+			size when another object tries to resize it
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetRetainSize"></a>
+    <strong>newobject:GetRetainSize ()</strong>
+    </dt>
+    <dd>
+    - func: GetRetainSize()
+	- desc: gets whether or not the object should retain its
+			size when another object tries to resize it
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:IsActive"></a>
+    <strong>newobject:IsActive ()</strong>
+    </dt>
+    <dd>
+    - func: IsActive()
+	- desc: gets whether or not the object is active within
+			its parent's child table
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetParents"></a>
+    <strong>newobject:GetParents ()</strong>
+    </dt>
+    <dd>
+    - func: GetParents()
+	- desc: returns a table of the object's parents and its
+			sub-parents
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:IsTopInternal"></a>
+    <strong>newobject:IsTopInternal ()</strong>
+    </dt>
+    <dd>
+    - func: IsTopInternal()
+	- desc: returns true if the object is the top most
+			internal in its parent's internals table or
+			false if not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:IsInternal"></a>
+    <strong>newobject:IsInternal ()</strong>
+    </dt>
+    <dd>
+    - func: IsInternal()
+	- desc: returns true if the object is internal or
+			false if not
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetType"></a>
+    <strong>newobject:GetType ()</strong>
+    </dt>
+    <dd>
+    - func: GetType()
+	- desc: gets the type of the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetDrawOrder"></a>
+    <strong>newobject:SetDrawOrder ()</strong>
+    </dt>
+    <dd>
+    - func: SetDrawOrder()
+	- desc: sets the object's draw order
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetDrawOrder"></a>
+    <strong>newobject:GetDrawOrder ()</strong>
+    </dt>
+    <dd>
+    - func: GetDrawOrder()
+	- desc: sets the object's draw order
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetProperty"></a>
+    <strong>newobject:SetProperty (name, value)</strong>
+    </dt>
+    <dd>
+    - func: SetProperty(name, value)
+	- desc: sets a property on the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+
+        </li>
+        <li><span class="parameter">value</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetProperty"></a>
+    <strong>newobject:GetProperty (name)</strong>
+    </dt>
+    <dd>
+    - func: GetProperty(name)
+	- desc: gets the value of an object's property
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:IsInList"></a>
+    <strong>newobject:IsInList ()</strong>
+    </dt>
+    <dd>
+    - func: IsInList()
+	- desc: checks to see if an object is in a list
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetState"></a>
+    <strong>newobject:SetState (name)</strong>
+    </dt>
+    <dd>
+    - func: SetState(name)
+	- desc: sets the object's state
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetState"></a>
+    <strong>newobject:GetState ()</strong>
+    </dt>
+    <dd>
+    - func: GetState()
+	- desc: gets the object's state
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-08-09 15:38:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,854 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>VideahEngine Docs</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>VideahEngine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/engine.libs.LoveFrames.html">engine.libs.LoveFrames</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.debug.html">engine.libs.LoveFrames.libraries.debug</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.skins.html">engine.libs.LoveFrames.libraries.skins</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.templates.html">engine.libs.LoveFrames.libraries.templates</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.util.html">engine.libs.LoveFrames.libraries.util</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.base.html">engine.libs.LoveFrames.objects.base</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.button.html">engine.libs.LoveFrames.objects.button</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.checkbox.html">engine.libs.LoveFrames.objects.checkbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.collapsiblecategory.html">engine.libs.LoveFrames.objects.collapsiblecategory</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.columnlist.html">engine.libs.LoveFrames.objects.columnlist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.form.html">engine.libs.LoveFrames.objects.form</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.frame.html">engine.libs.LoveFrames.objects.frame</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.grid.html">engine.libs.LoveFrames.objects.grid</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.image.html">engine.libs.LoveFrames.objects.image</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.imagebutton.html">engine.libs.LoveFrames.objects.imagebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.closebutton.html">engine.libs.LoveFrames.objects.internal.closebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.linenumberspanel.html">engine.libs.LoveFrames.objects.internal.linenumberspanel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.menuoption.html">engine.libs.LoveFrames.objects.internal.menuoption</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.modalbackground.html">engine.libs.LoveFrames.objects.internal.modalbackground</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollarea.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbar.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbody.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbody</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.sliderbutton.html">engine.libs.LoveFrames.objects.internal.sliderbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tabbutton.html">engine.libs.LoveFrames.objects.internal.tabbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tooltip.html">engine.libs.LoveFrames.objects.internal.tooltip</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenode.html">engine.libs.LoveFrames.objects.internal.treenode</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenodebutton.html">engine.libs.LoveFrames.objects.internal.treenodebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.list.html">engine.libs.LoveFrames.objects.list</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.menu.html">engine.libs.LoveFrames.objects.menu</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.multichoice.html">engine.libs.LoveFrames.objects.multichoice</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.numberbox.html">engine.libs.LoveFrames.objects.numberbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.panel.html">engine.libs.LoveFrames.objects.panel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.progressbar.html">engine.libs.LoveFrames.objects.progressbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.radiobutton.html">engine.libs.LoveFrames.objects.radiobutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.slider.html">engine.libs.LoveFrames.objects.slider</a></li>
+  <li><strong>engine.libs.LoveFrames.objects.tabs</strong></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.text.html">engine.libs.LoveFrames.objects.text</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.textinput.html">engine.libs.LoveFrames.objects.textinput</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tree.html">engine.libs.LoveFrames.objects.tree</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Blue.skin.html">engine.libs.LoveFrames.skins.Blue.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Orange.skin.html">engine.libs.LoveFrames.skins.Orange.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.templates.base.html">engine.libs.LoveFrames.templates.base</a></li>
+  <li><a href="../modules/engine.modules.error.html">engine.modules.error</a></li>
+  <li><a href="../modules/engine.modules.hook.html">engine.modules.hook</a></li>
+  <li><a href="../modules/engine.modules.html">engine.modules</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>engine.libs.LoveFrames.objects.tabs</code></h1>
+<p>-- Love Frames - A GUI library for LOVE --
+	-- Copyright (c) 2012-2014 Kenny Shields --</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#newobject:initialize">newobject:initialize ()</a></td>
+	<td class="summary">- func: initialize()
+	- desc: initializes the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:update">newobject:update (dt)</a></td>
+	<td class="summary">- func: update(deltatime)
+	- desc: updates the element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:draw">newobject:draw ()</a></td>
+	<td class="summary">- func: draw()
+	- desc: draws the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousepressed">newobject:mousepressed (x, y, button)</a></td>
+	<td class="summary">- func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousereleased">newobject:mousereleased (x, y, button)</a></td>
+	<td class="summary">- func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:wheelmoved">newobject:wheelmoved (x, y)</a></td>
+	<td class="summary">- func: wheelmoved(x, y)
+	- desc: called when the mouse wheel is moved</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:AddTab">newobject:AddTab (name, object, tip, image, onopened, onclosed)</a></td>
+	<td class="summary">- func: AddTab(name, object, tip, image)
+	- desc: adds a new tab to the tab panel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:AddScrollButtons">newobject:AddScrollButtons ()</a></td>
+	<td class="summary">- func: AddScrollButtons()
+	- desc: creates scroll buttons fot the tab panel
+	- note: for internal use only</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetWidthOfButtons">newobject:GetWidthOfButtons ()</a></td>
+	<td class="summary">- func: GetWidthOfButtons()
+	- desc: gets the total width of all of the tab buttons</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetHeightOfButtons">newobject:GetHeightOfButtons ()</a></td>
+	<td class="summary">- func: GetHeightOfButtons()
+	- desc: gets the height of one tab button</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SwitchToTab">newobject:SwitchToTab (tabnumber)</a></td>
+	<td class="summary">- func: SwitchToTab(tabnumber)
+	- desc: makes the specified tab the active tab</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetScrollButtonSize">newobject:SetScrollButtonSize (width, height)</a></td>
+	<td class="summary">- func: SetScrollButtonSize(width, height)
+	- desc: sets the size of the scroll buttons</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetPadding">newobject:SetPadding (padding)</a></td>
+	<td class="summary">- func: SetPadding(paddint)
+	- desc: sets the padding for the tab panel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetPadding">newobject:GetPadding ()</a></td>
+	<td class="summary">- func: SetPadding(paddint)
+	- desc: gets the padding of the tab panel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetTabHeight">newobject:SetTabHeight (height)</a></td>
+	<td class="summary">- func: SetTabHeight(height)
+	- desc: sets the height of the tab buttons</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetToolTipFont">newobject:SetToolTipFont (font)</a></td>
+	<td class="summary">- func: SetToolTipFont(font)
+	- desc: sets the height of the tab buttons</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetTabNumber">newobject:GetTabNumber ()</a></td>
+	<td class="summary">- func: GetTabNumber()
+	- desc: gets the object's tab number</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:RemoveTab">newobject:RemoveTab (id)</a></td>
+	<td class="summary">- func: RemoveTab(id)
+	- desc: removes a tab from the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetButtonScrollAmount">newobject:SetButtonScrollAmount (amount)</a></td>
+	<td class="summary">- func: SetButtonScrollAmount(speed)
+	- desc: sets the scroll amount of the object's scrollbar
+			buttons</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetButtonScrollAmount">newobject:GetButtonScrollAmount ()</a></td>
+	<td class="summary">- func: GetButtonScrollAmount()
+	- desc: gets the scroll amount of the object's scrollbar
+			buttons</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetMouseWheelScrollAmount">newobject:SetMouseWheelScrollAmount (amount)</a></td>
+	<td class="summary">- func: SetMouseWheelScrollAmount(amount)
+	- desc: sets the scroll amount of the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetButtonScrollAmount">newobject:GetButtonScrollAmount ()</a></td>
+	<td class="summary">- func: GetMouseWheelScrollAmount()
+	- desc: gets the scroll amount of the mouse wheel</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetTabObject">newobject:SetTabObject (id, object)</a></td>
+	<td class="summary">- func: SetTabObject(id, object)
+	- desc: sets the object of a tab</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetButtonAreaX">newobject:SetButtonAreaX (x)</a></td>
+	<td class="summary">- func: SetButtonAreaX(x)
+	- desc: sets the x position of the object's button area</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetButtonAreaX">newobject:GetButtonAreaX ()</a></td>
+	<td class="summary">- func: GetButtonAreaX()
+	- desc: gets the x position of the object's button area</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetButtonAreaWidth">newobject:SetButtonAreaWidth (width)</a></td>
+	<td class="summary">- func: SetButtonAreaWidth(width)
+	- desc: sets the width of the object's button area</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetButtonAreaWidth">newobject:GetButtonAreaWidth ()</a></td>
+	<td class="summary">- func: GetButtonAreaWidth()
+	- desc: gets the width of the object's button area</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetAutoButtonAreaWidth">newobject:SetAutoButtonAreaWidth (bool)</a></td>
+	<td class="summary">- func: SetAutoButtonAreaWidth(bool)
+	- desc: sets whether or not the width of the object's
+			button area should be adjusted automatically</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetAutoButtonAreaWidth">newobject:GetAutoButtonAreaWidth ()</a></td>
+	<td class="summary">- func: GetAutoButtonAreaWidth()
+	- desc: gets whether or not the width of the object's
+			button area should be adjusted automatically</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "newobject:initialize"></a>
+    <strong>newobject:initialize ()</strong>
+    </dt>
+    <dd>
+    - func: initialize()
+	- desc: initializes the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:update"></a>
+    <strong>newobject:update (dt)</strong>
+    </dt>
+    <dd>
+    - func: update(deltatime)
+	- desc: updates the element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:draw"></a>
+    <strong>newobject:draw ()</strong>
+    </dt>
+    <dd>
+    - func: draw()
+	- desc: draws the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousepressed"></a>
+    <strong>newobject:mousepressed (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousereleased"></a>
+    <strong>newobject:mousereleased (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousereleased(x, y, button)
+	- desc: called when the player releases a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:wheelmoved"></a>
+    <strong>newobject:wheelmoved (x, y)</strong>
+    </dt>
+    <dd>
+    - func: wheelmoved(x, y)
+	- desc: called when the mouse wheel is moved
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:AddTab"></a>
+    <strong>newobject:AddTab (name, object, tip, image, onopened, onclosed)</strong>
+    </dt>
+    <dd>
+    - func: AddTab(name, object, tip, image)
+	- desc: adds a new tab to the tab panel
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+
+        </li>
+        <li><span class="parameter">object</span>
+
+        </li>
+        <li><span class="parameter">tip</span>
+
+        </li>
+        <li><span class="parameter">image</span>
+
+        </li>
+        <li><span class="parameter">onopened</span>
+
+        </li>
+        <li><span class="parameter">onclosed</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:AddScrollButtons"></a>
+    <strong>newobject:AddScrollButtons ()</strong>
+    </dt>
+    <dd>
+    - func: AddScrollButtons()
+	- desc: creates scroll buttons fot the tab panel
+	- note: for internal use only
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetWidthOfButtons"></a>
+    <strong>newobject:GetWidthOfButtons ()</strong>
+    </dt>
+    <dd>
+    - func: GetWidthOfButtons()
+	- desc: gets the total width of all of the tab buttons
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetHeightOfButtons"></a>
+    <strong>newobject:GetHeightOfButtons ()</strong>
+    </dt>
+    <dd>
+    - func: GetHeightOfButtons()
+	- desc: gets the height of one tab button
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SwitchToTab"></a>
+    <strong>newobject:SwitchToTab (tabnumber)</strong>
+    </dt>
+    <dd>
+    - func: SwitchToTab(tabnumber)
+	- desc: makes the specified tab the active tab
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tabnumber</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetScrollButtonSize"></a>
+    <strong>newobject:SetScrollButtonSize (width, height)</strong>
+    </dt>
+    <dd>
+    - func: SetScrollButtonSize(width, height)
+	- desc: sets the size of the scroll buttons
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+        <li><span class="parameter">height</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetPadding"></a>
+    <strong>newobject:SetPadding (padding)</strong>
+    </dt>
+    <dd>
+    - func: SetPadding(paddint)
+	- desc: sets the padding for the tab panel
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">padding</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetPadding"></a>
+    <strong>newobject:GetPadding ()</strong>
+    </dt>
+    <dd>
+    - func: SetPadding(paddint)
+	- desc: gets the padding of the tab panel
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetTabHeight"></a>
+    <strong>newobject:SetTabHeight (height)</strong>
+    </dt>
+    <dd>
+    - func: SetTabHeight(height)
+	- desc: sets the height of the tab buttons
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">height</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetToolTipFont"></a>
+    <strong>newobject:SetToolTipFont (font)</strong>
+    </dt>
+    <dd>
+    - func: SetToolTipFont(font)
+	- desc: sets the height of the tab buttons
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">font</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetTabNumber"></a>
+    <strong>newobject:GetTabNumber ()</strong>
+    </dt>
+    <dd>
+    - func: GetTabNumber()
+	- desc: gets the object's tab number
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:RemoveTab"></a>
+    <strong>newobject:RemoveTab (id)</strong>
+    </dt>
+    <dd>
+    - func: RemoveTab(id)
+	- desc: removes a tab from the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetButtonScrollAmount"></a>
+    <strong>newobject:SetButtonScrollAmount (amount)</strong>
+    </dt>
+    <dd>
+    - func: SetButtonScrollAmount(speed)
+	- desc: sets the scroll amount of the object's scrollbar
+			buttons
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">amount</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetButtonScrollAmount"></a>
+    <strong>newobject:GetButtonScrollAmount ()</strong>
+    </dt>
+    <dd>
+    - func: GetButtonScrollAmount()
+	- desc: gets the scroll amount of the object's scrollbar
+			buttons
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetMouseWheelScrollAmount"></a>
+    <strong>newobject:SetMouseWheelScrollAmount (amount)</strong>
+    </dt>
+    <dd>
+    - func: SetMouseWheelScrollAmount(amount)
+	- desc: sets the scroll amount of the mouse wheel
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">amount</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetButtonScrollAmount"></a>
+    <strong>newobject:GetButtonScrollAmount ()</strong>
+    </dt>
+    <dd>
+    - func: GetMouseWheelScrollAmount()
+	- desc: gets the scroll amount of the mouse wheel
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetTabObject"></a>
+    <strong>newobject:SetTabObject (id, object)</strong>
+    </dt>
+    <dd>
+    - func: SetTabObject(id, object)
+	- desc: sets the object of a tab
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+
+        </li>
+        <li><span class="parameter">object</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetButtonAreaX"></a>
+    <strong>newobject:SetButtonAreaX (x)</strong>
+    </dt>
+    <dd>
+    - func: SetButtonAreaX(x)
+	- desc: sets the x position of the object's button area
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetButtonAreaX"></a>
+    <strong>newobject:GetButtonAreaX ()</strong>
+    </dt>
+    <dd>
+    - func: GetButtonAreaX()
+	- desc: gets the x position of the object's button area
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetButtonAreaWidth"></a>
+    <strong>newobject:SetButtonAreaWidth (width)</strong>
+    </dt>
+    <dd>
+    - func: SetButtonAreaWidth(width)
+	- desc: sets the width of the object's button area
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetButtonAreaWidth"></a>
+    <strong>newobject:GetButtonAreaWidth ()</strong>
+    </dt>
+    <dd>
+    - func: GetButtonAreaWidth()
+	- desc: gets the width of the object's button area
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetAutoButtonAreaWidth"></a>
+    <strong>newobject:SetAutoButtonAreaWidth (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetAutoButtonAreaWidth(bool)
+	- desc: sets whether or not the width of the object's
+			button area should be adjusted automatically
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetAutoButtonAreaWidth"></a>
+    <strong>newobject:GetAutoButtonAreaWidth ()</strong>
+    </dt>
+    <dd>
+    - func: GetAutoButtonAreaWidth()
+	- desc: gets whether or not the width of the object's
+			button area should be adjusted automatically
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-08-09 15:38:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

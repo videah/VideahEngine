@@ -1,0 +1,822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>VideahEngine Docs</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>VideahEngine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/engine.libs.LoveFrames.html">engine.libs.LoveFrames</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.debug.html">engine.libs.LoveFrames.libraries.debug</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.skins.html">engine.libs.LoveFrames.libraries.skins</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.templates.html">engine.libs.LoveFrames.libraries.templates</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.util.html">engine.libs.LoveFrames.libraries.util</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.base.html">engine.libs.LoveFrames.objects.base</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.button.html">engine.libs.LoveFrames.objects.button</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.checkbox.html">engine.libs.LoveFrames.objects.checkbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.collapsiblecategory.html">engine.libs.LoveFrames.objects.collapsiblecategory</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.columnlist.html">engine.libs.LoveFrames.objects.columnlist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.form.html">engine.libs.LoveFrames.objects.form</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.frame.html">engine.libs.LoveFrames.objects.frame</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.grid.html">engine.libs.LoveFrames.objects.grid</a></li>
+  <li><strong>engine.libs.LoveFrames.objects.image</strong></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.imagebutton.html">engine.libs.LoveFrames.objects.imagebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.closebutton.html">engine.libs.LoveFrames.objects.internal.closebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.linenumberspanel.html">engine.libs.LoveFrames.objects.internal.linenumberspanel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.menuoption.html">engine.libs.LoveFrames.objects.internal.menuoption</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.modalbackground.html">engine.libs.LoveFrames.objects.internal.modalbackground</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollarea.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbar.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbody.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbody</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.sliderbutton.html">engine.libs.LoveFrames.objects.internal.sliderbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tabbutton.html">engine.libs.LoveFrames.objects.internal.tabbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tooltip.html">engine.libs.LoveFrames.objects.internal.tooltip</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenode.html">engine.libs.LoveFrames.objects.internal.treenode</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenodebutton.html">engine.libs.LoveFrames.objects.internal.treenodebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.list.html">engine.libs.LoveFrames.objects.list</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.menu.html">engine.libs.LoveFrames.objects.menu</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.multichoice.html">engine.libs.LoveFrames.objects.multichoice</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.numberbox.html">engine.libs.LoveFrames.objects.numberbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.panel.html">engine.libs.LoveFrames.objects.panel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.progressbar.html">engine.libs.LoveFrames.objects.progressbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.radiobutton.html">engine.libs.LoveFrames.objects.radiobutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.slider.html">engine.libs.LoveFrames.objects.slider</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tabs.html">engine.libs.LoveFrames.objects.tabs</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.text.html">engine.libs.LoveFrames.objects.text</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.textinput.html">engine.libs.LoveFrames.objects.textinput</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tree.html">engine.libs.LoveFrames.objects.tree</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Blue.skin.html">engine.libs.LoveFrames.skins.Blue.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Orange.skin.html">engine.libs.LoveFrames.skins.Orange.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.templates.base.html">engine.libs.LoveFrames.templates.base</a></li>
+  <li><a href="../modules/engine.modules.error.html">engine.modules.error</a></li>
+  <li><a href="../modules/engine.modules.hook.html">engine.modules.hook</a></li>
+  <li><a href="../modules/engine.modules.html">engine.modules</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>engine.libs.LoveFrames.objects.image</code></h1>
+<p>-- Love Frames - A GUI library for LOVE --
+	-- Copyright (c) 2012-2014 Kenny Shields --</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#newobject:initialize">newobject:initialize ()</a></td>
+	<td class="summary">- func: initialize()
+	- desc: initializes the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:update">newobject:update (dt)</a></td>
+	<td class="summary">- func: update(deltatime)
+	- desc: updates the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:draw">newobject:draw ()</a></td>
+	<td class="summary">- func: draw()
+	- desc: draws the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetImage">newobject:SetImage (image)</a></td>
+	<td class="summary">- func: SetImage(image)
+	- desc: sets the object's image</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetImage">newobject:GetImage ()</a></td>
+	<td class="summary">- func: GetImage()
+	- desc: gets the object's image</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetColor">newobject:SetColor (r, g, b, a)</a></td>
+	<td class="summary">- func: SetColor(r, g, b, a)
+	- desc: sets the object's color</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetColor">newobject:GetColor ()</a></td>
+	<td class="summary">- func: GetColor()
+	- desc: gets the object's color</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetOrientation">newobject:SetOrientation (orientation)</a></td>
+	<td class="summary">- func: SetOrientation(orientation)
+	- desc: sets the object's orientation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetOrientation">newobject:GetOrientation ()</a></td>
+	<td class="summary">- func: GetOrientation()
+	- desc: gets the object's orientation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetScaleX">newobject:SetScaleX (scalex)</a></td>
+	<td class="summary">- func: SetScaleX(scalex)
+	- desc: sets the object's x scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetScaleX">newobject:GetScaleX ()</a></td>
+	<td class="summary">- func: GetScaleX()
+	- desc: gets the object's x scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetScaleY">newobject:SetScaleY (scaley)</a></td>
+	<td class="summary">- func: SetScaleY(scaley)
+	- desc: sets the object's y scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetScaleY">newobject:GetScaleY ()</a></td>
+	<td class="summary">- func: GetScaleY()
+	- desc: gets the object's y scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetScale">newobject:SetScale (scalex, scaley)</a></td>
+	<td class="summary">- func: SetScale(scalex, scaley)
+	- desc: sets the object's x and y scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetScale">newobject:GetScale ()</a></td>
+	<td class="summary">- func: GetScale()
+	- desc: gets the object's x and y scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetOffsetX">newobject:SetOffsetX (x)</a></td>
+	<td class="summary">- func: SetOffsetX(x)
+	- desc: sets the object's x offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetOffsetX">newobject:GetOffsetX ()</a></td>
+	<td class="summary">- func: GetOffsetX()
+	- desc: gets the object's x offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetOffsetY">newobject:SetOffsetY (y)</a></td>
+	<td class="summary">- func: SetOffsetY(y)
+	- desc: sets the object's y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetOffsetY">newobject:GetOffsetY ()</a></td>
+	<td class="summary">- func: GetOffsetY()
+	- desc: gets the object's y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetOffset">newobject:SetOffset (x, y)</a></td>
+	<td class="summary">- func: SetOffset(x, y)
+	- desc: sets the object's x and y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetOffset">newobject:GetOffset ()</a></td>
+	<td class="summary">- func: GetOffset()
+	- desc: gets the object's x and y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetShearX">newobject:SetShearX (shearx)</a></td>
+	<td class="summary">- func: SetShearX(shearx)
+	- desc: sets the object's x shear</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetShearX">newobject:GetShearX ()</a></td>
+	<td class="summary">- func: GetShearX()
+	- desc: gets the object's x shear</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetShearY">newobject:SetShearY (sheary)</a></td>
+	<td class="summary">- func: SetShearY(sheary)
+	- desc: sets the object's y shear</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetShearY">newobject:GetShearY ()</a></td>
+	<td class="summary">- func: GetShearY()
+	- desc: gets the object's y shear</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetShear">newobject:SetShear (shearx, sheary)</a></td>
+	<td class="summary">- func: SetShear(shearx, sheary)
+	- desc: sets the object's x and y shear</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetShear">newobject:GetShear ()</a></td>
+	<td class="summary">- func: GetShear()
+	- desc: gets the object's x and y shear</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetImageSize">newobject:GetImageSize ()</a></td>
+	<td class="summary">- func: GetImageSize()
+	- desc: gets the size of the object's image</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetImageWidth">newobject:GetImageWidth ()</a></td>
+	<td class="summary">- func: GetImageWidth()
+	- desc: gets the width of the object's image</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetImageHeight">newobject:GetImageHeight ()</a></td>
+	<td class="summary">- func: GetImageWidth()
+	- desc: gets the height of the object's image</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "newobject:initialize"></a>
+    <strong>newobject:initialize ()</strong>
+    </dt>
+    <dd>
+    - func: initialize()
+	- desc: initializes the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:update"></a>
+    <strong>newobject:update (dt)</strong>
+    </dt>
+    <dd>
+    - func: update(deltatime)
+	- desc: updates the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:draw"></a>
+    <strong>newobject:draw ()</strong>
+    </dt>
+    <dd>
+    - func: draw()
+	- desc: draws the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetImage"></a>
+    <strong>newobject:SetImage (image)</strong>
+    </dt>
+    <dd>
+    - func: SetImage(image)
+	- desc: sets the object's image
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">image</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetImage"></a>
+    <strong>newobject:GetImage ()</strong>
+    </dt>
+    <dd>
+    - func: GetImage()
+	- desc: gets the object's image
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetColor"></a>
+    <strong>newobject:SetColor (r, g, b, a)</strong>
+    </dt>
+    <dd>
+    - func: SetColor(r, g, b, a)
+	- desc: sets the object's color
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">r</span>
+
+        </li>
+        <li><span class="parameter">g</span>
+
+        </li>
+        <li><span class="parameter">b</span>
+
+        </li>
+        <li><span class="parameter">a</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetColor"></a>
+    <strong>newobject:GetColor ()</strong>
+    </dt>
+    <dd>
+    - func: GetColor()
+	- desc: gets the object's color
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetOrientation"></a>
+    <strong>newobject:SetOrientation (orientation)</strong>
+    </dt>
+    <dd>
+    - func: SetOrientation(orientation)
+	- desc: sets the object's orientation
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">orientation</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetOrientation"></a>
+    <strong>newobject:GetOrientation ()</strong>
+    </dt>
+    <dd>
+    - func: GetOrientation()
+	- desc: gets the object's orientation
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetScaleX"></a>
+    <strong>newobject:SetScaleX (scalex)</strong>
+    </dt>
+    <dd>
+    - func: SetScaleX(scalex)
+	- desc: sets the object's x scale
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">scalex</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetScaleX"></a>
+    <strong>newobject:GetScaleX ()</strong>
+    </dt>
+    <dd>
+    - func: GetScaleX()
+	- desc: gets the object's x scale
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetScaleY"></a>
+    <strong>newobject:SetScaleY (scaley)</strong>
+    </dt>
+    <dd>
+    - func: SetScaleY(scaley)
+	- desc: sets the object's y scale
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">scaley</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetScaleY"></a>
+    <strong>newobject:GetScaleY ()</strong>
+    </dt>
+    <dd>
+    - func: GetScaleY()
+	- desc: gets the object's y scale
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetScale"></a>
+    <strong>newobject:SetScale (scalex, scaley)</strong>
+    </dt>
+    <dd>
+    - func: SetScale(scalex, scaley)
+	- desc: sets the object's x and y scale
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">scalex</span>
+
+        </li>
+        <li><span class="parameter">scaley</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetScale"></a>
+    <strong>newobject:GetScale ()</strong>
+    </dt>
+    <dd>
+    - func: GetScale()
+	- desc: gets the object's x and y scale
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetOffsetX"></a>
+    <strong>newobject:SetOffsetX (x)</strong>
+    </dt>
+    <dd>
+    - func: SetOffsetX(x)
+	- desc: sets the object's x offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetOffsetX"></a>
+    <strong>newobject:GetOffsetX ()</strong>
+    </dt>
+    <dd>
+    - func: GetOffsetX()
+	- desc: gets the object's x offset
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetOffsetY"></a>
+    <strong>newobject:SetOffsetY (y)</strong>
+    </dt>
+    <dd>
+    - func: SetOffsetY(y)
+	- desc: sets the object's y offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">y</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetOffsetY"></a>
+    <strong>newobject:GetOffsetY ()</strong>
+    </dt>
+    <dd>
+    - func: GetOffsetY()
+	- desc: gets the object's y offset
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetOffset"></a>
+    <strong>newobject:SetOffset (x, y)</strong>
+    </dt>
+    <dd>
+    - func: SetOffset(x, y)
+	- desc: sets the object's x and y offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetOffset"></a>
+    <strong>newobject:GetOffset ()</strong>
+    </dt>
+    <dd>
+    - func: GetOffset()
+	- desc: gets the object's x and y offset
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetShearX"></a>
+    <strong>newobject:SetShearX (shearx)</strong>
+    </dt>
+    <dd>
+    - func: SetShearX(shearx)
+	- desc: sets the object's x shear
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">shearx</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetShearX"></a>
+    <strong>newobject:GetShearX ()</strong>
+    </dt>
+    <dd>
+    - func: GetShearX()
+	- desc: gets the object's x shear
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetShearY"></a>
+    <strong>newobject:SetShearY (sheary)</strong>
+    </dt>
+    <dd>
+    - func: SetShearY(sheary)
+	- desc: sets the object's y shear
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">sheary</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetShearY"></a>
+    <strong>newobject:GetShearY ()</strong>
+    </dt>
+    <dd>
+    - func: GetShearY()
+	- desc: gets the object's y shear
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetShear"></a>
+    <strong>newobject:SetShear (shearx, sheary)</strong>
+    </dt>
+    <dd>
+    - func: SetShear(shearx, sheary)
+	- desc: sets the object's x and y shear
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">shearx</span>
+
+        </li>
+        <li><span class="parameter">sheary</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetShear"></a>
+    <strong>newobject:GetShear ()</strong>
+    </dt>
+    <dd>
+    - func: GetShear()
+	- desc: gets the object's x and y shear
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetImageSize"></a>
+    <strong>newobject:GetImageSize ()</strong>
+    </dt>
+    <dd>
+    - func: GetImageSize()
+	- desc: gets the size of the object's image
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetImageWidth"></a>
+    <strong>newobject:GetImageWidth ()</strong>
+    </dt>
+    <dd>
+    - func: GetImageWidth()
+	- desc: gets the width of the object's image
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetImageHeight"></a>
+    <strong>newobject:GetImageHeight ()</strong>
+    </dt>
+    <dd>
+    - func: GetImageWidth()
+	- desc: gets the height of the object's image
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-08-09 15:38:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

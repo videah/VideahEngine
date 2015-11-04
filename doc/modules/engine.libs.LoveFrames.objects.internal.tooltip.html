@@ -1,0 +1,687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>VideahEngine Docs</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>VideahEngine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/engine.libs.LoveFrames.html">engine.libs.LoveFrames</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.debug.html">engine.libs.LoveFrames.libraries.debug</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.skins.html">engine.libs.LoveFrames.libraries.skins</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.templates.html">engine.libs.LoveFrames.libraries.templates</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.libraries.util.html">engine.libs.LoveFrames.libraries.util</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.base.html">engine.libs.LoveFrames.objects.base</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.button.html">engine.libs.LoveFrames.objects.button</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.checkbox.html">engine.libs.LoveFrames.objects.checkbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.collapsiblecategory.html">engine.libs.LoveFrames.objects.collapsiblecategory</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.columnlist.html">engine.libs.LoveFrames.objects.columnlist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.form.html">engine.libs.LoveFrames.objects.form</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.frame.html">engine.libs.LoveFrames.objects.frame</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.grid.html">engine.libs.LoveFrames.objects.grid</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.image.html">engine.libs.LoveFrames.objects.image</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.imagebutton.html">engine.libs.LoveFrames.objects.imagebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.closebutton.html">engine.libs.LoveFrames.objects.internal.closebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistheader</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow.html">engine.libs.LoveFrames.objects.internal.columnlist.columnlistrow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.linenumberspanel.html">engine.libs.LoveFrames.objects.internal.linenumberspanel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.menuoption.html">engine.libs.LoveFrames.objects.internal.menuoption</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.modalbackground.html">engine.libs.LoveFrames.objects.internal.modalbackground</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicelist</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow.html">engine.libs.LoveFrames.objects.internal.multichoice.multichoicerow</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollarea.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollarea</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbar.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbody.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbody</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton.html">engine.libs.LoveFrames.objects.internal.scrollable.scrollbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.sliderbutton.html">engine.libs.LoveFrames.objects.internal.sliderbutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.tabbutton.html">engine.libs.LoveFrames.objects.internal.tabbutton</a></li>
+  <li><strong>engine.libs.LoveFrames.objects.internal.tooltip</strong></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenode.html">engine.libs.LoveFrames.objects.internal.treenode</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.internal.treenodebutton.html">engine.libs.LoveFrames.objects.internal.treenodebutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.list.html">engine.libs.LoveFrames.objects.list</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.menu.html">engine.libs.LoveFrames.objects.menu</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.multichoice.html">engine.libs.LoveFrames.objects.multichoice</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.numberbox.html">engine.libs.LoveFrames.objects.numberbox</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.panel.html">engine.libs.LoveFrames.objects.panel</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.progressbar.html">engine.libs.LoveFrames.objects.progressbar</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.radiobutton.html">engine.libs.LoveFrames.objects.radiobutton</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.slider.html">engine.libs.LoveFrames.objects.slider</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tabs.html">engine.libs.LoveFrames.objects.tabs</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.text.html">engine.libs.LoveFrames.objects.text</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.textinput.html">engine.libs.LoveFrames.objects.textinput</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.objects.tree.html">engine.libs.LoveFrames.objects.tree</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Blue.skin.html">engine.libs.LoveFrames.skins.Blue.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.skins.Orange.skin.html">engine.libs.LoveFrames.skins.Orange.skin</a></li>
+  <li><a href="../modules/engine.libs.LoveFrames.templates.base.html">engine.libs.LoveFrames.templates.base</a></li>
+  <li><a href="../modules/engine.modules.error.html">engine.modules.error</a></li>
+  <li><a href="../modules/engine.modules.hook.html">engine.modules.hook</a></li>
+  <li><a href="../modules/engine.modules.html">engine.modules</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>engine.libs.LoveFrames.objects.internal.tooltip</code></h1>
+<p>-- Love Frames - A GUI library for LOVE --
+	-- Copyright (c) 2012-2014 Kenny Shields --</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#newobject:initialize">newobject:initialize (object, text)</a></td>
+	<td class="summary">- func: initialize()
+	- desc: initializes the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:update">newobject:update (dt)</a></td>
+	<td class="summary">- func: update(deltatime)
+	- desc: updates the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:draw">newobject:draw ()</a></td>
+	<td class="summary">- func: draw()
+	- desc: draws the object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetFollowCursor">newobject:SetFollowCursor (bool)</a></td>
+	<td class="summary">- func: SetFollowCursor(bool)
+	- desc: sets whether or not the tooltip should follow the
+			cursor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetFollowCursor">newobject:GetFollowCursor ()</a></td>
+	<td class="summary">- func: GetFollowCursor()
+	- desc: gets whether or not the tooltip should follow the
+			cursor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetObject">newobject:SetObject (object)</a></td>
+	<td class="summary">- func: SetObject(object)
+	- desc: sets the tooltip's object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetObject">newobject:GetObject ()</a></td>
+	<td class="summary">- func: GetObject()
+	- desc: gets the tooltip's object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetText">newobject:SetText (text)</a></td>
+	<td class="summary">- func: SetText(text)
+	- desc: sets the tooltip's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetText">newobject:GetText ()</a></td>
+	<td class="summary">- func: GetText()
+	- desc: gets the tooltip's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetTextMaxWidth">newobject:SetTextMaxWidth (width)</a></td>
+	<td class="summary">- func: SetTextMaxWidth(text)
+	- desc: sets the tooltip's text max width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetOffsetX">newobject:SetOffsetX (xoffset)</a></td>
+	<td class="summary">- func: SetOffsetX(xoffset)
+	- desc: sets the tooltip's x offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetOffsetX">newobject:GetOffsetX ()</a></td>
+	<td class="summary">- func: GetOffsetX()
+	- desc: gets the tooltip's x offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetOffsetY">newobject:SetOffsetY (yoffset)</a></td>
+	<td class="summary">- func: SetOffsetY(yoffset)
+	- desc: sets the tooltip's y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetOffsetY">newobject:GetOffsetY ()</a></td>
+	<td class="summary">- func: GetOffsetY()
+	- desc: gets the tooltip's y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetOffsets">newobject:SetOffsets (xoffset, yoffset)</a></td>
+	<td class="summary">- func: SetOffsets(xoffset, yoffset)
+	- desc: sets the tooltip's x and y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetOffsets">newobject:GetOffsets ()</a></td>
+	<td class="summary">- func: GetOffsets()
+	- desc: gets the tooltip's x and y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetPadding">newobject:SetPadding (h, v)</a></td>
+	<td class="summary">- func: SetPadding(padding)
+	- desc: sets the tooltip's padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetPadding">newobject:GetPadding ()</a></td>
+	<td class="summary">- func: GetPadding()
+	- desc: gets the tooltip's padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetFont">newobject:SetFont (font)</a></td>
+	<td class="summary">- func: SetFont(font)
+	- desc: sets the tooltip's font</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetFont">newobject:GetFont ()</a></td>
+	<td class="summary">- func: GetFont()
+	- desc: gets the tooltip's font</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:SetFollowObject">newobject:SetFollowObject (bool)</a></td>
+	<td class="summary">- func: SetFollowObject(bool)
+	- desc: sets whether or not the tooltip should follow
+			its assigned object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:GetFollowObject">newobject:GetFollowObject ()</a></td>
+	<td class="summary">- func: GetFollowObject()
+	- desc: gets whether or not the tooltip should follow
+			its assigned object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#newobject:mousepressed">newobject:mousepressed (x, y, button)</a></td>
+	<td class="summary">- func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "newobject:initialize"></a>
+    <strong>newobject:initialize (object, text)</strong>
+    </dt>
+    <dd>
+    - func: initialize()
+	- desc: initializes the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">object</span>
+
+        </li>
+        <li><span class="parameter">text</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:update"></a>
+    <strong>newobject:update (dt)</strong>
+    </dt>
+    <dd>
+    - func: update(deltatime)
+	- desc: updates the object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:draw"></a>
+    <strong>newobject:draw ()</strong>
+    </dt>
+    <dd>
+    - func: draw()
+	- desc: draws the object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetFollowCursor"></a>
+    <strong>newobject:SetFollowCursor (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetFollowCursor(bool)
+	- desc: sets whether or not the tooltip should follow the
+			cursor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetFollowCursor"></a>
+    <strong>newobject:GetFollowCursor ()</strong>
+    </dt>
+    <dd>
+    - func: GetFollowCursor()
+	- desc: gets whether or not the tooltip should follow the
+			cursor
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetObject"></a>
+    <strong>newobject:SetObject (object)</strong>
+    </dt>
+    <dd>
+    - func: SetObject(object)
+	- desc: sets the tooltip's object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">object</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetObject"></a>
+    <strong>newobject:GetObject ()</strong>
+    </dt>
+    <dd>
+    - func: GetObject()
+	- desc: gets the tooltip's object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetText"></a>
+    <strong>newobject:SetText (text)</strong>
+    </dt>
+    <dd>
+    - func: SetText(text)
+	- desc: sets the tooltip's text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">text</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetText"></a>
+    <strong>newobject:GetText ()</strong>
+    </dt>
+    <dd>
+    - func: GetText()
+	- desc: gets the tooltip's text
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetTextMaxWidth"></a>
+    <strong>newobject:SetTextMaxWidth (width)</strong>
+    </dt>
+    <dd>
+    - func: SetTextMaxWidth(text)
+	- desc: sets the tooltip's text max width
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetOffsetX"></a>
+    <strong>newobject:SetOffsetX (xoffset)</strong>
+    </dt>
+    <dd>
+    - func: SetOffsetX(xoffset)
+	- desc: sets the tooltip's x offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">xoffset</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetOffsetX"></a>
+    <strong>newobject:GetOffsetX ()</strong>
+    </dt>
+    <dd>
+    - func: GetOffsetX()
+	- desc: gets the tooltip's x offset
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetOffsetY"></a>
+    <strong>newobject:SetOffsetY (yoffset)</strong>
+    </dt>
+    <dd>
+    - func: SetOffsetY(yoffset)
+	- desc: sets the tooltip's y offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">yoffset</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetOffsetY"></a>
+    <strong>newobject:GetOffsetY ()</strong>
+    </dt>
+    <dd>
+    - func: GetOffsetY()
+	- desc: gets the tooltip's y offset
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetOffsets"></a>
+    <strong>newobject:SetOffsets (xoffset, yoffset)</strong>
+    </dt>
+    <dd>
+    - func: SetOffsets(xoffset, yoffset)
+	- desc: sets the tooltip's x and y offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">xoffset</span>
+
+        </li>
+        <li><span class="parameter">yoffset</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetOffsets"></a>
+    <strong>newobject:GetOffsets ()</strong>
+    </dt>
+    <dd>
+    - func: GetOffsets()
+	- desc: gets the tooltip's x and y offset
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetPadding"></a>
+    <strong>newobject:SetPadding (h, v)</strong>
+    </dt>
+    <dd>
+    - func: SetPadding(padding)
+	- desc: sets the tooltip's padding
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">h</span>
+
+        </li>
+        <li><span class="parameter">v</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetPadding"></a>
+    <strong>newobject:GetPadding ()</strong>
+    </dt>
+    <dd>
+    - func: GetPadding()
+	- desc: gets the tooltip's padding
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetFont"></a>
+    <strong>newobject:SetFont (font)</strong>
+    </dt>
+    <dd>
+    - func: SetFont(font)
+	- desc: sets the tooltip's font
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">font</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetFont"></a>
+    <strong>newobject:GetFont ()</strong>
+    </dt>
+    <dd>
+    - func: GetFont()
+	- desc: gets the tooltip's font
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:SetFollowObject"></a>
+    <strong>newobject:SetFollowObject (bool)</strong>
+    </dt>
+    <dd>
+    - func: SetFollowObject(bool)
+	- desc: sets whether or not the tooltip should follow
+			its assigned object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bool</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:GetFollowObject"></a>
+    <strong>newobject:GetFollowObject ()</strong>
+    </dt>
+    <dd>
+    - func: GetFollowObject()
+	- desc: gets whether or not the tooltip should follow
+			its assigned object
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "newobject:mousepressed"></a>
+    <strong>newobject:mousepressed (x, y, button)</strong>
+    </dt>
+    <dd>
+    - func: mousepressed(x, y, button)
+	- desc: called when the player presses a mouse button
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+        <li><span class="parameter">button</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-08-09 15:38:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

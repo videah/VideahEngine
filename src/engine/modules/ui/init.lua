@@ -1,3 +1,0 @@
-ui = {}
-
-return ui
