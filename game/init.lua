@@ -23,11 +23,15 @@
 local game = {}
 game.path = ... .. '.'
 
-local console = require 'game.console'
-
 function game.load(args)
 
-	if love.graphics then console.load(true) end
+	print('[console] Loading developer console ...')
+	game.console = require('game.console'):new(true)
+	print('[console] Loaded developer console!')
+
+	print('[resources] Loading UI Classes ...')
+	game.ui = require.tree('game.ui', true)
+	print('[resources] Loaded UI Classes!')
 
 	function network.server.onConnect(id)
 		print(id)
@@ -90,6 +94,8 @@ function game.load(args)
 
 	end
 
+	game.ui.options:show()
+
 end
 
 function game.update(dt)
@@ -104,7 +110,7 @@ end
 
 function game.keypressed(key, isrepeat)
 
-	if key == '`' and not console.input:GetFocus() then console.toggle() end
+	if key == '`' and not game.console.input:GetFocus() then game.console:toggle() end
 
 end
 

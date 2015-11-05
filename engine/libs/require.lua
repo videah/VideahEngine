@@ -1,0 +1,54 @@
+local oldRequire = require
+
+require = {}
+
+setmetatable(require, {__call = function(_,path) return oldRequire(path) end})
+
+-- require.tree private functions
+--
+local lfs   = love.filesystem
+local cache = {}
+
+local function toFSPath(requirePath) return requirePath:gsub("%.", "/") end
+local function toRequirePath(fsPath) return fsPath:gsub('/','.') end
+local function noExtension(path)     return path:gsub('%.lua$', '') end
+local function noEndDot(str)         return str:gsub('%.$', '') end
+
+function require.tree(requirePath, isClassFolder)
+  if not cache[requirePath] then
+    local result = {}
+
+    local fsPath = toFSPath(requirePath)
+    local entries = lfs.getDirectoryItems(fsPath)
+
+    for _,entry in ipairs(entries) do
+      fsPath = toFSPath(requirePath .. '.' .. entry)
+      if lfs.isDirectory(fsPath) then
+        result[entry] = require.tree(toRequirePath(fsPath))
+      else
+        entry = noExtension(entry)
+        if isClassFolder then
+          result[entry] = require(toRequirePath(requirePath .. '/' .. entry)):new()
+        else
+          result[entry] = require(toRequirePath(requirePath .. '/' .. entry))
+        end
+      end
+    end
+
+    cache[requirePath] = result
+  end
+
+  return cache[requirePath]
+end
+
+function require.path(filePath)
+  return noEndDot(noExtension(filePath):match("(.-)[^%.]*$"))
+end
+
+function require.relative(...)
+  local args = {...}
+  local first, last = args[1], args[#args]
+  local path = require.path(first)
+  return require(path .. '.' .. last)
+end
+

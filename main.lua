@@ -39,6 +39,9 @@ end
 
 function love.update(dt)
 
+	-- Reloader
+	require('engine.libs.lurker').update()
+
 	game.update(dt)
 	engine.update(dt)
 

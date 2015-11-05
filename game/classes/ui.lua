@@ -20,82 +20,52 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 -- THE SOFTWARE.
 
-require 'engine.libs.require'
+local UI = class('UI')
 
-local engine = {}
+function UI:initialize(title, showOnCreate, hardClose)
 
-class = require 'engine.libs.class'
+	self.frame = ui.Create('frame')
+	self.frame:SetVisible(showOnCreate or false)
+	self.frame:SetName(title)
+	self.frame:SetResizable(true)
 
-function engine.load(args)
+	self.frame:SetMinWidth(200)
+	self.frame:SetMinHeight(200)
 
-	hook = require 'engine.modules.hook'
-	network = require 'engine.modules.network'
+	self.frame:SetMaxWidth(10000)
+	self.frame:SetMaxHeight(10000)
 
-	if love.graphics then ui = require 'engine.libs.LoveFrames' end
-	json = require 'engine.libs.json'
-	lume = require 'engine.libs.lume'
-
-end
-
-function engine.update(dt)
-
-	if CLIENT then ui.update(dt) end
-
-end
-
-function engine.draw()
-
-	ui.draw()
+	self.frame.OnClose = function(object)
+		self:hide()
+		return false
+	end
 
 end
 
-function engine.mousepressed(x, y, button)
+function UI:setState(state)
 
-	ui.mousepressed(x, y, button)
-
-end
-
-function engine.mousereleased(x, y, button)
-
-	ui.mousereleased(x, y, button)
+	self.frame:MakeTop()
+	self.frame:SetVisible(state)
 
 end
 
-function engine.wheelmoved(x, y)
+function UI:show()
 
-	ui.wheelmoved(x, y)
-
-end
-
-function engine.keypressed(key, isrepeat)
-
-	ui.keypressed(key, isrepeat)
+	self:setState(true)
 
 end
 
-function engine.keyreleased(key)
+function UI:hide()
 
-	ui.keyreleased(key)
-
-end
-
-function engine.textinput(text)
-
-	ui.textinput(text)
+	self:setState(false)
 
 end
 
-function engine.textedited(t, s, l)
+function UI:toggle()
 
-
-end
-
-function engine.resize(w, h)
+	local toggleVis = not self.frame:GetVisible()
+	self:setState(toggleVis)
 
 end
 
-function engine.focus(focus)
-
-end
-
-return engine
+return UI

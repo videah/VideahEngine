@@ -27,29 +27,29 @@ function server.start(port)
 
 	if not CLIENT then
 
-		print('Starting server ...')
+		print('[network] Starting server ...')
 
 		server.internal = net.lubeServer()
 		server.internal.handshake = "80085"
 		server.internal:listen(port or "18025")
 
 		server.internal.callbacks.connect = server.onConnect or function()
-			print('Player connected, but a handler does not exist (make one) [network.server.onConnect(id)].')
+			print('[network] Player connected, but a handler does not exist (make one) [network.server.onConnect(id)].')
 		end
 
 		server.internal.callbacks.recv = server.onReceive or function()
-			print('Packet received, but a handler does not exist (make one) [network.server.onReceive(packet, id)].')
+			print('[network] Packet received, but a handler does not exist (make one) [network.server.onReceive(packet, id)].')
 		end
 
 		server.internal.callbacks.disconnect = server.onDisconnect or function()
-			print('Player disconnected, but a handler does not exist (make one) [network.server.onDisconnect(id)].')
+			print('[network] Player disconnected, but a handler does not exist (make one) [network.server.onDisconnect(id)].')
 		end
 
 		SERVER = true
 
 	else
 
-		error('Can\'nt start Server when Client is running')
+		error('[network] Can\'nt start Server when Client is running')
 
 	end
 

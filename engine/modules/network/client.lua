@@ -29,7 +29,7 @@ function client.start()
 
 	if not SERVER then
 
-		print('Starting client ...')
+		print('[network] Starting client ...')
 
 		client.internal = net.lubeClient()
 		client.internal.handshake = "80085"
@@ -38,13 +38,13 @@ function client.start()
 			error('Packet received, but a handler does not exist (make one) [network.client.onReceive].')
 		end
 
-		print('Successfuly started client!')
+		print('[network] Successfuly started client!')
 
 		CLIENT = true
 
 	else
 
-		error('Can\'nt start Client when Server is running')
+		error('[network] Can\'nt start Client when Server is running')
 
 	end
 
@@ -52,7 +52,11 @@ end
 
 function client.update(dt)
 
-	client.internal:update(dt)
+	if client.internal then
+
+		client.internal:update(dt)
+
+	end
 
 end
 
@@ -60,7 +64,7 @@ function client.connect(ip, port)
 
 	port = port or "18025"
 
-	print('Attempting to connect to ' .. ip .. ':' .. port .. ' ...')
+	print('[network] Attempting to connect to ' .. ip .. ':' .. port .. ' ...')
 
 	if CLIENT then
 
@@ -71,19 +75,19 @@ function client.connect(ip, port)
 		local success, err = client.internal:connect(ip, port)
 
 		if err then
-			print('Error connecting to ' .. ip .. ' (' .. err .. ')')
+			print('[network] Error connecting to ' .. ip .. ' (' .. err .. ')')
 			return false
 		end
 
 		if success then
-			print('Successfully connected to ' .. ip .. ':' .. port .. '!')
+			print('[network] Successfully connected to ' .. ip .. ':' .. port .. '!')
 			client.connected = true
 			return true
 		end
 
 	else
 
-		print('Error connecting to ' .. ip .. ' (Client isn\'t running)')
+		print('[network] Error connecting to ' .. ip .. ' (Client isn\'t running)')
 		return false
 
 	end
@@ -94,7 +98,7 @@ function client.disconnect(reason)
 
 	if CLIENT then
 
-		print('Disconnecting from server ...')
+		print('[network] Disconnecting from server ...')
 
 		client.internal:disconnect()
 

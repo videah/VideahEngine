@@ -3,7 +3,7 @@
 -- Copyright (c) 2015 Ruairidh Carmichael - ruairidhcarmichael@live.co.uk
 
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
--- of this software and associated documentation files (the "Software"), to deal
+-- of this software and associated documentation files (the 'Software'), to deal
 -- in the Software without restriction, including without limitation the rights
 -- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 -- copies of the Software, and to permit persons to whom the Software is
@@ -12,7 +12,7 @@
 -- The above copyright notice and this permission notice shall be included in
 -- all copies or substantial portions of the Software.
 
--- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-- THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 -- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 -- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 -- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -20,107 +20,95 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 -- THE SOFTWARE.
 
-local console = {}
+local UI = require 'game.classes.ui'
+
+local Console = class('Console', UI)
+
 local defaultPrint = print
 
-function console.load(hookPrint)
+function Console:initialize(hookPrint)
 
-	console.frame = ui.Create("frame")
-	console.frame:SetName("Console")
-	console.frame:SetSize(700, 500)
+	UI.initialize(self, 'Console', false)
 
-	console.frame:SetMinWidth(200)
-	console.frame:SetMinHeight(200)
+	self.frame:SetSize(700, 500)
+	self.frame:Center()
 
-	console.frame:SetMaxWidth(10000)
-	console.frame:SetMaxHeight(10000)
+	w, h = self.frame:GetSize()
 
-	console.frame:SetResizable(true)
-	console.frame:Center()
+	self.list = ui.Create('list', self.frame)
+	self.list:SetPos(10, 30)
+	self.list:SetSize(w - 20, h - 90)
+	self.list:SetAutoScroll(true)
 
-	w, h = console.frame:GetSize()
+	self.buffer = {}
 
-	console.list = ui.Create("list", console.frame)
-	console.list:SetPos(10, 30)
-	console.list:SetSize(w - 20, h - 90)
-	console.list:SetAutoScroll(true)
+	self.input = ui.Create('textinput', self.frame)
+	self.input:SetSize((w - 20) - 85, 35)
+	self.input:SetPos(10, h - 45)
+	self.input:SetFont(love.graphics.newFont('engine/assets/fonts/Varela-Regular.otf', 14))
 
-	console.buffer = {}
+	self.button = ui.Create('button', self.frame)
+	self.button:SetSize(75, 35)
+	self.button:SetPos(w - 85, h - 45)
+	self.button:SetText('Enter')
 
-	console.input = ui.Create("textinput", console.frame)
-	console.input:SetSize((w - 20) - 85, 35)
-	console.input:SetPos(10, h - 45)
-	console.input:SetFont(love.graphics.newFont('engine/assets/fonts/Varela-Regular.otf', 14))
+	self.input.OnEnter = function(object)
 
-	console.button = ui.Create("button", console.frame)
-	console.button:SetSize(75, 35)
-	console.button:SetPos(w - 85, h - 45)
-	console.button:SetText("Enter")
-
-	console.input.OnEnter = function(object)
-
-		console.runCommand(console.input:GetText())
-		console.input:Clear()
+		self:runCommand(self.input:GetText())
+		self.input:Clear()
 
 	end
 
-	console.button.OnClick = console.input.OnEnter
+	self.button.OnClick = self.input.OnEnter
 
-	console.frame:SetVisible(false)
-	console.frame.OnResize = function(object, width, height)
+	self.frame:SetVisible(false)
+	self.frame.OnResize = function(object, width, height)
 
-		console.list:SetSize(width - 20, height - 90)
-		console.input:SetSize((width - 20) - 85, 35)
+		self.list:SetSize(width - 20, height - 90)
+		self.input:SetSize((width - 20) - 85, 35)
 
-		console.list:SetPos(10, 30)
-		console.input:SetPos(10, height - 45)
+		self.list:SetPos(10, 30)
+		self.input:SetPos(10, height - 45)
 
-		console.button:SetSize(75, 35)
-		console.button:SetPos(width - 85, height - 45)
+		self.button:SetSize(75, 35)
+		self.button:SetPos(width - 85, height - 45)
 
 	end
 
-	console.frame.OnClose = function(object)
-		console.toggle()
+	self.frame.OnClose = function(object)
+		self:toggle()
 		return false
 	end
 	
 	if hookPrint then
 		print = function(...)
-			console.print(...)
+			self:print(...)
 			defaultPrint(...)
 		end
 	end
 
 end
 
-function console.toggle()
+function Console:print(text, color)
 
-	local toggleVis = not console.frame:GetVisible()
-	console.frame:SetVisible(toggleVis)
-
-end
-
-function console.print(text, color)
-
-	local line = ui.Create("text", console.list)
+	local line = ui.Create('text', self.list)
 	line:SetDetectLinks(true)
 	line:SetText(text)
 
-	table.insert(line, console.buffer)
+	table.insert(line, self.buffer)
 
 end
 
-function console.clear()
+function Console:clear()
 
-	console.list:Clear()
+	self.list:Clear()
 
 end
 
-function console.runCommand(text)
+function Console:runCommand(text)
 
 	print('] ' .. text)
 
 end
 
-return console
+return Console

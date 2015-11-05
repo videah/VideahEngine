@@ -20,82 +20,22 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 -- THE SOFTWARE.
 
-require 'engine.libs.require'
+local UI = require 'game.classes.ui'
 
-local engine = {}
+local Options = class('Options', UI)
 
-class = require 'engine.libs.class'
+function Options:initialize()
 
-function engine.load(args)
+	UI.initialize(self, 'Options', false)
 
-	hook = require 'engine.modules.hook'
-	network = require 'engine.modules.network'
+	self.frame:SetSize(600, 400)
+	self.frame:SetResizable(false)
+	self.frame:Center()
 
-	if love.graphics then ui = require 'engine.libs.LoveFrames' end
-	json = require 'engine.libs.json'
-	lume = require 'engine.libs.lume'
-
-end
-
-function engine.update(dt)
-
-	if CLIENT then ui.update(dt) end
+	self.tabs = ui.Create('tabs', self.frame)
+	self.tabs:SetPos(10, 30)
+	self.tabs:SetSize(self.frame:GetWidth() - 20, self.frame:GetHeight() - 40)
 
 end
 
-function engine.draw()
-
-	ui.draw()
-
-end
-
-function engine.mousepressed(x, y, button)
-
-	ui.mousepressed(x, y, button)
-
-end
-
-function engine.mousereleased(x, y, button)
-
-	ui.mousereleased(x, y, button)
-
-end
-
-function engine.wheelmoved(x, y)
-
-	ui.wheelmoved(x, y)
-
-end
-
-function engine.keypressed(key, isrepeat)
-
-	ui.keypressed(key, isrepeat)
-
-end
-
-function engine.keyreleased(key)
-
-	ui.keyreleased(key)
-
-end
-
-function engine.textinput(text)
-
-	ui.textinput(text)
-
-end
-
-function engine.textedited(t, s, l)
-
-
-end
-
-function engine.resize(w, h)
-
-end
-
-function engine.focus(focus)
-
-end
-
-return engine
+return Options
