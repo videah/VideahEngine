@@ -63,7 +63,7 @@ function game.load(args)
 
 	if CLIENT then
 
-		love.graphics.setBackgroundColor(200, 200, 200)
+		-- love.graphics.setBackgroundColor(200, 200, 200)
 
 		-- local frame = ui.Create("frame")
 		-- frame:SetName("Connect")

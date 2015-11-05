@@ -35,6 +35,16 @@ function engine.load(args)
 	json = require 'engine.libs.json'
 	lume = require 'engine.libs.lume'
 
+	cpml = require 'engine.libs.cpml'
+
+	-- Model Loaders
+	model = {}
+	model.iqm = require 'engine.libs.iqm'
+	model.obj = require 'engine.libs.obj'
+	model.iqe = require 'engine.libs.iqe'
+
+	require('engine.libs.love3d').import(true, true)
+
 end
 
 function engine.update(dt)
