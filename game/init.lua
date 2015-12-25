@@ -102,7 +102,7 @@ function game.update(dt)
 
 	network.update(dt)
 
-	if love.keyboard.isDown('lctrl', 'l') then game.console:clear() end
+	if love.keyboard.isDown('lctrl') and love.keyboard.isDown('l') then game.console:clear() end
 
 end
 
