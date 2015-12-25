@@ -102,6 +102,8 @@ function game.update(dt)
 
 	network.update(dt)
 
+	if love.keyboard.isDown('lctrl', 'l') then game.console:clear() end
+
 end
 
 function game.draw()
@@ -111,6 +113,8 @@ end
 function game.keypressed(key, isrepeat)
 
 	if key == '`' and not game.console.input:GetFocus() then game.console:toggle() end
+	if key == 'up' and game.console.input:GetFocus() then game.console:moveUpHistory() end
+	if key == 'down' and game.console.input:GetFocus() then game.console:moveDownHistory() end
 
 end
 

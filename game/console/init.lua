@@ -41,6 +41,10 @@ function Console:initialize(hookPrint)
 	self.list:SetAutoScroll(true)
 
 	self.buffer = {}
+	self.history = {}
+
+	self.historyPos = 0
+	self.tempHistory = nil
 
 	self.input = ui.Create('textinput', self.frame)
 	self.input:SetSize((w - 20) - 85, 35)
@@ -55,6 +59,11 @@ function Console:initialize(hookPrint)
 	self.input.OnEnter = function(object)
 
 		self:runCommand(self.input:GetText())
+
+		self.historyPos = 0
+		self.tempHistory = nil
+
+		table.insert(self.history, 1, self.input:GetText())
 		self.input:Clear()
 
 	end
@@ -110,6 +119,41 @@ function Console:runCommand(text)
 	print('] ' .. text)
 	local status, err = pcall(loadstring(text))
 	if err then print(err) end
+
+end
+
+function Console:moveUpHistory()
+
+	-- If a command in history has been edited since it was created, replace it with the edited one.
+	if self.history[self.historyPos] ~= self.input:GetText() then self.history[self.historyPos] = self.input:GetText() end
+
+	-- If we are at 0 in history (before any history) and we are moving up, store any input in a temporary
+	-- string and hold it in case we need to replace it later when we move back down.
+	if self.historyPos == 0 and #self.history > 0 then self.tempHistory = self.input:GetText() end
+
+	self.historyPos = self.historyPos + 1 -- Move history up one
+
+	-- We don't want to move beyond the consoles history, if we do, move back.
+	if self.historyPos > #self.history then self.historyPos = #self.history return end
+
+	-- Grab the string from history and place it in the input bar.
+	local stringFromHistory = self.history[self.historyPos]
+	self.input:SetText(stringFromHistory)
+
+end
+
+function Console:moveDownHistory()
+
+	if self.history[self.historyPos] ~= self.input:GetText() then self.history[self.historyPos] = self.input:GetText() end
+
+	self.historyPos = self.historyPos - 1
+
+	if self.historyPos <= 0 then self.historyPos = 0; self.input:Clear() end
+
+	local stringFromHistory = self.history[self.historyPos]
+	if stringFromHistory then self.input:SetText(stringFromHistory) end
+
+	if self.tempHistory and self.historyPos <= 0 then self.input:SetText(self.tempHistory) return end
 
 end
 
