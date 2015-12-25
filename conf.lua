@@ -6,6 +6,8 @@ function love.conf(c)
 	c.author = "Ruairidh 'VideahGams' Carmichael"
 	c.identity = "VideahEngine"
 
+	c.window.display = 2
+
 	c.args = {}
 	for _, v in ipairs( arg ) do
 		c.args[v] = true

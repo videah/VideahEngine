@@ -108,6 +108,8 @@ end
 function Console:runCommand(text)
 
 	print('] ' .. text)
+	local status, err = pcall(loadstring(text))
+	if err then print(err) end
 
 end
 
