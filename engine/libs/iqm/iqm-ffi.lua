@@ -1,5 +1,10 @@
 local ffi = require "ffi"
 
+local already_loaded = pcall(ffi.new, "struct iqmheader")
+if already_loaded then
+	return ffi.C
+end
+
 ffi.cdef([[
 // IQM: Inter-Quake Model format
 // version 1: April 20, 2010

@@ -83,7 +83,7 @@ local function dump_strings(text)
 end
 
 -- 'file' can be either a filename or IQM data (as long as the magic is intact)
-function iqm.load(file)
+function iqm.load(file, save_data)
 	-- HACK: Workaround for a bug in LuaJIT's GC - we need to turn it off for the
 	-- rest of the function or we'll get a segfault shortly into these loops.
 	--
@@ -189,10 +189,6 @@ function iqm.load(file)
 			for j = 0, va.size-1 do
 				vertices[i][va.type][j] = ptr[i*va.size+j]
 			end
-			-- if va.type == "weight" then
-			-- 	local v = vertices[i][va.type]
-			-- 	print(v[0], v[1], v[2], v[3])
-			-- end
 			if va.type == "position" then
 				local v = vertices[i][va.type]
 				for i = 1, 3 do
@@ -221,6 +217,29 @@ function iqm.load(file)
 		table.insert(indices, triangle.vertex[1] + 1)
 	end
 
+	-- re-read the vertex data :(
+	local save_buffer = {}
+	if save_data then
+		local buffer = {}
+		for _, va in ipairs(found_types) do
+			local ptr = read_ptr(data, va.format, va.offset)
+			for i = 1, header.num_vertexes do
+				buffer[i] = buffer[i] or {}
+				buffer[i][va.type] = {}
+				for j = 0, va.size-1 do
+					buffer[i][va.type][j+1] = ptr[(i-1)*va.size+j]
+				end
+			end
+		end
+		for i, triangle in ipairs(triangles) do
+			save_buffer[i] = {
+				buffer[triangle.vertex[0] + 1],
+				buffer[triangle.vertex[2] + 1],
+				buffer[triangle.vertex[1] + 1]
+			}
+		end
+	end
+
 	local layout = {}
 	for i, va in ipairs(found_types) do
 		layout[i] = { va.love_type, va.format, va.size }
@@ -239,6 +258,7 @@ function iqm.load(file)
 	local objects = {}
 	objects.bounds = {}
 	objects.bounds.base = computed_bbox
+	objects.triangles = save_buffer
 
 	if header.ofs_bounds > 0 then
 		local bounds = read_offset(

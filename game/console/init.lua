@@ -118,7 +118,7 @@ function Console:runCommand(text)
 
 	print('] ' .. text)
 	local status, err = pcall(loadstring(text))
-	if err then print(err) end
+	if err then print('Lua Error: ' .. err) end
 
 end
 

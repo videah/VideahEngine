@@ -43,7 +43,7 @@ function engine.load(args)
 	model.obj = require 'engine.libs.obj'
 	model.iqe = require 'engine.libs.iqe'
 
-	require('engine.libs.love3d').import(true, true)
+	require('engine.libs.love3d').import(true, false)
 
 end
 

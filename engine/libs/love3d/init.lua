@@ -269,6 +269,8 @@ function l3d.new_shader_raw(gl_version, vc, pc)
 #endif
 #pragma optionNV(strict on)
 #define %s
+varying vec4 VaryingTexCoord;
+varying vec4 VaryingColor;
 #line 0
 %s]]
 		local vs = arg1 and string.format(fmt, "#version " .. versions[gl_version], "VERTEX", vc) or nil
@@ -488,10 +490,10 @@ function l3d.bind_shadow_map(map)
 		gl.DrawBuffer(GL.NONE)
 		gl.Viewport(0, 0, map.width, map.height)
 	else
-		gl.DrawBuffer(GL.BACK)
 		--- XXX: This is not a good assumption on ES!
 		-- gl.BindFramebuffer(0)
 		love.graphics.setCanvas()
+		gl.DrawBuffer(GL.BACK)
 	end
 end
 
@@ -528,6 +530,9 @@ function l3d.new_shadow_map(w, h)
 	gl.GenFramebuffers(1, buffers)
 	gl.BindFramebuffer(GL.FRAMEBUFFER, buffers[0])
 
+	-- local col = ffi.new("GLfloat[4]", 1, 1, 1, 1)
+	-- gl.TexParameterfv(GL.TEXTURE_2D, GL.TEXTURE_BORDER_COLOR, col);
+
 	gl.GenTextures(1, buffers+1)
 	gl.BindTexture(GL.TEXTURE_2D, buffers[1])
 	gl.TexImage2D(GL.TEXTURE_2D, 0, GL.DEPTH_COMPONENT24, w, h, 0, GL.DEPTH_COMPONENT, GL.FLOAT, nil)
@@ -542,6 +547,7 @@ function l3d.new_shadow_map(w, h)
 	gl.FramebufferTexture(GL.FRAMEBUFFER, GL.DEPTH_ATTACHMENT, buffers[1], 0)
 
 	gl.DrawBuffer(GL.NONE)
+	gl.ReadBuffer(GL.NONE)
 
 	if gl.CheckFramebufferStatus(GL.FRAMEBUFFER) ~= GL.FRAMEBUFFER_COMPLETE then
 		l3d.bind_shadow_map()
@@ -654,7 +660,7 @@ function l3d.patch(automatic_transforms)
 		if type(r) == "number" then
 			orig.rotate(r)
 		end
-		l3d.rotate(r, axis)
+		l3d.rotate(r, axis or cpml.vec3.unit_z)
 		update()
 	end
 	--- See l3d.scale.

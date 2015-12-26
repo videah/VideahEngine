@@ -7,6 +7,8 @@ function love.conf(c)
 	c.identity = "VideahEngine"
 
 	c.window.display = 2
+	c.gammacorrect = true
+	c.window.msaa = 4
 
 	c.args = {}
 	for _, v in ipairs( arg ) do
