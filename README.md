@@ -6,7 +6,7 @@
 ![](https://img.shields.io/github/stars/VideahGams/VideahEngine.svg)
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
-Personal Love2D Engine Project.
+Personal LÖVE Engine Project.
 
 Everything is Work in Progress, and there is currently no documentation.
 
